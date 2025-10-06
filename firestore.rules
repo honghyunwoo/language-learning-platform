@@ -1,0 +1,110 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 헬퍼 함수: 사용자 인증 확인
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // 헬퍼 함수: 본인 확인
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // 사용자 프로필
+    match /users/{userId} {
+      // 모든 사용자가 다른 사용자 프로필 읽기 가능 (공개 정보만)
+      allow read: if true;
+      // 본인만 자신의 프로필 생성/수정 가능
+      allow create: if isOwner(userId);
+      allow update: if isOwner(userId);
+      // 삭제는 불가 (관리자만 가능하도록 별도 처리 필요)
+      allow delete: if false;
+    }
+
+    // 사용자 진행 상황
+    match /userProgress/{progressId} {
+      // 본인의 진행 상황만 접근 가능
+      allow read, write: if isAuthenticated() &&
+        resource.data.userId == request.auth.uid;
+    }
+
+    // 학습 일지 (Journal)
+    match /journals/{journalId} {
+      allow read: if isOwner(resource.data.userId);
+      allow create: if isAuthenticated() && isOwner(request.resource.data.userId);
+      allow update, delete: if isOwner(resource.data.userId);
+    }
+
+    // 알림
+    match /notifications/{notificationId} {
+      allow read: if isOwner(resource.data.userId);
+      allow update: if isOwner(resource.data.userId);
+      allow create, delete: if false; // 서버에서만
+    }
+
+    // 알림 설정
+    match /notificationSettings/{userId} {
+      allow read, write: if isOwner(userId);
+    }
+
+    // 게시글
+    match /posts/{postId} {
+      // 공개된 게시글은 모두 읽기 가능
+      allow read: if resource.data.isPublished == true ||
+        isOwner(resource.data.authorId);
+      // 인증된 사용자만 게시글 작성 가능
+      allow create: if isAuthenticated() &&
+        request.resource.data.authorId == request.auth.uid;
+      // 작성자만 수정/삭제 가능
+      allow update, delete: if isOwner(resource.data.authorId);
+    }
+
+    // 댓글
+    match /comments/{commentId} {
+      // 모두 읽기 가능
+      allow read: if true;
+      // 인증된 사용자만 작성 가능
+      allow create: if isAuthenticated() &&
+        request.resource.data.authorId == request.auth.uid;
+      // 작성자만 수정/삭제 가능
+      allow update, delete: if isOwner(resource.data.authorId);
+    }
+
+    // 학습 리소스
+    match /resources/{resourceId} {
+      // 모두 읽기 가능
+      allow read: if true;
+      // 작성/수정/삭제는 관리자만 (클라이언트에서는 불가)
+      allow write: if false;
+    }
+
+    // 리소스 리뷰
+    match /resourceReviews/{reviewId} {
+      // 모두 읽기 가능
+      allow read: if true;
+      // 인증된 사용자만 리뷰 작성 가능
+      allow create: if isAuthenticated() &&
+        request.resource.data.userId == request.auth.uid;
+      // 작성자만 수정/삭제 가능
+      allow update, delete: if isOwner(resource.data.userId);
+    }
+
+    // 북마크
+    match /bookmarks/{bookmarkId} {
+      // 본인의 북마크만 접근 가능
+      allow read, write: if isAuthenticated() &&
+        resource.data.userId == request.auth.uid;
+    }
+
+    // 팔로우 관계
+    match /follows/{followId} {
+      // 모두 읽기 가능
+      allow read: if true;
+      // 본인만 팔로우/언팔로우 가능
+      allow create, delete: if isAuthenticated() &&
+        request.resource.data.followerId == request.auth.uid;
+    }
+  }
+}

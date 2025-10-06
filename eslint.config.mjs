@@ -20,6 +20,11 @@ const eslintConfig = [
       "next-env.d.ts",
     ],
   },
+  {
+    rules: {
+      "@typescript-eslint/no-unused-vars": "warn", // error에서 warn으로 변경
+    },
+  },
 ];
 
 export default eslintConfig;

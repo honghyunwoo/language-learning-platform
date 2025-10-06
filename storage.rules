@@ -1,0 +1,54 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    // 헬퍼 함수: 사용자 인증 확인
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // 헬퍼 함수: 파일 크기 제한 (5MB)
+    function isValidSize() {
+      return request.resource.size < 5 * 1024 * 1024;
+    }
+
+    // 헬퍼 함수: 이미지 파일 형식 확인
+    function isImage() {
+      return request.resource.contentType.matches('image/.*');
+    }
+
+    // 프로필 이미지
+    match /profiles/{userId}/{fileName} {
+      // 모두 읽기 가능
+      allow read: if true;
+      // 본인만 업로드 가능, 이미지 파일이고 5MB 이하
+      allow create, update: if isAuthenticated() &&
+        request.auth.uid == userId &&
+        isImage() &&
+        isValidSize();
+      // 본인만 삭제 가능
+      allow delete: if isAuthenticated() &&
+        request.auth.uid == userId;
+    }
+
+    // 게시글 이미지
+    match /posts/{postId}/{fileName} {
+      // 모두 읽기 가능
+      allow read: if true;
+      // 인증된 사용자만 업로드 가능, 이미지 파일이고 5MB 이하
+      allow create: if isAuthenticated() &&
+        isImage() &&
+        isValidSize();
+      // 삭제는 게시글 삭제 시 서버에서 처리
+      allow delete: if false;
+    }
+
+    // 리소스 썸네일 (관리자만 업로드)
+    match /resources/{resourceId}/{fileName} {
+      // 모두 읽기 가능
+      allow read: if true;
+      // 클라이언트에서 업로드/삭제 불가
+      allow write: if false;
+    }
+  }
+}
