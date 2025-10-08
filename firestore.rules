@@ -106,5 +106,63 @@ service cloud.firestore {
       allow create, delete: if isAuthenticated() &&
         request.resource.data.followerId == request.auth.uid;
     }
+
+    // 댓글 (Replies)
+    match /replies/{replyId} {
+      // 모두 읽기 가능
+      allow read: if true;
+      // 인증된 사용자만 댓글 작성 가능
+      allow create: if isAuthenticated() &&
+        request.resource.data.authorId == request.auth.uid;
+      // 작성자만 수정/삭제 가능
+      allow update, delete: if isOwner(resource.data.authorId);
+    }
+
+    // 좋아요 (Likes)
+    match /likes/{likeId} {
+      // 모두 읽기 가능
+      allow read: if true;
+      // 인증된 사용자만 좋아요 가능
+      allow create: if isAuthenticated() &&
+        request.resource.data.userId == request.auth.uid;
+      // 본인만 삭제 가능
+      allow delete: if isOwner(resource.data.userId);
+    }
+
+    // 스터디 그룹 (Study Groups)
+    match /studyGroups/{groupId} {
+      // 모두 읽기 가능
+      allow read: if true;
+      // 인증된 사용자만 그룹 생성 가능
+      allow create: if isAuthenticated() &&
+        request.resource.data.leaderId == request.auth.uid;
+      // 그룹 리더 또는 멤버만 수정 가능
+      allow update: if isAuthenticated() && (
+        isOwner(resource.data.leaderId) ||
+        resource.data.members.hasAny([request.auth.uid])
+      );
+      // 그룹 리더만 삭제 가능
+      allow delete: if isOwner(resource.data.leaderId);
+    }
+
+    // 주차별 진행률 (Week Progress)
+    match /weekProgress/{progressId} {
+      // 본인의 진행률만 읽기 가능
+      allow read: if isAuthenticated() &&
+        resource.data.userId == request.auth.uid;
+      // 본인의 진행률만 작성/수정 가능
+      allow create, update: if isAuthenticated() &&
+        request.resource.data.userId == request.auth.uid;
+    }
+
+    // 활동별 진행률 (Activity Progress)
+    match /activity_progress/{progressId} {
+      // 본인의 진행률만 읽기 가능
+      allow read: if isAuthenticated() &&
+        resource.data.userId == request.auth.uid;
+      // 본인의 진행률만 작성/수정 가능
+      allow create, update: if isAuthenticated() &&
+        request.resource.data.userId == request.auth.uid;
+    }
   }
 }

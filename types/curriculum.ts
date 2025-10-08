@@ -10,7 +10,7 @@ export type ActivityType =
   | 'grammar';
 
 // 활동 난이도
-export type ActivityDifficulty = 1 | 2 | 3;
+export type ActivityDifficulty = 1 | 2 | 3 | 4;
 
 // 활동 상태
 export type ActivityStatus = 'not_started' | 'in_progress' | 'completed';

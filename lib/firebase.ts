@@ -15,6 +15,33 @@ interface FirebaseConfig {
   appId: string;
 }
 
+// 환경변수 검증 함수
+const validateFirebaseConfig = (config: FirebaseConfig): void => {
+  const requiredFields: (keyof FirebaseConfig)[] = [
+    'apiKey',
+    'authDomain', 
+    'projectId',
+    'storageBucket',
+    'messagingSenderId',
+    'appId'
+  ];
+
+  const missingFields = requiredFields.filter(field => !config[field]);
+  
+  if (missingFields.length > 0) {
+    const errorMessage = `Firebase 설정 오류: 다음 환경변수가 누락되었습니다: ${missingFields.join(', ')}\n\n.env.local 파일에 다음 변수들을 설정해주세요:\n${missingFields.map(field => `NEXT_PUBLIC_FIREBASE_${field.toUpperCase().replace(/([A-Z])/g, '_$1').slice(1)}`).join('\n')}`;
+    
+    if (typeof window !== 'undefined') {
+      // 클라이언트에서만 콘솔 에러 출력
+      console.error(errorMessage);
+      throw new Error('Firebase 환경변수 설정이 필요합니다. 브라우저 콘솔을 확인하세요.');
+    } else {
+      // 서버에서는 즉시 에러 발생
+      throw new Error(errorMessage);
+    }
+  }
+};
+
 // 환경변수에서 Firebase 설정 가져오기
 const firebaseConfig: FirebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || '',
@@ -24,6 +51,9 @@ const firebaseConfig: FirebaseConfig = {
   messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || '',
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || '',
 };
+
+// 환경변수 검증 실행
+validateFirebaseConfig(firebaseConfig);
 
 // Firebase 앱 초기화 (중복 초기화 방지, 클라이언트 전용)
 let app: FirebaseApp | undefined;

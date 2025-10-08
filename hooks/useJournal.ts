@@ -27,7 +27,7 @@ export const useJournalEntry = (userId: string | undefined, date: string | undef
       if (!userId || !date || !db) return null;
 
       const entryId = `${userId}_${date}`;
-      const entryDoc = await getDoc(doc(db, 'journalEntries', entryId));
+      const entryDoc = await getDoc(doc(db, 'journals', entryId));
 
       if (!entryDoc.exists()) return null;
 
@@ -50,14 +50,14 @@ export const useJournalEntries = (
       if (!userId || !db) return [];
 
       let q = query(
-        collection(db, 'journalEntries'),
+        collection(db, 'journals'),
         where('userId', '==', userId),
         orderBy('date', 'desc')
       );
 
       if (startDate && endDate) {
         q = query(
-          collection(db, 'journalEntries'),
+          collection(db, 'journals'),
           where('userId', '==', userId),
           where('date', '>=', startDate),
           where('date', '<=', endDate),
@@ -102,7 +102,7 @@ export const useCreateJournalEntry = () => {
         updatedAt: new Date().toISOString(),
       };
 
-      await setDoc(doc(db, 'journalEntries', entryId), entry);
+      await setDoc(doc(db, 'journals', entryId), entry);
       return entry;
     },
     onSuccess: (_data, variables) => {
@@ -130,7 +130,7 @@ export const useUpdateJournalEntry = () => {
       if (!db) throw new Error('Firestore not initialized');
 
       const entryId = `${userId}_${date}`;
-      await updateDoc(doc(db, 'journalEntries', entryId), {
+      await updateDoc(doc(db, 'journals', entryId), {
         ...data,
         updatedAt: new Date().toISOString(),
       });
@@ -165,7 +165,7 @@ export const useAddActivityLog = () => {
       if (!db) throw new Error('Firestore not initialized');
 
       const entryId = `${userId}_${date}`;
-      const entryRef = doc(db, 'journalEntries', entryId);
+      const entryRef = doc(db, 'journals', entryId);
       const entryDoc = await getDoc(entryRef);
 
       if (!entryDoc.exists()) {
@@ -221,7 +221,7 @@ export const useDeleteJournalEntry = () => {
       if (!db) throw new Error('Firestore not initialized');
 
       const entryId = `${userId}_${date}`;
-      await deleteDoc(doc(db, 'journalEntries', entryId));
+      await deleteDoc(doc(db, 'journals', entryId));
 
       return { userId, date };
     },

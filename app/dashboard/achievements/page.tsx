@@ -21,35 +21,48 @@ export default function AchievementsPage() {
 
   if (isLoading) {
     return (
-      <div className="space-y-6">
-        <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded w-64 animate-pulse" />
-        <div className="h-32 bg-gray-200 dark:bg-gray-700 rounded-xl animate-pulse" />
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-            <div
-              key={i}
-              className="h-64 bg-gray-200 dark:bg-gray-700 rounded-xl animate-pulse"
-            />
-          ))}
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-purple-900/10 dark:to-pink-900/10 p-6">
+        <div className="fixed inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-20 left-10 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute top-40 right-20 w-[500px] h-[500px] bg-purple-400/10 rounded-full blur-3xl animate-float delay-300"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto space-y-6">
+          <div className="glass dark:glass-dark rounded-[2rem] p-12 shadow-2xl border border-white/20 dark:border-gray-700/30 animate-scale-in">
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-6 border-4 border-purple-200 dark:border-purple-700 border-t-purple-600 dark:border-t-purple-400 rounded-full animate-spin"></div>
+              <p className="text-lg font-medium text-gray-600 dark:text-gray-400">로딩 중...</p>
+            </div>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="space-y-6">
-      {/* 헤더 */}
-      <div>
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">
-          🏆 성취 배지
-        </h1>
-        <p className="text-gray-600 dark:text-gray-400">
-          학습 목표를 달성하고 다양한 배지를 획득하세요!
-        </p>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-purple-900/10 dark:to-pink-900/10 p-6">
+      {/* 애니메이션 배경 */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute top-40 right-20 w-[500px] h-[500px] bg-purple-400/10 rounded-full blur-3xl animate-float delay-300"></div>
+        <div className="absolute bottom-20 left-1/3 w-[400px] h-[400px] bg-pink-400/10 rounded-full blur-3xl animate-float delay-500"></div>
       </div>
 
-      {/* 배지 갤러리 */}
-      <BadgeGallery entries={allEntries || []} completedWeeks={completedWeeks} />
+      <div className="relative max-w-7xl mx-auto space-y-6">
+        {/* 헤더 */}
+        <div className="glass dark:glass-dark rounded-[2rem] p-8 shadow-2xl border border-white/20 dark:border-gray-700/30 animate-fade-in-up">
+          <h1 className="text-4xl md:text-5xl font-black mb-3">
+            <span className="gradient-text">🏆 성취 배지</span>
+          </h1>
+          <p className="text-lg text-gray-600 dark:text-gray-400">
+            학습 목표를 달성하고 다양한 배지를 획득하세요!
+          </p>
+        </div>
+
+        {/* 배지 갤러리 */}
+        <div className="animate-fade-in-up delay-100">
+          <BadgeGallery entries={allEntries || []} completedWeeks={completedWeeks} />
+        </div>
+      </div>
     </div>
   );
 }

@@ -18,7 +18,6 @@ import { db } from '../firebase';
 import type {
   Post,
   Reply,
-  Like,
   StudyGroup,
   CreatePostData,
   UpdatePostData,

@@ -7,8 +7,20 @@ export function useActivityData(type: ActivityType, weekId: string) {
     queryKey: ['activityData', type, weekId],
     queryFn: async () => {
       try {
-        // weekId 변환: A1-W1 → week-1
-        const weekNumber = weekId.split('-W')[1] || '1';
+        // weekId 변환: A1-W1, week-1, or "1" → week number
+        let weekNumber = '1';
+
+        if (weekId.includes('-W')) {
+          // A1-W1 형식인 경우
+          weekNumber = weekId.split('-W')[1];
+        } else if (weekId.startsWith('week-')) {
+          // week-1 형식인 경우
+          weekNumber = weekId.replace('week-', '');
+        } else {
+          // 숫자만 있는 경우
+          weekNumber = weekId;
+        }
+
         const fileName = `week-${weekNumber}`;
 
         // Dynamic import로 JSON 데이터 로드

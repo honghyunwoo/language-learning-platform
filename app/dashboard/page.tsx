@@ -1,5 +1,6 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useAuth } from '@/hooks/useAuth';
 import {
   useUserProgress,
@@ -14,9 +15,16 @@ import StatsCard from '@/components/dashboard/StatsCard';
 import WeeklyChart from '@/components/dashboard/WeeklyChart';
 import { LearningStats, SkillProgress } from '@/components/dashboard';
 import { CheckCircleIcon } from '@heroicons/react/24/outline';
+import { 
+  SkeletonCard, 
+  SkeletonActivityCard, 
+  SkeletonChart, 
+  SkeletonProgressBar 
+} from '@/components/ui';
 import type { WeekProgress } from '@/types/progress';
 
 export default function DashboardPage() {
+  const router = useRouter();
   const { currentUser } = useAuth();
   const { data: progress, isLoading, error } = useUserProgress(currentUser?.uid);
   const { weeklyData, totalWeeklyTime } = useWeeklyStats(currentUser?.uid);
@@ -54,17 +62,49 @@ export default function DashboardPage() {
   // 로딩 상태
   if (isLoading) {
     return (
-      <div className="space-y-6">
-        <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded w-64 animate-pulse" />
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {[1, 2, 3, 4].map((i) => (
-            <div
-              key={i}
-              className="h-32 bg-gray-200 dark:bg-gray-700 rounded-xl animate-pulse"
-            />
-          ))}
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-purple-900/10 dark:to-pink-900/10 p-6">
+        {/* 애니메이션 배경 */}
+        <div className="fixed inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-20 left-10 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute top-40 right-20 w-[500px] h-[500px] bg-purple-400/10 rounded-full blur-3xl animate-float delay-300"></div>
+          <div className="absolute bottom-20 left-1/3 w-[400px] h-[400px] bg-pink-400/10 rounded-full blur-3xl animate-float delay-500"></div>
         </div>
-        <div className="h-96 bg-gray-200 dark:bg-gray-700 rounded-xl animate-pulse" />
+
+        <div className="relative max-w-7xl mx-auto space-y-8">
+          {/* 환영 메시지 Skeleton */}
+          <div className="glass dark:glass-dark rounded-[2rem] p-8 shadow-2xl border border-white/20 dark:border-gray-700/30">
+            <div className="space-y-4">
+              <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded-lg w-1/3 animate-pulse"></div>
+              <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded-lg w-1/2 animate-pulse"></div>
+            </div>
+          </div>
+
+          {/* 통계 카드 Skeleton */}
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {[1, 2, 3, 4].map((i) => (
+              <SkeletonCard key={i} />
+            ))}
+          </div>
+
+          {/* 차트 Skeleton */}
+          <div className="grid gap-8 lg:grid-cols-2">
+            <SkeletonChart />
+            <SkeletonChart />
+          </div>
+
+          {/* 활동 진행률 Skeleton */}
+          <div className="glass dark:glass-dark rounded-[2rem] p-8 shadow-2xl border border-white/20 dark:border-gray-700/30">
+            <div className="space-y-6">
+              <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded-lg w-1/4 animate-pulse"></div>
+              <SkeletonProgressBar />
+              <div className="space-y-4">
+                {[1, 2, 3].map((i) => (
+                  <SkeletonActivityCard key={i} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -72,286 +112,248 @@ export default function DashboardPage() {
   // 에러 상태
   if (error) {
     return (
-      <div className="flex items-center justify-center h-64">
-        <div className="text-center">
-          <svg
-            className="w-16 h-16 mx-auto mb-4 text-red-500"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
-          <p className="text-gray-600 dark:text-gray-400">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-purple-900/10 dark:to-pink-900/10 flex items-center justify-center p-6">
+        <div className="glass dark:glass-dark rounded-3xl p-12 text-center max-w-md shadow-2xl animate-scale-in">
+          <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-xl">
+            <svg
+              className="w-10 h-10 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+            데이터 로딩 오류
+          </h3>
+          <p className="text-gray-600 dark:text-gray-400 mb-6">
             데이터를 불러오는 중 오류가 발생했습니다.
           </p>
+          <button
+            onClick={() => window.location.reload()}
+            className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:scale-105 transition-transform shadow-lg"
+          >
+            다시 시도
+          </button>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="space-y-8">
-      {/* 환영 메시지 */}
-      <div>
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">
-          안녕하세요, {currentUser?.nickname}님! 👋
-        </h1>
-        <p className="text-gray-600 dark:text-gray-400">
-          오늘도 영어 학습을 시작해보세요.
-          {learnedToday && (
-            <span className="text-green-600 dark:text-green-400 font-medium ml-2">
-              오늘 이미 학습하셨네요! 🎉
-            </span>
-          )}
-        </p>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-purple-900/10 dark:to-pink-900/10 p-6">
+      {/* 애니메이션 배경 */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute top-40 right-20 w-[500px] h-[500px] bg-purple-400/10 rounded-full blur-3xl animate-float delay-300"></div>
+        <div className="absolute bottom-20 left-1/3 w-[400px] h-[400px] bg-pink-400/10 rounded-full blur-3xl animate-float delay-500"></div>
       </div>
 
-      {/* 통계 카드 그리드 */}
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        {/* 총 학습 시간 */}
-        <StatsCard
-          title="총 학습 시간"
-          value={
-            hours > 0 ? `${hours}시간 ${minutes}분` : `${minutes}분`
-          }
-          icon={
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-          }
-          color="primary"
-          badge={`이번 주: ${Math.floor(totalWeeklyTime / 60)}시간 ${
-            totalWeeklyTime % 60
-          }분`}
-        />
-
-        {/* 연속 학습일 (스트릭) */}
-        <StatsCard
-          title="연속 학습일"
-          value={`${currentStreak}일`}
-          icon={
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"
-              />
-            </svg>
-          }
-          color="success"
-          badge={learnedToday ? '✨ 오늘도 학습 완료!' : '오늘 학습을 시작해보세요'}
-        />
-
-        {/* 현재 주차 */}
-        <StatsCard
-          title="현재 주차"
-          value={currentUser?.currentWeek || 'A1-W1'}
-          icon={
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-              />
-            </svg>
-          }
-          color="info"
-          badge={`레벨: ${currentUser?.level || 'A1'}`}
-        />
-
-        {/* 이번 주 진행률 */}
-        <StatsCard
-          title="이번 주 진행률"
-          value={`${completedActivities}/${totalActivities}`}
-          icon={
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
-              />
-            </svg>
-          }
-          color="warning"
-          progress={percentage}
-        />
-      </div>
-
-      {/* 주간 학습 시간 차트 */}
-      <WeeklyChart
-        data={weeklyData}
-        dailyGoal={currentUser?.dailyLearningTime || 30}
-      />
-
-      {/* 전체 진행률 카드 */}
-      {overallProgress && (
-        <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
-          <div className="flex items-center justify-between mb-6">
-            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">
-              📊 전체 학습 진행률
-            </h3>
-            <div className="text-right">
-              <p className="text-3xl font-bold text-primary-600 dark:text-primary-400">
-                {overallCompletionPercentage}%
-              </p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                {totalActivitiesCompleted} / {allActivities} 완료
-              </p>
-            </div>
-          </div>
-
-          {/* 주차별 진행률 그리드 */}
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {weekProgress.map((week: WeekProgress) => {
-              const isCurrentWeek = getCurrentWeek() === week.weekId;
-              const isCompleted = week.progressPercentage === 100;
-
-              return (
-                <div
-                  key={week.weekId}
-                  className={`relative p-4 rounded-lg border-2 transition-all ${
-                    isCurrentWeek
-                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
-                      : isCompleted
-                      ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
-                      : 'border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50'
-                  }`}
-                >
-                  {/* Week 헤더 */}
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="font-semibold text-gray-900 dark:text-gray-100">
-                      {week.weekId.replace('week-', 'Week ')}
-                    </span>
-                    {isCompleted && (
-                      <CheckCircleIcon className="w-5 h-5 text-green-600 dark:text-green-400" />
-                    )}
-                    {isCurrentWeek && !isCompleted && (
-                      <span className="text-xs px-2 py-1 bg-primary-600 text-white rounded-full">
-                        진행 중
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Progress Bar */}
-                  <div className="mb-2">
-                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                      <div
-                        className={`h-2 rounded-full transition-all ${
-                          isCompleted
-                            ? 'bg-green-500'
-                            : isCurrentWeek
-                            ? 'bg-primary-500'
-                            : 'bg-gray-400'
-                        }`}
-                        style={{ width: `${week.progressPercentage}%` }}
-                      />
-                    </div>
-                  </div>
-
-                  {/* 완료 상태 */}
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    {week.completedActivities} / {week.totalActivities} 완료
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* 현재 주차 정보 */}
-          {getCurrentWeek() && (
-            <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-              <p className="text-sm text-blue-800 dark:text-blue-200">
-                💡 현재 진행 중인 주차:{' '}
-                <span className="font-semibold">
-                  {getCurrentWeek().replace('week-', 'Week ')}
+      <div className="relative max-w-7xl mx-auto space-y-8">
+        {/* 환영 메시지 */}
+        <div className="glass dark:glass-dark rounded-[2rem] p-8 shadow-2xl border border-white/20 dark:border-gray-700/30 animate-fade-in-up">
+          <h1 className="text-4xl md:text-5xl font-black mb-3">
+            <span className="gradient-text">안녕하세요,</span>{' '}
+            <span className="text-gray-900 dark:text-white">{currentUser?.nickname}님!</span>
+          </h1>
+          <p className="text-lg text-gray-600 dark:text-gray-400">
+            오늘도 영어 학습을 시작해보세요
+            {learnedToday && (
+              <span className="inline-flex items-center gap-2 ml-3 px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full text-sm font-bold shadow-lg shadow-green-500/30 animate-scale-in">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
                 </span>
-              </p>
-            </div>
-          )}
+                오늘 학습 완료!
+              </span>
+            )}
+          </p>
         </div>
-      )}
 
-      {/* 학습 통계 및 영역별 진행률 */}
-      {journalEntries && journalEntries.length > 0 && (
-        <>
-          <LearningStats entries={journalEntries} />
-          <SkillProgress entries={journalEntries} />
-        </>
-      )}
-
-      {/* 빠른 시작 카드 (데이터가 없을 때) */}
-      {!progress && (
-        <div className="bg-gradient-to-r from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 rounded-xl p-8 border border-primary-200 dark:border-primary-800">
-          <div className="flex flex-col md:flex-row items-center gap-6">
-            <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center flex-shrink-0">
-              <svg
-                className="w-8 h-8 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 10V3L4 14h7v7l9-11h-7z"
-                />
-              </svg>
-            </div>
-            <div className="flex-1 text-center md:text-left">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
-                영어 학습 여정을 시작하세요!
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                커리큘럼에서 첫 주차 학습을 시작하고, 매일의 진행 상황을 기록해보세요.
-              </p>
-              <button className="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-medium">
-                커리큘럼 시작하기 →
-              </button>
-            </div>
+        {/* 통계 카드 그리드 */}
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="animate-fade-in-up delay-100">
+            <StatsCard
+              title="총 학습 시간"
+              value={hours > 0 ? `${hours}시간 ${minutes}분` : `${minutes}분`}
+              icon={
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              }
+              color="primary"
+              badge={`이번 주: ${Math.floor(totalWeeklyTime / 60)}시간 ${totalWeeklyTime % 60}분`}
+            />
+          </div>
+          <div className="animate-fade-in-up delay-200">
+            <StatsCard
+              title="연속 학습일"
+              value={`${currentStreak}일`}
+              icon={
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+                </svg>
+              }
+              color="success"
+              badge={learnedToday ? '✨ 오늘도 학습 완료!' : '오늘 학습을 시작해보세요'}
+            />
+          </div>
+          <div className="animate-fade-in-up delay-300">
+            <StatsCard
+              title="전체 완료"
+              value={`${totalActivitiesCompleted}개`}
+              icon={
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              }
+              color="info"
+              badge={`전체: ${allActivities}개`}
+            />
+          </div>
+          <div className="animate-fade-in-up delay-400">
+            <StatsCard
+              title="이번 주 진행률"
+              value={`${completedActivities}/${totalActivities}`}
+              icon={
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                </svg>
+              }
+              color="warning"
+              progress={percentage}
+            />
           </div>
         </div>
-      )}
+
+        {/* 주간 학습 시간 차트 */}
+        <div className="glass dark:glass-dark rounded-[2rem] p-8 shadow-2xl border border-white/20 dark:border-gray-700/30 animate-fade-in-up delay-500">
+          <WeeklyChart data={weeklyData} dailyGoal={currentUser?.dailyLearningTime || 30} />
+        </div>
+
+        {/* 전체 진행률 카드 */}
+        {overallProgress && (
+          <div className="glass dark:glass-dark rounded-[2rem] p-8 shadow-2xl border border-white/20 dark:border-gray-700/30 animate-fade-in-up delay-600">
+            <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
+              <h3 className="text-3xl font-black text-gray-900 dark:text-white">
+                전체 학습 진행률
+              </h3>
+              <div className="text-right">
+                <p className="text-5xl font-black gradient-text mb-2">{overallCompletionPercentage}%</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">
+                  {totalActivitiesCompleted} / {allActivities} 활동 완료
+                </p>
+              </div>
+            </div>
+
+            {/* 주차별 진행률 그리드 */}
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-8">
+              {weekProgress.map((week: WeekProgress) => {
+                const isCurrentWeek = getCurrentWeek() === week.weekId;
+                const isCompleted = week.progressPercentage === 100;
+                return (
+                  <button
+                    key={week.weekId}
+                    onClick={() => router.push(`/dashboard/curriculum/${week.weekId}`)}
+                    className={`relative p-4 rounded-2xl border-2 transition-all card-hover w-full text-left ${
+                      isCurrentWeek
+                        ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30'
+                        : isCompleted
+                        ? 'border-green-500 bg-green-50 dark:bg-green-900/20 shadow-lg shadow-green-500/20 hover:shadow-green-500/30'
+                        : 'border-gray-200 dark:border-gray-700 glass dark:glass-dark hover:border-gray-300 dark:hover:border-gray-600'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="font-black text-gray-900 dark:text-white text-sm">
+                        {week.weekId.replace('week-', 'W')}
+                      </span>
+                      {isCompleted && <CheckCircleIcon className="w-5 h-5 text-green-600 dark:text-green-400" />}
+                      {isCurrentWeek && !isCompleted && (
+                        <span className="relative flex h-3 w-3">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-600"></span>
+                        </span>
+                      )}
+                    </div>
+                    <div className="mb-2">
+                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                        <div
+                          className={`h-2 rounded-full transition-all ${
+                            isCompleted ? 'bg-green-500' : isCurrentWeek ? 'bg-blue-500' : 'bg-gray-400'
+                          }`}
+                          style={{ width: `${week.progressPercentage}%` }}
+                        />
+                      </div>
+                    </div>
+                    <p className="text-xs text-center text-gray-600 dark:text-gray-400 font-medium">
+                      {week.completedActivities}/{week.totalActivities}
+                    </p>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* 현재 주차 정보 */}
+            {getCurrentWeek() && (
+              <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl border border-blue-200 dark:border-blue-800/50 shadow-xl animate-scale-in">
+                <p className="text-sm text-blue-800 dark:text-blue-200 font-medium">
+                  현재 진행 중인 주차:{' '}
+                  <span className="font-black gradient-text text-base">
+                    {getCurrentWeek().replace('week-', 'Week ')}
+                  </span>
+                </p>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* 학습 통계 및 영역별 진행률 */}
+        {journalEntries && journalEntries.length > 0 && (
+          <>
+            <div className="glass dark:glass-dark rounded-[2rem] p-8 shadow-2xl border border-white/20 dark:border-gray-700/30 animate-fade-in-up delay-700">
+              <LearningStats entries={journalEntries} />
+            </div>
+            <div className="glass dark:glass-dark rounded-[2rem] p-8 shadow-2xl border border-white/20 dark:border-gray-700/30 animate-fade-in-up delay-800">
+              <SkillProgress entries={journalEntries} />
+            </div>
+          </>
+        )}
+
+        {/* 빠른 시작 카드 */}
+        {!progress && (
+          <div className="glass dark:glass-dark rounded-[2rem] p-10 border border-white/20 dark:border-gray-700/30 shadow-2xl animate-scale-in">
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-2xl">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <div className="flex-1 text-center md:text-left">
+                <h3 className="text-3xl font-black mb-3">
+                  <span className="gradient-text">영어 학습 여정</span>
+                  <span className="text-gray-900 dark:text-white">을 시작하세요!</span>
+                </h3>
+                <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
+                  커리큘럼에서 첫 주차 학습을 시작하고, 매일의 진행 상황을 기록해보세요.
+                </p>
+                <button
+                  onClick={() => router.push('/dashboard/curriculum')}
+                  className="px-8 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white rounded-2xl font-bold shadow-2xl shadow-blue-500/30 hover:shadow-blue-500/50 transition-all hover:scale-105"
+                >
+                  커리큘럼 시작하기 →
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
