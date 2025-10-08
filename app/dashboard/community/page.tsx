@@ -70,7 +70,7 @@ const mockPosts = [
 ];
 
 export default function CommunityPage() {
-  const { currentUser } = useAuth();
+  useAuth(); // currentUser는 향후 사용 예정
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedLevels, setSelectedLevels] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState('');

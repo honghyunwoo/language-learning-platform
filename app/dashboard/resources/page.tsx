@@ -75,7 +75,7 @@ const mockResources = [
 ];
 
 export default function ResourcesPage() {
-  const { currentUser } = useAuth();
+  useAuth(); // currentUser는 향후 사용 예정
   const [selectedType, setSelectedType] = useState('all');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedLevels, setSelectedLevels] = useState<string[]>([]);

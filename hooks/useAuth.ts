@@ -11,7 +11,7 @@ import {
   signInWithPopup,
   updateProfile,
 } from 'firebase/auth';
-import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from 'firebase/firestore';
+import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
 import { auth, db } from '@/lib/firebase';
 import { User, UserLevel, LearningGoal, DailyLearningTime } from '@/types/user';
 
@@ -118,15 +118,16 @@ export const useAuth = () => {
 
       await setDoc(doc(db, 'users', userCredential.user.uid), newUser);
       setCurrentUser(newUser);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('회원가입 실패:', err);
 
       // Firebase 에러 메시지를 한국어로 변환
-      if (err.code === 'auth/email-already-in-use') {
+      const error = err as { code?: string };
+      if (error.code === 'auth/email-already-in-use') {
         setError('이미 사용 중인 이메일입니다.');
-      } else if (err.code === 'auth/weak-password') {
+      } else if (error.code === 'auth/weak-password') {
         setError('비밀번호는 최소 6자 이상이어야 합니다.');
-      } else if (err.code === 'auth/invalid-email') {
+      } else if (error.code === 'auth/invalid-email') {
         setError('올바른 이메일 형식이 아닙니다.');
       } else {
         setError('회원가입에 실패했습니다. 다시 시도해주세요.');
@@ -150,12 +151,13 @@ export const useAuth = () => {
       setLoading(true);
 
       await signInWithEmailAndPassword(auth, data.email, data.password);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('로그인 실패:', err);
 
-      if (err.code === 'auth/user-not-found' || err.code === 'auth/wrong-password') {
+      const error = err as { code?: string };
+      if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
         setError('이메일 또는 비밀번호가 올바르지 않습니다.');
-      } else if (err.code === 'auth/invalid-email') {
+      } else if (error.code === 'auth/invalid-email') {
         setError('올바른 이메일 형식이 아닙니다.');
       } else {
         setError('로그인에 실패했습니다. 다시 시도해주세요.');
@@ -230,10 +232,11 @@ export const useAuth = () => {
           });
         }
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Google 로그인 실패:', err);
 
-      if (err.code === 'auth/popup-closed-by-user') {
+      const error = err as { code?: string };
+      if (error.code === 'auth/popup-closed-by-user') {
         setError('로그인 팝업이 닫혔습니다.');
       } else {
         setError('Google 로그인에 실패했습니다. 다시 시도해주세요.');

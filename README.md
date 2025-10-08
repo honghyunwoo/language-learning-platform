@@ -76,19 +76,30 @@ http://localhost:3008 에서 애플리케이션을 확인할 수 있습니다.
 
 ## 📖 문서
 
-- [환경 변수 설정 가이드](./ENVIRONMENT.md)
-- [배포 가이드](./DEPLOYMENT.md)
-- [개발 로드맵](./DEVELOPMENT_ROADMAP.md)
+### 주요 문서
+- [환경 변수 설정 가이드](./docs/ENVIRONMENT.md)
+- [배포 가이드](./docs/DEPLOYMENT.md)
+- [Firebase 배포](./docs/FIREBASE_DEPLOYMENT.md)
+- [개발 로드맵](./docs/DEVELOPMENT_ROADMAP.md)
+
+### 개발 가이드
+- [Firebase 인덱스 가이드](./docs/FIREBASE_INDEX_GUIDE.md)
+- [Firestore 규칙 배포](./docs/DEPLOY_FIRESTORE_RULES.md)
+- [테스팅 가이드](./docs/TESTING_GUIDE.md)
+- [종합 테스트 리포트](./docs/COMPREHENSIVE_TEST_REPORT.md)
 
 ## 📋 주요 스크립트
 
 ```bash
-npm run dev        # 개발 서버 (포트 3008)
-npm run build      # 프로덕션 빌드
-npm run start      # 프로덕션 서버
-npm run lint       # ESLint 실행
-npm run validate:json  # Activity JSON 검증
+npm run dev        # 개발 서버 (포트 3008, 자동 포트 충돌 해결)
+npm run build      # 프로덕션 빌드 (JSON 검증 포함)
+npm run start      # 프로덕션 서버 (포트 3008)
+npm run lint       # ESLint 실행 (자동 수정 적용됨)
+npm run validate:json  # Activity JSON 스키마 검증
 ```
+
+### 포트 관리
+개발 서버는 기본적으로 **포트 3008**을 사용하며, `npm run dev` 실행 시 자동으로 포트 충돌을 감지하고 해결합니다.
 
 ## 📊 프로젝트 통계
 

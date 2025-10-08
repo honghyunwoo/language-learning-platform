@@ -17,7 +17,7 @@ import {
 } from '@heroicons/react/24/outline';
 
 export default function SettingsPage() {
-  const router = useRouter();
+  useRouter(); // router는 향후 사용 예정
   const { currentUser, logout } = useAuth();
 
   const [dailyGoal, setDailyGoal] = useState<number>(currentUser?.dailyLearningTime || 30);

@@ -8,10 +8,9 @@ import {
   updateDoc,
   query,
   where,
-  serverTimestamp,
 } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
-import { CurriculumWeek, UserWeekProgress, ActivitySession } from '@/types/curriculum';
+import { UserWeekProgress, ActivitySession } from '@/types/curriculum';
 import { curriculumData, getWeekById } from '@/lib/curriculum/curriculumData';
 
 // 레벨별 주차 목록 조회

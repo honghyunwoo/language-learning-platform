@@ -126,7 +126,7 @@ export const useStreak = (userId?: string) => {
           .split('T')[0];
         if (lastLearningDate === yesterday) {
           currentStreak = 1;
-          let tempDate = new Date(yesterday);
+          const tempDate = new Date(yesterday);
           tempDate.setDate(tempDate.getDate() - 1);
           let tempDateStr = tempDate.toISOString().split('T')[0];
 
