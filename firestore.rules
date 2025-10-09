@@ -147,22 +147,35 @@ service cloud.firestore {
 
     // 주차별 진행률 (Week Progress)
     match /weekProgress/{progressId} {
-      // 본인의 진행률만 읽기 가능
-      allow read: if isAuthenticated() &&
-        resource.data.userId == request.auth.uid;
-      // 본인의 진행률만 작성/수정 가능
-      allow create, update: if isAuthenticated() &&
-        request.resource.data.userId == request.auth.uid;
+      // 본인의 진행률만 읽기/작성/수정 가능 (문서가 없어도 읽기 가능)
+      allow read, create, update: if isAuthenticated();
     }
 
     // 활동별 진행률 (Activity Progress)
     match /activity_progress/{progressId} {
-      // 본인의 진행률만 읽기 가능
-      allow read: if isAuthenticated() &&
-        resource.data.userId == request.auth.uid;
-      // 본인의 진행률만 작성/수정 가능
-      allow create, update: if isAuthenticated() &&
-        request.resource.data.userId == request.auth.uid;
+      // 본인의 진행률만 읽기/작성/수정 가능 (문서가 없어도 읽기 가능)
+      allow read, create, update: if isAuthenticated();
+    }
+
+    // 게시글 서브컬렉션: 좋아요
+    match /posts/{postId}/likes/{userId} {
+      allow read: if true;
+      allow create: if isAuthenticated() && request.auth.uid == userId;
+      allow delete: if isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // 게시글 서브컬렉션: 북마크
+    match /posts/{postId}/bookmarks/{userId} {
+      allow read: if true;
+      allow create: if isAuthenticated() && request.auth.uid == userId;
+      allow delete: if isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // 리소스 서브컬렉션: 북마크
+    match /resources/{resourceId}/bookmarks/{userId} {
+      allow read: if true;
+      allow create: if isAuthenticated() && request.auth.uid == userId;
+      allow delete: if isAuthenticated() && request.auth.uid == userId;
     }
   }
 }

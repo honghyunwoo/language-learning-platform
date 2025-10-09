@@ -66,11 +66,11 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        {/* Animated Background Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-purple-900/10 dark:to-pink-900/10">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute top-40 right-20 w-[500px] h-[500px] bg-purple-400/20 rounded-full blur-3xl animate-float delay-300"></div>
-          <div className="absolute bottom-20 left-1/3 w-[400px] h-[400px] bg-pink-400/20 rounded-full blur-3xl animate-float delay-500"></div>
+        {/* Animated Background Gradients - 부드러운 톤 */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/30 dark:from-gray-900 dark:via-slate-900/50 dark:to-gray-900">
+          <div className="absolute top-20 left-10 w-96 h-96 bg-blue-300/10 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute top-40 right-20 w-[500px] h-[500px] bg-indigo-300/10 rounded-full blur-3xl animate-float delay-300"></div>
+          <div className="absolute bottom-20 left-1/3 w-[400px] h-[400px] bg-violet-300/10 rounded-full blur-3xl animate-float delay-500"></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
@@ -99,7 +99,7 @@ export default function Home() {
           <p className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-400 mb-12 max-w-4xl mx-auto animate-fade-in-up delay-600 leading-relaxed">
             A1부터 B2까지, 주차별 커리큘럼과 실전 활동으로
             <br className="hidden md:block" />
-            <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+            <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-600 to-indigo-600">
               당신의 영어 실력을 한 단계 업그레이드
             </span>
           </p>
@@ -109,7 +109,7 @@ export default function Home() {
             <Link href="/signup">
               <Button
                 size="lg"
-                className="group btn-glow bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-10 py-7 text-xl font-bold rounded-2xl shadow-2xl shadow-blue-500/40 hover:shadow-blue-500/60 transition-all hover:scale-110"
+                className="group btn-glow bg-gradient-to-r from-slate-600 via-indigo-600 to-violet-600 hover:from-slate-700 hover:via-indigo-700 hover:to-violet-700 text-white px-10 py-7 text-xl font-bold rounded-2xl shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/30 transition-all hover:scale-105"
               >
                 <span className="relative z-10 flex items-center gap-3">
                   무료로 시작하기
@@ -139,23 +139,23 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Level Badges - Animated */}
+          {/* Level Badges - Animated - 부드러운 색감 */}
           <div className="flex flex-wrap justify-center gap-4 animate-fade-in-up delay-800">
             {[
-              { level: 'A1', label: '기초', from: 'green-400', to: 'emerald-600', delay: '0' },
-              { level: 'A2', label: '초급', from: 'blue-400', to: 'cyan-600', delay: '100' },
-              { level: 'B1', label: '중급', from: 'purple-400', to: 'violet-600', delay: '200' },
-              { level: 'B2', label: '고급', from: 'pink-400', to: 'rose-600', delay: '300' },
+              { level: 'A1', label: '기초', from: 'emerald-500', to: 'teal-600', delay: '0' },
+              { level: 'A2', label: '초급', from: 'sky-500', to: 'blue-600', delay: '100' },
+              { level: 'B1', label: '중급', from: 'indigo-500', to: 'violet-600', delay: '200' },
+              { level: 'B2', label: '고급', from: 'purple-500', to: 'fuchsia-600', delay: '300' },
             ].map((item) => (
               <div
                 key={item.level}
                 className={`group relative animate-scale-in delay-${item.delay}`}
               >
                 <div
-                  className={`absolute inset-0 bg-gradient-to-r from-${item.from} to-${item.to} rounded-2xl blur-xl opacity-40 group-hover:opacity-70 transition-opacity`}
+                  className={`absolute inset-0 bg-gradient-to-r from-${item.from} to-${item.to} rounded-2xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity`}
                 ></div>
                 <div
-                  className={`relative px-8 py-4 bg-gradient-to-r from-${item.from} to-${item.to} rounded-2xl text-white font-black text-xl shadow-2xl group-hover:scale-110 transition-all cursor-pointer`}
+                  className={`relative px-8 py-4 bg-gradient-to-r from-${item.from} to-${item.to} rounded-2xl text-white font-black text-xl shadow-lg group-hover:scale-105 transition-all cursor-pointer`}
                 >
                   {item.level} {item.label}
                 </div>
@@ -283,10 +283,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats Section - 부드러운 그라데이션 */}
       <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600"></div>
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYtMi42ODYgNi02cy0yLjY4Ni02LTYtNi02IDIuNjg2LTYgNiAyLjY4NiA2IDYgNiIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiIG9wYWNpdHk9Ii4xIi8+PC9nPjwvc3ZnPg==')] opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-700 via-indigo-700 to-violet-700"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYtMi42ODYgNi02cy0yLjY4Ni02LTYtNi02IDIuNjg2LTYgNiAyLjY4NiA2IDYgNiIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiIG9wYWNpdHk9Ii4wNSIvPjwvZz48L3N2Zz4=')] opacity-10"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-16 text-center">
@@ -330,7 +330,7 @@ export default function Home() {
               <Link href="/signup">
                 <Button
                   size="lg"
-                  className="btn-glow bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-16 py-8 text-2xl font-black rounded-2xl shadow-2xl shadow-blue-500/40 hover:shadow-blue-500/60 transition-all hover:scale-110"
+                  className="btn-glow bg-gradient-to-r from-slate-600 via-indigo-600 to-violet-600 hover:from-slate-700 hover:via-indigo-700 hover:to-violet-700 text-white px-16 py-8 text-2xl font-black rounded-2xl shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/30 transition-all hover:scale-105"
                 >
                   무료로 시작하기 →
                 </Button>
