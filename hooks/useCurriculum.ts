@@ -172,11 +172,15 @@ export const useCompleteActivity = () => {
       activityId: string;
       timeSpent: number;
     }) => {
-      if (!db) throw new Error('Firestore not initialized');
+      if (!db) {
+        console.error('Firestore not initialized');
+        throw new Error('Firestore not initialized');
+      }
 
-      const progressId = `${userId}_${weekId}`;
-      const progressRef = doc(db, 'weekProgress', progressId);
-      const progressDoc = await getDoc(progressRef);
+      try {
+        const progressId = `${userId}_${weekId}`;
+        const progressRef = doc(db, 'weekProgress', progressId);
+        const progressDoc = await getDoc(progressRef);
 
       const currentData = progressDoc.exists()
         ? (progressDoc.data() as UserWeekProgress)
@@ -254,6 +258,13 @@ export const useCompleteActivity = () => {
       }
 
       return updatedProgress;
+      } catch (error) {
+        console.error('Error completing activity:', error);
+        if (error instanceof Error) {
+          throw new Error(`활동 완료 중 오류가 발생했습니다: ${error.message}`);
+        }
+        throw new Error('활동 완료 중 알 수 없는 오류가 발생했습니다.');
+      }
     },
     onSuccess: (_data, variables) => {
       queryClient.invalidateQueries({
@@ -266,6 +277,10 @@ export const useCompleteActivity = () => {
         queryKey: ['journal', variables.userId],
       });
     },
+    onError: (error) => {
+      console.error('Complete activity mutation error:', error);
+    },
+    retry: 1,
   });
 };
 
