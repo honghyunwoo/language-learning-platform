@@ -15,7 +15,7 @@ const Card = ({
 }: CardProps) => {
   // 기본 스타일
   const baseStyles =
-    'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl transition-all duration-200';
+    'bg-slate-50/80 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl transition-all duration-200';
 
   // 호버 효과
   const hoverStyles = hover

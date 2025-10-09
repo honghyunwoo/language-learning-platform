@@ -18,7 +18,7 @@ export default function Home() {
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 overflow-hidden">
+    <div className="min-h-screen bg-slate-50 dark:bg-gray-900 overflow-hidden">
       {/* Fixed Header with Glassmorphism */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -308,7 +308,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-32 bg-white dark:bg-gray-900">
+      <section className="relative py-32 bg-slate-50 dark:bg-gray-900">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="relative">
             {/* Background Glow */}
