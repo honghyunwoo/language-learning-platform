@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
+import { useResources, useToggleBookmark } from '@/hooks/useResources';
 import { Button, Card, Badge } from '@/components/ui';
 import {
   SkeletonCard
@@ -13,6 +14,7 @@ import {
   StarIcon,
   ClockIcon,
   TagIcon,
+  GlobeAltIcon,
 } from '@heroicons/react/24/outline';
 
 const resourceTypes = [
@@ -75,13 +77,23 @@ const mockResources = [
 ];
 
 export default function ResourcesPage() {
-  useAuth(); // currentUser는 향후 사용 예정
+  const { currentUser } = useAuth();
   const [selectedType, setSelectedType] = useState('all');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedLevels, setSelectedLevels] = useState<string[]>([]);
   const [selectedDuration, setSelectedDuration] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
-  const [isLoading] = useState(false);
+
+  // 실제 데이터 조회
+  const { data: resources, isLoading, error } = useResources({
+    type: selectedType === 'all' ? undefined : selectedType,
+    category: selectedCategory === 'all' ? undefined : selectedCategory,
+    level: selectedLevels.length > 0 ? selectedLevels[0] : undefined, // 첫 번째 레벨만 사용
+    search: searchQuery || undefined,
+  });
+
+  // 북마크 토글
+  const toggleBookmark = useToggleBookmark();
 
   const handleLevelToggle = (level: string) => {
     setSelectedLevels(prev => 
@@ -280,8 +292,14 @@ export default function ResourcesPage() {
                 Array.from({ length: 4 }).map((_, i) => (
                   <SkeletonCard key={i} />
                 ))
-              ) : (
-                mockResources.map((resource) => (
+              ) : error ? (
+                <Card padding="lg" className="text-center">
+                  <p className="text-red-600 dark:text-red-400">
+                    리소스를 불러오는데 실패했습니다. 다시 시도해주세요.
+                  </p>
+                </Card>
+              ) : resources && resources.length > 0 ? (
+                resources.map((resource) => (
                   <Card key={resource.id} padding="lg" className="hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                     {/* 리소스 헤더 */}
                     <div className="flex items-start justify-between mb-4">
@@ -297,7 +315,7 @@ export default function ResourcesPage() {
                           {resource.rating}
                         </span>
                         <span className="text-xs text-gray-500 dark:text-gray-500">
-                          ({resource.reviewCount})
+                          ({resource.viewCount})
                         </span>
                       </div>
                     </div>
@@ -324,41 +342,30 @@ export default function ResourcesPage() {
 
                     {/* 레벨 및 카테고리 태그 */}
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {resource.levels.map((level) => (
-                        <Badge key={level} variant="level" level={level as 'A1' | 'A2' | 'B1' | 'B2'} size="sm">
-                          {level}
-                        </Badge>
-                      ))}
-                      {resource.categories.map((category) => (
-                        <span
-                          key={category}
-                          className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-xs rounded-full"
-                        >
-                          {categories.find(c => c.id === category)?.name}
-                        </span>
-                      ))}
+                      <Badge variant="level" level={resource.level} size="sm">
+                        {resource.level}
+                      </Badge>
+                      <span
+                        className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-xs rounded-full"
+                      >
+                        {categories.find(c => c.id === resource.category)?.name}
+                      </span>
                     </div>
 
                     {/* 특징 및 시간 */}
                     <div className="flex items-center gap-4 mb-4 text-sm text-gray-600 dark:text-gray-400">
-                      <div className="flex items-center gap-1">
-                        <ClockIcon className="w-4 h-4" />
-                        <span>{resource.duration}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <TagIcon className="w-4 h-4" />
-                        <span>{resource.features.length}개 특징</span>
-                      </div>
-                    </div>
-
-                    {/* 사용법 가이드 */}
-                    <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-3 mb-4">
-                      <p className="text-sm text-blue-800 dark:text-blue-200 font-medium mb-1">
-                        💡 사용법
-                      </p>
-                      <p className="text-sm text-blue-700 dark:text-blue-300">
-                        {resource.howToUse}
-                      </p>
+                      {resource.duration && (
+                        <div className="flex items-center gap-1">
+                          <ClockIcon className="w-4 h-4" />
+                          <span>{resource.duration}</span>
+                        </div>
+                      )}
+                      {resource.tags && resource.tags.length > 0 && (
+                        <div className="flex items-center gap-1">
+                          <TagIcon className="w-4 h-4" />
+                          <span>{resource.tags.length}개 태그</span>
+                        </div>
+                      )}
                     </div>
 
                     {/* 액션 버튼 */}
@@ -373,13 +380,33 @@ export default function ResourcesPage() {
                       </Button>
                       <Button
                         variant="secondary"
-                        onClick={() => {/* TODO: 상세 페이지로 이동 */}}
+                        onClick={() => {
+                          if (!currentUser) return;
+                          toggleBookmark.mutate({ resourceId: resource.id, userId: currentUser.uid });
+                        }}
+                        className="px-4"
                       >
-                        자세히 보기
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                        </svg>
                       </Button>
                     </div>
                   </Card>
                 ))
+              ) : (
+                <Card padding="lg" className="text-center col-span-2">
+                  <div className="py-12">
+                    <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
+                      <GlobeAltIcon className="w-8 h-8 text-gray-400" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                      아직 리소스가 없습니다
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">
+                      관리자가 곧 유용한 학습 자료를 추가할 예정입니다.
+                    </p>
+                  </div>
+                </Card>
               )}
             </div>
 

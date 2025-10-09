@@ -1,102 +1,152 @@
 'use client';
 
-import { createContext, useContext, useState, useCallback, ReactNode } from 'react';
+import { createContext, useContext, useReducer, ReactNode } from 'react';
+import { XMarkIcon, CheckCircleIcon, ExclamationTriangleIcon, InformationCircleIcon } from '@heroicons/react/24/outline';
 
-type ToastType = 'success' | 'error' | 'info' | 'warning';
-
-interface Toast {
+export interface Toast {
   id: string;
-  type: ToastType;
-  message: string;
+  type: 'success' | 'error' | 'warning' | 'info';
+  title: string;
+  description?: string;
+  duration?: number;
 }
 
+interface ToastState {
+  toasts: Toast[];
+}
+
+type ToastAction =
+  | { type: 'ADD_TOAST'; payload: Toast }
+  | { type: 'REMOVE_TOAST'; payload: string };
+
 interface ToastContextType {
-  showToast: (type: ToastType, message: string) => void;
+  toasts: Toast[];
+  addToast: (toast: Omit<Toast, 'id'>) => void;
+  removeToast: (id: string) => void;
 }
 
 const ToastContext = createContext<ToastContextType | undefined>(undefined);
 
+function toastReducer(state: ToastState, action: ToastAction): ToastState {
+  switch (action.type) {
+    case 'ADD_TOAST':
+      return {
+        ...state,
+        toasts: [...state.toasts, action.payload],
+      };
+    case 'REMOVE_TOAST':
+      return {
+        ...state,
+        toasts: state.toasts.filter((toast) => toast.id !== action.payload),
+      };
+    default:
+      return state;
+  }
+}
+
 export function ToastProvider({ children }: { children: ReactNode }) {
-  const [toasts, setToasts] = useState<Toast[]>([]);
+  const [state, dispatch] = useReducer(toastReducer, { toasts: [] });
 
-  const showToast = useCallback((type: ToastType, message: string) => {
+  const addToast = (toast: Omit<Toast, 'id'>) => {
     const id = Math.random().toString(36).substr(2, 9);
-    const newToast: Toast = { id, type, message };
+    const newToast = { ...toast, id };
+    dispatch({ type: 'ADD_TOAST', payload: newToast });
 
-    setToasts(prev => [...prev, newToast]);
-
-    // 3초 후 자동 제거
+    // 자동 제거
+    const duration = toast.duration || 5000;
     setTimeout(() => {
-      setToasts(prev => prev.filter(toast => toast.id !== id));
-    }, 3000);
-  }, []);
+      dispatch({ type: 'REMOVE_TOAST', payload: id });
+    }, duration);
+  };
 
-  const getToastStyles = (type: ToastType) => {
-    switch (type) {
+  const removeToast = (id: string) => {
+    dispatch({ type: 'REMOVE_TOAST', payload: id });
+  };
+
+  return (
+    <ToastContext.Provider value={{ toasts: state.toasts, addToast, removeToast }}>
+      {children}
+      <ToastContainer />
+    </ToastContext.Provider>
+  );
+}
+
+function ToastContainer() {
+  const { toasts } = useContext(ToastContext)!;
+
+  return (
+    <div className="fixed top-4 right-4 z-50 space-y-2">
+      {toasts.map((toast) => (
+        <ToastItem key={toast.id} toast={toast} />
+      ))}
+    </div>
+  );
+}
+
+function ToastItem({ toast }: { toast: Toast }) {
+  const { removeToast } = useContext(ToastContext)!;
+
+  const getIcon = () => {
+    switch (toast.type) {
       case 'success':
-        return 'bg-green-500 text-white';
+        return <CheckCircleIcon className="w-5 h-5 text-green-500" />;
       case 'error':
-        return 'bg-red-500 text-white';
+        return <XMarkIcon className="w-5 h-5 text-red-500" />;
       case 'warning':
-        return 'bg-yellow-500 text-white';
+        return <ExclamationTriangleIcon className="w-5 h-5 text-yellow-500" />;
       case 'info':
-        return 'bg-blue-500 text-white';
-      default:
-        return 'bg-gray-800 text-white';
+        return <InformationCircleIcon className="w-5 h-5 text-blue-500" />;
     }
   };
 
-  const getToastIcon = (type: ToastType) => {
-    switch (type) {
+  const getBgColor = () => {
+    switch (toast.type) {
       case 'success':
-        return (
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-          </svg>
-        );
+        return 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800';
       case 'error':
-        return (
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-          </svg>
-        );
+        return 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800';
       case 'warning':
-        return (
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-          </svg>
-        );
+        return 'bg-yellow-50 dark:bg-yellow-900/20 border-yellow-200 dark:border-yellow-800';
       case 'info':
-        return (
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-          </svg>
-        );
+        return 'bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800';
     }
   };
 
   return (
-    <ToastContext.Provider value={{ showToast }}>
-      {children}
-      <div className="fixed bottom-4 right-4 z-50 space-y-2">
-        {toasts.map(toast => (
-          <div
-            key={toast.id}
-            className={`flex items-center gap-3 px-4 py-3 rounded-lg shadow-lg animate-slide-in ${getToastStyles(toast.type)}`}
+    <div
+      className={`max-w-sm w-full ${getBgColor()} border rounded-lg p-4 shadow-lg animate-in slide-in-from-right-full`}
+    >
+      <div className="flex items-start">
+        <div className="flex-shrink-0">
+          {getIcon()}
+        </div>
+        <div className="ml-3 w-0 flex-1">
+          <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
+            {toast.title}
+          </p>
+          {toast.description && (
+            <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+              {toast.description}
+            </p>
+          )}
+        </div>
+        <div className="ml-4 flex-shrink-0 flex">
+          <button
+            className="inline-flex text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 focus:outline-none"
+            onClick={() => removeToast(toast.id)}
           >
-            {getToastIcon(toast.type)}
-            <span className="font-medium">{toast.message}</span>
-          </div>
-        ))}
+            <XMarkIcon className="w-4 h-4" />
+          </button>
+        </div>
       </div>
-    </ToastContext.Provider>
+    </div>
   );
 }
 
 export function useToast() {
   const context = useContext(ToastContext);
-  if (!context) {
-    throw new Error('useToast must be used within ToastProvider');
+  if (context === undefined) {
+    throw new Error('useToast must be used within a ToastProvider');
   }
   return context;
 }

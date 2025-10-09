@@ -6,6 +6,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { usePost, useReplies, useLike, useCommunityActions } from '@/hooks/useCommunity';
 import { Card } from '@/components/ui';
 import { Button } from '@/components/ui';
+import { timestampToDate } from '@/lib/utils';
 
 export default function PostDetailPage() {
   const params = useParams();
@@ -156,7 +157,7 @@ export default function PostDetailPage() {
             </span>
           )}
           <span>•</span>
-          <span>{new Date(post.createdAt).toLocaleString('ko-KR')}</span>
+          <span>{timestampToDate(post.createdAt)?.toLocaleString('ko-KR')}</span>
           <span>•</span>
           <span>조회 {post.viewCount}</span>
         </div>
@@ -278,7 +279,7 @@ export default function PostDetailPage() {
                   )}
                   <span className="text-gray-500 dark:text-gray-400">•</span>
                   <span className="text-gray-500 dark:text-gray-400">
-                    {new Date(reply.createdAt).toLocaleString('ko-KR')}
+                    {timestampToDate(reply.createdAt)?.toLocaleString('ko-KR')}
                   </span>
                 </div>
 

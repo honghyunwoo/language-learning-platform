@@ -1,7 +1,7 @@
 // Firebase 초기화 및 서비스 인스턴스 설정
 import { initializeApp, getApps, FirebaseApp } from 'firebase/app';
-import { getAuth, Auth } from 'firebase/auth';
-import { getFirestore, Firestore } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 // Storage는 결제 필요로 인해 비활성화
 // import { getStorage, FirebaseStorage } from 'firebase/storage';
 
@@ -55,30 +55,17 @@ const firebaseConfig: FirebaseConfig = {
 // 환경변수 검증 실행
 validateFirebaseConfig(firebaseConfig);
 
-// Firebase 앱 초기화 (중복 초기화 방지, 클라이언트 전용)
-let app: FirebaseApp | undefined;
-let auth: Auth | undefined;
-let db: Firestore | undefined;
-// Storage는 결제 필요로 인해 비활성화
-// let storage: FirebaseStorage | undefined;
-
-// 브라우저 환경에서만 초기화
-if (typeof window !== 'undefined') {
-  if (!getApps().length) {
-    app = initializeApp(firebaseConfig);
-  } else {
-    app = getApps()[0];
-  }
-
-  // Firebase 서비스 인스턴스
-  auth = getAuth(app);
-  db = getFirestore(app);
-  // Storage는 결제 필요로 인해 비활성화
-  // storage = getStorage(app);
+// Firebase 앱 초기화 (중복 초기화 방지)
+let app: FirebaseApp;
+if (!getApps().length) {
+  app = initializeApp(firebaseConfig);
+} else {
+  app = getApps()[0];
 }
 
-// Export (클라이언트에서만 사용 가능)
-export { auth, db };
+// Firebase 서비스 인스턴스
+export const auth = getAuth(app);
+export const db = getFirestore(app);
 // Storage는 결제 필요로 인해 비활성화
 // export { auth, db, storage };
 export default app;

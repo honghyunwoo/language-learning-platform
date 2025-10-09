@@ -87,8 +87,8 @@ export default function StudyGroupsPage() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 animate-fade-in-up delay-100">
           {groups && groups.length > 0 ? (
             groups.map((group, index) => {
-              const isMember = group.memberIds.includes(currentUser?.uid || '');
-              const isFull = group.memberIds.length >= group.maxMembers;
+              const isMember = group.members.includes(currentUser?.uid || '');
+              const isFull = group.members.length >= group.maxMembers;
 
               return (
                 <div
@@ -128,7 +128,7 @@ export default function StudyGroupsPage() {
                   {/* 멤버 수 */}
                   <div className="flex items-center gap-2 text-sm font-bold text-gray-700 dark:text-gray-300 mb-6 p-3 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-800/50 rounded-xl">
                     <UsersIcon className="w-5 h-5 text-purple-600 dark:text-purple-400" />
-                    <span>{group.memberIds.length} / {group.maxMembers}명</span>
+                    <span>{group.members.length} / {group.maxMembers}명</span>
                     {isFull && (
                       <span className="text-red-600 dark:text-red-400 text-xs">(정원 마감)</span>
                     )}

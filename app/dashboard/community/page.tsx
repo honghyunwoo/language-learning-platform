@@ -1,7 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { useAuth } from '@/hooks/useAuth';
+import { useToggleLike } from '@/hooks/useCommunity';
+import { usePosts } from '@/hooks/useCommunity';
 import { Button, Card } from '@/components/ui';
 import {
   SkeletonCard
@@ -70,12 +73,22 @@ const mockPosts = [
 ];
 
 export default function CommunityPage() {
-  useAuth(); // currentUser는 향후 사용 예정
+  const router = useRouter();
+  const { currentUser } = useAuth();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedLevels, setSelectedLevels] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState<'latest' | 'popular' | 'trending'>('latest');
-  const [isLoading] = useState(false);
+
+  // 실제 데이터 조회
+  const { data: posts, isLoading, error } = usePosts({
+    category: selectedCategory === 'all' ? undefined : selectedCategory,
+    level: selectedLevels.length > 0 ? selectedLevels : undefined,
+    search: searchQuery || undefined,
+    sortBy,
+  });
+
+  const toggleLike = useToggleLike();
 
   const handleLevelToggle = (level: string) => {
     setSelectedLevels(prev => 
@@ -115,7 +128,7 @@ export default function CommunityPage() {
               <Button
                 variant="primary"
                 className="w-full mb-6"
-                onClick={() => {/* TODO: 글 작성 페이지로 이동 */}}
+                onClick={() => router.push('/dashboard/community/write')}
               >
                 <PencilIcon className="w-5 h-5 mr-2" />
                 새 글 작성하기
@@ -231,26 +244,40 @@ export default function CommunityPage() {
                 Array.from({ length: 3 }).map((_, i) => (
                   <SkeletonCard key={i} />
                 ))
-              ) : (
-                mockPosts.map((post) => (
+              ) : error ? (
+                <Card padding="lg" className="text-center">
+                  <p className="text-red-600 dark:text-red-400">
+                    게시글을 불러오는데 실패했습니다. 다시 시도해주세요.
+                  </p>
+                </Card>
+              ) : posts && posts.length > 0 ? (
+                posts.map((post) => (
                   <Card key={post.id} padding="lg" className="hover:shadow-xl transition-shadow cursor-pointer">
                     {/* 작성자 정보 */}
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center">
-                        <span className="text-primary-600 dark:text-primary-400 font-medium">
-                          {post.author.nickname.charAt(0)}
-                        </span>
+                        {post.authorProfilePic ? (
+                          <img
+                            src={post.authorProfilePic}
+                            alt={post.authorNickname}
+                            className="w-full h-full rounded-full object-cover"
+                          />
+                        ) : (
+                          <span className="text-primary-600 dark:text-primary-400 font-medium">
+                            {post.authorNickname.charAt(0)}
+                          </span>
+                        )}
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
                           <span className="font-medium text-gray-900 dark:text-white">
-                            {post.author.nickname}
+                            {post.authorNickname}
                           </span>
                           <span className="px-2 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-xs font-medium rounded-full">
-                            {post.author.level}
+                            {post.authorLevel}
                           </span>
                           <span className="text-sm text-gray-500 dark:text-gray-400">
-                            {formatTimeAgo(post.createdAt)}
+                            {formatTimeAgo(post.createdAt.toDate().toISOString())}
                           </span>
                         </div>
                       </div>
@@ -281,7 +308,13 @@ export default function CommunityPage() {
                     {/* 상호작용 버튼들 */}
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-6">
-                        <button className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors">
+                        <button
+                          onClick={() => {
+                            if (!currentUser) return;
+                            toggleLike.mutate({ postId: post.id, userId: currentUser.uid });
+                          }}
+                          className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors"
+                        >
                           <HeartIcon className="w-5 h-5" />
                           <span>{post.likeCount}</span>
                         </button>
@@ -306,6 +339,27 @@ export default function CommunityPage() {
                     </div>
                   </Card>
                 ))
+              ) : (
+                <Card padding="lg" className="text-center">
+                  <div className="py-12">
+                    <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
+                      <PencilIcon className="w-8 h-8 text-gray-400" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                      아직 게시글이 없습니다
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">
+                      첫 번째 게시글을 작성해보세요!
+                    </p>
+                    <Button
+                      variant="primary"
+                      onClick={() => router.push('/dashboard/community/write')}
+                    >
+                      <PencilIcon className="w-4 h-4 mr-2" />
+                      글 작성하기
+                    </Button>
+                  </div>
+                </Card>
               )}
             </div>
 

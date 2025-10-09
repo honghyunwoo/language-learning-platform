@@ -1,8 +1,13 @@
-// 게시물 타입
-export type PostType = 'question' | 'tip' | 'discussion';
+// 게시물 타입 (useCommunity.ts와 호환)
+export type PostType = 'question' | 'discussion' | 'share' | 'tip';
 
-// 게시물 카테고리
+// 게시물 카테고리 (useCommunity.ts와 호환)
 export type PostCategory =
+  | 'journal'      // 학습 일지
+  | 'tip'          // 팁
+  | 'review'       // 리뷰
+  | 'question'     // 질문
+  | 'success'      // 성공 사례
   | 'grammar'      // 문법
   | 'vocabulary'   // 어휘
   | 'listening'    // 듣기
