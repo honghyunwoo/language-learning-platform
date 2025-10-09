@@ -109,42 +109,7 @@ export default function DashboardPage() {
     );
   }
 
-  // 에러 상태
-  if (error) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/30 dark:from-gray-900 dark:via-slate-900/50 dark:to-gray-900 flex items-center justify-center p-6">
-        <div className="glass dark:glass-dark rounded-3xl p-12 text-center max-w-md shadow-2xl animate-scale-in">
-          <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-xl">
-            <svg
-              className="w-10 h-10 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-          </div>
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
-            데이터 로딩 오류
-          </h3>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
-            데이터를 불러오는 중 오류가 발생했습니다.
-          </p>
-          <button
-            onClick={() => window.location.reload()}
-            className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:scale-105 transition-transform shadow-lg"
-          >
-            다시 시도
-          </button>
-        </div>
-      </div>
-    );
-  }
+  // 에러 상태는 제거 - 대신 각 컴포넌트에서 개별 처리
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/30 dark:from-gray-900 dark:via-slate-900/50 dark:to-gray-900 p-6">

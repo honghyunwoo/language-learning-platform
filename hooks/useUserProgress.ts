@@ -18,24 +18,30 @@ export const useUserProgress = (userId: string | undefined) => {
     queryKey: ['userProgress', userId],
     queryFn: async () => {
       if (!userId || !db) {
-        throw new Error('User ID or Firestore not available');
+        return null;
       }
 
-      // 현재 진행 중인 주차 데이터 가져오기
-      const progressDoc = await getDoc(
-        doc(db, 'userProgress', `${userId}_current`)
-      );
+      try {
+        // 현재 진행 중인 주차 데이터 가져오기
+        const progressDoc = await getDoc(
+          doc(db, 'userProgress', `${userId}_current`)
+        );
 
-      if (progressDoc.exists()) {
-        return progressDoc.data() as UserProgress;
+        if (progressDoc.exists()) {
+          return progressDoc.data() as UserProgress;
+        }
+
+        // 데이터가 없으면 기본값 반환 (첫 사용자)
+        return null;
+      } catch (error) {
+        console.error('Error fetching user progress:', error);
+        return null;
       }
-
-      // 데이터가 없으면 기본값 반환 (첫 사용자)
-      return null;
     },
     enabled: !!userId && !!db,
     staleTime: 1000 * 60 * 5, // 5분
     gcTime: 1000 * 60 * 30, // 30분 (이전 cacheTime)
+    retry: 1, // 1번만 재시도
   });
 };
 
@@ -75,20 +81,21 @@ export const useStreak = (userId?: string) => {
         return { currentStreak: 0, lastLearningDate: '', learnedToday: false };
       }
 
-      const today = new Date().toISOString().split('T')[0];
-      const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000)
-        .toISOString()
-        .split('T')[0];
+      try {
+        const today = new Date().toISOString().split('T')[0];
+        const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000)
+          .toISOString()
+          .split('T')[0];
 
-      // 최근 30일 일지 조회
-      const q = query(
-        collection(db, 'journalEntries'),
-        where('userId', '==', userId),
-        where('date', '>=', thirtyDaysAgo),
-        orderBy('date', 'desc')
-      );
-      const snapshot = await getDocs(q);
-      const entries = snapshot.docs.map((doc) => doc.data());
+        // 최근 30일 일지 조회
+        const q = query(
+          collection(db, 'journalEntries'),
+          where('userId', '==', userId),
+          where('date', '>=', thirtyDaysAgo),
+          orderBy('date', 'desc')
+        );
+        const snapshot = await getDocs(q);
+        const entries = snapshot.docs.map((doc) => doc.data());
 
       // 학습한 날짜들 (learningTime > 0)
       const learningDates = entries
@@ -149,9 +156,14 @@ export const useStreak = (userId?: string) => {
         lastLearningDate,
         learnedToday,
       };
+      } catch (error) {
+        console.error('Error calculating streak:', error);
+        return { currentStreak: 0, lastLearningDate: '', learnedToday: false };
+      }
     },
     enabled: !!userId && !!db,
     staleTime: 1000 * 60 * 5,
+    retry: 1,
   });
 };
 
@@ -164,29 +176,35 @@ export const useLearningTime = (userId?: string) => {
         return { totalMinutes: 0, hours: 0, minutes: 0, formatted: '0시간 0분' };
       }
 
-      const q = query(
-        collection(db, 'journalEntries'),
-        where('userId', '==', userId)
-      );
-      const snapshot = await getDocs(q);
-      const entries = snapshot.docs.map((doc) => doc.data());
+      try {
+        const q = query(
+          collection(db, 'journalEntries'),
+          where('userId', '==', userId)
+        );
+        const snapshot = await getDocs(q);
+        const entries = snapshot.docs.map((doc) => doc.data());
 
-      const totalMinutes = entries.reduce(
-        (sum, entry) => sum + (entry.learningTime || 0),
-        0
-      );
-      const hours = Math.floor(totalMinutes / 60);
-      const minutes = totalMinutes % 60;
+        const totalMinutes = entries.reduce(
+          (sum, entry) => sum + (entry.learningTime || 0),
+          0
+        );
+        const hours = Math.floor(totalMinutes / 60);
+        const minutes = totalMinutes % 60;
 
-      return {
-        totalMinutes,
-        hours,
-        minutes,
-        formatted: `${hours}시간 ${minutes}분`,
-      };
+        return {
+          totalMinutes,
+          hours,
+          minutes,
+          formatted: `${hours}시간 ${minutes}분`,
+        };
+      } catch (error) {
+        console.error('Error calculating learning time:', error);
+        return { totalMinutes: 0, hours: 0, minutes: 0, formatted: '0시간 0분' };
+      }
     },
     enabled: !!userId && !!db,
     staleTime: 1000 * 60 * 5,
+    retry: 1,
   });
 };
 
