@@ -2,23 +2,27 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import {
   collection,
   doc,
+  getDoc,
+  getDocs,
+  setDoc,
   addDoc,
   updateDoc,
   deleteDoc,
-  getDocs,
-  getDoc,
   query,
   where,
   orderBy,
   limit,
   Timestamp,
   serverTimestamp,
-  setDoc,
-  increment
+  increment,
+  QueryFieldFilterConstraint,
+  type DocumentReference,
+  type CollectionReference
 } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import { useToast } from '@/components/ui';
 import type { PostType, PostCategory } from '@/types/community';
+import { useFirestoreQuery, useFirestoreDocument, useCreateDocument, useToggleSubcollectionDoc } from './useFirestore';
 
 export interface Post {
   id: string;
@@ -70,48 +74,28 @@ export function usePosts(filters?: {
   sortBy?: 'latest' | 'popular' | 'trending';
 }) {
   return useQuery({
-    queryKey: ['posts', filters],
+    queryKey: ['posts', filters], // 검색은 클라이언트에서 하므로 queryKey에 포함
     queryFn: async () => {
-      try {
-        let q = query(
-          collection(db, 'posts'),
-          where('isPublished', '==', true),
-          orderBy('createdAt', 'desc'),
-          limit(20)
-        );
+      const baseQuery = query(
+        collection(db, 'posts'),
+        where('isPublished', '==', true),
+        orderBy('createdAt', 'desc'),
+        limit(20)
+      );
 
-        // 카테고리 필터
-        if (filters?.category && filters.category !== 'all') {
-          q = query(q, where('category', '==', filters.category));
-        }
+      const q = [
+        filters?.category && filters.category !== 'all' && where('category', '==', filters.category),
+        filters?.level && filters.level.length > 0 && where('level', 'in', filters.level),
+      ].filter((constraint): constraint is QueryFieldFilterConstraint => Boolean(constraint));
 
-        // 레벨 필터
-        if (filters?.level && filters.level.length > 0) {
-          q = query(q, where('level', 'in', filters.level));
-        }
+      const snapshot = await getDocs(query(baseQuery, ...q));
+      const posts = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })) as Post[];
 
-        const snapshot = await getDocs(q);
-        const posts: Post[] = [];
-        
-        snapshot.forEach((doc) => {
-          posts.push({ id: doc.id, ...doc.data() } as Post);
-        });
-
-        // 클라이언트 사이드 검색 (Firestore 제한으로 인해)
-        if (filters?.search) {
-          const searchTerm = filters.search.toLowerCase();
-          return posts.filter(post => 
-            post.title.toLowerCase().includes(searchTerm) ||
-            post.content.toLowerCase().includes(searchTerm) ||
-            post.tags.some(tag => tag.toLowerCase().includes(searchTerm))
-          );
-        }
-
-        return posts;
-      } catch (error) {
-        console.error('Failed to fetch posts:', error);
-        throw new Error('게시글을 불러오는데 실패했습니다.');
+      if (filters?.search) {
+        const searchTerm = filters.search.toLowerCase();
+        return posts.filter(p => p.title.toLowerCase().includes(searchTerm) || p.content.toLowerCase().includes(searchTerm));
       }
+      return posts;
     },
     staleTime: 5 * 60 * 1000, // 5분
   });
@@ -119,29 +103,7 @@ export function usePosts(filters?: {
 
 // 게시글 상세 조회
 export function usePost(postId: string) {
-  return useQuery({
-    queryKey: ['post', postId],
-    queryFn: async () => {
-      try {
-        const docRef = doc(db, 'posts', postId);
-        const docSnap = await getDoc(docRef);
-        
-        if (!docSnap.exists()) {
-          throw new Error('게시글을 찾을 수 없습니다.');
-        }
-
-        // 조회수 증가 (백그라운드에서 실행)
-        updateDoc(docRef, { viewCount: increment(1) }).catch(console.error);
-
-        return { id: docSnap.id, ...docSnap.data() } as Post;
-      } catch (error) {
-        console.error('Failed to fetch post:', error);
-        throw new Error('게시글을 불러오는데 실패했습니다.');
-      }
-    },
-    enabled: !!postId,
-    staleTime: 5 * 60 * 1000,
-  });
+  return useFirestoreDocument<Post>('posts', postId, { incrementViewCount: true });
 }
 
 // 게시글 작성
@@ -149,24 +111,17 @@ export function useCreatePost() {
   const queryClient = useQueryClient();
   const { addToast } = useToast();
 
+  const createPostMutation = useCreateDocument<Post>('posts');
+
   return useMutation({
     mutationFn: async (postData: Omit<Post, 'id' | 'createdAt' | 'updatedAt' | 'likeCount' | 'commentCount' | 'viewCount' | 'bookmarkCount'>) => {
-      try {
-        const docRef = await addDoc(collection(db, 'posts'), {
-          ...postData,
-          likeCount: 0,
-          commentCount: 0,
-          viewCount: 0,
-          bookmarkCount: 0,
-          createdAt: serverTimestamp(),
-          updatedAt: serverTimestamp(),
-        });
-
-        return docRef.id;
-      } catch (error) {
-        console.error('Failed to create post:', error);
-        throw new Error('게시글 작성에 실패했습니다.');
-      }
+      return await createPostMutation.mutateAsync({
+        ...postData,
+        likeCount: 0,
+        commentCount: 0,
+        viewCount: 0,
+        bookmarkCount: 0,
+      });
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['posts'] });
@@ -174,13 +129,6 @@ export function useCreatePost() {
         type: 'success',
         title: '게시글이 작성되었습니다!',
         description: '커뮤니티에 새로운 글이 추가되었습니다.',
-      });
-    },
-    onError: (error) => {
-      addToast({
-        type: 'error',
-        title: '게시글 작성 실패',
-        description: error.message,
       });
     },
   });
@@ -326,65 +274,37 @@ export function useCreateComment() {
 
 // 좋아요 토글
 export function useToggleLike() {
-  const queryClient = useQueryClient();
   const { addToast } = useToast();
+  const queryClient = useQueryClient();
 
-  return useMutation({
-    mutationFn: async ({ postId, userId }: { postId: string; userId: string }) => {
-      try {
-        // likes 서브컬렉션 확인 및 토글
-        const likeDocRef = doc(db, 'posts', postId, 'likes', userId);
-        const likeSnap = await getDoc(likeDocRef);
-        const postRef = doc(db, 'posts', postId);
+  return useMutation<
+    { toggled: boolean },
+    Error,
+    { parentId: string; userId: string }
+  >({
+    mutationFn: async ({ parentId, userId }: { parentId: string; userId: string }) => {
+      if (!db) throw new Error('Firestore is not initialized.');
 
-        if (likeSnap.exists()) {
-          await deleteDoc(likeDocRef);
-          await updateDoc(postRef, { likeCount: increment(-1) });
-          return { liked: false } as const;
-        }
+      const subDocRef = doc(db, 'posts', parentId, 'likes', userId);
+      const subDocSnap = await getDoc(subDocRef);
+      const parentRef = doc(db, 'posts', parentId);
 
-        await setDoc(likeDocRef, { userId, createdAt: serverTimestamp() });
-        await updateDoc(postRef, { likeCount: increment(1) });
-        return { liked: true } as const;
-      } catch (error) {
-        console.error('Failed to toggle like:', error);
-        throw new Error('좋아요 처리에 실패했습니다.');
+      if (subDocSnap.exists()) {
+        await deleteDoc(subDocRef);
+        await updateDoc(parentRef, { likeCount: increment(-1) });
+        return { toggled: false };
+      } else {
+        await setDoc(subDocRef, { createdAt: new Date().toISOString() });
+        await updateDoc(parentRef, { likeCount: increment(1) });
+        return { toggled: true };
       }
     },
-    // 낙관적 UI 업데이트 (즉시 반응)
-    onMutate: async ({ postId }) => {
-      // 진행 중인 쿼리 취소
-      await queryClient.cancelQueries({ queryKey: ['posts'] });
-      
-      // 이전 데이터 백업
-      const previousPosts = queryClient.getQueryData(['posts']);
-      
-      // 낙관적으로 UI 업데이트 (좋아요 수 즉시 변경)
-      queryClient.setQueryData(['posts'], (old: Post[] | undefined) => {
-        if (!old) return old;
-        return old.map((post: Post) =>
-          post.id === postId
-            ? { ...post, likeCount: post.likeCount + 1 } // 임시로 증가
-            : post
-        );
-      });
-      
-      return { previousPosts };
-    },
-    onError: (error, variables, context) => {
-      // 에러 발생시 이전 데이터로 복구
-      if (context?.previousPosts) {
-        queryClient.setQueryData(['posts'], context.previousPosts);
-      }
-      addToast({
-        type: 'error',
-        title: '좋아요 처리 실패',
-        description: error.message,
-      });
-    },
-    onSettled: () => {
-      // 서버 데이터로 최종 동기화
+    onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: ['posts'] });
+      addToast({
+        type: 'success',
+        title: data.toggled ? '게시글에 좋아요를 눌렀습니다.' : '좋아요를 취소했습니다.',
+      });
     },
   });
 }
@@ -427,42 +347,43 @@ export function useDeleteComment() {
 
 // 북마크 토글
 export function useToggleBookmark() {
-  const queryClient = useQueryClient();
   const { addToast } = useToast();
+  const queryClient = useQueryClient();
 
-  return useMutation({
-    mutationFn: async ({ postId, userId }: { postId: string; userId: string }) => {
-      try {
-        const bookmarkDocRef = doc(db, 'posts', postId, 'bookmarks', userId);
-        const bookmarkSnap = await getDoc(bookmarkDocRef);
-        const postRef = doc(db, 'posts', postId);
+  return useMutation<
+    { toggled: boolean },
+    Error,
+    { parentId: string; userId: string }
+  >({
+    mutationFn: async ({ parentId, userId }: { parentId: string; userId: string }) => {
+      if (!db) throw new Error('Firestore is not initialized.');
 
-        if (bookmarkSnap.exists()) {
-          await deleteDoc(bookmarkDocRef);
-          await updateDoc(postRef, { bookmarkCount: increment(-1) });
-          return { bookmarked: false } as const;
-        }
+      const subDocRef = doc(db, 'posts', parentId, 'bookmarks', userId);
+      const subDocSnap = await getDoc(subDocRef);
+      const parentRef = doc(db, 'posts', parentId);
 
-        await setDoc(bookmarkDocRef, { userId, createdAt: serverTimestamp() });
-        await updateDoc(postRef, { bookmarkCount: increment(1) });
-        return { bookmarked: true } as const;
-      } catch (error) {
-        console.error('Failed to toggle bookmark:', error);
-        throw new Error('북마크 처리에 실패했습니다.');
+      if (subDocSnap.exists()) {
+        await deleteDoc(subDocRef);
+        await updateDoc(parentRef, { bookmarkCount: increment(-1) });
+        return { toggled: false };
+      } else {
+        await setDoc(subDocRef, { createdAt: new Date().toISOString() });
+        await updateDoc(parentRef, { bookmarkCount: increment(1) });
+        return { toggled: true };
       }
     },
-    onSuccess: (result) => {
+    onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: ['posts'] });
       addToast({
         type: 'success',
-        title: result.bookmarked ? '북마크에 추가되었습니다.' : '북마크가 해제되었습니다.',
+        title: data.toggled ? '북마크에 추가되었습니다.' : '북마크가 해제되었습니다.',
       });
     },
     onError: (error) => {
       addToast({
         type: 'error',
         title: '북마크 처리 실패',
-        description: error.message,
+        description: (error as Error).message,
       });
     },
   });
@@ -556,7 +477,7 @@ export function useLike(userId: string | undefined, postId: string, type: 'post'
       throw new Error('로그인이 필요합니다.');
     }
 
-    await toggleLikeMutation.mutateAsync({ postId, userId });
+    await toggleLikeMutation.mutateAsync({ parentId: postId, userId });
   };
 
   return {

@@ -1,0 +1,590 @@
+[
+  {
+    "id": "listening-a1-001",
+    "level": "A1-A2",
+    "title": "카페에서 커피 주문하기",
+    "situation": "스타벅스에서 처음 주문하는 상황",
+    "duration": "20 seconds",
+    "speakers": ["Customer", "Barista"],
+    "dialogue": [
+      {
+        "speaker": "Barista",
+        "text": "Hi! Welcome to Starbucks. What can I get for you today?",
+        "translation": "안녕하세요! 스타벅스에 오신 것을 환영합니다. 오늘 무엇을 드릴까요?",
+        "notes": "'What can I get for you?' = 주문 받을 때 표준 표현"
+      },
+      {
+        "speaker": "Customer",
+        "text": "Hi! Can I get a tall latte, please?",
+        "translation": "안녕하세요! 톨 사이즈 라떼 하나 주세요.",
+        "notes": "'Can I get...' = 가장 자연스러운 주문 표현"
+      },
+      {
+        "speaker": "Barista",
+        "text": "Sure! Hot or iced?",
+        "translation": "네! 뜨거운 거요, 차가운 거요?",
+        "notes": ""
+      },
+      {
+        "speaker": "Customer",
+        "text": "Hot, please. And can I get that for here?",
+        "translation": "뜨거운 걸로 주세요. 그리고 매장에서 먹을게요.",
+        "notes": "'for here' = 매장 내 식사, 'to go' = 포장"
+      },
+      {
+        "speaker": "Barista",
+        "text": "Of course! That'll be five dollars.",
+        "translation": "물론이죠! 5달러입니다.",
+        "notes": "'That'll be...' = 가격 말할 때"
+      }
+    ],
+    "vocabulary": [
+      { "word": "latte", "meaning": "라떼" },
+      { "word": "iced", "meaning": "차가운, 얼음이 든" },
+      { "word": "for here", "meaning": "매장에서 먹다" }
+    ],
+    "questions": [
+      {
+        "question": "What does the customer order?",
+        "options": ["Latte", "Coffee", "Tea", "Juice"],
+        "correctAnswer": 0,
+        "explanation": "고객이 'tall latte'를 주문했습니다."
+      },
+      {
+        "question": "Does the customer want it hot or iced?",
+        "options": ["Hot", "Iced", "Both", "Not mentioned"],
+        "correctAnswer": 0,
+        "explanation": "고객이 'Hot, please'라고 답했습니다."
+      },
+      {
+        "question": "How much is the latte?",
+        "options": ["$3", "$4", "$5", "$6"],
+        "correctAnswer": 2,
+        "explanation": "바리스타가 'five dollars'라고 말했습니다."
+      }
+    ]
+  },
+  {
+    "id": "listening-a1-002",
+    "level": "A1-A2",
+    "title": "길 묻기",
+    "situation": "길을 잃어서 지나가는 사람에게 묻는 상황",
+    "duration": "18 seconds",
+    "speakers": ["Tourist", "Local"],
+    "dialogue": [
+      {
+        "speaker": "Tourist",
+        "text": "Excuse me, could you help me?",
+        "translation": "실례합니다, 도와주실 수 있나요?",
+        "notes": "'Excuse me' = 길거리에서 말 걸 때"
+      },
+      {
+        "speaker": "Local",
+        "text": "Sure! What do you need?",
+        "translation": "물론이죠! 무엇이 필요하세요?",
+        "notes": ""
+      },
+      {
+        "speaker": "Tourist",
+        "text": "I'm looking for the subway station. Is it near here?",
+        "translation": "지하철역을 찾고 있는데요. 여기 근처에 있나요?",
+        "notes": "'I'm looking for...' = ~를 찾고 있다"
+      },
+      {
+        "speaker": "Local",
+        "text": "Yes! Go straight for two blocks, then turn left.",
+        "translation": "네! 두 블록 직진하시고, 왼쪽으로 도세요.",
+        "notes": "'go straight' = 직진하다"
+      },
+      {
+        "speaker": "Tourist",
+        "text": "Thank you so much!",
+        "translation": "정말 감사합니다!",
+        "notes": ""
+      }
+    ],
+    "vocabulary": [
+      { "word": "subway", "meaning": "지하철" },
+      { "word": "straight", "meaning": "직진" },
+      { "word": "block", "meaning": "블록 (거리 단위)" }
+    ],
+    "questions": [
+      {
+        "question": "What is the tourist looking for?",
+        "options": ["Bus stop", "Subway station", "Taxi stand", "Hotel"],
+        "correctAnswer": 1,
+        "explanation": "관광객이 'subway station'을 찾고 있다고 말했습니다."
+      },
+      {
+        "question": "How should the tourist go?",
+        "options": ["Turn right", "Turn left", "Go straight", "Go straight then turn left"],
+        "correctAnswer": 3,
+        "explanation": "'Go straight for two blocks, then turn left'라고 안내했습니다."
+      }
+    ]
+  },
+  {
+    "id": "listening-a1-003",
+    "level": "A1-A2",
+    "title": "전화로 예약하기",
+    "situation": "레스토랑에 전화로 예약하는 상황",
+    "duration": "22 seconds",
+    "speakers": ["Caller", "Restaurant"],
+    "dialogue": [
+      {
+        "speaker": "Restaurant",
+        "text": "Good evening, Mario's Italian Restaurant. How may I help you?",
+        "translation": "좋은 저녁입니다, 마리오 이탈리안 레스토랑입니다. 무엇을 도와드릴까요?",
+        "notes": "전화 받을 때 표준 인사"
+      },
+      {
+        "speaker": "Caller",
+        "text": "Hi! I'd like to make a reservation for tonight.",
+        "translation": "안녕하세요! 오늘 저녁 예약하고 싶은데요.",
+        "notes": "'I'd like to...' = ~하고 싶습니다 (정중한 표현)"
+      },
+      {
+        "speaker": "Restaurant",
+        "text": "Certainly! What time and for how many people?",
+        "translation": "물론이죠! 몇 시에 몇 명이신가요?",
+        "notes": ""
+      },
+      {
+        "speaker": "Caller",
+        "text": "Seven PM for four people, please.",
+        "translation": "저녁 7시에 4명이요.",
+        "notes": ""
+      },
+      {
+        "speaker": "Restaurant",
+        "text": "Perfect! May I have your name?",
+        "translation": "완벽합니다! 성함을 여쭤봐도 될까요?",
+        "notes": "'May I have your name?' = 이름 물을 때"
+      },
+      {
+        "speaker": "Caller",
+        "text": "Yes, it's John Smith.",
+        "translation": "네, John Smith입니다.",
+        "notes": ""
+      }
+    ],
+    "vocabulary": [
+      { "word": "reservation", "meaning": "예약" },
+      { "word": "certainly", "meaning": "물론이죠" }
+    ],
+    "questions": [
+      {
+        "question": "What time is the reservation?",
+        "options": ["6 PM", "7 PM", "8 PM", "9 PM"],
+        "correctAnswer": 1,
+        "explanation": "Seven PM (7시)라고 말했습니다."
+      },
+      {
+        "question": "How many people?",
+        "options": ["2", "3", "4", "5"],
+        "correctAnswer": 2,
+        "explanation": "4명(four people)이라고 했습니다."
+      },
+      {
+        "question": "What is the caller's name?",
+        "options": ["Mario", "John Smith", "Smith John", "Not mentioned"],
+        "correctAnswer": 1,
+        "explanation": "John Smith라고 이름을 말했습니다."
+      }
+    ]
+  },
+  {
+    "id": "listening-a1-004",
+    "level": "A1-A2",
+    "title": "쇼핑하기",
+    "situation": "옷가게에서 사이즈 묻기",
+    "duration": "18 seconds",
+    "speakers": ["Customer", "Staff"],
+    "dialogue": [
+      {
+        "speaker": "Staff",
+        "text": "Hi! Can I help you find anything?",
+        "translation": "안녕하세요! 뭘 찾으시는 거 도와드릴까요?",
+        "notes": "매장 직원이 고객에게 접근할 때"
+      },
+      {
+        "speaker": "Customer",
+        "text": "Yes, I'm looking for this shirt in a medium.",
+        "translation": "네, 이 셔츠 미디엄 사이즈 찾고 있어요.",
+        "notes": ""
+      },
+      {
+        "speaker": "Staff",
+        "text": "Let me check... Yes, we have it! Would you like to try it on?",
+        "translation": "확인해볼게요... 네, 있습니다! 입어보시겠어요?",
+        "notes": "'try it on' = 입어보다"
+      },
+      {
+        "speaker": "Customer",
+        "text": "Yes, please. Where's the fitting room?",
+        "translation": "네, 부탁드려요. 탈의실이 어디있나요?",
+        "notes": "'fitting room' = 탈의실"
+      },
+      {
+        "speaker": "Staff",
+        "text": "It's right over there, next to the cashier.",
+        "translation": "저기 있어요, 계산대 옆에요.",
+        "notes": ""
+      }
+    ],
+    "vocabulary": [
+      { "word": "medium", "meaning": "미디엄 (사이즈)" },
+      { "word": "try on", "meaning": "입어보다" },
+      { "word": "fitting room", "meaning": "탈의실" }
+    ],
+    "questions": [
+      {
+        "question": "What size does the customer want?",
+        "options": ["Small", "Medium", "Large", "Extra Large"],
+        "correctAnswer": 1,
+        "explanation": "고객이 'medium' 사이즈를 찾고 있다고 말했습니다."
+      },
+      {
+        "question": "Where is the fitting room?",
+        "options": ["Next to entrance", "Next to cashier", "Upstairs", "Outside"],
+        "correctAnswer": 1,
+        "explanation": "'next to the cashier' (계산대 옆)라고 했습니다."
+      }
+    ]
+  },
+  {
+    "id": "listening-a1-005",
+    "level": "A1-A2",
+    "title": "자기소개",
+    "situation": "새로운 반 친구들에게 자기소개",
+    "duration": "20 seconds",
+    "speakers": ["Teacher", "Student"],
+    "dialogue": [
+      {
+        "speaker": "Teacher",
+        "text": "Class, we have a new student today. Please introduce yourself.",
+        "translation": "여러분, 오늘 새 학생이 왔어요. 자기소개 해주세요.",
+        "notes": ""
+      },
+      {
+        "speaker": "Student",
+        "text": "Hi everyone! My name is Sarah. I'm from Canada.",
+        "translation": "안녕하세요 여러분! 제 이름은 Sarah예요. 캐나다에서 왔어요.",
+        "notes": "'I'm from...' = ~에서 왔다"
+      },
+      {
+        "speaker": "Teacher",
+        "text": "Welcome, Sarah! What do you like to do in your free time?",
+        "translation": "환영합니다, Sarah! 여가 시간에 뭘 좋아하세요?",
+        "notes": "'in your free time' = 여가 시간에"
+      },
+      {
+        "speaker": "Student",
+        "text": "I love reading books and playing soccer.",
+        "translation": "책 읽는 걸 좋아하고 축구하는 것도 좋아해요.",
+        "notes": ""
+      },
+      {
+        "speaker": "Teacher",
+        "text": "That's great! We have a soccer team here.",
+        "translation": "좋네요! 우리 여기 축구팀이 있어요.",
+        "notes": ""
+      }
+    ],
+    "vocabulary": [
+      { "word": "introduce", "meaning": "소개하다" },
+      { "word": "free time", "meaning": "여가 시간" }
+    ],
+    "questions": [
+      {
+        "question": "Where is Sarah from?",
+        "options": ["USA", "Canada", "UK", "Australia"],
+        "correctAnswer": 1,
+        "explanation": "Sarah가 'I'm from Canada'라고 말했습니다."
+      },
+      {
+        "question": "What does Sarah like to do?",
+        "options": ["Read and play soccer", "Watch TV", "Cook", "Swim"],
+        "correctAnswer": 0,
+        "explanation": "'reading books and playing soccer'를 좋아한다고 했습니다."
+      }
+    ]
+  },
+  {
+    "id": "listening-b1-001",
+    "level": "B1-B2",
+    "title": "뉴스 요약",
+    "situation": "아침 뉴스 헤드라인",
+    "duration": "25 seconds",
+    "speakers": ["News Anchor"],
+    "dialogue": [
+      {
+        "speaker": "News Anchor",
+        "text": "Good morning. Here are today's top stories.",
+        "translation": "좋은 아침입니다. 오늘의 주요 뉴스입니다.",
+        "notes": ""
+      },
+      {
+        "speaker": "News Anchor",
+        "text": "The government announced new environmental policies yesterday aimed at reducing carbon emissions by 30% over the next decade.",
+        "translation": "정부가 어제 향후 10년간 탄소 배출을 30% 감축하기 위한 새로운 환경 정책을 발표했습니다.",
+        "notes": "'aimed at' = ~을 목표로 하는"
+      },
+      {
+        "speaker": "News Anchor",
+        "text": "In business news, technology stocks rose sharply following strong earnings reports from major companies.",
+        "translation": "경제 뉴스에서는, 주요 기업들의 강력한 실적 발표 이후 기술주가 급등했습니다.",
+        "notes": "'rose sharply' = 급등하다"
+      },
+      {
+        "speaker": "News Anchor",
+        "text": "And in sports, the national team won their qualifying match 3-1, securing their spot in the championship.",
+        "translation": "그리고 스포츠에서는, 국가대표팀이 예선전에서 3대1로 승리하며 챔피언십 진출권을 확보했습니다.",
+        "notes": "'securing' = 확보하다"
+      }
+    ],
+    "vocabulary": [
+      { "word": "emissions", "meaning": "배출" },
+      { "word": "decade", "meaning": "10년" },
+      { "word": "sharply", "meaning": "급격히" },
+      { "word": "qualifying", "meaning": "예선의" }
+    ],
+    "questions": [
+      {
+        "question": "What is the government's goal for carbon emissions?",
+        "options": ["10% reduction", "20% reduction", "30% reduction", "50% reduction"],
+        "correctAnswer": 2,
+        "explanation": "30% 감축을 목표로 한다고 발표했습니다."
+      },
+      {
+        "question": "What happened to technology stocks?",
+        "options": ["Fell", "Rose sharply", "Stayed same", "Not mentioned"],
+        "correctAnswer": 1,
+        "explanation": "'rose sharply' (급등했다)고 말했습니다."
+      }
+    ]
+  },
+  {
+    "id": "listening-b1-002",
+    "level": "B1-B2",
+    "title": "직장 회의",
+    "situation": "프로젝트 진행 상황 회의",
+    "duration": "28 seconds",
+    "speakers": ["Manager", "Employee"],
+    "dialogue": [
+      {
+        "speaker": "Manager",
+        "text": "Thanks everyone for joining. Let's start with project updates. Sarah, how's the marketing campaign going?",
+        "translation": "참석해주셔서 감사합니다. 프로젝트 업데이트부터 시작하죠. Sarah, 마케팅 캠페인은 어떻게 되고 있나요?",
+        "notes": ""
+      },
+      {
+        "speaker": "Employee",
+        "text": "It's progressing well. We've completed the initial phase and we're on track to launch next month.",
+        "translation": "잘 진행되고 있습니다. 초기 단계를 완료했고 다음 달 출시 일정에 맞춰 가고 있습니다.",
+        "notes": "'on track' = 일정대로"
+      },
+      {
+        "speaker": "Manager",
+        "text": "Excellent! Have you encountered any challenges so far?",
+        "translation": "훌륭합니다! 지금까지 어떤 어려움은 없었나요?",
+        "notes": "'encountered' = 마주치다, 겪다"
+      },
+      {
+        "speaker": "Employee",
+        "text": "We had some budget constraints, but we've managed to work around them by prioritizing key features.",
+        "translation": "예산 제약이 있었지만, 핵심 기능에 우선순위를 두어 해결했습니다.",
+        "notes": "'work around' = 우회하여 해결하다"
+      }
+    ],
+    "vocabulary": [
+      { "word": "campaign", "meaning": "캠페인" },
+      { "word": "progressing", "meaning": "진행되고 있다" },
+      { "word": "constraints", "meaning": "제약" },
+      { "word": "prioritizing", "meaning": "우선순위를 정하다" }
+    ],
+    "questions": [
+      {
+        "question": "When is the launch planned?",
+        "options": ["This month", "Next month", "Next year", "Not mentioned"],
+        "correctAnswer": 1,
+        "explanation": "'next month' (다음 달) 출시 예정이라고 했습니다."
+      },
+      {
+        "question": "What challenge did they face?",
+        "options": ["Time", "Budget", "Staff", "Technology"],
+        "correctAnswer": 1,
+        "explanation": "'budget constraints' (예산 제약)이 있었다고 말했습니다."
+      }
+    ]
+  },
+  {
+    "id": "listening-b1-003",
+    "level": "B1-B2",
+    "title": "취업 인터뷰",
+    "situation": "첫 취업 면접",
+    "duration": "30 seconds",
+    "speakers": ["Interviewer", "Candidate"],
+    "dialogue": [
+      {
+        "speaker": "Interviewer",
+        "text": "Thank you for coming in today. Could you tell me about your previous work experience?",
+        "translation": "오늘 와주셔서 감사합니다. 이전 업무 경험에 대해 말씀해주시겠어요?",
+        "notes": ""
+      },
+      {
+        "speaker": "Candidate",
+        "text": "Certainly. I worked as a junior developer at a tech startup for two years, where I focused primarily on front-end development.",
+        "translation": "물론입니다. 기술 스타트업에서 2년간 주니어 개발자로 일했으며, 주로 프론트엔드 개발에 집중했습니다.",
+        "notes": "'primarily' = 주로"
+      },
+      {
+        "speaker": "Interviewer",
+        "text": "That's impressive. What made you interested in this position?",
+        "translation": "인상적이네요. 이 포지션에 관심을 갖게 된 이유는 무엇인가요?",
+        "notes": ""
+      },
+      {
+        "speaker": "Candidate",
+        "text": "I'm particularly drawn to your company's innovative approach to problem-solving and the opportunity to work on large-scale projects.",
+        "translation": "귀사의 혁신적인 문제 해결 방식과 대규모 프로젝트에서 일할 수 있는 기회에 특히 매력을 느꼈습니다.",
+        "notes": "'drawn to' = ~에 끌리다"
+      }
+    ],
+    "vocabulary": [
+      { "word": "startup", "meaning": "스타트업" },
+      { "word": "primarily", "meaning": "주로" },
+      { "word": "innovative", "meaning": "혁신적인" },
+      { "word": "large-scale", "meaning": "대규모의" }
+    ],
+    "questions": [
+      {
+        "question": "How long did the candidate work at the startup?",
+        "options": ["1 year", "2 years", "3 years", "5 years"],
+        "correctAnswer": 1,
+        "explanation": "2년(two years)간 일했다고 말했습니다."
+      },
+      {
+        "question": "What attracted the candidate to this job?",
+        "options": ["High salary", "Location", "Innovative approach", "Flexible hours"],
+        "correctAnswer": 2,
+        "explanation": "'innovative approach to problem-solving'에 끌렸다고 했습니다."
+      }
+    ]
+  },
+  {
+    "id": "listening-b1-004",
+    "level": "B1-B2",
+    "title": "학술 토론",
+    "situation": "대학 세미나에서의 토론",
+    "duration": "32 seconds",
+    "speakers": ["Professor", "Student"],
+    "dialogue": [
+      {
+        "speaker": "Professor",
+        "text": "Today we'll discuss the impact of social media on modern communication. What are your thoughts on this topic?",
+        "translation": "오늘은 소셜 미디어가 현대 커뮤니케이션에 미치는 영향에 대해 토론하겠습니다. 이 주제에 대한 생각이 어떠신가요?",
+        "notes": ""
+      },
+      {
+        "speaker": "Student",
+        "text": "I believe social media has fundamentally changed how we interact. While it's made communication more accessible, it's also created challenges in maintaining meaningful connections.",
+        "translation": "소셜 미디어가 우리의 상호작용 방식을 근본적으로 바꿨다고 생각합니다. 커뮤니케이션을 더 쉽게 만들었지만, 의미 있는 연결을 유지하는 데 어려움도 만들었습니다.",
+        "notes": "'fundamentally' = 근본적으로"
+      },
+      {
+        "speaker": "Professor",
+        "text": "That's an interesting perspective. Can you elaborate on the challenges you mentioned?",
+        "translation": "흥미로운 관점이네요. 말씀하신 어려움에 대해 좀 더 설명해주시겠어요?",
+        "notes": "'elaborate on' = ~에 대해 자세히 설명하다"
+      },
+      {
+        "speaker": "Student",
+        "text": "Well, people tend to have superficial interactions online rather than deep, face-to-face conversations. This can lead to feelings of isolation despite being constantly connected.",
+        "translation": "사람들이 깊이 있는 대면 대화보다 온라인에서 피상적인 상호작용을 하는 경향이 있습니다. 이것이 끊임없이 연결되어 있음에도 고립감을 느끼게 할 수 있습니다.",
+        "notes": "'superficial' = 피상적인"
+      }
+    ],
+    "vocabulary": [
+      { "word": "fundamentally", "meaning": "근본적으로" },
+      { "word": "accessible", "meaning": "접근 가능한" },
+      { "word": "elaborate", "meaning": "자세히 설명하다" },
+      { "word": "superficial", "meaning": "피상적인" },
+      { "word": "isolation", "meaning": "고립" }
+    ],
+    "questions": [
+      {
+        "question": "What is the discussion topic?",
+        "options": ["Technology", "Social media impact", "Education", "Modern art"],
+        "correctAnswer": 1,
+        "explanation": "'impact of social media on modern communication'이 주제입니다."
+      },
+      {
+        "question": "What problem does the student mention?",
+        "options": ["Too expensive", "Superficial interactions", "Too complicated", "Not enough users"],
+        "correctAnswer": 1,
+        "explanation": "'superficial interactions' (피상적인 상호작용)을 문제로 언급했습니다."
+      }
+    ]
+  },
+  {
+    "id": "listening-b1-005",
+    "level": "B1-B2",
+    "title": "고객 서비스 전화",
+    "situation": "제품 문제로 고객센터에 전화",
+    "duration": "35 seconds",
+    "speakers": ["Customer", "Support"],
+    "dialogue": [
+      {
+        "speaker": "Support",
+        "text": "Thank you for calling Tech Support. This is Mike speaking. How can I assist you today?",
+        "translation": "기술 지원팀에 전화주셔서 감사합니다. Mike입니다. 오늘 무엇을 도와드릴까요?",
+        "notes": "고객 서비스 표준 인사"
+      },
+      {
+        "speaker": "Customer",
+        "text": "Hi Mike. I'm having trouble with my laptop. It won't turn on no matter what I do.",
+        "translation": "안녕하세요 Mike. 노트북에 문제가 있어요. 뭘 해도 켜지지 않아요.",
+        "notes": "'no matter what' = 무엇을 해도"
+      },
+      {
+        "speaker": "Support",
+        "text": "I understand how frustrating that must be. Let's try some troubleshooting steps. Have you checked if the battery is properly connected?",
+        "translation": "얼마나 답답하실지 이해합니다. 문제 해결 단계를 시도해봅시다. 배터리가 제대로 연결되어 있는지 확인하셨나요?",
+        "notes": "'troubleshooting' = 문제 해결"
+      },
+      {
+        "speaker": "Customer",
+        "text": "Yes, I've checked that. The battery seems fine, but the power button doesn't respond at all.",
+        "translation": "네, 확인했어요. 배터리는 괜찮아 보이는데, 전원 버튼이 전혀 반응하지 않아요.",
+        "notes": ""
+      },
+      {
+        "speaker": "Support",
+        "text": "Alright. In that case, I recommend bringing it to our service center. I can schedule an appointment for you right away.",
+        "translation": "알겠습니다. 그렇다면 서비스 센터로 가져오시는 것을 추천합니다. 바로 예약해드릴 수 있습니다.",
+        "notes": "'right away' = 즉시"
+      }
+    ],
+    "vocabulary": [
+      { "word": "assist", "meaning": "돕다, 지원하다" },
+      { "word": "frustrating", "meaning": "답답한" },
+      { "word": "troubleshooting", "meaning": "문제 해결" },
+      { "word": "respond", "meaning": "반응하다" }
+    ],
+    "questions": [
+      {
+        "question": "What is the problem with the laptop?",
+        "options": ["Too slow", "Won't turn on", "Screen broken", "Virus"],
+        "correctAnswer": 1,
+        "explanation": "노트북이 켜지지 않는다('won't turn on')고 말했습니다."
+      },
+      {
+        "question": "What does the support agent recommend?",
+        "options": ["Buy new laptop", "Visit service center", "Wait a day", "Restart computer"],
+        "correctAnswer": 1,
+        "explanation": "'bringing it to our service center'를 추천했습니다."
+      }
+    ]
+  }
+]

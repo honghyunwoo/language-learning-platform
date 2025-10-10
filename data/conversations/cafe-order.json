@@ -1,0 +1,361 @@
+{
+  "id": "conv-cafe-order",
+  "title": "카페에서 커피 주문하기",
+  "description": "스타벅스에서 처음 주문하는 상황을 연습합니다.",
+  "level": "A1",
+  "estimatedTime": 10,
+  "scenario": {
+    "location": "Starbucks cafe",
+    "situation": "처음 미국 카페에서 주문하는 상황",
+    "goal": "커피를 성공적으로 주문하고 받기",
+    "culturalNotes": [
+      "미국 카페에서는 사이즈를 먼저 말합니다 (Tall, Grande, Venti)",
+      "'For here or to go?'는 매장에서 먹을지 테이크아웃할지 묻는 표현입니다",
+      "팁은 필수는 아니지만, 좋은 서비스를 받았다면 1-2달러 정도 주는 것이 일반적입니다"
+    ]
+  },
+  "characters": [
+    {
+      "id": "barista",
+      "name": "Barista",
+      "role": "카페 직원",
+      "personality": "친절하고 도움을 주려는"
+    },
+    {
+      "id": "customer",
+      "name": "You",
+      "role": "고객 (학습자)",
+      "personality": "첫 주문이라 약간 긴장함"
+    }
+  ],
+  "dialogue": [
+    {
+      "id": "start",
+      "speaker": "barista",
+      "text": "Hi! Welcome to Starbucks. What can I get for you today?",
+      "translation": "안녕하세요! 스타벅스에 오신 것을 환영합니다. 오늘 무엇을 드릴까요?",
+      "audioUrl": null,
+      "notes": "'What can I get for you?' = 주문 받을 때 가장 흔한 표현",
+      "nextNodeId": "response-1"
+    },
+    {
+      "id": "response-1",
+      "speaker": "customer",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-1a",
+          "text": "Can I get a tall latte, please?",
+          "translation": "톡 사이즈 라떼 하나 주세요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 'Can I get...'은 가장 자연스러운 주문 표현입니다.",
+            "points": 10
+          },
+          "nextNodeId": "barista-2a"
+        },
+        {
+          "id": "opt-1b",
+          "text": "I want a coffee.",
+          "translation": "커피 주세요.",
+          "feedback": {
+            "type": "good",
+            "message": "의미는 전달되지만, 'I want'는 다소 직접적입니다. 'Can I get...' 또는 'I'd like...'가 더 자연스럽습니다.",
+            "points": 7,
+            "suggestion": "Can I get a tall latte, please?"
+          },
+          "nextNodeId": "barista-2b"
+        },
+        {
+          "id": "opt-1c",
+          "text": "Give me latte.",
+          "translation": "라떼 주세요.",
+          "feedback": {
+            "type": "needs-improvement",
+            "message": "'Give me'는 명령조로 들려서 무례하게 느껴질 수 있습니다. 'Can I get...'이나 'I'd like...'를 사용하세요.",
+            "points": 4,
+            "suggestion": "Can I get a tall latte, please?",
+            "culturalNote": "영어권에서는 정중한 표현이 매우 중요합니다. 'please'를 꼭 붙이세요!"
+          },
+          "nextNodeId": "barista-2c"
+        }
+      ]
+    },
+    {
+      "id": "barista-2a",
+      "speaker": "barista",
+      "text": "Sure! Would you like that hot or iced?",
+      "translation": "물론이죠! 따뜻한 걸로 드릴까요, 차가운 걸로 드릴까요?",
+      "notes": "'Would you like...' = 정중하게 선호도를 묻는 표현",
+      "nextNodeId": "response-2a"
+    },
+    {
+      "id": "barista-2b",
+      "speaker": "barista",
+      "text": "Okay. What size would you like?",
+      "translation": "알겠습니다. 어떤 사이즈로 드릴까요?",
+      "notes": "사이즈를 명확히 말하지 않아서 다시 물어봄",
+      "nextNodeId": "response-2b"
+    },
+    {
+      "id": "barista-2c",
+      "speaker": "barista",
+      "text": "Um... what size? Tall, grande, or venti?",
+      "translation": "음... 어떤 사이즈요? 톨, 그란데, 벤티?",
+      "notes": "무례한 표현에 약간 당황한 반응. 사이즈를 다시 확인함",
+      "nextNodeId": "response-2c"
+    },
+    {
+      "id": "response-2a",
+      "speaker": "customer",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-2a1",
+          "text": "Hot, please.",
+          "translation": "따뜻한 걸로 주세요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 간단하고 명확하게 대답했습니다.",
+            "points": 10
+          },
+          "nextNodeId": "barista-3"
+        },
+        {
+          "id": "opt-2a2",
+          "text": "Iced, please.",
+          "translation": "차가운 걸로 주세요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 간단하고 명확하게 대답했습니다.",
+            "points": 10
+          },
+          "nextNodeId": "barista-3"
+        }
+      ]
+    },
+    {
+      "id": "response-2b",
+      "speaker": "customer",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-2b1",
+          "text": "Tall, please.",
+          "translation": "톨 사이즈로 주세요.",
+          "feedback": {
+            "type": "good",
+            "message": "좋습니다! 사이즈를 명확히 말했습니다.",
+            "points": 8
+          },
+          "nextNodeId": "barista-3"
+        },
+        {
+          "id": "opt-2b2",
+          "text": "Small one.",
+          "translation": "작은 거요.",
+          "feedback": {
+            "type": "needs-improvement",
+            "message": "스타벅스에서는 'Small' 대신 'Tall'을 사용합니다. 전문 용어를 배워두세요!",
+            "points": 5,
+            "suggestion": "Tall, please.",
+            "culturalNote": "스타벅스 사이즈: Tall (12oz), Grande (16oz), Venti (20oz/24oz)"
+          },
+          "nextNodeId": "barista-confused"
+        }
+      ]
+    },
+    {
+      "id": "response-2c",
+      "speaker": "customer",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-2c1",
+          "text": "Sorry, tall size, please.",
+          "translation": "죄송해요, 톨 사이즈로 주세요.",
+          "feedback": {
+            "type": "good",
+            "message": "좋습니다! 'Sorry'로 예의를 갖추고 다시 정중하게 말했습니다.",
+            "points": 8,
+            "culturalNote": "실수했을 때 'Sorry'를 사용하면 상황이 부드러워집니다."
+          },
+          "nextNodeId": "barista-3"
+        }
+      ]
+    },
+    {
+      "id": "barista-confused",
+      "speaker": "barista",
+      "text": "We have tall, grande, and venti. Would you like a tall?",
+      "translation": "저희는 톨, 그란데, 벤티가 있습니다. 톨로 드릴까요?",
+      "notes": "'Small'이라고 해서 직원이 'Tall'을 제안함",
+      "nextNodeId": "response-confused"
+    },
+    {
+      "id": "response-confused",
+      "speaker": "customer",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-conf1",
+          "text": "Yes, tall is fine. Thank you.",
+          "translation": "네, 톨로 괜찮습니다. 감사합니다.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 직원의 도움을 받아들이고 감사 인사도 했습니다.",
+            "points": 9
+          },
+          "nextNodeId": "barista-3"
+        }
+      ]
+    },
+    {
+      "id": "barista-3",
+      "speaker": "barista",
+      "text": "Great! For here or to go?",
+      "translation": "좋습니다! 매장에서 드시나요, 가져가시나요?",
+      "notes": "'For here' = 매장에서 먹기, 'To go' = 테이크아웃",
+      "nextNodeId": "response-3"
+    },
+    {
+      "id": "response-3",
+      "speaker": "customer",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-3a",
+          "text": "For here, please.",
+          "translation": "매장에서 먹을게요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 정확한 표현을 사용했습니다.",
+            "points": 10
+          },
+          "nextNodeId": "barista-final"
+        },
+        {
+          "id": "opt-3b",
+          "text": "To go, please.",
+          "translation": "테이크아웃할게요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 정확한 표현을 사용했습니다.",
+            "points": 10
+          },
+          "nextNodeId": "barista-final"
+        },
+        {
+          "id": "opt-3c",
+          "text": "Take out.",
+          "translation": "테이크아웃이요.",
+          "feedback": {
+            "type": "good",
+            "message": "의미는 전달되지만, 'To go'가 더 자연스러운 표현입니다.",
+            "points": 7,
+            "suggestion": "To go, please."
+          },
+          "nextNodeId": "barista-final"
+        }
+      ]
+    },
+    {
+      "id": "barista-final",
+      "speaker": "barista",
+      "text": "Perfect! That'll be $4.50. Cash or card?",
+      "translation": "좋습니다! 4달러 50센트입니다. 현금이신가요, 카드인가요?",
+      "notes": "가격을 말하고 결제 방법을 물어봄",
+      "nextNodeId": "response-payment"
+    },
+    {
+      "id": "response-payment",
+      "speaker": "customer",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-pay1",
+          "text": "Card, please.",
+          "translation": "카드로 할게요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 간단하고 명확합니다.",
+            "points": 10
+          },
+          "nextNodeId": "end-success"
+        },
+        {
+          "id": "opt-pay2",
+          "text": "I'll pay with my credit card.",
+          "translation": "신용카드로 결제할게요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 문장으로 정중하게 말했습니다.",
+            "points": 10
+          },
+          "nextNodeId": "end-success"
+        }
+      ]
+    },
+    {
+      "id": "end-success",
+      "speaker": "barista",
+      "text": "Great! Your latte will be ready in a few minutes. Have a great day!",
+      "translation": "좋습니다! 라떼가 몇 분 안에 준비됩니다. 좋은 하루 되세요!",
+      "notes": "주문 완료! 'Have a great day!' = 흔한 인사",
+      "isEnd": true,
+      "completionMessage": "축하합니다! 카페에서 성공적으로 주문했습니다! 🎉"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "latte",
+      "pronunciation": "/ˈlɑːteɪ/",
+      "meaning": "라떼 (에스프레소에 스팀 밀크를 넣은 커피)",
+      "example": "I'd like a latte, please."
+    },
+    {
+      "word": "iced",
+      "pronunciation": "/aɪst/",
+      "meaning": "차가운, 얼음이 든",
+      "example": "Can I get an iced coffee?"
+    },
+    {
+      "word": "for here",
+      "pronunciation": "/fɔːr hɪr/",
+      "meaning": "매장에서 먹을 것 (to go의 반대)",
+      "example": "For here or to go?"
+    },
+    {
+      "word": "to go",
+      "pronunciation": "/tuː ɡoʊ/",
+      "meaning": "테이크아웃",
+      "example": "I'll have it to go, please."
+    }
+  ],
+  "keyPhrases": [
+    {
+      "phrase": "Can I get...?",
+      "meaning": "~을 주시겠어요? (주문할 때)",
+      "usage": "Can I get a tall latte, please?",
+      "formality": "polite"
+    },
+    {
+      "phrase": "Would you like...?",
+      "meaning": "~을 원하시나요? (정중한 질문)",
+      "usage": "Would you like that hot or iced?",
+      "formality": "polite"
+    },
+    {
+      "phrase": "For here or to go?",
+      "meaning": "매장에서 드시나요, 가져가시나요?",
+      "usage": "Standard question at cafes and restaurants",
+      "formality": "neutral"
+    }
+  ],
+  "scoring": {
+    "maxPoints": 100,
+    "excellentThreshold": 85,
+    "goodThreshold": 70,
+    "passingThreshold": 50
+  }
+}

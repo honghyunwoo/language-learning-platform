@@ -2,11 +2,12 @@
 
 import { useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
+import DOMPurify from 'dompurify';
 import { useAuth } from '@/hooks/useAuth';
 import { usePost, useReplies, useLike, useCommunityActions } from '@/hooks/useCommunity';
 import { Card } from '@/components/ui';
 import { Button } from '@/components/ui';
-import { timestampToDate } from '@/lib/utils';
+import type { Post } from '@/types/community';
 
 export default function PostDetailPage() {
   const params = useParams();
@@ -14,7 +15,7 @@ export default function PostDetailPage() {
   const postId = params.id as string;
 
   const { currentUser } = useAuth();
-  const { data: post, isLoading: postLoading } = usePost(postId);
+  const { data: post, isLoading: postLoading } = usePost(postId) as { data: Post | undefined; isLoading: boolean };
   const { data: replies, isLoading: repliesLoading, refresh: refreshReplies } = useReplies(postId);
   const { isLiked, toggleLike } = useLike(currentUser?.uid, postId, 'post');
   const { createReply, acceptReply, deleteReply, deletePost, isSubmitting } = useCommunityActions(
@@ -97,11 +98,15 @@ export default function PostDetailPage() {
     );
   }
 
-  if (!post) {
+  if (postLoading || !post) {
     return (
       <Card padding="lg">
         <div className="text-center py-12">
-          <p className="text-gray-600 dark:text-gray-400">게시물을 찾을 수 없습니다.</p>
+          {postLoading ? (
+            <p className="text-gray-600 dark:text-gray-400">로딩 중...</p>
+          ) : (
+            <p className="text-gray-600 dark:text-gray-400">게시물을 찾을 수 없습니다.</p>
+          )}
         </div>
       </Card>
     );
@@ -157,15 +162,21 @@ export default function PostDetailPage() {
             </span>
           )}
           <span>•</span>
-          <span>{timestampToDate(post.createdAt)?.toLocaleString('ko-KR')}</span>
+          <span>{new Date(post.createdAt).toLocaleString('ko-KR')}</span>
           <span>•</span>
           <span>조회 {post.viewCount}</span>
         </div>
 
         {/* 내용 */}
-        <div className="prose dark:prose-invert max-w-none mb-6">
-          <p className="whitespace-pre-wrap">{post.content}</p>
-        </div>
+        <div
+          className="prose dark:prose-invert max-w-none mb-6 whitespace-pre-wrap"
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(post.content, {
+              ALLOWED_TAGS: ['p', 'br', 'strong', 'em', 'a', 'ul', 'ol', 'li', 'code', 'pre'],
+              ALLOWED_ATTR: ['href', 'target', 'rel']
+            })
+          }}
+        />
 
         {/* 태그 */}
         {post.tags && post.tags.length > 0 && (
@@ -279,7 +290,9 @@ export default function PostDetailPage() {
                   )}
                   <span className="text-gray-500 dark:text-gray-400">•</span>
                   <span className="text-gray-500 dark:text-gray-400">
-                    {timestampToDate(reply.createdAt)?.toLocaleString('ko-KR')}
+                    {typeof reply.createdAt === 'string'
+                      ? new Date(reply.createdAt).toLocaleString('ko-KR')
+                      : reply.createdAt?.toDate?.()?.toLocaleString('ko-KR')}
                   </span>
                 </div>
 
@@ -307,9 +320,15 @@ export default function PostDetailPage() {
                 </div>
               </div>
 
-              <p className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap mb-3">
-                {reply.content}
-              </p>
+              <div
+                className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap mb-3"
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(reply.content, {
+                    ALLOWED_TAGS: ['p', 'br', 'strong', 'em', 'a', 'code'],
+                    ALLOWED_ATTR: ['href', 'target', 'rel']
+                  })
+                }}
+              />
 
               <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

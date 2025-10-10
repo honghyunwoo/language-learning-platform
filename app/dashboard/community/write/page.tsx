@@ -9,7 +9,7 @@ import { Breadcrumb } from '@/components/ui';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import type { PostCategory } from '@/types/community';
 
-const categories = [
+const categories: Array<{ id: PostCategory; name: string; description: string }> = [
   { id: 'journal', name: '학습 일지', description: '나의 학습 경험과 성장을 공유해보세요' },
   { id: 'tip', name: '학습 팁', description: '효과적인 학습 방법을 알려주세요' },
   { id: 'review', name: '리소스 리뷰', description: '유용한 학습 자료를 추천해주세요' },
@@ -170,7 +170,7 @@ export default function WritePostPage() {
                 <button
                   key={category.id}
                   type="button"
-                  onClick={() => setFormData(prev => ({ ...prev, category: category.id as PostCategory }))}
+                  onClick={() => setFormData(prev => ({ ...prev, category: category.id }))}
                   className={`p-4 rounded-lg border-2 text-left transition-all ${
                     formData.category === category.id
                       ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'

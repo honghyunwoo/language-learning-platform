@@ -1,0 +1,282 @@
+[
+  {
+    "id": "grammar-a1-001",
+    "level": "A1",
+    "topic": "be-verb",
+    "question": "I ___ a student.",
+    "options": ["am", "is", "are", "be"],
+    "correctAnswer": 0,
+    "explanation": {
+      "korean": "'I'와 함께 사용하는 be동사는 'am'입니다.",
+      "english": "Use 'am' with the subject 'I'.",
+      "rule": "I am / You are / He/She/It is / We/You/They are"
+    },
+    "difficulty": 1
+  },
+  {
+    "id": "grammar-a1-002",
+    "level": "A1",
+    "topic": "articles",
+    "question": "I have ___ apple.",
+    "options": ["a", "an", "the", "(no article)"],
+    "correctAnswer": 1,
+    "explanation": {
+      "korean": "'apple'은 모음으로 시작하므로 'an'을 사용합니다.",
+      "english": "Use 'an' before words starting with a vowel sound.",
+      "rule": "a + consonant sound (a book) / an + vowel sound (an apple)"
+    },
+    "difficulty": 1
+  },
+  {
+    "id": "grammar-a1-003",
+    "level": "A1",
+    "topic": "plural-nouns",
+    "question": "I have two ___.",
+    "options": ["book", "books", "bookes", "book's"],
+    "correctAnswer": 1,
+    "explanation": {
+      "korean": "복수형을 만들 때 대부분의 명사는 '-s'를 붙입니다.",
+      "english": "Most nouns form the plural by adding '-s'.",
+      "rule": "book → books / cat → cats / day → days"
+    },
+    "difficulty": 1
+  },
+  {
+    "id": "grammar-a1-004",
+    "level": "A1",
+    "topic": "present-simple",
+    "question": "She ___ to school every day.",
+    "options": ["go", "goes", "going", "is go"],
+    "correctAnswer": 1,
+    "explanation": {
+      "korean": "3인칭 단수(he/she/it) 현재형 동사는 '-s'를 붙입니다.",
+      "english": "Add '-s' to verbs with he/she/it in present simple.",
+      "rule": "I/You/We/They go → He/She/It goes"
+    },
+    "difficulty": 2
+  },
+  {
+    "id": "grammar-a1-005",
+    "level": "A1",
+    "topic": "pronouns",
+    "question": "This is my book. It's ___.",
+    "options": ["my", "mine", "me", "I"],
+    "correctAnswer": 1,
+    "explanation": {
+      "korean": "소유대명사 'mine'은 '나의 것'이라는 뜻으로 명사 없이 단독으로 사용됩니다.",
+      "english": "'Mine' is a possessive pronoun that stands alone without a noun.",
+      "rule": "my book → It's mine / your pen → It's yours"
+    },
+    "difficulty": 2
+  },
+  {
+    "id": "grammar-a2-001",
+    "level": "A2",
+    "topic": "past-simple",
+    "question": "I ___ to the park yesterday.",
+    "options": ["go", "goes", "went", "going"],
+    "correctAnswer": 2,
+    "explanation": {
+      "korean": "'go'의 과거형은 불규칙 동사로 'went'입니다.",
+      "english": "'Go' is an irregular verb; its past form is 'went'.",
+      "rule": "go → went / eat → ate / see → saw"
+    },
+    "difficulty": 2
+  },
+  {
+    "id": "grammar-a2-002",
+    "level": "A2",
+    "topic": "future-will",
+    "question": "I ___ visit my grandmother tomorrow.",
+    "options": ["will", "am", "going", "do"],
+    "correctAnswer": 0,
+    "explanation": {
+      "korean": "미래를 나타낼 때 'will + 동사원형'을 사용합니다.",
+      "english": "Use 'will + base verb' to express future actions.",
+      "rule": "I will go / She will come / They will arrive"
+    },
+    "difficulty": 2
+  },
+  {
+    "id": "grammar-a2-003",
+    "level": "A2",
+    "topic": "comparative",
+    "question": "This book is ___ than that one.",
+    "options": ["big", "bigger", "biggest", "more big"],
+    "correctAnswer": 1,
+    "explanation": {
+      "korean": "짧은 형용사의 비교급은 '-er'을 붙입니다.",
+      "english": "Add '-er' to short adjectives for comparative form.",
+      "rule": "big → bigger / small → smaller / fast → faster"
+    },
+    "difficulty": 2
+  },
+  {
+    "id": "grammar-a2-004",
+    "level": "A2",
+    "topic": "frequency-adverbs",
+    "question": "I ___ eat breakfast at 7 AM.",
+    "options": ["always", "never", "sometimes", "all correct"],
+    "correctAnswer": 3,
+    "explanation": {
+      "korean": "빈도부사(always, never, sometimes 등)는 모두 일반동사 앞에 위치합니다.",
+      "english": "Frequency adverbs come before the main verb.",
+      "rule": "I always eat / I never eat / I sometimes eat"
+    },
+    "difficulty": 3
+  },
+  {
+    "id": "grammar-a2-005",
+    "level": "A2",
+    "topic": "some-any",
+    "question": "Do you have ___ questions?",
+    "options": ["some", "any", "a", "an"],
+    "correctAnswer": 1,
+    "explanation": {
+      "korean": "의문문과 부정문에서는 'any'를 사용합니다.",
+      "english": "Use 'any' in questions and negative sentences.",
+      "rule": "Questions/Negatives: any / Positive statements: some"
+    },
+    "difficulty": 3
+  },
+  {
+    "id": "grammar-b1-001",
+    "level": "B1",
+    "topic": "present-perfect",
+    "question": "I ___ never ___ to Paris.",
+    "options": ["have / been", "has / been", "am / been", "was / been"],
+    "correctAnswer": 0,
+    "explanation": {
+      "korean": "현재완료는 'have/has + 과거분사'로 만듭니다. 'I'는 'have'를 사용합니다.",
+      "english": "Present perfect: have/has + past participle. Use 'have' with 'I'.",
+      "rule": "I/You/We/They have been / He/She/It has been"
+    },
+    "difficulty": 3
+  },
+  {
+    "id": "grammar-b1-002",
+    "level": "B1",
+    "topic": "modal-verbs",
+    "question": "You ___ study hard if you want to pass the exam.",
+    "options": ["can", "should", "may", "might"],
+    "correctAnswer": 1,
+    "explanation": {
+      "korean": "'should'는 조언이나 권유를 나타냅니다. '~해야 한다'는 의미입니다.",
+      "english": "'Should' expresses advice or recommendation.",
+      "rule": "should = advice / must = obligation / can = ability"
+    },
+    "difficulty": 3
+  },
+  {
+    "id": "grammar-b1-003",
+    "level": "B1",
+    "topic": "conditional-type2",
+    "question": "If I ___ rich, I would buy a big house.",
+    "options": ["am", "was", "were", "be"],
+    "correctAnswer": 2,
+    "explanation": {
+      "korean": "가정법 과거에서는 'I/he/she/it'에도 'were'를 사용합니다.",
+      "english": "In second conditional, use 'were' for all subjects (formal).",
+      "rule": "If I were you... / If he were here... (formal)"
+    },
+    "difficulty": 4
+  },
+  {
+    "id": "grammar-b1-004",
+    "level": "B1",
+    "topic": "passive-voice",
+    "question": "This book ___ by millions of people.",
+    "options": ["reads", "is read", "was reading", "has reading"],
+    "correctAnswer": 1,
+    "explanation": {
+      "korean": "수동태는 'be동사 + 과거분사'로 만듭니다.",
+      "english": "Passive voice: be + past participle.",
+      "rule": "Active: People read this book → Passive: This book is read"
+    },
+    "difficulty": 4
+  },
+  {
+    "id": "grammar-b1-005",
+    "level": "B1",
+    "topic": "relative-pronouns",
+    "question": "The woman ___ is talking to John is my teacher.",
+    "options": ["which", "who", "what", "where"],
+    "correctAnswer": 1,
+    "explanation": {
+      "korean": "사람을 지칭할 때는 관계대명사 'who'를 사용합니다.",
+      "english": "Use 'who' for people in relative clauses.",
+      "rule": "People: who / Things: which / Places: where"
+    },
+    "difficulty": 4
+  },
+  {
+    "id": "grammar-b2-001",
+    "level": "B2",
+    "topic": "participle-clauses",
+    "question": "___ down the street, I saw an old friend.",
+    "options": ["Walk", "Walked", "Walking", "To walk"],
+    "correctAnswer": 2,
+    "explanation": {
+      "korean": "분사구문은 '-ing'를 사용하여 두 동작이 동시에 일어남을 표현합니다.",
+      "english": "Use '-ing' participle to show simultaneous actions.",
+      "rule": "While I was walking → Walking down the street"
+    },
+    "difficulty": 4
+  },
+  {
+    "id": "grammar-b2-002",
+    "level": "B2",
+    "topic": "inversion",
+    "question": "Never ___ such a beautiful sunset.",
+    "options": ["I have seen", "have I seen", "I saw", "did I saw"],
+    "correctAnswer": 1,
+    "explanation": {
+      "korean": "부정 부사(never, rarely)가 문장 앞에 올 때 주어와 동사가 도치됩니다.",
+      "english": "Invert subject and verb after negative adverbs at the start.",
+      "rule": "Never/Rarely/Seldom + auxiliary + subject + verb"
+    },
+    "difficulty": 5
+  },
+  {
+    "id": "grammar-b2-003",
+    "level": "B2",
+    "topic": "past-perfect",
+    "question": "If I ___ known, I would have come earlier.",
+    "options": ["have", "had", "has", "having"],
+    "correctAnswer": 1,
+    "explanation": {
+      "korean": "가정법 과거완료는 'If + had + 과거분사'를 사용합니다.",
+      "english": "Third conditional: If + had + past participle.",
+      "rule": "If I had known → I would have done"
+    },
+    "difficulty": 5
+  },
+  {
+    "id": "grammar-b2-004",
+    "level": "B2",
+    "topic": "compound-relatives",
+    "question": "___ comes first will get the prize.",
+    "options": ["Who", "Whoever", "Which", "What"],
+    "correctAnswer": 1,
+    "explanation": {
+      "korean": "'whoever'는 '누구든지'라는 뜻으로 복합 관계대명사입니다.",
+      "english": "'Whoever' means 'anyone who' - a compound relative pronoun.",
+      "rule": "whoever = anyone who / whatever = anything that"
+    },
+    "difficulty": 5
+  },
+  {
+    "id": "grammar-b2-005",
+    "level": "B2",
+    "topic": "reported-speech",
+    "question": "She said that she ___ tired.",
+    "options": ["is", "was", "were", "be"],
+    "correctAnswer": 1,
+    "explanation": {
+      "korean": "간접화법에서는 시제를 한 단계 과거로 바꿉니다.",
+      "english": "In reported speech, shift the tense back one step.",
+      "rule": "Direct: 'I am tired' → Reported: She said she was tired"
+    },
+    "difficulty": 5
+  }
+]

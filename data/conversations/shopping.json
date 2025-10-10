@@ -1,0 +1,638 @@
+{
+  "id": "conv-shopping",
+  "title": "옷 가게에서 쇼핑하기",
+  "description": "옷 가게에서 직원과 대화하며 원하는 옷을 찾고, 사이즈를 물어보고, 가격을 확인하고, 구매하는 전체 과정을 연습합니다.",
+  "level": "A2",
+  "estimatedTime": 12,
+  "scenario": {
+    "location": "의류 매장 (Clothing Store)",
+    "situation": "새로운 셔츠를 사러 옷 가게에 들어갑니다. 직원이 도움을 제공하려고 다가옵니다.",
+    "goal": "원하는 스타일의 셔츠를 찾고, 적절한 사이즈를 확인하고, 가격을 물어본 후 구매를 결정합니다.",
+    "culturalNotes": [
+      "미국/영국 매장에서는 직원이 먼저 'Can I help you find something?'이라고 물어보는 것이 일반적입니다.",
+      "'I'm just browsing/looking'이라고 하면 직원이 거리를 두고 필요할 때 도움을 줍니다.",
+      "탈의실은 'fitting room' 또는 'dressing room'이라고 합니다.",
+      "가격표가 없는 경우 'How much is this?'라고 물어보는 것이 자연스럽습니다.",
+      "신용카드 결제 시 'Can I use a card?'보다 그냥 카드를 건네는 것이 더 자연스럽습니다."
+    ]
+  },
+  "characters": [
+    {
+      "id": "salesperson",
+      "name": "Store Employee",
+      "role": "판매 직원",
+      "description": "친절하고 도움이 되는 의류 매장 직원"
+    },
+    {
+      "id": "shopper",
+      "name": "You",
+      "role": "쇼핑객",
+      "description": "셔츠를 사려는 고객"
+    }
+  ],
+  "dialogue": [
+    {
+      "id": "start",
+      "speaker": "salesperson",
+      "text": "Hi there! Welcome to our store. Can I help you find something today?",
+      "translation": "안녕하세요! 저희 매장에 오신 것을 환영합니다. 오늘 무언가 찾는 것을 도와드릴까요?",
+      "notes": "'Can I help you find something?' = 매장 직원의 가장 일반적인 첫 인사",
+      "nextNodeId": "response-1"
+    },
+    {
+      "id": "response-1",
+      "speaker": "shopper",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-1a",
+          "text": "Yes, please. I'm looking for a shirt.",
+          "translation": "네, 부탁드려요. 셔츠를 찾고 있어요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 'I'm looking for...'는 원하는 물건을 말할 때 가장 자연스러운 표현입니다.",
+            "points": 10,
+            "culturalNote": "'Yes, please'는 정중하면서도 친근한 응답입니다."
+          },
+          "nextNodeId": "salesperson-2a"
+        },
+        {
+          "id": "opt-1b",
+          "text": "I'm just looking, thanks.",
+          "translation": "그냥 둘러보는 중이에요, 감사합니다.",
+          "feedback": {
+            "type": "good",
+            "message": "좋습니다! 'I'm just looking'은 혼자 둘러보고 싶을 때 사용하는 표현입니다.",
+            "points": 8,
+            "culturalNote": "이렇게 말하면 직원이 거리를 두고 필요할 때만 도움을 줍니다."
+          },
+          "nextNodeId": "salesperson-2b"
+        },
+        {
+          "id": "opt-1c",
+          "text": "I want shirt.",
+          "translation": "셔츠 원해요.",
+          "feedback": {
+            "type": "needs-improvement",
+            "message": "의미는 전달되지만, 문법과 정중함이 부족합니다.",
+            "points": 5,
+            "suggestion": "Yes, please. I'm looking for a shirt.",
+            "culturalNote": "'I want'는 직접적이고 무례하게 들릴 수 있습니다."
+          },
+          "nextNodeId": "salesperson-2a"
+        }
+      ]
+    },
+    {
+      "id": "salesperson-2a",
+      "speaker": "salesperson",
+      "text": "Great! What kind of shirt are you looking for? We have casual shirts, dress shirts, and polo shirts.",
+      "translation": "좋아요! 어떤 종류의 셔츠를 찾으시나요? 저희는 캐주얼 셔츠, 드레스 셔츠, 폴로 셔츠가 있습니다.",
+      "notes": "'What kind of...' = 어떤 종류/스타일인지 물어볼 때 사용",
+      "nextNodeId": "response-style"
+    },
+    {
+      "id": "salesperson-2b",
+      "speaker": "salesperson",
+      "text": "No problem! Feel free to look around. Let me know if you need any help.",
+      "translation": "문제없어요! 자유롭게 둘러보세요. 도움이 필요하시면 말씀해 주세요.",
+      "notes": "'Feel free to...' = 자유롭게 ~하세요 (격식 없는 허락)",
+      "nextNodeId": "shopper-changes-mind"
+    },
+    {
+      "id": "shopper-changes-mind",
+      "speaker": "shopper",
+      "text": "(After browsing for a minute, you see a nice blue shirt and decide to ask for help)",
+      "translation": "(잠시 둘러본 후, 멋진 파란색 셔츠를 발견하고 도움을 요청하기로 결정합니다)",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-ask-help",
+          "text": "Excuse me, can you help me with this shirt?",
+          "translation": "실례합니다, 이 셔츠에 대해 도움을 받을 수 있을까요?",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 'Can you help me with...'는 특정 물건에 대한 도움을 요청할 때 사용합니다.",
+            "points": 10
+          },
+          "nextNodeId": "salesperson-size"
+        }
+      ]
+    },
+    {
+      "id": "response-style",
+      "speaker": "shopper",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-style1",
+          "text": "I'm looking for a casual shirt.",
+          "translation": "캐주얼 셔츠를 찾고 있어요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 명확하게 원하는 스타일을 말했습니다.",
+            "points": 10
+          },
+          "nextNodeId": "salesperson-color"
+        },
+        {
+          "id": "opt-style2",
+          "text": "Something casual, maybe a polo shirt?",
+          "translation": "캐주얼한 것으로, 아마도 폴로 셔츠요?",
+          "feedback": {
+            "type": "excellent",
+            "message": "훌륭합니다! 'Something...' + 'maybe'는 유연하게 의사를 표현하는 방법입니다.",
+            "points": 10,
+            "culturalNote": "'maybe'를 사용하면 확실하지 않다는 것을 보여주고, 직원의 추천을 받을 수 있습니다."
+          },
+          "nextNodeId": "salesperson-color"
+        },
+        {
+          "id": "opt-style3",
+          "text": "Casual one.",
+          "translation": "캐주얼한 거요.",
+          "feedback": {
+            "type": "good",
+            "message": "의미는 전달되지만, 너무 짧습니다.",
+            "points": 7,
+            "suggestion": "I'm looking for a casual shirt."
+          },
+          "nextNodeId": "salesperson-color"
+        }
+      ]
+    },
+    {
+      "id": "salesperson-color",
+      "speaker": "salesperson",
+      "text": "Perfect! Our casual shirts are over here. What color do you prefer?",
+      "translation": "완벽해요! 저희 캐주얼 셔츠는 여기 있습니다. 어떤 색상을 선호하시나요?",
+      "notes": "'prefer' = 선호하다 (좋아하는 것을 선택할 때)",
+      "nextNodeId": "response-color"
+    },
+    {
+      "id": "response-color",
+      "speaker": "shopper",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-color1",
+          "text": "Do you have this in blue?",
+          "translation": "이거 파란색으로 있나요?",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 'Do you have this in [color]?'는 특정 색상을 물어볼 때 가장 자연스러운 표현입니다.",
+            "points": 10,
+            "culturalNote": "'this in blue' = 이 디자인을 파란색으로"
+          },
+          "nextNodeId": "salesperson-size"
+        },
+        {
+          "id": "opt-color2",
+          "text": "I like blue or gray.",
+          "translation": "파란색이나 회색을 좋아해요.",
+          "feedback": {
+            "type": "good",
+            "message": "좋습니다! 선호하는 색상을 명확히 표현했습니다.",
+            "points": 8
+          },
+          "nextNodeId": "salesperson-size"
+        },
+        {
+          "id": "opt-color3",
+          "text": "Blue.",
+          "translation": "파란색.",
+          "feedback": {
+            "type": "needs-improvement",
+            "message": "너무 짧고 정중하지 않습니다.",
+            "points": 6,
+            "suggestion": "Do you have this in blue?"
+          },
+          "nextNodeId": "salesperson-size"
+        }
+      ]
+    },
+    {
+      "id": "salesperson-size",
+      "speaker": "salesperson",
+      "text": "Great choice! We have that in blue. What size do you wear?",
+      "translation": "좋은 선택이에요! 파란색으로 있습니다. 사이즈가 어떻게 되세요?",
+      "notes": "'What size do you wear?' = 사이즈를 물어볼 때 가장 일반적인 표현",
+      "nextNodeId": "response-size"
+    },
+    {
+      "id": "response-size",
+      "speaker": "shopper",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-size1",
+          "text": "I usually wear a medium.",
+          "translation": "보통 미디엄을 입어요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 'I usually wear...'는 자신의 사이즈를 말할 때 가장 자연스러운 표현입니다.",
+            "points": 10
+          },
+          "nextNodeId": "salesperson-try"
+        },
+        {
+          "id": "opt-size2",
+          "text": "Medium, please.",
+          "translation": "미디엄이요, 부탁드려요.",
+          "feedback": {
+            "type": "good",
+            "message": "좋습니다! 간결하고 정중한 표현입니다.",
+            "points": 8
+          },
+          "nextNodeId": "salesperson-try"
+        },
+        {
+          "id": "opt-size3",
+          "text": "I'm not sure. Can I try it on?",
+          "translation": "잘 모르겠어요. 입어볼 수 있을까요?",
+          "feedback": {
+            "type": "excellent",
+            "message": "훌륭합니다! 사이즈가 확실하지 않을 때 'Can I try it on?'은 매우 유용한 표현입니다.",
+            "points": 10,
+            "culturalNote": "'try on' = 입어보다 (옷/신발)"
+          },
+          "nextNodeId": "salesperson-fitting-room"
+        }
+      ]
+    },
+    {
+      "id": "salesperson-try",
+      "speaker": "salesperson",
+      "text": "Here's a medium in blue. Would you like to try it on? The fitting rooms are right over there.",
+      "translation": "파란색 미디엄 사이즈 여기 있습니다. 입어보시겠어요? 탈의실은 바로 저쪽에 있습니다.",
+      "notes": "'fitting room' = 탈의실 (미국식), 'changing room' (영국식)",
+      "nextNodeId": "response-try"
+    },
+    {
+      "id": "salesperson-fitting-room",
+      "speaker": "salesperson",
+      "text": "Of course! Let me grab a medium and a large for you to try. The fitting rooms are right over there.",
+      "translation": "물론이죠! 입어보실 수 있게 미디엄과 라지를 가져다 드릴게요. 탈의실은 바로 저쪽에 있습니다.",
+      "notes": "'grab' = (빠르게) 가져오다 (구어체)",
+      "nextNodeId": "response-try"
+    },
+    {
+      "id": "response-try",
+      "speaker": "shopper",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-try1",
+          "text": "Yes, thank you!",
+          "translation": "네, 감사합니다!",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 간결하고 정중한 표현입니다.",
+            "points": 10
+          },
+          "nextNodeId": "after-trying"
+        },
+        {
+          "id": "opt-try2",
+          "text": "That would be great, thanks.",
+          "translation": "그러면 좋겠네요, 감사합니다.",
+          "feedback": {
+            "type": "excellent",
+            "message": "훌륭합니다! 'That would be great'는 제안에 감사하게 동의하는 표현입니다.",
+            "points": 10
+          },
+          "nextNodeId": "after-trying"
+        }
+      ]
+    },
+    {
+      "id": "after-trying",
+      "speaker": "shopper",
+      "text": "(After trying on the shirt, you come out of the fitting room. The shirt fits well!)",
+      "translation": "(셔츠를 입어본 후, 탈의실에서 나옵니다. 셔츠가 잘 맞습니다!)",
+      "nextNodeId": "salesperson-fit"
+    },
+    {
+      "id": "salesperson-fit",
+      "speaker": "salesperson",
+      "text": "How does it fit? Does it feel comfortable?",
+      "translation": "사이즈가 어떠세요? 편안한가요?",
+      "notes": "'How does it fit?' = 사이즈가 맞는지 물어보는 표현",
+      "nextNodeId": "response-fit"
+    },
+    {
+      "id": "response-fit",
+      "speaker": "shopper",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-fit1",
+          "text": "It fits perfectly! How much is it?",
+          "translation": "완벽하게 맞아요! 얼마예요?",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 'It fits perfectly'는 사이즈가 잘 맞을 때 사용하는 자연스러운 표현입니다.",
+            "points": 10,
+            "culturalNote": "'How much is it?' = 가격을 물어보는 가장 직접적인 표현"
+          },
+          "nextNodeId": "salesperson-price"
+        },
+        {
+          "id": "opt-fit2",
+          "text": "It's a bit tight. Do you have a large?",
+          "translation": "좀 타이트해요. 라지 사이즈 있나요?",
+          "feedback": {
+            "type": "excellent",
+            "message": "훌륭합니다! 사이즈가 맞지 않을 때 명확하게 표현했습니다.",
+            "points": 10,
+            "culturalNote": "'tight' = 꽉 끼는, 'loose' = 헐렁한"
+          },
+          "nextNodeId": "salesperson-large"
+        },
+        {
+          "id": "opt-fit3",
+          "text": "Good. Price?",
+          "translation": "좋아요. 가격?",
+          "feedback": {
+            "type": "needs-improvement",
+            "message": "너무 짧고 무례하게 들립니다.",
+            "points": 5,
+            "suggestion": "It fits perfectly! How much is it?"
+          },
+          "nextNodeId": "salesperson-price"
+        }
+      ]
+    },
+    {
+      "id": "salesperson-large",
+      "speaker": "salesperson",
+      "text": "Sure! Let me get you a large. One moment, please.",
+      "translation": "물론이죠! 라지 사이즈 가져다 드릴게요. 잠시만 기다려 주세요.",
+      "notes": "'One moment, please' = 잠시만 기다려 주세요",
+      "nextNodeId": "after-large"
+    },
+    {
+      "id": "after-large",
+      "speaker": "shopper",
+      "text": "(After trying the large size, it fits better)",
+      "translation": "(라지 사이즈를 입어본 후, 더 잘 맞습니다)",
+      "nextNodeId": "shopper-satisfied"
+    },
+    {
+      "id": "shopper-satisfied",
+      "speaker": "shopper",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-satisfied",
+          "text": "This one is much better! I'll take it. How much is it?",
+          "translation": "이게 훨씬 낫네요! 이걸로 살게요. 얼마예요?",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 'I'll take it'은 구매 의사를 표현하는 가장 자연스러운 표현입니다.",
+            "points": 10,
+            "culturalNote": "'I'll take it' = 이걸로 살게요 (매장에서 가장 흔한 구매 표현)"
+          },
+          "nextNodeId": "salesperson-price"
+        }
+      ]
+    },
+    {
+      "id": "salesperson-price",
+      "speaker": "salesperson",
+      "text": "It's $45. Would you like to pay with cash or card?",
+      "translation": "45달러입니다. 현금으로 계산하시겠어요, 아니면 카드로 하시겠어요?",
+      "notes": "'cash or card' = 현금 또는 카드 (결제 수단을 물어볼 때)",
+      "nextNodeId": "response-payment"
+    },
+    {
+      "id": "response-payment",
+      "speaker": "shopper",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-pay1",
+          "text": "Card, please.",
+          "translation": "카드로 할게요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 간단하고 명확한 표현입니다.",
+            "points": 10
+          },
+          "nextNodeId": "salesperson-checkout"
+        },
+        {
+          "id": "opt-pay2",
+          "text": "Can I use a credit card?",
+          "translation": "신용카드를 사용할 수 있나요?",
+          "feedback": {
+            "type": "good",
+            "message": "좋습니다! 정중하게 물어보는 표현입니다.",
+            "points": 8,
+            "culturalNote": "대부분의 매장에서는 카드를 받으므로 'Card, please'가 더 자연스럽습니다."
+          },
+          "nextNodeId": "salesperson-checkout"
+        },
+        {
+          "id": "opt-pay3",
+          "text": "I'll pay cash.",
+          "translation": "현금으로 계산할게요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 'I'll pay cash'는 현금 결제 의사를 명확히 표현합니다.",
+            "points": 10
+          },
+          "nextNodeId": "salesperson-checkout"
+        }
+      ]
+    },
+    {
+      "id": "salesperson-checkout",
+      "speaker": "salesperson",
+      "text": "Perfect! I'll ring that up for you. Here's your receipt. Thank you for shopping with us!",
+      "translation": "완벽해요! 계산해 드릴게요. 영수증 여기 있습니다. 저희 매장에서 쇼핑해 주셔서 감사합니다!",
+      "notes": "'ring up' = 계산하다 (구어체), 'receipt' = 영수증",
+      "nextNodeId": "response-final"
+    },
+    {
+      "id": "response-final",
+      "speaker": "shopper",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-final1",
+          "text": "Thank you! Have a great day!",
+          "translation": "감사합니다! 좋은 하루 보내세요!",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 'Have a great day'는 매장을 나갈 때 가장 자연스러운 인사입니다.",
+            "points": 10,
+            "culturalNote": "미국에서는 'Have a nice/great day'를 매우 자주 사용합니다."
+          },
+          "nextNodeId": "end"
+        },
+        {
+          "id": "opt-final2",
+          "text": "Thanks so much for your help!",
+          "translation": "도움 주셔서 정말 감사합니다!",
+          "feedback": {
+            "type": "excellent",
+            "message": "훌륭합니다! 직원의 도움에 대한 감사를 표현하는 정중한 방법입니다.",
+            "points": 10
+          },
+          "nextNodeId": "end"
+        }
+      ]
+    },
+    {
+      "id": "end",
+      "speaker": "salesperson",
+      "text": "You're welcome! Enjoy your new shirt!",
+      "translation": "천만에요! 새 셔츠 즐겁게 입으세요!",
+      "isEnd": true,
+      "completionMessage": "축하합니다! 쇼핑 시나리오를 완료했습니다. 옷 가게에서 자연스럽게 대화하며 쇼핑하는 방법을 배웠습니다!"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "casual",
+      "pronunciation": "/ˈkæʒuəl/",
+      "meaning": "캐주얼한, 격식 없는",
+      "example": "I'm looking for a casual shirt."
+    },
+    {
+      "word": "dress shirt",
+      "pronunciation": "/dres ʃɜːrt/",
+      "meaning": "정장 셔츠",
+      "example": "Do you have any dress shirts?"
+    },
+    {
+      "word": "polo shirt",
+      "pronunciation": "/ˈpoʊloʊ ʃɜːrt/",
+      "meaning": "폴로 셔츠 (칼라가 있는 반팔 티셔츠)",
+      "example": "I prefer polo shirts for summer."
+    },
+    {
+      "word": "fitting room",
+      "pronunciation": "/ˈfɪtɪŋ ruːm/",
+      "meaning": "탈의실 (미국식: fitting room, 영국식: changing room)",
+      "example": "The fitting rooms are over there."
+    },
+    {
+      "word": "try on",
+      "pronunciation": "/traɪ ɒn/",
+      "meaning": "(옷/신발을) 입어보다, 신어보다",
+      "example": "Can I try this on?"
+    },
+    {
+      "word": "fit",
+      "pronunciation": "/fɪt/",
+      "meaning": "(옷이) 맞다, 사이즈가 맞다",
+      "example": "How does it fit?"
+    },
+    {
+      "word": "tight",
+      "pronunciation": "/taɪt/",
+      "meaning": "(옷이) 꽉 끼는, 타이트한",
+      "example": "This shirt is a bit tight."
+    },
+    {
+      "word": "loose",
+      "pronunciation": "/luːs/",
+      "meaning": "(옷이) 헐렁한, 느슨한",
+      "example": "This is too loose for me."
+    },
+    {
+      "word": "receipt",
+      "pronunciation": "/rɪˈsiːt/",
+      "meaning": "영수증",
+      "example": "Here's your receipt."
+    },
+    {
+      "word": "ring up",
+      "pronunciation": "/rɪŋ ʌp/",
+      "meaning": "계산하다 (구어체)",
+      "example": "I'll ring that up for you."
+    },
+    {
+      "word": "grab",
+      "pronunciation": "/ɡræb/",
+      "meaning": "(빠르게) 가져오다 (구어체)",
+      "example": "Let me grab that for you."
+    },
+    {
+      "word": "browse",
+      "pronunciation": "/braʊz/",
+      "meaning": "둘러보다, 구경하다",
+      "example": "I'm just browsing."
+    }
+  ],
+  "keyPhrases": [
+    {
+      "phrase": "Can I help you find something?",
+      "meaning": "무언가 찾는 것을 도와드릴까요?",
+      "usage": "매장 직원이 고객에게 처음 인사할 때 사용하는 가장 일반적인 표현"
+    },
+    {
+      "phrase": "I'm looking for...",
+      "meaning": "...을 찾고 있어요",
+      "usage": "원하는 물건을 말할 때 사용하는 자연스러운 표현"
+    },
+    {
+      "phrase": "I'm just browsing/looking.",
+      "meaning": "그냥 둘러보는 중이에요.",
+      "usage": "혼자 구경하고 싶을 때 사용 (직원이 거리를 둠)"
+    },
+    {
+      "phrase": "Do you have this in [color/size]?",
+      "meaning": "이거 [색상/사이즈]로 있나요?",
+      "usage": "특정 색상이나 사이즈를 물어볼 때 사용"
+    },
+    {
+      "phrase": "What size do you wear?",
+      "meaning": "사이즈가 어떻게 되세요?",
+      "usage": "직원이 고객의 사이즈를 물어볼 때 사용"
+    },
+    {
+      "phrase": "Can I try it on?",
+      "meaning": "입어볼 수 있을까요?",
+      "usage": "옷이나 신발을 입어보거나 신어보고 싶을 때 사용"
+    },
+    {
+      "phrase": "How does it fit?",
+      "meaning": "사이즈가 어떠세요?",
+      "usage": "옷의 사이즈가 맞는지 물어볼 때 사용"
+    },
+    {
+      "phrase": "It fits perfectly.",
+      "meaning": "완벽하게 맞아요.",
+      "usage": "옷의 사이즈가 잘 맞을 때 사용"
+    },
+    {
+      "phrase": "It's a bit tight/loose.",
+      "meaning": "좀 꽉 껴요/헐렁해요.",
+      "usage": "옷이 맞지 않을 때 사용"
+    },
+    {
+      "phrase": "I'll take it.",
+      "meaning": "이걸로 살게요.",
+      "usage": "물건을 구매하기로 결정했을 때 사용하는 가장 자연스러운 표현"
+    },
+    {
+      "phrase": "How much is it?",
+      "meaning": "얼마예요?",
+      "usage": "가격을 물어볼 때 사용하는 직접적인 표현"
+    },
+    {
+      "phrase": "Cash or card?",
+      "meaning": "현금으로 하시겠어요, 아니면 카드로 하시겠어요?",
+      "usage": "결제 수단을 물어볼 때 사용"
+    }
+  ],
+  "scoring": {
+    "maxPoints": 100,
+    "excellentThreshold": 85,
+    "goodThreshold": 70,
+    "passingThreshold": 50
+  }
+}

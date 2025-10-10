@@ -1,7 +1,9 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import DOMPurify from 'dompurify';
 import { useAuth } from '@/hooks/useAuth';
 import { useToggleLike } from '@/hooks/useCommunity';
 import { usePosts } from '@/hooks/useCommunity';
@@ -255,12 +257,14 @@ export default function CommunityPage() {
                   <Card key={post.id} padding="lg" className="hover:shadow-xl transition-shadow cursor-pointer">
                     {/* 작성자 정보 */}
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center">
+                      <div className="w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center overflow-hidden">
                         {post.authorProfilePic ? (
-                          <img
+                          <Image
                             src={post.authorProfilePic}
                             alt={post.authorNickname}
-                            className="w-full h-full rounded-full object-cover"
+                            width={40}
+                            height={40}
+                            className="rounded-full object-cover"
                           />
                         ) : (
                           <span className="text-primary-600 dark:text-primary-400 font-medium">
@@ -288,9 +292,15 @@ export default function CommunityPage() {
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 line-clamp-2">
                         {post.title}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-400 line-clamp-3">
-                        {post.content}
-                      </p>
+                      <div
+                        className="text-gray-600 dark:text-gray-400 line-clamp-3"
+                        dangerouslySetInnerHTML={{
+                          __html: DOMPurify.sanitize(post.content, {
+                            ALLOWED_TAGS: [],
+                            ALLOWED_ATTR: []
+                          })
+                        }}
+                      />
                     </div>
 
                     {/* 태그 */}
@@ -311,7 +321,7 @@ export default function CommunityPage() {
                         <button
                           onClick={() => {
                             if (!currentUser) return;
-                            toggleLike.mutate({ postId: post.id, userId: currentUser.uid });
+                            toggleLike.mutate({ parentId: post.id, userId: currentUser.uid });
                           }}
                           className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors"
                         >

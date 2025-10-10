@@ -1,0 +1,310 @@
+{
+  "id": "conv-ask-directions",
+  "title": "길 묻기",
+  "description": "거리에서 모르는 사람에게 길을 물어보는 상황을 연습합니다.",
+  "level": "A1-A2",
+  "estimatedTime": 8,
+  "scenario": {
+    "location": "Street in downtown",
+    "situation": "지하철역을 찾고 있지만 길을 모르는 상황",
+    "goal": "예의 바르게 길을 묻고 감사 인사하기",
+    "culturalNotes": [
+      "'Excuse me'로 먼저 주의를 끌고 말을 거는 것이 예의입니다",
+      "길을 모르면 솔직하게 'I'm sorry, I don't know'라고 말합니다",
+      "도움을 받으면 반드시 'Thank you'로 감사를 표현하세요"
+    ]
+  },
+  "characters": [
+    {
+      "id": "stranger",
+      "name": "Local Person",
+      "role": "현지인",
+      "personality": "도움을 주려는, 친절한"
+    },
+    {
+      "id": "traveler",
+      "name": "You",
+      "role": "여행자 (학습자)",
+      "personality": "길을 잃어서 약간 당황함"
+    }
+  ],
+  "dialogue": [
+    {
+      "id": "start",
+      "speaker": "traveler",
+      "isChoice": true,
+      "situation": "거리에서 지나가는 사람에게 길을 물어야 합니다.",
+      "options": [
+        {
+          "id": "opt-start1",
+          "text": "Excuse me, could you help me?",
+          "translation": "실례합니다, 도와주실 수 있나요?",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 'Excuse me'로 정중하게 주의를 끌었습니다.",
+            "points": 10
+          },
+          "nextNodeId": "stranger-1a"
+        },
+        {
+          "id": "opt-start2",
+          "text": "Hey, where is the subway?",
+          "translation": "이봐요, 지하철 어디예요?",
+          "feedback": {
+            "type": "needs-improvement",
+            "message": "'Hey'는 친구에게 쓰는 표현입니다. 모르는 사람에게는 'Excuse me'를 사용하세요.",
+            "points": 4,
+            "suggestion": "Excuse me, could you help me?",
+            "culturalNote": "영어권에서는 모르는 사람에게 'Excuse me'로 시작하는 것이 예의입니다."
+          },
+          "nextNodeId": "stranger-1b"
+        },
+        {
+          "id": "opt-start3",
+          "text": "Hello, I'm looking for the subway station.",
+          "translation": "안녕하세요, 지하철역을 찾고 있습니다.",
+          "feedback": {
+            "type": "good",
+            "message": "좋습니다! 정중하지만, 'Excuse me'를 먼저 사용하면 더 자연스럽습니다.",
+            "points": 8,
+            "suggestion": "Excuse me, I'm looking for the subway station."
+          },
+          "nextNodeId": "stranger-1a"
+        }
+      ]
+    },
+    {
+      "id": "stranger-1a",
+      "speaker": "stranger",
+      "text": "Sure! What are you looking for?",
+      "translation": "물론이죠! 무엇을 찾고 계신가요?",
+      "notes": "친절하게 도움을 주려고 함",
+      "nextNodeId": "traveler-2a"
+    },
+    {
+      "id": "stranger-1b",
+      "speaker": "stranger",
+      "text": "Um, the subway? Which line?",
+      "translation": "음, 지하철요? 어느 노선이요?",
+      "notes": "약간 당황했지만 도와주려고 함",
+      "nextNodeId": "traveler-2b"
+    },
+    {
+      "id": "traveler-2a",
+      "speaker": "traveler",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-2a1",
+          "text": "I'm looking for the subway station. Is it near here?",
+          "translation": "지하철역을 찾고 있어요. 여기 근처에 있나요?",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 명확하게 질문하고 위치도 물어봤습니다.",
+            "points": 10
+          },
+          "nextNodeId": "stranger-3"
+        },
+        {
+          "id": "opt-2a2",
+          "text": "The subway station.",
+          "translation": "지하철역이요.",
+          "feedback": {
+            "type": "good",
+            "message": "의미는 전달되지만, 완전한 문장으로 말하는 것이 더 좋습니다.",
+            "points": 7,
+            "suggestion": "I'm looking for the subway station."
+          },
+          "nextNodeId": "stranger-3"
+        }
+      ]
+    },
+    {
+      "id": "traveler-2b",
+      "speaker": "traveler",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-2b1",
+          "text": "Sorry, I meant the nearest subway station.",
+          "translation": "죄송해요, 가장 가까운 지하철역을 말하는 거였어요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 'Sorry'로 상황을 부드럽게 만들고 명확하게 설명했습니다.",
+            "points": 10,
+            "culturalNote": "실수나 오해가 있을 때 'Sorry'를 사용하면 대화가 부드러워집니다."
+          },
+          "nextNodeId": "stranger-3"
+        },
+        {
+          "id": "opt-2b2",
+          "text": "Any subway station is fine.",
+          "translation": "아무 지하철역이나 괜찮아요.",
+          "feedback": {
+            "type": "good",
+            "message": "좋습니다! 유연하게 대답했습니다.",
+            "points": 8
+          },
+          "nextNodeId": "stranger-3"
+        }
+      ]
+    },
+    {
+      "id": "stranger-3",
+      "speaker": "stranger",
+      "text": "Oh, yes! Go straight down this street for two blocks. Then turn left. You'll see it on your right.",
+      "translation": "아, 네! 이 거리를 따라 두 블록 직진하세요. 그다음 왼쪽으로 도세요. 오른쪽에 보일 거예요.",
+      "notes": "길 안내: go straight (직진), turn left (좌회전), on your right (오른쪽에)",
+      "nextNodeId": "traveler-4"
+    },
+    {
+      "id": "traveler-4",
+      "speaker": "traveler",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-4a",
+          "text": "Two blocks straight, then turn left. Got it! Thank you so much!",
+          "translation": "두 블록 직진, 그다음 왼쪽이요. 알겠습니다! 정말 감사합니다!",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 확인하고 감사 인사도 했습니다. 'Got it!' = 이해했다는 자연스러운 표현",
+            "points": 10,
+            "culturalNote": "'Got it!'은 이해했다는 캐주얼한 표현으로 자주 사용됩니다."
+          },
+          "nextNodeId": "end-perfect"
+        },
+        {
+          "id": "opt-4b",
+          "text": "Thank you!",
+          "translation": "감사합니다!",
+          "feedback": {
+            "type": "good",
+            "message": "감사 인사는 필수! 하지만 내용을 확인하면 더 좋습니다.",
+            "points": 8,
+            "suggestion": "Two blocks straight, then turn left. Got it! Thank you!"
+          },
+          "nextNodeId": "end-good"
+        },
+        {
+          "id": "opt-4c",
+          "text": "Sorry, can you repeat that?",
+          "translation": "죄송한데, 다시 말씀해 주시겠어요?",
+          "feedback": {
+            "type": "excellent",
+            "message": "훌륭합니다! 이해하지 못했을 때 다시 물어보는 것은 전혀 문제가 아닙니다.",
+            "points": 10,
+            "culturalNote": "이해하지 못했을 때는 솔직하게 다시 물어보세요. 'Can you repeat?' 또는 'Could you say that again?'"
+          },
+          "nextNodeId": "stranger-repeat"
+        }
+      ]
+    },
+    {
+      "id": "stranger-repeat",
+      "speaker": "stranger",
+      "text": "Of course! Go straight for two blocks, then turn left. The subway station is on your right.",
+      "translation": "물론이죠! 두 블록 직진하고, 왼쪽으로 도세요. 지하철역은 오른쪽에 있습니다.",
+      "notes": "천천히 다시 설명해줌",
+      "nextNodeId": "traveler-understand"
+    },
+    {
+      "id": "traveler-understand",
+      "speaker": "traveler",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-und1",
+          "text": "Got it! Thank you so much for your help!",
+          "translation": "이해했어요! 도와주셔서 정말 감사합니다!",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 이해했다고 확인하고 진심으로 감사를 표현했습니다.",
+            "points": 10
+          },
+          "nextNodeId": "end-perfect"
+        }
+      ]
+    },
+    {
+      "id": "end-perfect",
+      "speaker": "stranger",
+      "text": "You're welcome! Have a great day!",
+      "translation": "천만에요! 좋은 하루 되세요!",
+      "isEnd": true,
+      "completionMessage": "완벽합니다! 예의 바르게 길을 물었습니다! 🎉"
+    },
+    {
+      "id": "end-good",
+      "speaker": "stranger",
+      "text": "No problem! Good luck!",
+      "translation": "문제없어요! 행운을 빌어요!",
+      "isEnd": true,
+      "completionMessage": "잘했습니다! 감사 인사를 잊지 않았습니다! 👍"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "excuse me",
+      "pronunciation": "/ɪkˈskjuːz miː/",
+      "meaning": "실례합니다 (주의를 끌 때)",
+      "example": "Excuse me, can you help me?"
+    },
+    {
+      "word": "straight",
+      "pronunciation": "/streɪt/",
+      "meaning": "똑바로, 직진",
+      "example": "Go straight for two blocks."
+    },
+    {
+      "word": "turn left",
+      "pronunciation": "/tɜːrn left/",
+      "meaning": "좌회전하다",
+      "example": "Turn left at the corner."
+    },
+    {
+      "word": "turn right",
+      "pronunciation": "/tɜːrn raɪt/",
+      "meaning": "우회전하다",
+      "example": "Turn right at the traffic light."
+    },
+    {
+      "word": "block",
+      "pronunciation": "/blɑːk/",
+      "meaning": "블록 (건물 사이의 거리 단위)",
+      "example": "It's two blocks away."
+    }
+  ],
+  "keyPhrases": [
+    {
+      "phrase": "Excuse me",
+      "meaning": "실례합니다 (모르는 사람에게 말을 걸 때)",
+      "usage": "Excuse me, could you help me?",
+      "formality": "polite"
+    },
+    {
+      "phrase": "Could you...?",
+      "meaning": "~해주시겠어요? (정중한 부탁)",
+      "usage": "Could you help me?",
+      "formality": "polite"
+    },
+    {
+      "phrase": "Got it!",
+      "meaning": "이해했어요! 알겠어요!",
+      "usage": "Casual way to show understanding",
+      "formality": "casual"
+    },
+    {
+      "phrase": "Can you repeat that?",
+      "meaning": "다시 말씀해 주시겠어요?",
+      "usage": "When you didn't understand something",
+      "formality": "polite"
+    }
+  ],
+  "scoring": {
+    "maxPoints": 100,
+    "excellentThreshold": 85,
+    "goodThreshold": 70,
+    "passingThreshold": 50
+  }
+}

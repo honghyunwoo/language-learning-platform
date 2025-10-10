@@ -1,0 +1,454 @@
+[
+  {
+    "id": "vocab-a1-001",
+    "level": "A1",
+    "category": "family",
+    "questionType": "fill-in-blank",
+    "question": "My ___ is a teacher. (어머니)",
+    "options": ["mother", "father", "sister", "brother"],
+    "correctAnswer": 0,
+    "wordInfo": {
+      "word": "mother",
+      "pronunciation": "/ˈmʌðər/",
+      "koreanMeaning": "어머니",
+      "exampleSentence": "My mother cooks delicious food.",
+      "exampleTranslation": "우리 어머니는 맛있는 음식을 요리하세요."
+    },
+    "difficulty": 1
+  },
+  {
+    "id": "vocab-a1-002",
+    "level": "A1",
+    "category": "family",
+    "questionType": "meaning",
+    "question": "What does 'father' mean?",
+    "options": ["어머니", "아버지", "형/오빠", "누나/언니"],
+    "correctAnswer": 1,
+    "wordInfo": {
+      "word": "father",
+      "pronunciation": "/ˈfɑːðər/",
+      "koreanMeaning": "아버지"
+    },
+    "difficulty": 1
+  },
+  {
+    "id": "vocab-a1-003",
+    "level": "A1",
+    "category": "food",
+    "questionType": "fill-in-blank",
+    "question": "I like to eat ___ for breakfast. (사과)",
+    "options": ["apple", "banana", "orange", "grape"],
+    "correctAnswer": 0,
+    "wordInfo": {
+      "word": "apple",
+      "pronunciation": "/ˈæpl/",
+      "koreanMeaning": "사과"
+    },
+    "difficulty": 1
+  },
+  {
+    "id": "vocab-a1-004",
+    "level": "A1",
+    "category": "food",
+    "questionType": "meaning",
+    "question": "What is '물' in English?",
+    "options": ["water", "milk", "juice", "coffee"],
+    "correctAnswer": 0,
+    "wordInfo": {
+      "word": "water",
+      "pronunciation": "/ˈwɔːtər/",
+      "koreanMeaning": "물"
+    },
+    "difficulty": 1
+  },
+  {
+    "id": "vocab-a1-005",
+    "level": "A1",
+    "category": "numbers",
+    "questionType": "meaning",
+    "question": "What does 'ten' mean?",
+    "options": ["1", "5", "10", "100"],
+    "correctAnswer": 2,
+    "wordInfo": {
+      "word": "ten",
+      "pronunciation": "/ten/",
+      "koreanMeaning": "10"
+    },
+    "difficulty": 1
+  },
+  {
+    "id": "vocab-a1-006",
+    "level": "A1",
+    "category": "colors",
+    "questionType": "fill-in-blank",
+    "question": "The sky is ___. (파란색)",
+    "options": ["red", "blue", "green", "yellow"],
+    "correctAnswer": 1,
+    "wordInfo": {
+      "word": "blue",
+      "pronunciation": "/bluː/",
+      "koreanMeaning": "파란색"
+    },
+    "difficulty": 1
+  },
+  {
+    "id": "vocab-a1-007",
+    "level": "A1",
+    "category": "verbs",
+    "questionType": "meaning",
+    "question": "What does 'go' mean?",
+    "options": ["오다", "가다", "먹다", "자다"],
+    "correctAnswer": 1,
+    "wordInfo": {
+      "word": "go",
+      "pronunciation": "/ɡoʊ/",
+      "koreanMeaning": "가다"
+    },
+    "difficulty": 1
+  },
+  {
+    "id": "vocab-a1-008",
+    "level": "A1",
+    "category": "greetings",
+    "questionType": "fill-in-blank",
+    "question": "___, how are you? (안녕하세요)",
+    "options": ["Hello", "Goodbye", "Sorry", "Please"],
+    "correctAnswer": 0,
+    "wordInfo": {
+      "word": "hello",
+      "pronunciation": "/həˈloʊ/",
+      "koreanMeaning": "안녕하세요"
+    },
+    "difficulty": 1
+  },
+  {
+    "id": "vocab-a2-001",
+    "level": "A2",
+    "category": "jobs",
+    "questionType": "fill-in-blank",
+    "question": "A ___ helps sick people. (의사)",
+    "options": ["doctor", "teacher", "driver", "engineer"],
+    "correctAnswer": 0,
+    "wordInfo": {
+      "word": "doctor",
+      "pronunciation": "/ˈdɑːktər/",
+      "koreanMeaning": "의사"
+    },
+    "difficulty": 2
+  },
+  {
+    "id": "vocab-a2-002",
+    "level": "A2",
+    "category": "jobs",
+    "questionType": "meaning",
+    "question": "What does 'teacher' do?",
+    "options": ["운전한다", "요리한다", "가르친다", "치료한다"],
+    "correctAnswer": 2,
+    "wordInfo": {
+      "word": "teacher",
+      "pronunciation": "/ˈtiːtʃər/",
+      "koreanMeaning": "선생님"
+    },
+    "difficulty": 2
+  },
+  {
+    "id": "vocab-a2-003",
+    "level": "A2",
+    "category": "hobbies",
+    "questionType": "fill-in-blank",
+    "question": "I like ___ books. (읽기)",
+    "options": ["reading", "swimming", "cooking", "gaming"],
+    "correctAnswer": 0,
+    "wordInfo": {
+      "word": "reading",
+      "pronunciation": "/ˈriːdɪŋ/",
+      "koreanMeaning": "읽기"
+    },
+    "difficulty": 2
+  },
+  {
+    "id": "vocab-a2-004",
+    "level": "A2",
+    "category": "weather",
+    "questionType": "meaning",
+    "question": "What is '비가 오는' in English?",
+    "options": ["sunny", "rainy", "cloudy", "snowy"],
+    "correctAnswer": 1,
+    "wordInfo": {
+      "word": "rainy",
+      "pronunciation": "/ˈreɪni/",
+      "koreanMeaning": "비가 오는"
+    },
+    "difficulty": 2
+  },
+  {
+    "id": "vocab-a2-005",
+    "level": "A2",
+    "category": "places",
+    "questionType": "fill-in-blank",
+    "question": "I go to ___ to buy food. (가게)",
+    "options": ["school", "hospital", "park", "store"],
+    "correctAnswer": 3,
+    "wordInfo": {
+      "word": "store",
+      "pronunciation": "/stɔːr/",
+      "koreanMeaning": "가게"
+    },
+    "difficulty": 2
+  },
+  {
+    "id": "vocab-a2-006",
+    "level": "A2",
+    "category": "transportation",
+    "questionType": "meaning",
+    "question": "What is '기차' in English?",
+    "options": ["bus", "train", "car", "bike"],
+    "correctAnswer": 1,
+    "wordInfo": {
+      "word": "train",
+      "pronunciation": "/treɪn/",
+      "koreanMeaning": "기차"
+    },
+    "difficulty": 2
+  },
+  {
+    "id": "vocab-a2-007",
+    "level": "A2",
+    "category": "time",
+    "questionType": "fill-in-blank",
+    "question": "I wake up in the ___. (아침)",
+    "options": ["morning", "afternoon", "evening", "night"],
+    "correctAnswer": 0,
+    "wordInfo": {
+      "word": "morning",
+      "pronunciation": "/ˈmɔːrnɪŋ/",
+      "koreanMeaning": "아침"
+    },
+    "difficulty": 2
+  },
+  {
+    "id": "vocab-a2-008",
+    "level": "A2",
+    "category": "emotions",
+    "questionType": "meaning",
+    "question": "What does 'happy' mean?",
+    "options": ["슬픈", "행복한", "화난", "피곤한"],
+    "correctAnswer": 1,
+    "wordInfo": {
+      "word": "happy",
+      "pronunciation": "/ˈhæpi/",
+      "koreanMeaning": "행복한"
+    },
+    "difficulty": 2
+  },
+  {
+    "id": "vocab-b1-001",
+    "level": "B1",
+    "category": "abstract",
+    "questionType": "meaning",
+    "question": "What does 'freedom' mean?",
+    "options": ["평화", "자유", "정의", "평등"],
+    "correctAnswer": 1,
+    "wordInfo": {
+      "word": "freedom",
+      "pronunciation": "/ˈfriːdəm/",
+      "koreanMeaning": "자유"
+    },
+    "difficulty": 3
+  },
+  {
+    "id": "vocab-b1-002",
+    "level": "B1",
+    "category": "emotions",
+    "questionType": "fill-in-blank",
+    "question": "I feel ___ when I have to wait too long. (짜증나는)",
+    "options": ["happy", "excited", "anxious", "grateful"],
+    "correctAnswer": 2,
+    "wordInfo": {
+      "word": "anxious",
+      "pronunciation": "/ˈæŋkʃəs/",
+      "koreanMeaning": "불안한, 걱정되는"
+    },
+    "difficulty": 3
+  },
+  {
+    "id": "vocab-b1-003",
+    "level": "B1",
+    "category": "opinions",
+    "questionType": "meaning",
+    "question": "What does 'agree' mean?",
+    "options": ["동의하다", "반대하다", "논쟁하다", "설명하다"],
+    "correctAnswer": 0,
+    "wordInfo": {
+      "word": "agree",
+      "pronunciation": "/əˈɡriː/",
+      "koreanMeaning": "동의하다"
+    },
+    "difficulty": 3
+  },
+  {
+    "id": "vocab-b1-004",
+    "level": "B1",
+    "category": "society",
+    "questionType": "fill-in-blank",
+    "question": "Every ___ has its own customs and traditions. (문화)",
+    "options": ["community", "culture", "tradition", "citizen"],
+    "correctAnswer": 1,
+    "wordInfo": {
+      "word": "culture",
+      "pronunciation": "/ˈkʌltʃər/",
+      "koreanMeaning": "문화"
+    },
+    "difficulty": 3
+  },
+  {
+    "id": "vocab-b1-005",
+    "level": "B1",
+    "category": "verbs",
+    "questionType": "meaning",
+    "question": "What does 'achieve' mean?",
+    "options": ["시작하다", "성취하다", "포기하다", "계속하다"],
+    "correctAnswer": 1,
+    "wordInfo": {
+      "word": "achieve",
+      "pronunciation": "/əˈtʃiːv/",
+      "koreanMeaning": "성취하다, 달성하다"
+    },
+    "difficulty": 3
+  },
+  {
+    "id": "vocab-b1-006",
+    "level": "B1",
+    "category": "adjectives",
+    "questionType": "fill-in-blank",
+    "question": "The situation was very ___ and difficult to handle. (복잡한)",
+    "options": ["simple", "complex", "easy", "clear"],
+    "correctAnswer": 1,
+    "wordInfo": {
+      "word": "complex",
+      "pronunciation": "/kəmˈpleks/",
+      "koreanMeaning": "복잡한"
+    },
+    "difficulty": 3
+  },
+  {
+    "id": "vocab-b1-007",
+    "level": "B1",
+    "category": "nouns",
+    "questionType": "meaning",
+    "question": "What is '증거' in English?",
+    "options": ["proof", "evidence", "fact", "truth"],
+    "correctAnswer": 1,
+    "wordInfo": {
+      "word": "evidence",
+      "pronunciation": "/ˈevɪdəns/",
+      "koreanMeaning": "증거"
+    },
+    "difficulty": 3
+  },
+  {
+    "id": "vocab-b2-001",
+    "level": "B2",
+    "category": "idioms",
+    "questionType": "meaning",
+    "question": "What does 'piece of cake' mean?",
+    "options": ["맛있는 케이크", "아주 쉬운 일", "케이크 조각", "특별한 선물"],
+    "correctAnswer": 1,
+    "wordInfo": {
+      "word": "piece of cake",
+      "pronunciation": "/piːs əv keɪk/",
+      "koreanMeaning": "아주 쉬운 일 (idiom)"
+    },
+    "difficulty": 4
+  },
+  {
+    "id": "vocab-b2-002",
+    "level": "B2",
+    "category": "idioms",
+    "questionType": "fill-in-blank",
+    "question": "Let's ___ the ice by introducing ourselves. (어색함을 깨다)",
+    "options": ["make", "break", "cut", "melt"],
+    "correctAnswer": 1,
+    "wordInfo": {
+      "word": "break the ice",
+      "pronunciation": "/breɪk ði aɪs/",
+      "koreanMeaning": "어색함을 깨다 (idiom)"
+    },
+    "difficulty": 4
+  },
+  {
+    "id": "vocab-b2-003",
+    "level": "B2",
+    "category": "business",
+    "questionType": "meaning",
+    "question": "What does 'deadline' mean?",
+    "options": ["시작 시간", "마감 기한", "회의 시간", "근무 시간"],
+    "correctAnswer": 1,
+    "wordInfo": {
+      "word": "deadline",
+      "pronunciation": "/ˈdedlaɪn/",
+      "koreanMeaning": "마감 기한"
+    },
+    "difficulty": 4
+  },
+  {
+    "id": "vocab-b2-004",
+    "level": "B2",
+    "category": "academic",
+    "questionType": "fill-in-blank",
+    "question": "The ___ shows that the theory is correct. (연구)",
+    "options": ["research", "analysis", "experiment", "study"],
+    "correctAnswer": 0,
+    "wordInfo": {
+      "word": "research",
+      "pronunciation": "/rɪˈsɜːrtʃ/",
+      "koreanMeaning": "연구"
+    },
+    "difficulty": 4
+  },
+  {
+    "id": "vocab-b2-005",
+    "level": "B2",
+    "category": "news",
+    "questionType": "meaning",
+    "question": "What is '갈등' in English?",
+    "options": ["agreement", "conflict", "peace", "solution"],
+    "correctAnswer": 1,
+    "wordInfo": {
+      "word": "conflict",
+      "pronunciation": "/ˈkɑːnflɪkt/",
+      "koreanMeaning": "갈등, 충돌"
+    },
+    "difficulty": 4
+  },
+  {
+    "id": "vocab-b2-006",
+    "level": "B2",
+    "category": "advanced-verbs",
+    "questionType": "fill-in-blank",
+    "question": "The government will ___ new policies next year. (시행하다)",
+    "options": ["implement", "create", "make", "do"],
+    "correctAnswer": 0,
+    "wordInfo": {
+      "word": "implement",
+      "pronunciation": "/ˈɪmplɪment/",
+      "koreanMeaning": "시행하다, 이행하다"
+    },
+    "difficulty": 5
+  },
+  {
+    "id": "vocab-b2-007",
+    "level": "B2",
+    "category": "advanced-adjectives",
+    "questionType": "meaning",
+    "question": "What does 'ambiguous' mean?",
+    "options": ["명확한", "애매한", "정확한", "간단한"],
+    "correctAnswer": 1,
+    "wordInfo": {
+      "word": "ambiguous",
+      "pronunciation": "/æmˈbɪɡjuəs/",
+      "koreanMeaning": "애매한, 모호한"
+    },
+    "difficulty": 5
+  }
+]

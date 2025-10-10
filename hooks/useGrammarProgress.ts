@@ -1,51 +1,17 @@
-import { useState, useEffect } from 'react';
-import { useAuth } from './useAuth';
+import { useActivityProgress } from './useActivityProgress';
 import {
-  getActivityProgress,
   completeGrammarActivity,
-  updateActivityProgress,
 } from '@/lib/firebase/progress';
 import type { GrammarProgress } from '@/types/progress';
+import { useAuth } from './useAuth';
 
 /**
  * Grammar Activity 진행률 관리 Hook
- *
- * 기능:
- * - 연습 문제 완료 추적
- * - 정답률 계산
- * - 취약점 분석 (자주 틀린 문법 포인트)
  */
 export function useGrammarProgress(activityId: string, weekId: string) {
   const { currentUser: user } = useAuth();
-  const [progress, setProgress] = useState<GrammarProgress | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
-
-  // 진행률 불러오기
-  useEffect(() => {
-    if (!user) {
-      setLoading(false);
-      return;
-    }
-
-    const fetchProgress = async () => {
-      try {
-        setLoading(true);
-        const data = await getActivityProgress<GrammarProgress>(
-          user.uid,
-          activityId
-        );
-        setProgress(data);
-      } catch (err) {
-        setError(err as Error);
-        console.error('Error fetching grammar progress:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProgress();
-  }, [user, activityId]);
+  const { progress, loading, error, updateProgress, fetchProgress } =
+    useActivityProgress<GrammarProgress>(activityId);
 
   /**
    * Grammar Activity 완료 처리
@@ -76,40 +42,10 @@ export function useGrammarProgress(activityId: string, weekId: string) {
         weakPoints
       );
 
-      // 로컬 상태 업데이트
-      const updatedProgress = await getActivityProgress<GrammarProgress>(
-        user.uid,
-        activityId
-      );
-      setProgress(updatedProgress);
+      // 완료 후 상태 리프레시
+      await fetchProgress();
     } catch (err) {
-      setError(err as Error);
       console.error('Error completing grammar activity:', err);
-      throw err;
-    }
-  };
-
-  /**
-   * 진행률 부분 업데이트
-   * 예: 연습 문제 하나씩 완료할 때마다 호출
-   */
-  const updateProgress = async (
-    updates: Partial<Omit<GrammarProgress, 'createdAt' | 'updatedAt'>>
-  ) => {
-    if (!user) throw new Error('User not authenticated');
-
-    try {
-      await updateActivityProgress(user.uid, activityId, updates);
-
-      // 로컬 상태 업데이트
-      const updatedProgress = await getActivityProgress<GrammarProgress>(
-        user.uid,
-        activityId
-      );
-      setProgress(updatedProgress);
-    } catch (err) {
-      setError(err as Error);
-      console.error('Error updating grammar progress:', err);
       throw err;
     }
   };

@@ -49,3 +49,6 @@ emulator-data/
 
 # windows special files
 nul
+
+# claude session notes (personal)
+.claude/SESSION_NOTES.md

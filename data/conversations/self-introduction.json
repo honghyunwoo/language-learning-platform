@@ -1,0 +1,449 @@
+{
+  "id": "conv-self-intro",
+  "title": "첫 만남에서 자기소개하기",
+  "description": "새로운 사람을 만났을 때 자연스럽게 자기소개하는 방법을 배웁니다.",
+  "level": "A1",
+  "estimatedTime": 12,
+  "scenario": {
+    "location": "Networking event / Social gathering",
+    "situation": "처음 만난 사람과 인사하고 자기소개를 나누는 상황",
+    "goal": "자연스럽게 자기소개하고 상대방에 대해 알아가기",
+    "culturalNotes": [
+      "영어권에서는 악수하며 인사하는 것이 일반적입니다",
+      "이름을 말한 후 'Nice to meet you'라고 말하는 것이 예의입니다",
+      "'What do you do?'는 직업을 묻는 가장 일반적인 표현입니다",
+      "너무 개인적인 질문(나이, 결혼 여부 등)은 처음 만났을 때 피하는 것이 좋습니다"
+    ]
+  },
+  "characters": [
+    {
+      "id": "stranger",
+      "name": "Alex",
+      "role": "새로운 지인",
+      "personality": "외향적이고 친근한"
+    },
+    {
+      "id": "learner",
+      "name": "You",
+      "role": "학습자",
+      "personality": "처음 만나는 사람이라 약간 긴장함"
+    }
+  ],
+  "dialogue": [
+    {
+      "id": "start",
+      "speaker": "stranger",
+      "text": "Hi there! I don't think we've met before. I'm Alex.",
+      "translation": "안녕하세요! 우리 전에 만난 적 없는 것 같네요. 저는 Alex예요.",
+      "notes": "'I don't think we've met before' = 처음 만났을 때 자주 쓰는 표현",
+      "nextNodeId": "response-1"
+    },
+    {
+      "id": "response-1",
+      "speaker": "learner",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-1a",
+          "text": "Hi Alex! I'm [Your name]. Nice to meet you!",
+          "translation": "안녕하세요 Alex! 저는 [이름]이에요. 만나서 반가워요!",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 이름을 밝히고 'Nice to meet you'로 인사했습니다.",
+            "points": 10,
+            "culturalNote": "'Nice to meet you'는 첫 만남에서 가장 기본적이고 중요한 표현입니다."
+          },
+          "nextNodeId": "alex-2a"
+        },
+        {
+          "id": "opt-1b",
+          "text": "Hello. My name is [Your name].",
+          "translation": "안녕하세요. 제 이름은 [이름]입니다.",
+          "feedback": {
+            "type": "good",
+            "message": "좋습니다! 하지만 'Nice to meet you'를 추가하면 더 친근하게 들립니다.",
+            "points": 7,
+            "suggestion": "Hi! I'm [Your name]. Nice to meet you!"
+          },
+          "nextNodeId": "alex-2b"
+        },
+        {
+          "id": "opt-1c",
+          "text": "Hi.",
+          "translation": "안녕하세요.",
+          "feedback": {
+            "type": "needs-improvement",
+            "message": "너무 짧습니다! 상대방이 이름을 말했으니, 당신도 이름을 소개해야 합니다.",
+            "points": 3,
+            "suggestion": "Hi! I'm [Your name]. Nice to meet you!",
+            "culturalNote": "서양 문화에서는 상대방이 이름을 소개하면 자신도 이름을 말하는 것이 예의입니다."
+          },
+          "nextNodeId": "alex-2c"
+        }
+      ]
+    },
+    {
+      "id": "alex-2a",
+      "speaker": "stranger",
+      "text": "Nice to meet you too! So, what brings you here today?",
+      "translation": "저도 만나서 반가워요! 그럼, 오늘 어떻게 여기 오셨어요?",
+      "notes": "'What brings you here?' = 이 자리에 온 이유를 묻는 자연스러운 표현",
+      "nextNodeId": "response-2"
+    },
+    {
+      "id": "alex-2b",
+      "speaker": "stranger",
+      "text": "Nice to meet you. So, are you new to this area?",
+      "translation": "만나서 반가워요. 이 지역이 처음이신가요?",
+      "notes": "약간 격식있는 대화 분위기",
+      "nextNodeId": "response-2b"
+    },
+    {
+      "id": "alex-2c",
+      "speaker": "stranger",
+      "text": "Um... I'm sorry, I didn't catch your name?",
+      "translation": "음... 죄송한데, 이름을 못 들었는데요?",
+      "notes": "'I didn't catch your name' = 이름을 놓쳤을 때 쓰는 표현",
+      "nextNodeId": "response-name"
+    },
+    {
+      "id": "response-name",
+      "speaker": "learner",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-name1",
+          "text": "Oh sorry! I'm [Your name]. Nice to meet you!",
+          "translation": "아 죄송해요! 저는 [이름]이에요. 만나서 반가워요!",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 'Sorry'로 상황을 부드럽게 만들고 제대로 소개했습니다.",
+            "points": 9
+          },
+          "nextNodeId": "alex-2a"
+        }
+      ]
+    },
+    {
+      "id": "response-2",
+      "speaker": "learner",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-2a",
+          "text": "I'm here to meet new people and practice my English!",
+          "translation": "새로운 사람들을 만나고 영어 연습하러 왔어요!",
+          "feedback": {
+            "type": "excellent",
+            "message": "훌륭합니다! 솔직하고 긍정적인 대답입니다.",
+            "points": 10,
+            "culturalNote": "솔직하게 영어를 배우고 있다고 말하는 것은 전혀 부끄러운 일이 아닙니다!"
+          },
+          "nextNodeId": "alex-3a"
+        },
+        {
+          "id": "opt-2b",
+          "text": "Just looking around.",
+          "translation": "그냥 둘러보고 있어요.",
+          "feedback": {
+            "type": "good",
+            "message": "괜찮지만, 좀 더 구체적으로 말하면 대화가 더 잘 이어집니다.",
+            "points": 6,
+            "suggestion": "I'm here to meet new people and practice my English!"
+          },
+          "nextNodeId": "alex-3b"
+        },
+        {
+          "id": "opt-2c",
+          "text": "My friend invited me.",
+          "translation": "친구가 초대했어요.",
+          "feedback": {
+            "type": "good",
+            "message": "좋은 대답입니다! 구체적이고 자연스럽습니다.",
+            "points": 8
+          },
+          "nextNodeId": "alex-3a"
+        }
+      ]
+    },
+    {
+      "id": "response-2b",
+      "speaker": "learner",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-2b1",
+          "text": "Yes, I just moved here last month.",
+          "translation": "네, 지난달에 막 이사왔어요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 구체적인 정보를 제공해서 대화가 자연스럽게 이어집니다.",
+            "points": 10
+          },
+          "nextNodeId": "alex-3a"
+        },
+        {
+          "id": "opt-2b2",
+          "text": "No, I've been here for a while.",
+          "translation": "아니요, 여기 온 지 좀 됐어요.",
+          "feedback": {
+            "type": "good",
+            "message": "좋습니다! 'for a while' = 꽤 된 시간을 의미하는 자연스러운 표현",
+            "points": 8
+          },
+          "nextNodeId": "alex-3a"
+        }
+      ]
+    },
+    {
+      "id": "alex-3a",
+      "speaker": "stranger",
+      "text": "That's great! So, what do you do?",
+      "translation": "좋네요! 그럼, 무슨 일 하세요?",
+      "notes": "'What do you do?' = 직업을 묻는 가장 일반적인 표현",
+      "nextNodeId": "response-3"
+    },
+    {
+      "id": "alex-3b",
+      "speaker": "stranger",
+      "text": "Cool. So, are you from around here?",
+      "translation": "좋네요. 그럼, 여기 사세요?",
+      "notes": "'from around here' = 이 지역 출신인지 묻는 표현",
+      "nextNodeId": "response-3b"
+    },
+    {
+      "id": "response-3",
+      "speaker": "learner",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-3a",
+          "text": "I'm a student. I'm studying computer science.",
+          "translation": "저는 학생이에요. 컴퓨터 과학을 공부하고 있어요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 직업과 전공까지 구체적으로 말했습니다.",
+            "points": 10
+          },
+          "nextNodeId": "alex-4"
+        },
+        {
+          "id": "opt-3b",
+          "text": "I work at a tech company as a software engineer.",
+          "translation": "테크 회사에서 소프트웨어 엔지니어로 일해요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 회사와 직책을 명확하게 설명했습니다.",
+            "points": 10
+          },
+          "nextNodeId": "alex-4"
+        },
+        {
+          "id": "opt-3c",
+          "text": "I'm looking for a job right now.",
+          "translation": "지금 구직 중이에요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "훌륭합니다! 솔직하게 현재 상황을 말했습니다.",
+            "points": 10,
+            "culturalNote": "구직 중이라고 말하는 것은 전혀 부끄러운 일이 아니며, 네트워킹 기회가 될 수 있습니다."
+          },
+          "nextNodeId": "alex-4"
+        }
+      ]
+    },
+    {
+      "id": "response-3b",
+      "speaker": "learner",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-3b1",
+          "text": "No, I'm originally from Korea.",
+          "translation": "아니요, 저는 원래 한국에서 왔어요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 'originally from' = 출신을 말할 때 자연스러운 표현",
+            "points": 10
+          },
+          "nextNodeId": "alex-korea"
+        },
+        {
+          "id": "opt-3b2",
+          "text": "Yes, I grew up here.",
+          "translation": "네, 여기서 자랐어요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 'grew up' = 자란 곳을 말할 때 쓰는 표현",
+            "points": 10
+          },
+          "nextNodeId": "alex-4"
+        }
+      ]
+    },
+    {
+      "id": "alex-korea",
+      "speaker": "stranger",
+      "text": "Oh, Korea! That's awesome! How long have you been here?",
+      "translation": "오, 한국! 멋지네요! 여기 온 지 얼마나 됐어요?",
+      "notes": "'How long have you been here?' = 체류 기간을 묻는 표현",
+      "nextNodeId": "response-korea"
+    },
+    {
+      "id": "response-korea",
+      "speaker": "learner",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-korea1",
+          "text": "I've been here for about six months.",
+          "translation": "약 6개월 됐어요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 'for + 기간' = 현재완료 시제와 함께 쓰는 자연스러운 표현",
+            "points": 10
+          },
+          "nextNodeId": "alex-4"
+        },
+        {
+          "id": "opt-korea2",
+          "text": "I just arrived a few weeks ago.",
+          "translation": "몇 주 전에 막 도착했어요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 'just arrived' = 최근에 온 것을 표현하는 자연스러운 방법",
+            "points": 10
+          },
+          "nextNodeId": "alex-4"
+        }
+      ]
+    },
+    {
+      "id": "alex-4",
+      "speaker": "stranger",
+      "text": "That's interesting! Hey, would you like to grab a coffee sometime? I'd love to hear more about your experiences.",
+      "translation": "흥미롭네요! 저기, 언젠가 커피 한잔 하실래요? 당신의 경험에 대해 더 듣고 싶어요.",
+      "notes": "'grab a coffee' = 커피 마시러 가자는 캐주얼한 표현",
+      "nextNodeId": "response-final"
+    },
+    {
+      "id": "response-final",
+      "speaker": "learner",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-final1",
+          "text": "Sure! That sounds great. Can I get your number?",
+          "translation": "좋아요! 좋네요. 번호 받을 수 있을까요?",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 긍정적으로 응답하고 연락처를 교환하려고 합니다.",
+            "points": 10,
+            "culturalNote": "새로운 친구를 사귀려면 적극적으로 연락처를 교환하는 것이 좋습니다."
+          },
+          "nextNodeId": "end-success"
+        },
+        {
+          "id": "opt-final2",
+          "text": "Yes, I'd love to! How about this weekend?",
+          "translation": "네, 좋아요! 이번 주말은 어때요?",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 적극적으로 구체적인 시간을 제안했습니다.",
+            "points": 10
+          },
+          "nextNodeId": "end-success"
+        },
+        {
+          "id": "opt-final3",
+          "text": "That would be nice. Let me give you my email.",
+          "translation": "좋을 것 같아요. 이메일 드릴게요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "훌륭합니다! 정중하게 연락처를 제공했습니다.",
+            "points": 10
+          },
+          "nextNodeId": "end-success"
+        }
+      ]
+    },
+    {
+      "id": "end-success",
+      "speaker": "stranger",
+      "text": "Awesome! Looking forward to it. It was really nice meeting you!",
+      "translation": "좋아요! 기대할게요. 만나서 정말 반가웠어요!",
+      "isEnd": true,
+      "completionMessage": "축하합니다! 성공적으로 새로운 친구를 사귀었습니다! 🎉"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "Nice to meet you",
+      "pronunciation": "/naɪs tuː miːt juː/",
+      "meaning": "만나서 반갑습니다",
+      "example": "Hi, I'm Sarah. Nice to meet you!"
+    },
+    {
+      "word": "What brings you here?",
+      "pronunciation": "/wʌt brɪŋz juː hɪr/",
+      "meaning": "어떻게 여기 오셨어요?",
+      "example": "So, what brings you here today?"
+    },
+    {
+      "word": "What do you do?",
+      "pronunciation": "/wʌt duː juː duː/",
+      "meaning": "무슨 일 하세요? (직업)",
+      "example": "Nice to meet you! What do you do?"
+    },
+    {
+      "word": "originally from",
+      "pronunciation": "/əˈrɪdʒɪnəli frʌm/",
+      "meaning": "원래 ~출신",
+      "example": "I'm originally from Korea."
+    },
+    {
+      "word": "grab a coffee",
+      "pronunciation": "/ɡræb ə ˈkɔːfi/",
+      "meaning": "커피 한잔 하다 (캐주얼)",
+      "example": "Would you like to grab a coffee sometime?"
+    }
+  ],
+  "keyPhrases": [
+    {
+      "phrase": "Nice to meet you",
+      "meaning": "만나서 반갑습니다 (첫 만남)",
+      "usage": "Always say this when meeting someone for the first time",
+      "formality": "neutral"
+    },
+    {
+      "phrase": "What do you do?",
+      "meaning": "무슨 일 하세요?",
+      "usage": "Common way to ask about someone's job",
+      "formality": "neutral"
+    },
+    {
+      "phrase": "I'm originally from...",
+      "meaning": "저는 원래 ~출신입니다",
+      "usage": "When talking about your hometown/country",
+      "formality": "neutral"
+    },
+    {
+      "phrase": "How long have you been here?",
+      "meaning": "여기 온 지 얼마나 됐어요?",
+      "usage": "Asking about duration of stay",
+      "formality": "neutral"
+    },
+    {
+      "phrase": "I'd love to",
+      "meaning": "그러고 싶어요 (긍정적 응답)",
+      "usage": "Enthusiastic way to accept an invitation",
+      "formality": "friendly"
+    }
+  ],
+  "scoring": {
+    "maxPoints": 100,
+    "excellentThreshold": 85,
+    "goodThreshold": 70,
+    "passingThreshold": 50
+  }
+}

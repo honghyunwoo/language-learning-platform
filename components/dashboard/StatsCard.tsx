@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, memo } from 'react';
 import { Card } from '@/components/ui';
 
 type ColorType = 'primary' | 'success' | 'info' | 'warning';
@@ -31,7 +31,8 @@ const colorClasses: Record<ColorType, { bg: string; text: string }> = {
   },
 };
 
-export default function StatsCard({
+// React.memo로 메모이제이션하여 불필요한 리렌더링 방지
+const StatsCard = memo(function StatsCard({
   title,
   value,
   icon,
@@ -95,4 +96,6 @@ export default function StatsCard({
       )}
     </Card>
   );
-}
+});
+
+export default StatsCard;

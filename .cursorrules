@@ -1,0 +1,85 @@
+# Cursor Rules for Language Learning Platform
+
+이 프로젝트는 Next.js 15 기반 언어 학습 플랫폼입니다.
+
+## 📚 프로젝트 컨텍스트
+
+- **프레임워크**: Next.js 15.5.4 (App Router)
+- **언어**: TypeScript
+- **스타일링**: Tailwind CSS
+- **백엔드**: Firebase (Firestore, Authentication, Storage)
+- **상태관리**: React Query (@tanstack/query)
+- **주요 기능**: 언어 학습 커리큘럼, 커뮤니티, 학습 일지, 리소스
+
+## 🎯 Cursor-SuperClaude (CS) Commands
+
+이 프로젝트에서는 `/cs:` 접두사 명령어를 사용하여 SuperClaude 기능을 활용할 수 있습니다.
+
+### 사용 가능한 명령어
+
+채팅창에서 다음 명령어를 입력하세요:
+
+- `/cs:cleanup` - 레거시 코드 및 파일 정리
+- `/cs:analyze` - 코드 품질/보안/성능 분석
+- `/cs:improve` - 코드 개선 및 리팩토링
+- `/cs:implement` - 새로운 기능 구현
+- `/cs:build` - 프로젝트 빌드 및 최적화
+- `/cs:test` - 테스트 실행 및 커버리지
+- `/cs:troubleshoot` - 버그 진단 및 해결
+- `/cs:brainstorm` - 요구사항 발굴 및 아이디어 구체화
+- `/cs:design` - 시스템 설계
+- `/cs:explain` - 코드 설명
+- `/cs:document` - 문서화
+- `/cs:git` - Git 작업 지원
+
+자세한 사용법은 `.cursor/rules/cs-commands.md` 파일을 참고하세요.
+
+### 예시
+
+```
+/cs:cleanup src/ --type all --safe
+/cs:analyze src/auth --focus security
+/cs:implement "사용자 프로필 편집 기능" --framework react --with-tests
+/cs:build --type prod --optimize
+```
+
+## 🛠️ 개발 가이드라인
+
+### 코드 스타일
+- **한국어 주석**: 모든 주석은 한국어로 작성
+- **컴포넌트**: 함수형 컴포넌트 + TypeScript
+- **네이밍**: camelCase (변수/함수), PascalCase (컴포넌트/타입)
+
+### 파일 구조
+- `/app` - Next.js App Router 페이지
+- `/components` - 재사용 가능한 컴포넌트
+- `/hooks` - Custom React Hooks (React Query)
+- `/lib` - 유틸리티 함수 및 설정
+- `/types` - TypeScript 타입 정의
+- `/data` - Activity JSON 파일 (48개)
+
+### Firebase 규칙
+- **Authentication**: 이메일/비밀번호 + Google OAuth
+- **Firestore**: `/posts`, `/users`, `/progress`, `/studyGroups` 등
+- **Storage**: `/profile-images`, `/post-images` 등
+
+### 중요한 파일들
+- `hooks/useCommunity.ts` - 커뮤니티 기능 (Post, Comment)
+- `hooks/useFirestore.ts` - Firestore 공통 훅
+- `lib/firebase.ts` - Firebase 초기화
+- `types/community.ts` - 커뮤니티 타입 정의
+
+## ⚠️ 주의사항
+
+1. **타입 안전성**: 모든 코드는 TypeScript strict 모드 통과 필요
+2. **Firebase 규칙**: Firestore Security Rules 준수
+3. **성능**: React Query 캐싱 전략 활용
+4. **빌드**: `npm run build` 성공 필수
+
+## 🚀 자동 작업
+
+채팅에서 `/cs:` 명령어를 사용하면 Claude가 자동으로:
+- 프레임워크 감지 (Next.js, React, Firebase 등)
+- 프로젝트 구조 분석
+- 모범 사례 적용
+- 한국어로 설명 및 문서화

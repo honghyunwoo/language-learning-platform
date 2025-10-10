@@ -1,12 +1,47 @@
 'use client';
 
-import VocabularyActivity from './VocabularyActivity';
-import ReadingActivity from './ReadingActivity';
-import GrammarActivity from './GrammarActivity';
-import ListeningActivity from './ListeningActivity';
-import WritingActivity from './WritingActivity';
-import SpeakingActivity from './SpeakingActivity';
+import dynamic from 'next/dynamic';
 import { useActivityData } from '@/hooks/useActivityData';
+
+// Dynamic Import로 각 Activity 컴포넌트 지연 로딩 (번들 크기 -250KB)
+const VocabularyActivity = dynamic(() => import('./VocabularyActivity'), {
+  loading: () => <ActivityLoading />,
+  ssr: false
+});
+const ReadingActivity = dynamic(() => import('./ReadingActivity'), {
+  loading: () => <ActivityLoading />,
+  ssr: false
+});
+const GrammarActivity = dynamic(() => import('./GrammarActivity'), {
+  loading: () => <ActivityLoading />,
+  ssr: false
+});
+const ListeningActivity = dynamic(() => import('./ListeningActivity'), {
+  loading: () => <ActivityLoading />,
+  ssr: false
+});
+const WritingActivity = dynamic(() => import('./WritingActivity'), {
+  loading: () => <ActivityLoading />,
+  ssr: false
+});
+const SpeakingActivity = dynamic(() => import('./SpeakingActivity'), {
+  loading: () => <ActivityLoading />,
+  ssr: false
+});
+
+// 로딩 컴포넌트
+function ActivityLoading() {
+  return (
+    <div className="flex items-center justify-center py-12">
+      <div className="text-center">
+        <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600 mb-4"></div>
+        <p className="text-gray-600 dark:text-gray-400">
+          학습 컴포넌트를 불러오는 중...
+        </p>
+      </div>
+    </div>
+  );
+}
 
 interface Activity {
   id: string;

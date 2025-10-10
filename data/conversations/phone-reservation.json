@@ -1,0 +1,532 @@
+{
+  "id": "conv-phone-reservation",
+  "title": "전화로 레스토랑 예약하기",
+  "description": "레스토랑에 전화해서 테이블을 예약하는 방법을 배웁니다.",
+  "level": "A2",
+  "estimatedTime": 10,
+  "scenario": {
+    "location": "Phone call to a restaurant",
+    "situation": "레스토랑에 전화해서 저녁 식사 예약을 하려는 상황",
+    "goal": "날짜, 시간, 인원을 말하고 성공적으로 예약하기",
+    "culturalNotes": [
+      "전화 예약 시 'I'd like to make a reservation'이 가장 일반적인 표현입니다",
+      "날짜와 시간을 명확하게 말해야 합니다 (예: Friday, March 15th at 7 PM)",
+      "인원수는 'for + 숫자 + people/person'으로 표현합니다",
+      "예약 시 이름과 전화번호를 남겨야 합니다",
+      "인기있는 레스토랑은 며칠 전에 예약해야 합니다"
+    ]
+  },
+  "characters": [
+    {
+      "id": "host",
+      "name": "Restaurant Host",
+      "role": "레스토랑 직원",
+      "personality": "친절하고 전문적인"
+    },
+    {
+      "id": "caller",
+      "name": "You",
+      "role": "예약자 (학습자)",
+      "personality": "전화 예약이 처음이라 약간 긴장함"
+    }
+  ],
+  "dialogue": [
+    {
+      "id": "start",
+      "speaker": "host",
+      "text": "Good afternoon! Thank you for calling Mario's Italian Restaurant. How may I help you?",
+      "translation": "안녕하세요! Mario's Italian Restaurant에 전화주셔서 감사합니다. 무엇을 도와드릴까요?",
+      "notes": "'How may I help you?' = 전화 응대 시 정중한 표현",
+      "nextNodeId": "response-1"
+    },
+    {
+      "id": "response-1",
+      "speaker": "caller",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-1a",
+          "text": "Hi! I'd like to make a reservation for dinner, please.",
+          "translation": "안녕하세요! 저녁 식사 예약하고 싶은데요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 'I'd like to make a reservation'은 예약할 때 가장 표준적인 표현입니다.",
+            "points": 10
+          },
+          "nextNodeId": "host-2a"
+        },
+        {
+          "id": "opt-1b",
+          "text": "Can I book a table?",
+          "translation": "테이블 예약할 수 있나요?",
+          "feedback": {
+            "type": "good",
+            "message": "좋습니다! 'book a table'도 맞는 표현이지만, 'make a reservation'이 더 formal합니다.",
+            "points": 8,
+            "suggestion": "I'd like to make a reservation, please."
+          },
+          "nextNodeId": "host-2a"
+        },
+        {
+          "id": "opt-1c",
+          "text": "I want to eat at your restaurant.",
+          "translation": "당신 레스토랑에서 먹고 싶어요.",
+          "feedback": {
+            "type": "needs-improvement",
+            "message": "'I want'는 다소 직접적입니다. 'I'd like to make a reservation'이 더 정중합니다.",
+            "points": 5,
+            "suggestion": "I'd like to make a reservation for dinner, please.",
+            "culturalNote": "전화 예약은 formal한 상황이므로 정중한 표현을 사용하세요."
+          },
+          "nextNodeId": "host-2b"
+        }
+      ]
+    },
+    {
+      "id": "host-2a",
+      "speaker": "host",
+      "text": "Certainly! What day would you like to come in?",
+      "translation": "물론이죠! 어느 날 오시겠어요?",
+      "notes": "'come in' = 방문하다 (레스토랑 용어)",
+      "nextNodeId": "response-date"
+    },
+    {
+      "id": "host-2b",
+      "speaker": "host",
+      "text": "Okay. When would you like to dine with us?",
+      "translation": "알겠습니다. 언제 저희와 식사하시겠어요?",
+      "notes": "'dine with us' = formal한 레스토랑 표현",
+      "nextNodeId": "response-date"
+    },
+    {
+      "id": "response-date",
+      "speaker": "caller",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-date1",
+          "text": "This Friday, the 15th.",
+          "translation": "이번 주 금요일, 15일이요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 요일과 날짜를 모두 명확하게 말했습니다.",
+            "points": 10,
+            "culturalNote": "날짜는 'the + 숫자 + th/st/nd/rd'로 말합니다. 예: the 15th (fifteen-th)"
+          },
+          "nextNodeId": "host-time"
+        },
+        {
+          "id": "opt-date2",
+          "text": "Next Saturday evening.",
+          "translation": "다음 주 토요일 저녁이요.",
+          "feedback": {
+            "type": "good",
+            "message": "좋습니다! 하지만 구체적인 날짜도 함께 말하면 더 명확합니다.",
+            "points": 8,
+            "suggestion": "Next Saturday, the 16th."
+          },
+          "nextNodeId": "host-clarify-date"
+        },
+        {
+          "id": "opt-date3",
+          "text": "Friday.",
+          "translation": "금요일이요.",
+          "feedback": {
+            "type": "needs-improvement",
+            "message": "'금요일'만으로는 부족합니다. 'This Friday' 또는 'Next Friday'처럼 구체적으로 말하세요.",
+            "points": 5,
+            "suggestion": "This Friday, the 15th."
+          },
+          "nextNodeId": "host-which-friday"
+        }
+      ]
+    },
+    {
+      "id": "host-which-friday",
+      "speaker": "host",
+      "text": "This Friday or next Friday?",
+      "translation": "이번 주 금요일인가요, 다음 주 금요일인가요?",
+      "notes": "날짜가 명확하지 않아서 다시 물어봄",
+      "nextNodeId": "response-clarify"
+    },
+    {
+      "id": "response-clarify",
+      "speaker": "caller",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-clarify1",
+          "text": "Oh sorry, this Friday, the 15th.",
+          "translation": "아 죄송해요, 이번 주 금요일, 15일이요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 'Sorry'로 상황을 부드럽게 만들고 명확하게 다시 말했습니다.",
+            "points": 9
+          },
+          "nextNodeId": "host-time"
+        }
+      ]
+    },
+    {
+      "id": "host-clarify-date",
+      "speaker": "host",
+      "text": "That would be the 16th, correct?",
+      "translation": "그럼 16일이 맞나요?",
+      "notes": "직원이 날짜를 확인함",
+      "nextNodeId": "response-confirm"
+    },
+    {
+      "id": "response-confirm",
+      "speaker": "caller",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-confirm1",
+          "text": "Yes, that's right. The 16th.",
+          "translation": "네, 맞아요. 16일이요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 날짜를 확인하고 재확인했습니다.",
+            "points": 10
+          },
+          "nextNodeId": "host-time"
+        }
+      ]
+    },
+    {
+      "id": "host-time",
+      "speaker": "host",
+      "text": "Great! And what time?",
+      "translation": "좋습니다! 몇 시로 하시겠어요?",
+      "notes": "시간을 묻는 간단한 질문",
+      "nextNodeId": "response-time"
+    },
+    {
+      "id": "response-time",
+      "speaker": "caller",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-time1",
+          "text": "7 PM, please.",
+          "translation": "오후 7시요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! '7 PM' 또는 '7 o'clock' 모두 정확한 표현입니다.",
+            "points": 10
+          },
+          "nextNodeId": "host-party-size"
+        },
+        {
+          "id": "opt-time2",
+          "text": "Around 7 or 7:30.",
+          "translation": "7시나 7시 30분쯤이요.",
+          "feedback": {
+            "type": "good",
+            "message": "괜찮지만, 레스토랑은 정확한 시간을 선호합니다.",
+            "points": 7,
+            "suggestion": "7 PM would be perfect."
+          },
+          "nextNodeId": "host-prefer-time"
+        },
+        {
+          "id": "opt-time3",
+          "text": "Evening time.",
+          "translation": "저녁 시간이요.",
+          "feedback": {
+            "type": "needs-improvement",
+            "message": "너무 막연합니다. 구체적인 시간을 말해야 합니다. (예: 7 PM)",
+            "points": 4,
+            "suggestion": "7 PM, please."
+          },
+          "nextNodeId": "host-what-time"
+        }
+      ]
+    },
+    {
+      "id": "host-prefer-time",
+      "speaker": "host",
+      "text": "We have availability at 7:00 and 7:30. Which would you prefer?",
+      "translation": "7시와 7시 30분에 자리가 있습니다. 어느 것을 선호하시나요?",
+      "notes": "직원이 가능한 시간을 제시함",
+      "nextNodeId": "response-choose-time"
+    },
+    {
+      "id": "response-choose-time",
+      "speaker": "caller",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-choose1",
+          "text": "7:00 would be perfect.",
+          "translation": "7시가 완벽할 것 같아요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 'would be perfect'는 선택을 표현하는 정중한 방법입니다.",
+            "points": 10
+          },
+          "nextNodeId": "host-party-size"
+        }
+      ]
+    },
+    {
+      "id": "host-what-time",
+      "speaker": "host",
+      "text": "I need a specific time. How about 7 PM or 8 PM?",
+      "translation": "구체적인 시간이 필요합니다. 7시나 8시는 어떠세요?",
+      "notes": "구체적인 시간을 요청함",
+      "nextNodeId": "response-specific-time"
+    },
+    {
+      "id": "response-specific-time",
+      "speaker": "caller",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-specific1",
+          "text": "7 PM, please.",
+          "translation": "7시로 주세요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 명확하게 시간을 선택했습니다.",
+            "points": 8
+          },
+          "nextNodeId": "host-party-size"
+        }
+      ]
+    },
+    {
+      "id": "host-party-size",
+      "speaker": "host",
+      "text": "Perfect! And how many people will be in your party?",
+      "translation": "완벽합니다! 일행이 몇 분이신가요?",
+      "notes": "'party' = 일행, 파티 (레스토랑 용어)",
+      "nextNodeId": "response-people"
+    },
+    {
+      "id": "response-people",
+      "speaker": "caller",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-people1",
+          "text": "Four people.",
+          "translation": "4명이요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 간단하고 명확합니다.",
+            "points": 10
+          },
+          "nextNodeId": "host-name"
+        },
+        {
+          "id": "opt-people2",
+          "text": "It's just for two.",
+          "translation": "2명이에요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 'just for two'는 2명을 표현하는 자연스러운 방법입니다.",
+            "points": 10
+          },
+          "nextNodeId": "host-name"
+        },
+        {
+          "id": "opt-people3",
+          "text": "We are four.",
+          "translation": "우리는 4명이에요.",
+          "feedback": {
+            "type": "good",
+            "message": "의미는 전달되지만, 'Four people' 또는 'A party of four'가 더 자연스럽습니다.",
+            "points": 7,
+            "suggestion": "Four people, please."
+          },
+          "nextNodeId": "host-name"
+        }
+      ]
+    },
+    {
+      "id": "host-name",
+      "speaker": "host",
+      "text": "Excellent! May I have your name, please?",
+      "translation": "좋습니다! 성함을 알려주시겠어요?",
+      "notes": "'May I have your name?' = 정중하게 이름을 묻는 표현",
+      "nextNodeId": "response-name"
+    },
+    {
+      "id": "response-name",
+      "speaker": "caller",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-name1",
+          "text": "Yes, it's Kim. K-I-M.",
+          "translation": "네, Kim이에요. K-I-M이요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 이름을 말하고 스펠링도 알려줬습니다. 매우 professional합니다!",
+            "points": 10,
+            "culturalNote": "전화상으로 이름을 말할 때 스펠링을 알려주면 실수를 방지할 수 있습니다."
+          },
+          "nextNodeId": "host-phone"
+        },
+        {
+          "id": "opt-name2",
+          "text": "Sure, my name is Kim.",
+          "translation": "네, 제 이름은 Kim이에요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 정중하게 이름을 알려줬습니다.",
+            "points": 9
+          },
+          "nextNodeId": "host-phone"
+        }
+      ]
+    },
+    {
+      "id": "host-phone",
+      "speaker": "host",
+      "text": "Thank you, Mr./Ms. Kim. And a phone number where we can reach you?",
+      "translation": "감사합니다, Kim 님. 연락 가능한 전화번호도 알려주시겠어요?",
+      "notes": "'where we can reach you' = 연락할 수 있는 (정중한 표현)",
+      "nextNodeId": "response-phone"
+    },
+    {
+      "id": "response-phone",
+      "speaker": "caller",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-phone1",
+          "text": "Yes, it's 555-1234.",
+          "translation": "네, 555-1234예요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 명확하게 번호를 알려줬습니다.",
+            "points": 10
+          },
+          "nextNodeId": "host-confirm"
+        },
+        {
+          "id": "opt-phone2",
+          "text": "Sure, 555-1234.",
+          "translation": "네, 555-1234예요.",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 간단하고 명확합니다.",
+            "points": 10
+          },
+          "nextNodeId": "host-confirm"
+        }
+      ]
+    },
+    {
+      "id": "host-confirm",
+      "speaker": "host",
+      "text": "Perfect! So that's Friday the 15th at 7 PM for four people under the name Kim. We look forward to seeing you!",
+      "translation": "완벽합니다! 그럼 금요일 15일 오후 7시, 4명, Kim 님 성함으로 예약되었습니다. 뵙기를 기대하겠습니다!",
+      "notes": "직원이 예약 내용을 확인함 - 항상 확인하는 것이 중요!",
+      "nextNodeId": "response-final"
+    },
+    {
+      "id": "response-final",
+      "speaker": "caller",
+      "isChoice": true,
+      "options": [
+        {
+          "id": "opt-final1",
+          "text": "Great! Thank you so much!",
+          "translation": "좋아요! 정말 감사합니다!",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 감사 인사로 정중하게 마무리했습니다.",
+            "points": 10
+          },
+          "nextNodeId": "end-success"
+        },
+        {
+          "id": "opt-final2",
+          "text": "Perfect! See you then!",
+          "translation": "완벽해요! 그때 뵐게요!",
+          "feedback": {
+            "type": "excellent",
+            "message": "완벽합니다! 'See you then'은 친근하게 마무리하는 표현입니다.",
+            "points": 10
+          },
+          "nextNodeId": "end-success"
+        }
+      ]
+    },
+    {
+      "id": "end-success",
+      "speaker": "host",
+      "text": "You're welcome! Have a great day!",
+      "translation": "천만에요! 좋은 하루 되세요!",
+      "isEnd": true,
+      "completionMessage": "축하합니다! 레스토랑 예약을 성공적으로 완료했습니다! 🎉"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "reservation",
+      "pronunciation": "/ˌrezərˈveɪʃən/",
+      "meaning": "예약",
+      "example": "I'd like to make a reservation for dinner."
+    },
+    {
+      "word": "party",
+      "pronunciation": "/ˈpɑːrti/",
+      "meaning": "일행, 파티 (레스토랑)",
+      "example": "A party of four, please."
+    },
+    {
+      "word": "come in",
+      "pronunciation": "/kʌm ɪn/",
+      "meaning": "방문하다 (레스토랑)",
+      "example": "When would you like to come in?"
+    },
+    {
+      "word": "availability",
+      "pronunciation": "/əˌveɪləˈbɪləti/",
+      "meaning": "이용 가능성, 빈자리",
+      "example": "We have availability at 7:00."
+    },
+    {
+      "word": "reach",
+      "pronunciation": "/riːtʃ/",
+      "meaning": "연락하다",
+      "example": "A number where we can reach you?"
+    }
+  ],
+  "keyPhrases": [
+    {
+      "phrase": "I'd like to make a reservation",
+      "meaning": "예약하고 싶습니다",
+      "usage": "Standard way to start a restaurant reservation",
+      "formality": "polite"
+    },
+    {
+      "phrase": "for + number + people",
+      "meaning": "~명",
+      "usage": "For four people / For two people",
+      "formality": "neutral"
+    },
+    {
+      "phrase": "May I have your name?",
+      "meaning": "성함을 알려주시겠어요?",
+      "usage": "Polite way to ask for someone's name",
+      "formality": "polite"
+    },
+    {
+      "phrase": "look forward to",
+      "meaning": "~을 기대하다",
+      "usage": "We look forward to seeing you!",
+      "formality": "polite"
+    }
+  ],
+  "scoring": {
+    "maxPoints": 100,
+    "excellentThreshold": 85,
+    "goodThreshold": 70,
+    "passingThreshold": 50
+  }
+}

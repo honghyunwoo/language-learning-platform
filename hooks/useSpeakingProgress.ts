@@ -1,52 +1,17 @@
-import { useState, useEffect } from 'react';
-import { useAuth } from './useAuth';
+import { useActivityProgress } from './useActivityProgress';
 import {
-  getActivityProgress,
   completeSpeakingActivity,
-  updateActivityProgress,
 } from '@/lib/firebase/progress';
 import type { SpeakingProgress } from '@/types/progress';
+import { useAuth } from './useAuth';
 
 /**
  * Speaking Activity 진행률 관리 Hook
- *
- * 기능:
- * - 녹음 완료한 문장 수 추적
- * - 녹음 시간 추적
- * - 녹음 시도 횟수 추적
- * - 자가 평가 결과 저장
  */
 export function useSpeakingProgress(activityId: string, weekId: string) {
   const { currentUser: user } = useAuth();
-  const [progress, setProgress] = useState<SpeakingProgress | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
-
-  // 진행률 불러오기
-  useEffect(() => {
-    if (!user) {
-      setLoading(false);
-      return;
-    }
-
-    const fetchProgress = async () => {
-      try {
-        setLoading(true);
-        const data = await getActivityProgress<SpeakingProgress>(
-          user.uid,
-          activityId
-        );
-        setProgress(data);
-      } catch (err) {
-        setError(err as Error);
-        console.error('Error fetching speaking progress:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProgress();
-  }, [user, activityId]);
+  const { progress, loading, error, updateProgress, fetchProgress } =
+    useActivityProgress<SpeakingProgress>(activityId);
 
   /**
    * Speaking Activity 완료 처리
@@ -77,40 +42,10 @@ export function useSpeakingProgress(activityId: string, weekId: string) {
         selfEvaluation
       );
 
-      // 로컬 상태 업데이트
-      const updatedProgress = await getActivityProgress<SpeakingProgress>(
-        user.uid,
-        activityId
-      );
-      setProgress(updatedProgress);
+      // 완료 후 상태 리프레시
+      await fetchProgress();
     } catch (err) {
-      setError(err as Error);
       console.error('Error completing speaking activity:', err);
-      throw err;
-    }
-  };
-
-  /**
-   * 진행률 부분 업데이트
-   * 예: 녹음 하나씩 완료할 때마다 호출
-   */
-  const updateProgress = async (
-    updates: Partial<Omit<SpeakingProgress, 'createdAt' | 'updatedAt'>>
-  ) => {
-    if (!user) throw new Error('User not authenticated');
-
-    try {
-      await updateActivityProgress(user.uid, activityId, updates);
-
-      // 로컬 상태 업데이트
-      const updatedProgress = await getActivityProgress<SpeakingProgress>(
-        user.uid,
-        activityId
-      );
-      setProgress(updatedProgress);
-    } catch (err) {
-      setError(err as Error);
-      console.error('Error updating speaking progress:', err);
       throw err;
     }
   };

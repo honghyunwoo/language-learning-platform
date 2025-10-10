@@ -14,8 +14,11 @@ service cloud.firestore {
 
     // 사용자 프로필
     match /users/{userId} {
-      // 모든 사용자가 다른 사용자 프로필 읽기 가능 (공개 정보만)
-      allow read: if true;
+      // 본인은 전체 프로필 읽기 가능
+      allow get: if isOwner(userId);
+      // 다른 사용자는 공개 설정된 프로필만 읽기 가능
+      allow read: if resource.data.keys().hasAny(['settings']) &&
+        resource.data.settings.profilePublic == true;
       // 본인만 자신의 프로필 생성/수정 가능
       allow create: if isOwner(userId);
       allow update: if isOwner(userId);
@@ -147,14 +150,18 @@ service cloud.firestore {
 
     // 주차별 진행률 (Week Progress)
     match /weekProgress/{progressId} {
-      // 본인의 진행률만 읽기/작성/수정 가능 (문서가 없어도 읽기 가능)
-      allow read, create, update: if isAuthenticated();
+      // 본인의 진행률만 접근 가능
+      allow read, update: if isOwner(resource.data.userId);
+      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      allow delete: if false;
     }
 
     // 활동별 진행률 (Activity Progress)
     match /activity_progress/{progressId} {
-      // 본인의 진행률만 읽기/작성/수정 가능 (문서가 없어도 읽기 가능)
-      allow read, create, update: if isAuthenticated();
+      // 본인의 진행률만 접근 가능
+      allow read, update: if isOwner(resource.data.userId);
+      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      allow delete: if false;
     }
 
     // 게시글 서브컬렉션: 좋아요

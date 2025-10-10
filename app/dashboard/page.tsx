@@ -1,5 +1,7 @@
 'use client';
 
+import { useMemo } from 'react';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/hooks/useAuth';
 import {
@@ -12,21 +14,25 @@ import {
 import { useOverallProgress } from '@/hooks/useOverallProgress';
 import { useJournalEntries } from '@/hooks/useJournal';
 import StatsCard from '@/components/dashboard/StatsCard';
-import WeeklyChart from '@/components/dashboard/WeeklyChart';
 import { LearningStats, SkillProgress } from '@/components/dashboard';
 import { CheckCircleIcon } from '@heroicons/react/24/outline';
-import { 
-  SkeletonCard, 
-  SkeletonActivityCard, 
-  SkeletonChart, 
-  SkeletonProgressBar 
+import {
+  SkeletonCard,
+  SkeletonActivityCard,
+  SkeletonChart,
+  SkeletonProgressBar
 } from '@/components/ui';
-import type { WeekProgress } from '@/types/progress';
+
+// Chart.js Dynamic Import (번들 크기 -130KB)
+const WeeklyChart = dynamic(() => import('@/components/dashboard/WeeklyChart'), {
+  loading: () => <SkeletonChart />,
+  ssr: false
+});
 
 export default function DashboardPage() {
   const router = useRouter();
   const { currentUser } = useAuth();
-  const { data: progress, isLoading, error } = useUserProgress(currentUser?.uid);
+  const { data: progress, isLoading } = useUserProgress(currentUser?.uid);
   const { weeklyData, totalWeeklyTime } = useWeeklyStats(currentUser?.uid);
   const { data: streakData } = useStreak(currentUser?.uid);
   const { data: learningTimeData } = useLearningTime(currentUser?.uid);
@@ -58,6 +64,15 @@ export default function DashboardPage() {
   const learnedToday = streakData?.learnedToday || false;
   const hours = learningTimeData?.hours || 0;
   const minutes = learningTimeData?.minutes || 0;
+
+  // weekProgress 메모이제이션 - 매 렌더링마다 새 배열 생성 방지
+  const memoizedWeekProgress = useMemo(() => {
+    return weekProgress.map((week) => ({
+      ...week,
+      isCurrentWeek: getCurrentWeek() === week.weekId,
+      isCompleted: week.progressPercentage === 100,
+    }));
+  }, [weekProgress, getCurrentWeek]);
 
   // 로딩 상태
   if (isLoading) {
@@ -127,7 +142,7 @@ export default function DashboardPage() {
             <span className="gradient-text">안녕하세요,</span>{' '}
             <span className="text-gray-900 dark:text-white">{currentUser?.nickname}님!</span>
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400">
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
             오늘도 영어 학습을 시작해보세요
             {learnedToday && (
               <span className="inline-flex items-center gap-2 ml-3 px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full text-sm font-bold shadow-lg shadow-green-500/30 animate-scale-in">
@@ -220,17 +235,15 @@ export default function DashboardPage() {
 
             {/* 주차별 진행률 그리드 */}
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-8">
-              {weekProgress.map((week: WeekProgress) => {
-                const isCurrentWeek = getCurrentWeek() === week.weekId;
-                const isCompleted = week.progressPercentage === 100;
+              {memoizedWeekProgress.map((week) => {
                 return (
                   <button
                     key={week.weekId}
                     onClick={() => router.push(`/dashboard/curriculum/${week.weekId}`)}
                     className={`relative p-4 rounded-2xl border-2 transition-all card-hover w-full text-left ${
-                      isCurrentWeek
+                      week.isCurrentWeek
                         ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30'
-                        : isCompleted
+                        : week.isCompleted
                         ? 'border-green-500 bg-green-50 dark:bg-green-900/20 shadow-lg shadow-green-500/20 hover:shadow-green-500/30'
                         : 'border-gray-200 dark:border-gray-700 glass dark:glass-dark hover:border-gray-300 dark:hover:border-gray-600'
                     }`}
@@ -239,8 +252,8 @@ export default function DashboardPage() {
                       <span className="font-black text-gray-900 dark:text-white text-sm">
                         {week.weekId.replace('week-', 'W')}
                       </span>
-                      {isCompleted && <CheckCircleIcon className="w-5 h-5 text-green-600 dark:text-green-400" />}
-                      {isCurrentWeek && !isCompleted && (
+                      {week.isCompleted && <CheckCircleIcon className="w-5 h-5 text-green-600 dark:text-green-400" />}
+                      {week.isCurrentWeek && !week.isCompleted && (
                         <span className="relative flex h-3 w-3">
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
                           <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-600"></span>
@@ -251,7 +264,7 @@ export default function DashboardPage() {
                       <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                         <div
                           className={`h-2 rounded-full transition-all ${
-                            isCompleted ? 'bg-green-500' : isCurrentWeek ? 'bg-blue-500' : 'bg-gray-400'
+                            week.isCompleted ? 'bg-green-500' : week.isCurrentWeek ? 'bg-blue-500' : 'bg-gray-400'
                           }`}
                           style={{ width: `${week.progressPercentage}%` }}
                         />

@@ -7,7 +7,7 @@ const protectedPaths = ['/dashboard'];
 // 인증된 사용자가 접근하면 안 되는 경로 (로그인, 회원가입)
 const authPaths = ['/login', '/signup'];
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // 보호된 경로인지 확인
@@ -18,15 +18,19 @@ export function middleware(request: NextRequest) {
   // 인증 페이지인지 확인
   const isAuthPath = authPaths.some((path) => pathname.startsWith(path));
 
-  // Firebase Auth 토큰 확인 (쿠키 또는 헤더)
-  // Note: Firebase는 클라이언트 사이드 인증을 사용하므로
-  // 미들웨어에서는 기본적인 체크만 수행
-  // 실제 인증 확인은 클라이언트에서 useAuth로 처리
-
-  // 보호된 경로 접근 시 체크 (서버 사이드에서는 기본 체크만)
+  // 보호된 경로 접근 시 세션 확인
   if (isProtectedPath) {
-    // 클라이언트에서 인증 확인 필요
-    // 여기서는 일단 통과시키고, 클라이언트에서 useEffect로 체크
+    const sessionToken = request.cookies.get('session')?.value;
+
+    // 세션 토큰이 없으면 로그인 페이지로 리다이렉트
+    if (!sessionToken) {
+      const loginUrl = new URL('/login', request.url);
+      loginUrl.searchParams.set('redirect', pathname);
+      return NextResponse.redirect(loginUrl);
+    }
+
+    // TODO: Firebase Admin SDK로 토큰 검증
+    // 현재는 토큰 존재만 확인 (클라이언트에서 추가 검증)
     return NextResponse.next();
   }
 

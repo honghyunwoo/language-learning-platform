@@ -12,6 +12,7 @@ import {
 import { db } from '@/lib/firebase';
 import { UserWeekProgress, ActivitySession } from '@/types/curriculum';
 import { curriculumData, getWeekById } from '@/lib/curriculum/curriculumData';
+import { awardActivityPoints } from '@/lib/gamification/userPoints';
 
 // 레벨별 주차 목록 조회
 export const useCurriculumWeeks = (level?: string) => {
@@ -189,13 +190,26 @@ export const useCompleteActivity = () => {
       const completedActivities = currentData?.completedActivities || [];
       const currentTimeSpent = currentData?.timeSpent || 0;
 
-      // 이미 완료한 활동이 아니면 추가
-      if (!completedActivities.includes(activityId)) {
-        completedActivities.push(activityId);
-      }
-
       // 주차 데이터 가져오기
       const weekData = getWeekById(weekId);
+      const activity = weekData?.activities.find((a) => a.id === activityId);
+
+      // 이미 완료한 활동이 아니면 추가 및 포인트 부여
+      const isFirstCompletion = !completedActivities.includes(activityId);
+      if (isFirstCompletion) {
+        completedActivities.push(activityId);
+
+        // 포인트 부여 (첫 완료 시에만)
+        if (activity) {
+          try {
+            await awardActivityPoints(userId, activity.type, activity.title);
+          } catch (error) {
+            console.error('Failed to award points:', error);
+            // 포인트 부여 실패해도 활동 완료는 진행
+          }
+        }
+      }
+
       const requiredActivities =
         weekData?.activities.filter((a) => a.requiredForCompletion) || [];
       const allRequiredCompleted = requiredActivities.every((a) =>
@@ -218,7 +232,6 @@ export const useCompleteActivity = () => {
 
       // 일지 자동 업데이트
       const today = new Date().toISOString().split('T')[0];
-      const activity = weekData?.activities.find((a) => a.id === activityId);
 
       if (activity) {
         const journalId = `${userId}_${today}`;

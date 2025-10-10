@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from '@/hooks/useAuth';
 import { useJournalEntries } from '@/hooks/useJournal';
 import { useOverallProgress } from '@/hooks/useOverallProgress';
+import { useUserStats } from '@/hooks/useFollow';
 import {
   ClockIcon,
   CheckCircleIcon,
@@ -13,12 +14,14 @@ import {
   ChartBarIcon,
   FireIcon,
   ArrowRightIcon,
+  UserGroupIcon,
 } from '@heroicons/react/24/outline';
 
 export default function ProfilePage() {
   const router = useRouter();
   const { currentUser } = useAuth();
   const { overallCompletionPercentage, totalActivitiesCompleted } = useOverallProgress();
+  const { data: userStats } = useUserStats(currentUser?.uid);
 
   // 전체 Journal 데이터
   const { data: allEntries } = useJournalEntries(
@@ -166,6 +169,30 @@ export default function ProfilePage() {
                 </div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">현재 스트릭</div>
               </div>
+            </div>
+          </div>
+
+          {/* 소셜 통계 */}
+          <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+            <div className="flex items-center justify-center gap-8">
+              <button
+                onClick={() => router.push('/dashboard/profile/followers')}
+                className="text-center hover:scale-105 transition-transform"
+              >
+                <div className="text-2xl font-black text-gray-900 dark:text-white">
+                  {userStats?.followersCount || 0}
+                </div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">팔로워</div>
+              </button>
+              <button
+                onClick={() => router.push('/dashboard/profile/following')}
+                className="text-center hover:scale-105 transition-transform"
+              >
+                <div className="text-2xl font-black text-gray-900 dark:text-white">
+                  {userStats?.followingCount || 0}
+                </div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">팔로잉</div>
+              </button>
             </div>
           </div>
         </div>

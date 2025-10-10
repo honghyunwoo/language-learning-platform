@@ -382,7 +382,7 @@ export default function ResourcesPage() {
                         variant="secondary"
                         onClick={() => {
                           if (!currentUser) return;
-                          toggleBookmark.mutate({ resourceId: resource.id, userId: currentUser.uid });
+                          toggleBookmark.mutate({ parentId: resource.id, userId: currentUser.uid });
                         }}
                         className="px-4"
                       >
