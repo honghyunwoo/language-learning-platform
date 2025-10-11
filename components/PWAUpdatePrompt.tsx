@@ -15,7 +15,8 @@ export default function PWAUpdatePrompt() {
     ) {
       // ✅ Delta 8: basePath 안전 등록
       const base = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
-      const workbox = new Workbox(`${base}/sw.js`);
+      // 🔧 Fix: URL 버전 태그로 구 SW 강제 교체 (임시)
+      const workbox = new Workbox(`${base}/sw.js?v=2`);
 
       // ✅ Delta 4: waiting 이벤트로 새 버전 감지
       workbox.addEventListener('waiting', () => {
