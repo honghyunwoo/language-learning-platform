@@ -72,6 +72,21 @@ registerRoute(
   })
 );
 
+// 4-2. Video Files - Cache First + Range Requests
+registerRoute(
+  ({ url }) => /\.(?:mp4|webm|ogg)$/i.test(url.pathname),
+  new CacheFirst({
+    cacheName: 'video-files',
+    plugins: [
+      new RangeRequestsPlugin(), // 부분 요청 지원 (시크바)
+      new ExpirationPlugin({
+        maxEntries: 20,
+        maxAgeSeconds: 30 * 24 * 60 * 60, // 30일
+      }),
+    ],
+  })
+);
+
 // 5. JSON Data - Network First
 registerRoute(
   ({ url }) =>
