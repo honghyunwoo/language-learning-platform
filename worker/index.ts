@@ -7,7 +7,9 @@ import { RangeRequestsPlugin } from 'workbox-range-requests';
 declare const self: ServiceWorkerGlobalScope;
 
 // Precache 매니페스트 (next-pwa가 자동 생성)
-precacheAndRoute(self.__WB_MANIFEST);
+// @ts-ignore
+const manifest = self.__WB_MANIFEST || [];
+precacheAndRoute(manifest);
 
 // 1. Documents - Network First (오프라인 폴백 자동 주입)
 registerRoute(
