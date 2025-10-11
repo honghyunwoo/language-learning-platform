@@ -4,11 +4,20 @@ import withPWAInit from "@ducanh2912/next-pwa";
 
 const withPWA = withPWAInit({
   dest: "public",
-  cacheOnFrontEndNav: true,
-  aggressiveFrontEndNavCaching: true,
-  reloadOnOnline: true,
   disable: process.env.NODE_ENV === "development",
+
+  // ✅ Delta 1: customWorkerSrc (올바른 옵션명)
+  customWorkerSrc: "worker",
+
+  // ✅ Delta 2: 오프라인 폴백 (App Router 표준)
+  fallbacks: {
+    document: "/~offline",
+    image: "/images/offline-image.svg",
+  },
+
   workboxOptions: {
+    skipWaiting: false, // ✅ 사용자 승인 시에만 활성화
+    clientsClaim: false,
     disableDevLogs: true,
     runtimeCaching: [
       {
