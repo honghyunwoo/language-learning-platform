@@ -1,0 +1,143 @@
+{
+  "id": "week-5-grammar",
+  "type": "grammar",
+  "level": "A2.1",
+  "week": 5,
+  "title": "가산/불가산 & some/any/much/many - 핵심 문법",
+  "estimatedTime": 30,
+  "objectives": [
+    "형식·의미·담화 기능 통합 이해",
+    "빈출 오류 교정",
+    "실전 적용 능력"
+  ],
+  "content": {
+    "linguisticFoundation": {
+      "title": "형식-의미-사용",
+      "summary": "가산/불가산 & some/any/much/many의 형태 규칙과 기능적 의미를 Reichenbach/Comrie 관점으로 설명",
+      "visualAid": {
+        "type": "timeline",
+        "description": "타임라인·도식으로 대비",
+        "asciiArt": "[Form]→[Meaning]→[Use]"
+      }
+    },
+    "coreTheory": {
+      "rules": [
+        {
+          "rule": "형태",
+          "detail": "긍정/부정/의문 기본 도식"
+        },
+        {
+          "rule": "합의/일치",
+          "detail": "인칭·수 일치, 시제 일치(해당 시)"
+        },
+        {
+          "rule": "담화 기능",
+          "detail": "정보 구조와 문맥 연결"
+        }
+      ]
+    },
+    "comparison": {
+      "title": "혼동 항목 비교",
+      "points": [
+        "형태 대비",
+        "의미 대비",
+        "상황별 선택"
+      ]
+    },
+    "koreanLearnerPitfalls": {
+      "title": "한국인 학습자 오류",
+      "errors": [
+        {
+          "wrong": "I am agree.",
+          "fix": "I agree.",
+          "why": "동사 agree는 be 동사 불필요(서술동사) 형식 혼동."
+        },
+        {
+          "wrong": "He don't...",
+          "fix": "He doesn't...",
+          "why": "3인칭 단수 동사 변화"
+        }
+      ]
+    },
+    "examples": {
+      "pairs": [
+        {
+          "correct": "I am a student.",
+          "incorrect": "I a student."
+        },
+        {
+          "correct": "Are you okay?",
+          "incorrect": "You are okay?"
+        }
+      ]
+    },
+    "exercises": [
+      {
+        "type": "choose",
+        "question": "_____ you a teacher?",
+        "options": [
+          "Are",
+          "Is",
+          "Am",
+          "Be"
+        ],
+        "correct": "Are"
+      },
+      {
+        "type": "error_correction",
+        "sentence": "He am happy.",
+        "fix": "He is happy."
+      },
+      {
+        "type": "translation_ko_en",
+        "korean": "나는 학생이 아니야.",
+        "correct": "I am not a student."
+      },
+      {
+        "type": "production",
+        "prompt": "자기 상태·직업을 be동사로 4문장"
+      },
+      {
+        "type": "production",
+        "prompt": "자기 상태·직업을 be동사로 4문장"
+      },
+      {
+        "type": "production",
+        "prompt": "자기 상태·직업을 be동사로 4문장"
+      },
+      {
+        "type": "production",
+        "prompt": "자기 상태·직업을 be동사로 4문장"
+      },
+      {
+        "type": "production",
+        "prompt": "자기 상태·직업을 be동사로 4문장"
+      }
+    ]
+  },
+  "assessment": {
+    "diagnosticTest": [
+      {
+        "q": "be 동사의 1인칭 단수?",
+        "a": "am"
+      }
+    ],
+    "progressChecks": [
+      {
+        "q": "She ___ a doctor.",
+        "a": "is"
+      }
+    ],
+    "finalTest": [
+      {
+        "q": "완성: We ___ friends.",
+        "a": "are"
+      }
+    ]
+  },
+  "metadata": {
+    "createdBy": "GPT-5 Thinking Mode",
+    "createdAt": "2025-10-11",
+    "difficultyRating": 6.5
+  }
+}

@@ -1,0 +1,451 @@
+{
+  "id": "week-11-vocabulary-elite",
+  "type": "vocabulary",
+  "level": "B2",
+  "week": 11,
+  "title": "협상·설득 어휘·담화 표지 - 엘리트 어휘 마스터",
+  "estimatedTime": 30,
+  "objectives": [
+    "고급 담화 표지·전문 어휘 15개 뉘앙스·레지스터 구분",
+    "코퍼스 기반 콜로케이션/구문 패턴 체득",
+    "실전 발표·협상에서 자연스럽게 사용"
+  ],
+  "content": {
+    "theory": {
+      "introduction": "'협상·설득 어휘·담화 표지' 영역의 고빈도 키워드를 의미론(denotation vs connotation), 사회언어학적 레지스터, 장르별 사용패턴으로 분석.",
+      "etymology": {
+        "notes": "핵심 표제어 어원·도메인 변천 약식 요약"
+      },
+      "semanticFields": [
+        {
+          "category": "협상·설득 어휘·담화 표지",
+          "words": [
+            "trade-off",
+            "concession",
+            "BATNA",
+            "leverage",
+            "anchor",
+            "sweetener",
+            "counteroffer",
+            "tentative",
+            "contingent on",
+            "due diligence",
+            "fallback",
+            "red line",
+            "goodwill",
+            "walk-away",
+            "trial balloon"
+          ],
+          "nuances": "정책/경영/학술 담화에서의 쓰임 대비"
+        }
+      ]
+    },
+    "examples": {
+      "trade-off": [
+        {
+          "level": "intermediate",
+          "sentence": "Every business decision involves a trade-off between cost and quality.",
+          "translation": "모든 비즈니스 결정은 비용과 품질 간의 트레이드오프를 수반한다.",
+          "notes": "의사결정 맥락",
+          "audioUrl": "/audio/elite_trade-off_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "We need to carefully evaluate the trade-offs before committing to this strategy.",
+          "translation": "이 전략을 실행하기 전에 트레이드오프를 신중히 평가해야 한다.",
+          "notes": "전략적 평가",
+          "audioUrl": "/audio/elite_trade-off_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "The trade-off between short-term profits and long-term sustainability is becoming increasingly critical.",
+          "translation": "단기 수익과 장기 지속가능성 간의 트레이드오프가 점점 더 중요해지고 있다.",
+          "notes": "전략적 딜레마",
+          "audioUrl": "/audio/elite_trade-off_3.mp3"
+        }
+      ],
+      "concession": [
+        {
+          "level": "intermediate",
+          "sentence": "We're willing to make some concessions to reach an agreement.",
+          "translation": "합의에 도달하기 위해 몇 가지 양보를 할 용의가 있습니다.",
+          "notes": "협상 기본",
+          "audioUrl": "/audio/elite_concession_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The union demanded significant concessions on working conditions.",
+          "translation": "노조는 근무 조건에 대한 상당한 양보를 요구했다.",
+          "notes": "노사협상",
+          "audioUrl": "/audio/elite_concession_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Making concessions without reciprocal commitments can weaken your negotiating position.",
+          "translation": "상호 약속 없이 양보하면 협상 입지가 약해질 수 있다.",
+          "notes": "협상 전술",
+          "audioUrl": "/audio/elite_concession_3.mp3"
+        }
+      ],
+      "BATNA": [
+        {
+          "level": "intermediate",
+          "sentence": "Always know your BATNA before entering negotiations.",
+          "translation": "협상에 들어가기 전에 항상 BATNA를 파악하라.",
+          "notes": "협상 준비 (Best Alternative To Negotiated Agreement)",
+          "audioUrl": "/audio/elite_BATNA_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Our BATNA gives us leverage to push for better terms.",
+          "translation": "우리의 BATNA가 더 나은 조건을 요구할 수 있는 지렛대를 제공한다.",
+          "notes": "협상력 강화",
+          "audioUrl": "/audio/elite_BATNA_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "A strong BATNA transforms the power dynamics of any negotiation.",
+          "translation": "강력한 BATNA는 모든 협상의 힘의 역학을 변화시킨다.",
+          "notes": "협상 이론",
+          "audioUrl": "/audio/elite_BATNA_3.mp3"
+        }
+      ],
+      "leverage": [
+        {
+          "level": "intermediate",
+          "sentence": "We can leverage our market position to negotiate better prices.",
+          "translation": "시장 지위를 활용하여 더 나은 가격을 협상할 수 있다.",
+          "notes": "협상 활용",
+          "audioUrl": "/audio/elite_leverage_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The company leveraged its intellectual property to secure favorable licensing terms.",
+          "translation": "회사는 지적재산권을 활용하여 유리한 라이선스 조건을 확보했다.",
+          "notes": "전략적 활용",
+          "audioUrl": "/audio/elite_leverage_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Understanding how to leverage information asymmetry is crucial in strategic negotiations.",
+          "translation": "정보 비대칭을 활용하는 방법을 이해하는 것이 전략적 협상에서 중요하다.",
+          "notes": "고급 협상 전술",
+          "audioUrl": "/audio/elite_leverage_3.mp3"
+        }
+      ],
+      "anchor": [
+        {
+          "level": "intermediate",
+          "sentence": "They anchored the negotiation by making an aggressive opening offer.",
+          "translation": "그들은 공격적인 첫 제안으로 협상의 기준점을 설정했다.",
+          "notes": "협상 시작",
+          "audioUrl": "/audio/elite_anchor_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The initial price serves as an anchor that influences all subsequent counteroffers.",
+          "translation": "초기 가격은 이후 모든 역제안에 영향을 미치는 기준점 역할을 한다.",
+          "notes": "앵커링 효과",
+          "audioUrl": "/audio/elite_anchor_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Sophisticated negotiators deliberately set anchors to frame the entire discussion.",
+          "translation": "노련한 협상가들은 전체 논의를 틀짓기 위해 의도적으로 기준점을 설정한다.",
+          "notes": "심리적 전술",
+          "audioUrl": "/audio/elite_anchor_3.mp3"
+        }
+      ],
+      "sweetener": [
+        {
+          "level": "intermediate",
+          "sentence": "We added some sweeteners to make the deal more attractive.",
+          "translation": "거래를 더 매력적으로 만들기 위해 감미료를 추가했다.",
+          "notes": "거래 개선",
+          "audioUrl": "/audio/elite_sweetener_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The sweetener of expedited delivery helped close the contract.",
+          "translation": "신속 배송이라는 감미료가 계약 체결에 도움이 되었다.",
+          "notes": "계약 체결 전술",
+          "audioUrl": "/audio/elite_sweetener_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Strategic use of sweeteners can shift negotiations from impasse to agreement.",
+          "translation": "감미료의 전략적 사용은 협상을 교착 상태에서 합의로 전환할 수 있다.",
+          "notes": "교착 돌파",
+          "audioUrl": "/audio/elite_sweetener_3.mp3"
+        }
+      ],
+      "counteroffer": [
+        {
+          "level": "intermediate",
+          "sentence": "We received their counteroffer and need to review it carefully.",
+          "translation": "그들의 역제안을 받았으며 신중히 검토해야 한다.",
+          "notes": "협상 진행",
+          "audioUrl": "/audio/elite_counteroffer_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The counteroffer addressed most of our concerns but fell short on pricing.",
+          "translation": "역제안은 우리의 우려 대부분을 해결했지만 가격 면에서는 부족했다.",
+          "notes": "제안 평가",
+          "audioUrl": "/audio/elite_counteroffer_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Timing your counteroffer strategically can maximize concessions from the other party.",
+          "translation": "역제안의 타이밍을 전략적으로 잡으면 상대방의 양보를 극대화할 수 있다.",
+          "notes": "협상 타이밍",
+          "audioUrl": "/audio/elite_counteroffer_3.mp3"
+        }
+      ],
+      "tentative": [
+        {
+          "level": "intermediate",
+          "sentence": "We've reached a tentative agreement pending board approval.",
+          "translation": "이사회 승인을 조건으로 잠정 합의에 도달했다.",
+          "notes": "조건부 합의",
+          "audioUrl": "/audio/elite_tentative_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The tentative timeline assumes no major regulatory hurdles.",
+          "translation": "잠정 일정은 주요 규제 장애물이 없다고 가정한다.",
+          "notes": "가정 포함 계획",
+          "audioUrl": "/audio/elite_tentative_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Maintaining tentative commitments allows flexibility while preserving negotiating momentum.",
+          "translation": "잠정적 약속을 유지하면 협상 모멘텀을 보존하면서 유연성을 허용한다.",
+          "notes": "협상 전략",
+          "audioUrl": "/audio/elite_tentative_3.mp3"
+        }
+      ],
+      "contingent on": [
+        {
+          "level": "intermediate",
+          "sentence": "The deal is contingent on regulatory approval.",
+          "translation": "거래는 규제 승인을 조건으로 한다.",
+          "notes": "조건부 계약",
+          "audioUrl": "/audio/elite_contingent on_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Our investment is contingent on meeting specific performance milestones.",
+          "translation": "우리의 투자는 특정 성과 이정표 달성을 조건으로 한다.",
+          "notes": "성과 조건",
+          "audioUrl": "/audio/elite_contingent on_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Making agreements contingent on verifiable metrics reduces implementation risk.",
+          "translation": "검증 가능한 지표를 조건으로 계약을 체결하면 이행 위험을 줄일 수 있다.",
+          "notes": "위험 관리",
+          "audioUrl": "/audio/elite_contingent on_3.mp3"
+        }
+      ],
+      "due diligence": [
+        {
+          "level": "intermediate",
+          "sentence": "We need to complete due diligence before finalizing the acquisition.",
+          "translation": "인수를 최종 확정하기 전에 실사를 완료해야 한다.",
+          "notes": "M&A 절차",
+          "audioUrl": "/audio/elite_due diligence_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Thorough due diligence revealed several undisclosed liabilities.",
+          "translation": "철저한 실사를 통해 여러 미공개 부채가 드러났다.",
+          "notes": "리스크 발견",
+          "audioUrl": "/audio/elite_due diligence_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Due diligence extends beyond financials to include cultural and strategic fit assessment.",
+          "translation": "실사는 재무를 넘어 문화적·전략적 적합성 평가까지 확장된다.",
+          "notes": "포괄적 실사",
+          "audioUrl": "/audio/elite_due diligence_3.mp3"
+        }
+      ],
+      "fallback": [
+        {
+          "level": "intermediate",
+          "sentence": "We always prepare a fallback plan in case negotiations fail.",
+          "translation": "협상이 실패할 경우를 대비해 항상 대안 계획을 준비한다.",
+          "notes": "대안 준비",
+          "audioUrl": "/audio/elite_fallback_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The fallback position involves seeking alternative suppliers.",
+          "translation": "대안 입장은 대체 공급업체를 찾는 것을 포함한다.",
+          "notes": "대체 전략",
+          "audioUrl": "/audio/elite_fallback_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "A credible fallback strengthens your negotiating position even if never used.",
+          "translation": "신뢰할 수 있는 대안은 실제로 사용하지 않더라도 협상 입지를 강화한다.",
+          "notes": "협상력 강화",
+          "audioUrl": "/audio/elite_fallback_3.mp3"
+        }
+      ],
+      "red line": [
+        {
+          "level": "intermediate",
+          "sentence": "Price is our red line - we cannot compromise on that.",
+          "translation": "가격은 우리의 레드라인입니다 - 그것은 양보할 수 없습니다.",
+          "notes": "협상 한계선",
+          "audioUrl": "/audio/elite_red line_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The company drew a red line at any concessions affecting core technology.",
+          "translation": "회사는 핵심 기술에 영향을 미치는 모든 양보에 레드라인을 그었다.",
+          "notes": "절대 불가 조건",
+          "audioUrl": "/audio/elite_red line_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Clearly communicating red lines early prevents wasted negotiation time.",
+          "translation": "레드라인을 조기에 명확히 전달하면 협상 시간 낭비를 방지할 수 있다.",
+          "notes": "효율적 협상",
+          "audioUrl": "/audio/elite_red line_3.mp3"
+        }
+      ],
+      "goodwill": [
+        {
+          "level": "intermediate",
+          "sentence": "Building goodwill is essential for long-term partnerships.",
+          "translation": "신뢰 구축은 장기 파트너십에 필수적이다.",
+          "notes": "관계 구축",
+          "audioUrl": "/audio/elite_goodwill_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The company's goodwill was damaged by the contract dispute.",
+          "translation": "계약 분쟁으로 회사의 신뢰가 손상되었다.",
+          "notes": "신뢰 손실",
+          "audioUrl": "/audio/elite_goodwill_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Investing in goodwill through fair dealing yields dividends in future negotiations.",
+          "translation": "공정한 거래를 통한 신뢰 투자는 향후 협상에서 배당을 제공한다.",
+          "notes": "장기적 가치",
+          "audioUrl": "/audio/elite_goodwill_3.mp3"
+        }
+      ],
+      "walk-away": [
+        {
+          "level": "intermediate",
+          "sentence": "We determined our walk-away point before starting negotiations.",
+          "translation": "협상을 시작하기 전에 철수 지점을 결정했다.",
+          "notes": "협상 준비",
+          "audioUrl": "/audio/elite_walk-away_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Knowing when to walk away is as important as knowing when to compromise.",
+          "translation": "언제 철수해야 하는지 아는 것은 언제 양보해야 하는지 아는 것만큼 중요하다.",
+          "notes": "협상 판단",
+          "audioUrl": "/audio/elite_walk-away_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "The credibility of your walk-away threat depends on your BATNA strength.",
+          "translation": "철수 위협의 신뢰성은 BATNA의 강도에 달려 있다.",
+          "notes": "협상 레버리지",
+          "audioUrl": "/audio/elite_walk-away_3.mp3"
+        }
+      ],
+      "trial balloon": [
+        {
+          "level": "intermediate",
+          "sentence": "They floated a trial balloon to gauge our reaction.",
+          "translation": "그들은 우리의 반응을 가늠하기 위해 시범 제안을 띄웠다.",
+          "notes": "반응 테스트",
+          "audioUrl": "/audio/elite_trial balloon_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The trial balloon revealed stakeholder concerns before formal proposal.",
+          "translation": "시범 제안은 공식 제안 전에 이해관계자의 우려를 드러냈다.",
+          "notes": "사전 테스트",
+          "audioUrl": "/audio/elite_trial balloon_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Strategic use of trial balloons minimizes risk while exploring negotiation boundaries.",
+          "translation": "시범 제안의 전략적 사용은 협상 경계를 탐색하면서 위험을 최소화한다.",
+          "notes": "위험 완화 전술",
+          "audioUrl": "/audio/elite_trial balloon_3.mp3"
+        }
+      ]
+    },
+    "exercises": [
+      {
+        "type": "collocation",
+        "instruction": "콜로케이션 선택",
+        "question": "_____ analysis",
+        "options": [
+          "variance",
+          "escalate",
+          "escalation"
+        ],
+        "correct": "variance",
+        "explanation": "통계 맥락"
+      },
+      {
+        "type": "translation",
+        "korean": "우리는 이 사안을 다음 주 회의에서 다시 논의하자.",
+        "correct": "Let's table the discussion until next week's meeting.",
+        "explanation": "‘table’의 미국식/영국식 차이는 노트 참고"
+      },
+      {
+        "type": "production",
+        "prompt": "신규 프로젝트 브리핑 4문장(표제어 5개 포함)"
+      },
+      {
+        "type": "production",
+        "prompt": "신규 프로젝트 브리핑 4문장(표제어 5개 포함)"
+      },
+      {
+        "type": "production",
+        "prompt": "신규 프로젝트 브리핑 4문장(표제어 5개 포함)"
+      }
+    ]
+  },
+  "assessment": {
+    "preTest": [
+      {
+        "q": "BATNA의 의미는?",
+        "a": "Best Alternative To a Negotiated Agreement"
+      }
+    ],
+    "postTest": [
+      {
+        "q": "'uplift'의 데이터 맥락 의미?",
+        "a": "증가분/상승 효과"
+      }
+    ],
+    "masteryCheck": {
+      "description": "90% 이상 정답 시 통과",
+      "questions": [
+        {
+          "q": "‘anchor’ 전략 한 줄 설명",
+          "a": "초기 제안을 유리한 기준점으로 설정해 협상 범위를 유도"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "createdBy": "GPT-5 Thinking Mode",
+    "createdAt": "2025-10-11",
+    "qualityScore": 95
+  }
+}

@@ -1,0 +1,360 @@
+{
+  "generatedAt": "2025-10-10T22:22:42.847Z",
+  "totalActivities": 56,
+  "byType": {
+    "vocabulary": 16,
+    "grammar": 8,
+    "listening": 8,
+    "speaking": 8,
+    "reading": 8,
+    "writing": 8
+  },
+  "byWeek": {
+    "week-1": 7,
+    "week-2": 7,
+    "week-3": 7,
+    "week-4": 7,
+    "week-5": 7,
+    "week-6": 7,
+    "week-7": 7,
+    "week-8": 7
+  },
+  "files": [
+    {
+      "file": "week-1-vocab.json",
+      "type": "vocabulary",
+      "week": 1,
+      "path": "/activities/vocabulary/week-1-vocab.json"
+    },
+    {
+      "file": "week-1-vocabulary.json",
+      "type": "vocabulary",
+      "week": 1,
+      "path": "/activities/vocabulary/week-1-vocabulary.json"
+    },
+    {
+      "file": "week-2-vocab.json",
+      "type": "vocabulary",
+      "week": 2,
+      "path": "/activities/vocabulary/week-2-vocab.json"
+    },
+    {
+      "file": "week-2-vocabulary.json",
+      "type": "vocabulary",
+      "week": 2,
+      "path": "/activities/vocabulary/week-2-vocabulary.json"
+    },
+    {
+      "file": "week-3-vocab.json",
+      "type": "vocabulary",
+      "week": 3,
+      "path": "/activities/vocabulary/week-3-vocab.json"
+    },
+    {
+      "file": "week-3-vocabulary.json",
+      "type": "vocabulary",
+      "week": 3,
+      "path": "/activities/vocabulary/week-3-vocabulary.json"
+    },
+    {
+      "file": "week-4-vocab.json",
+      "type": "vocabulary",
+      "week": 4,
+      "path": "/activities/vocabulary/week-4-vocab.json"
+    },
+    {
+      "file": "week-4-vocabulary.json",
+      "type": "vocabulary",
+      "week": 4,
+      "path": "/activities/vocabulary/week-4-vocabulary.json"
+    },
+    {
+      "file": "week-5-vocab.json",
+      "type": "vocabulary",
+      "week": 5,
+      "path": "/activities/vocabulary/week-5-vocab.json"
+    },
+    {
+      "file": "week-5-vocabulary.json",
+      "type": "vocabulary",
+      "week": 5,
+      "path": "/activities/vocabulary/week-5-vocabulary.json"
+    },
+    {
+      "file": "week-6-vocab.json",
+      "type": "vocabulary",
+      "week": 6,
+      "path": "/activities/vocabulary/week-6-vocab.json"
+    },
+    {
+      "file": "week-6-vocabulary.json",
+      "type": "vocabulary",
+      "week": 6,
+      "path": "/activities/vocabulary/week-6-vocabulary.json"
+    },
+    {
+      "file": "week-7-vocab.json",
+      "type": "vocabulary",
+      "week": 7,
+      "path": "/activities/vocabulary/week-7-vocab.json"
+    },
+    {
+      "file": "week-7-vocabulary.json",
+      "type": "vocabulary",
+      "week": 7,
+      "path": "/activities/vocabulary/week-7-vocabulary.json"
+    },
+    {
+      "file": "week-8-vocab.json",
+      "type": "vocabulary",
+      "week": 8,
+      "path": "/activities/vocabulary/week-8-vocab.json"
+    },
+    {
+      "file": "week-8-vocabulary.json",
+      "type": "vocabulary",
+      "week": 8,
+      "path": "/activities/vocabulary/week-8-vocabulary.json"
+    },
+    {
+      "file": "week-1-grammar.json",
+      "type": "grammar",
+      "week": 1,
+      "path": "/activities/grammar/week-1-grammar.json"
+    },
+    {
+      "file": "week-2-grammar.json",
+      "type": "grammar",
+      "week": 2,
+      "path": "/activities/grammar/week-2-grammar.json"
+    },
+    {
+      "file": "week-3-grammar.json",
+      "type": "grammar",
+      "week": 3,
+      "path": "/activities/grammar/week-3-grammar.json"
+    },
+    {
+      "file": "week-4-grammar.json",
+      "type": "grammar",
+      "week": 4,
+      "path": "/activities/grammar/week-4-grammar.json"
+    },
+    {
+      "file": "week-5-grammar.json",
+      "type": "grammar",
+      "week": 5,
+      "path": "/activities/grammar/week-5-grammar.json"
+    },
+    {
+      "file": "week-6-grammar.json",
+      "type": "grammar",
+      "week": 6,
+      "path": "/activities/grammar/week-6-grammar.json"
+    },
+    {
+      "file": "week-7-grammar.json",
+      "type": "grammar",
+      "week": 7,
+      "path": "/activities/grammar/week-7-grammar.json"
+    },
+    {
+      "file": "week-8-grammar.json",
+      "type": "grammar",
+      "week": 8,
+      "path": "/activities/grammar/week-8-grammar.json"
+    },
+    {
+      "file": "week-1-listening.json",
+      "type": "listening",
+      "week": 1,
+      "path": "/activities/listening/week-1-listening.json"
+    },
+    {
+      "file": "week-2-listening.json",
+      "type": "listening",
+      "week": 2,
+      "path": "/activities/listening/week-2-listening.json"
+    },
+    {
+      "file": "week-3-listening.json",
+      "type": "listening",
+      "week": 3,
+      "path": "/activities/listening/week-3-listening.json"
+    },
+    {
+      "file": "week-4-listening.json",
+      "type": "listening",
+      "week": 4,
+      "path": "/activities/listening/week-4-listening.json"
+    },
+    {
+      "file": "week-5-listening.json",
+      "type": "listening",
+      "week": 5,
+      "path": "/activities/listening/week-5-listening.json"
+    },
+    {
+      "file": "week-6-listening.json",
+      "type": "listening",
+      "week": 6,
+      "path": "/activities/listening/week-6-listening.json"
+    },
+    {
+      "file": "week-7-listening.json",
+      "type": "listening",
+      "week": 7,
+      "path": "/activities/listening/week-7-listening.json"
+    },
+    {
+      "file": "week-8-listening.json",
+      "type": "listening",
+      "week": 8,
+      "path": "/activities/listening/week-8-listening.json"
+    },
+    {
+      "file": "week-1-speaking.json",
+      "type": "speaking",
+      "week": 1,
+      "path": "/activities/speaking/week-1-speaking.json"
+    },
+    {
+      "file": "week-2-speaking.json",
+      "type": "speaking",
+      "week": 2,
+      "path": "/activities/speaking/week-2-speaking.json"
+    },
+    {
+      "file": "week-3-speaking.json",
+      "type": "speaking",
+      "week": 3,
+      "path": "/activities/speaking/week-3-speaking.json"
+    },
+    {
+      "file": "week-4-speaking.json",
+      "type": "speaking",
+      "week": 4,
+      "path": "/activities/speaking/week-4-speaking.json"
+    },
+    {
+      "file": "week-5-speaking.json",
+      "type": "speaking",
+      "week": 5,
+      "path": "/activities/speaking/week-5-speaking.json"
+    },
+    {
+      "file": "week-6-speaking.json",
+      "type": "speaking",
+      "week": 6,
+      "path": "/activities/speaking/week-6-speaking.json"
+    },
+    {
+      "file": "week-7-speaking.json",
+      "type": "speaking",
+      "week": 7,
+      "path": "/activities/speaking/week-7-speaking.json"
+    },
+    {
+      "file": "week-8-speaking.json",
+      "type": "speaking",
+      "week": 8,
+      "path": "/activities/speaking/week-8-speaking.json"
+    },
+    {
+      "file": "week-1-reading.json",
+      "type": "reading",
+      "week": 1,
+      "path": "/activities/reading/week-1-reading.json"
+    },
+    {
+      "file": "week-2-reading.json",
+      "type": "reading",
+      "week": 2,
+      "path": "/activities/reading/week-2-reading.json"
+    },
+    {
+      "file": "week-3-reading.json",
+      "type": "reading",
+      "week": 3,
+      "path": "/activities/reading/week-3-reading.json"
+    },
+    {
+      "file": "week-4-reading.json",
+      "type": "reading",
+      "week": 4,
+      "path": "/activities/reading/week-4-reading.json"
+    },
+    {
+      "file": "week-5-reading.json",
+      "type": "reading",
+      "week": 5,
+      "path": "/activities/reading/week-5-reading.json"
+    },
+    {
+      "file": "week-6-reading.json",
+      "type": "reading",
+      "week": 6,
+      "path": "/activities/reading/week-6-reading.json"
+    },
+    {
+      "file": "week-7-reading.json",
+      "type": "reading",
+      "week": 7,
+      "path": "/activities/reading/week-7-reading.json"
+    },
+    {
+      "file": "week-8-reading.json",
+      "type": "reading",
+      "week": 8,
+      "path": "/activities/reading/week-8-reading.json"
+    },
+    {
+      "file": "week-1-writing.json",
+      "type": "writing",
+      "week": 1,
+      "path": "/activities/writing/week-1-writing.json"
+    },
+    {
+      "file": "week-2-writing.json",
+      "type": "writing",
+      "week": 2,
+      "path": "/activities/writing/week-2-writing.json"
+    },
+    {
+      "file": "week-3-writing.json",
+      "type": "writing",
+      "week": 3,
+      "path": "/activities/writing/week-3-writing.json"
+    },
+    {
+      "file": "week-4-writing.json",
+      "type": "writing",
+      "week": 4,
+      "path": "/activities/writing/week-4-writing.json"
+    },
+    {
+      "file": "week-5-writing.json",
+      "type": "writing",
+      "week": 5,
+      "path": "/activities/writing/week-5-writing.json"
+    },
+    {
+      "file": "week-6-writing.json",
+      "type": "writing",
+      "week": 6,
+      "path": "/activities/writing/week-6-writing.json"
+    },
+    {
+      "file": "week-7-writing.json",
+      "type": "writing",
+      "week": 7,
+      "path": "/activities/writing/week-7-writing.json"
+    },
+    {
+      "file": "week-8-writing.json",
+      "type": "writing",
+      "week": 8,
+      "path": "/activities/writing/week-8-writing.json"
+    }
+  ]
+}

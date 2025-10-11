@@ -1,0 +1,504 @@
+{
+  "id": "week-3-vocabulary",
+  "type": "vocabulary",
+  "level": "A1.2",
+  "week": 3,
+  "title": "일상 루틴 - 어휘 마스터",
+  "estimatedTime": 30,
+  "objectives": [
+    "일상 루틴 관련 핵심 표현 15개 의미·용법·격식 구분",
+    "어원/문화적 맥락·콜로케이션 이해",
+    "실전 대화에서 자연스럽게 사용"
+  ],
+  "content": {
+    "theory": {
+      "introduction": "이 단원은 '일상 루틴' 주제에서 자주 쓰이는 어휘의 의미 범주, 사회언어학적 격식, 담화 기능을 체계적으로 다룬다.",
+      "etymology": {
+        "notes": "핵심 표제어의 어원·문화 맥락 간략 제시(상세 주석은 교사용 부록)"
+      },
+      "semanticFields": [
+        {
+          "category": "일상 루틴",
+          "words": [
+            "wake up",
+            "get up",
+            "have breakfast",
+            "go to work",
+            "study",
+            "have lunch",
+            "exercise",
+            "commute",
+            "rest",
+            "meet friends",
+            "cook dinner",
+            "do homework",
+            "watch TV",
+            "go to bed",
+            "sleep"
+          ],
+          "nuances": "의미 차이와 상황 적합성을 비교 설명"
+        }
+      ]
+    },
+    "examples": {
+      "wake up": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'wake up' every day.",
+          "translation": "나는 매일 'wake up'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/wake up_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'wake up' more naturally.",
+          "translation": "나는 'wake up'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/wake up_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'wake up' should be deployed appropriately.",
+          "translation": "맥락이 'wake up'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/wake up_3.mp3"
+        }
+      ],
+      "get up": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'get up' every day.",
+          "translation": "나는 매일 'get up'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/get up_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'get up' more naturally.",
+          "translation": "나는 'get up'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/get up_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'get up' should be deployed appropriately.",
+          "translation": "맥락이 'get up'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/get up_3.mp3"
+        }
+      ],
+      "have breakfast": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'have breakfast' every day.",
+          "translation": "나는 매일 'have breakfast'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/have breakfast_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'have breakfast' more naturally.",
+          "translation": "나는 'have breakfast'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/have breakfast_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'have breakfast' should be deployed appropriately.",
+          "translation": "맥락이 'have breakfast'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/have breakfast_3.mp3"
+        }
+      ],
+      "go to work": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'go to work' every day.",
+          "translation": "나는 매일 'go to work'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/go to work_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'go to work' more naturally.",
+          "translation": "나는 'go to work'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/go to work_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'go to work' should be deployed appropriately.",
+          "translation": "맥락이 'go to work'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/go to work_3.mp3"
+        }
+      ],
+      "study": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'study' every day.",
+          "translation": "나는 매일 'study'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/study_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'study' more naturally.",
+          "translation": "나는 'study'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/study_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'study' should be deployed appropriately.",
+          "translation": "맥락이 'study'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/study_3.mp3"
+        }
+      ],
+      "have lunch": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'have lunch' every day.",
+          "translation": "나는 매일 'have lunch'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/have lunch_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'have lunch' more naturally.",
+          "translation": "나는 'have lunch'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/have lunch_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'have lunch' should be deployed appropriately.",
+          "translation": "맥락이 'have lunch'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/have lunch_3.mp3"
+        }
+      ],
+      "exercise": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'exercise' every day.",
+          "translation": "나는 매일 'exercise'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/exercise_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'exercise' more naturally.",
+          "translation": "나는 'exercise'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/exercise_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'exercise' should be deployed appropriately.",
+          "translation": "맥락이 'exercise'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/exercise_3.mp3"
+        }
+      ],
+      "commute": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'commute' every day.",
+          "translation": "나는 매일 'commute'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/commute_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'commute' more naturally.",
+          "translation": "나는 'commute'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/commute_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'commute' should be deployed appropriately.",
+          "translation": "맥락이 'commute'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/commute_3.mp3"
+        }
+      ],
+      "rest": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'rest' every day.",
+          "translation": "나는 매일 'rest'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/rest_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'rest' more naturally.",
+          "translation": "나는 'rest'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/rest_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'rest' should be deployed appropriately.",
+          "translation": "맥락이 'rest'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/rest_3.mp3"
+        }
+      ],
+      "meet friends": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'meet friends' every day.",
+          "translation": "나는 매일 'meet friends'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/meet friends_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'meet friends' more naturally.",
+          "translation": "나는 'meet friends'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/meet friends_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'meet friends' should be deployed appropriately.",
+          "translation": "맥락이 'meet friends'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/meet friends_3.mp3"
+        }
+      ],
+      "cook dinner": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'cook dinner' every day.",
+          "translation": "나는 매일 'cook dinner'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/cook dinner_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'cook dinner' more naturally.",
+          "translation": "나는 'cook dinner'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/cook dinner_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'cook dinner' should be deployed appropriately.",
+          "translation": "맥락이 'cook dinner'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/cook dinner_3.mp3"
+        }
+      ],
+      "do homework": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'do homework' every day.",
+          "translation": "나는 매일 'do homework'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/do homework_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'do homework' more naturally.",
+          "translation": "나는 'do homework'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/do homework_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'do homework' should be deployed appropriately.",
+          "translation": "맥락이 'do homework'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/do homework_3.mp3"
+        }
+      ],
+      "watch TV": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'watch TV' every day.",
+          "translation": "나는 매일 'watch TV'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/watch TV_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'watch TV' more naturally.",
+          "translation": "나는 'watch TV'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/watch TV_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'watch TV' should be deployed appropriately.",
+          "translation": "맥락이 'watch TV'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/watch TV_3.mp3"
+        }
+      ],
+      "go to bed": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'go to bed' every day.",
+          "translation": "나는 매일 'go to bed'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/go to bed_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'go to bed' more naturally.",
+          "translation": "나는 'go to bed'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/go to bed_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'go to bed' should be deployed appropriately.",
+          "translation": "맥락이 'go to bed'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/go to bed_3.mp3"
+        }
+      ],
+      "sleep": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'sleep' every day.",
+          "translation": "나는 매일 'sleep'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/sleep_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'sleep' more naturally.",
+          "translation": "나는 'sleep'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/sleep_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'sleep' should be deployed appropriately.",
+          "translation": "맥락이 'sleep'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/sleep_3.mp3"
+        }
+      ]
+    },
+    "exercises": [
+      {
+        "type": "fill_in_the_blank",
+        "question": "_____! Nice to meet you.",
+        "options": [
+          "Hello",
+          "Bye",
+          "Thanks",
+          "Sorry"
+        ],
+        "correct": "Hello",
+        "explanation": "첫 만남 인사"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "격식 있는 첫 만남 인사?",
+        "options": [
+          "How do you do?",
+          "What's up?",
+          "Yo!",
+          "Heya"
+        ],
+        "correct": "How do you do?",
+        "explanation": "고격식 의례 표현"
+      },
+      {
+        "type": "translation",
+        "korean": "좋은 아침입니다.",
+        "correct": "Good morning."
+      },
+      {
+        "type": "dialogue_match",
+        "prompt": "A: How are you?\nB: ________",
+        "options": [
+          "Good, thanks. And you?",
+          "How old are you?",
+          "Where?",
+          "Nice day."
+        ],
+        "correct": "Good, thanks. And you?"
+      },
+      {
+        "type": "collocation",
+        "question": "작별 인사에 자연스러운 것은?",
+        "options": [
+          "Take care.",
+          "Nice to meet you.",
+          "How are you?",
+          "Hey!"
+        ],
+        "correct": "Take care."
+      },
+      {
+        "type": "production",
+        "prompt": "일상 루틴 표현 5개로 4문장 대화 만들기",
+        "rubric": "격식/상황 일치, 철자·문법"
+      },
+      {
+        "type": "production",
+        "prompt": "일상 루틴 표현 5개로 4문장 대화 만들기",
+        "rubric": "격식/상황 일치, 철자·문법"
+      },
+      {
+        "type": "production",
+        "prompt": "일상 루틴 표현 5개로 4문장 대화 만들기",
+        "rubric": "격식/상황 일치, 철자·문법"
+      }
+    ]
+  },
+  "assessment": {
+    "preTest": [
+      {
+        "q": "‘Hello’의 적절한 응답은?",
+        "a": "Hi/Hello."
+      },
+      {
+        "q": "'How's it going?'의 격식 수준은?",
+        "a": "비격식"
+      }
+    ],
+    "postTest": [
+      {
+        "q": "첫 만남: ‘만나서 반갑습니다’",
+        "a": "Nice to meet you."
+      },
+      {
+        "q": "작별 배려 인사",
+        "a": "Take care."
+      }
+    ],
+    "masteryCheck": {
+      "description": "90% 이상 정답 시 통과",
+      "questions": [
+        {
+          "q": "‘Nice to see you’와 ‘Nice to meet you’ 차이 간단 설명",
+          "a": "재회 vs 첫 만남"
+        }
+      ]
+    }
+  },
+  "resources": {
+    "practiceTools": [
+      {
+        "name": "Anki Deck",
+        "url": "/downloads/week3_vocab.apkg",
+        "cards": 45
+      }
+    ]
+  },
+  "metadata": {
+    "createdBy": "GPT-5 Thinking Mode",
+    "createdAt": "2025-10-11",
+    "qualityScore": 92
+  }
+}

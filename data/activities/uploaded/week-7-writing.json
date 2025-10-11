@@ -1,0 +1,46 @@
+{
+  "id": "week-7-writing",
+  "type": "writing",
+  "level": "A2.2",
+  "week": 7,
+  "title": "여행 일정 소개",
+  "estimatedTime": 30,
+  "objectives": [
+    "문장 단위 작성",
+    "간단한 단락 구성"
+  ],
+  "content": {
+    "models": [
+      {
+        "title": "모델 1",
+        "text": "Hello, my name is ____. I am from ____. Nice to meet you."
+      },
+      {
+        "title": "모델 2",
+        "text": "Hi, I'm ____. I'm a ____. I like ____. See you."
+      }
+    ],
+    "planning": [
+      "아이디어 브레인스토밍",
+      "문장 배열",
+      "교정 체크리스트"
+    ],
+    "checklist": [
+      "대문자/마침표",
+      "주어+동사",
+      "be 동사 일치"
+    ]
+  },
+  "assessment": {
+    "rubric": {
+      "content": 5,
+      "organization": 5,
+      "language": 5
+    },
+    "task": "자기소개 4~5문장 작성"
+  },
+  "metadata": {
+    "createdBy": "GPT-5 Thinking Mode",
+    "createdAt": "2025-10-11"
+  }
+}

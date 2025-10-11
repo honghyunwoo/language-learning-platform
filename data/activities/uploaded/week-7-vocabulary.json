@@ -1,0 +1,504 @@
+{
+  "id": "week-7-vocabulary",
+  "type": "vocabulary",
+  "level": "A2.2",
+  "week": 7,
+  "title": "여행·교통 - 어휘 마스터",
+  "estimatedTime": 30,
+  "objectives": [
+    "여행·교통 관련 핵심 표현 15개 의미·용법·격식 구분",
+    "어원/문화적 맥락·콜로케이션 이해",
+    "실전 대화에서 자연스럽게 사용"
+  ],
+  "content": {
+    "theory": {
+      "introduction": "이 단원은 '여행·교통' 주제에서 자주 쓰이는 어휘의 의미 범주, 사회언어학적 격식, 담화 기능을 체계적으로 다룬다.",
+      "etymology": {
+        "notes": "핵심 표제어의 어원·문화 맥락 간략 제시(상세 주석은 교사용 부록)"
+      },
+      "semanticFields": [
+        {
+          "category": "여행·교통",
+          "words": [
+            "ticket",
+            "passport",
+            "boarding pass",
+            "gate",
+            "luggage",
+            "subway",
+            "bus",
+            "taxi",
+            "platform",
+            "schedule",
+            "delay",
+            "reservation",
+            "check-in",
+            "map",
+            "directions"
+          ],
+          "nuances": "의미 차이와 상황 적합성을 비교 설명"
+        }
+      ]
+    },
+    "examples": {
+      "ticket": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'ticket' every day.",
+          "translation": "나는 매일 'ticket'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/ticket_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'ticket' more naturally.",
+          "translation": "나는 'ticket'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/ticket_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'ticket' should be deployed appropriately.",
+          "translation": "맥락이 'ticket'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/ticket_3.mp3"
+        }
+      ],
+      "passport": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'passport' every day.",
+          "translation": "나는 매일 'passport'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/passport_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'passport' more naturally.",
+          "translation": "나는 'passport'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/passport_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'passport' should be deployed appropriately.",
+          "translation": "맥락이 'passport'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/passport_3.mp3"
+        }
+      ],
+      "boarding pass": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'boarding pass' every day.",
+          "translation": "나는 매일 'boarding pass'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/boarding pass_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'boarding pass' more naturally.",
+          "translation": "나는 'boarding pass'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/boarding pass_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'boarding pass' should be deployed appropriately.",
+          "translation": "맥락이 'boarding pass'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/boarding pass_3.mp3"
+        }
+      ],
+      "gate": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'gate' every day.",
+          "translation": "나는 매일 'gate'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/gate_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'gate' more naturally.",
+          "translation": "나는 'gate'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/gate_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'gate' should be deployed appropriately.",
+          "translation": "맥락이 'gate'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/gate_3.mp3"
+        }
+      ],
+      "luggage": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'luggage' every day.",
+          "translation": "나는 매일 'luggage'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/luggage_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'luggage' more naturally.",
+          "translation": "나는 'luggage'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/luggage_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'luggage' should be deployed appropriately.",
+          "translation": "맥락이 'luggage'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/luggage_3.mp3"
+        }
+      ],
+      "subway": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'subway' every day.",
+          "translation": "나는 매일 'subway'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/subway_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'subway' more naturally.",
+          "translation": "나는 'subway'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/subway_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'subway' should be deployed appropriately.",
+          "translation": "맥락이 'subway'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/subway_3.mp3"
+        }
+      ],
+      "bus": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'bus' every day.",
+          "translation": "나는 매일 'bus'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/bus_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'bus' more naturally.",
+          "translation": "나는 'bus'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/bus_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'bus' should be deployed appropriately.",
+          "translation": "맥락이 'bus'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/bus_3.mp3"
+        }
+      ],
+      "taxi": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'taxi' every day.",
+          "translation": "나는 매일 'taxi'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/taxi_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'taxi' more naturally.",
+          "translation": "나는 'taxi'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/taxi_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'taxi' should be deployed appropriately.",
+          "translation": "맥락이 'taxi'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/taxi_3.mp3"
+        }
+      ],
+      "platform": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'platform' every day.",
+          "translation": "나는 매일 'platform'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/platform_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'platform' more naturally.",
+          "translation": "나는 'platform'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/platform_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'platform' should be deployed appropriately.",
+          "translation": "맥락이 'platform'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/platform_3.mp3"
+        }
+      ],
+      "schedule": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'schedule' every day.",
+          "translation": "나는 매일 'schedule'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/schedule_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'schedule' more naturally.",
+          "translation": "나는 'schedule'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/schedule_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'schedule' should be deployed appropriately.",
+          "translation": "맥락이 'schedule'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/schedule_3.mp3"
+        }
+      ],
+      "delay": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'delay' every day.",
+          "translation": "나는 매일 'delay'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/delay_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'delay' more naturally.",
+          "translation": "나는 'delay'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/delay_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'delay' should be deployed appropriately.",
+          "translation": "맥락이 'delay'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/delay_3.mp3"
+        }
+      ],
+      "reservation": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'reservation' every day.",
+          "translation": "나는 매일 'reservation'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/reservation_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'reservation' more naturally.",
+          "translation": "나는 'reservation'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/reservation_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'reservation' should be deployed appropriately.",
+          "translation": "맥락이 'reservation'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/reservation_3.mp3"
+        }
+      ],
+      "check-in": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'check-in' every day.",
+          "translation": "나는 매일 'check-in'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/check-in_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'check-in' more naturally.",
+          "translation": "나는 'check-in'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/check-in_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'check-in' should be deployed appropriately.",
+          "translation": "맥락이 'check-in'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/check-in_3.mp3"
+        }
+      ],
+      "map": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'map' every day.",
+          "translation": "나는 매일 'map'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/map_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'map' more naturally.",
+          "translation": "나는 'map'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/map_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'map' should be deployed appropriately.",
+          "translation": "맥락이 'map'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/map_3.mp3"
+        }
+      ],
+      "directions": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'directions' every day.",
+          "translation": "나는 매일 'directions'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/directions_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'directions' more naturally.",
+          "translation": "나는 'directions'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/directions_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'directions' should be deployed appropriately.",
+          "translation": "맥락이 'directions'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/directions_3.mp3"
+        }
+      ]
+    },
+    "exercises": [
+      {
+        "type": "fill_in_the_blank",
+        "question": "_____! Nice to meet you.",
+        "options": [
+          "Hello",
+          "Bye",
+          "Thanks",
+          "Sorry"
+        ],
+        "correct": "Hello",
+        "explanation": "첫 만남 인사"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "격식 있는 첫 만남 인사?",
+        "options": [
+          "How do you do?",
+          "What's up?",
+          "Yo!",
+          "Heya"
+        ],
+        "correct": "How do you do?",
+        "explanation": "고격식 의례 표현"
+      },
+      {
+        "type": "translation",
+        "korean": "좋은 아침입니다.",
+        "correct": "Good morning."
+      },
+      {
+        "type": "dialogue_match",
+        "prompt": "A: How are you?\nB: ________",
+        "options": [
+          "Good, thanks. And you?",
+          "How old are you?",
+          "Where?",
+          "Nice day."
+        ],
+        "correct": "Good, thanks. And you?"
+      },
+      {
+        "type": "collocation",
+        "question": "작별 인사에 자연스러운 것은?",
+        "options": [
+          "Take care.",
+          "Nice to meet you.",
+          "How are you?",
+          "Hey!"
+        ],
+        "correct": "Take care."
+      },
+      {
+        "type": "production",
+        "prompt": "여행·교통 표현 5개로 4문장 대화 만들기",
+        "rubric": "격식/상황 일치, 철자·문법"
+      },
+      {
+        "type": "production",
+        "prompt": "여행·교통 표현 5개로 4문장 대화 만들기",
+        "rubric": "격식/상황 일치, 철자·문법"
+      },
+      {
+        "type": "production",
+        "prompt": "여행·교통 표현 5개로 4문장 대화 만들기",
+        "rubric": "격식/상황 일치, 철자·문법"
+      }
+    ]
+  },
+  "assessment": {
+    "preTest": [
+      {
+        "q": "‘Hello’의 적절한 응답은?",
+        "a": "Hi/Hello."
+      },
+      {
+        "q": "'How's it going?'의 격식 수준은?",
+        "a": "비격식"
+      }
+    ],
+    "postTest": [
+      {
+        "q": "첫 만남: ‘만나서 반갑습니다’",
+        "a": "Nice to meet you."
+      },
+      {
+        "q": "작별 배려 인사",
+        "a": "Take care."
+      }
+    ],
+    "masteryCheck": {
+      "description": "90% 이상 정답 시 통과",
+      "questions": [
+        {
+          "q": "‘Nice to see you’와 ‘Nice to meet you’ 차이 간단 설명",
+          "a": "재회 vs 첫 만남"
+        }
+      ]
+    }
+  },
+  "resources": {
+    "practiceTools": [
+      {
+        "name": "Anki Deck",
+        "url": "/downloads/week7_vocab.apkg",
+        "cards": 45
+      }
+    ]
+  },
+  "metadata": {
+    "createdBy": "GPT-5 Thinking Mode",
+    "createdAt": "2025-10-11",
+    "qualityScore": 92
+  }
+}

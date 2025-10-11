@@ -2,187 +2,492 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    // 헬퍼 함수: 사용자 인증 확인
+
+    // ============================================================================
+    // HELPER FUNCTIONS - 보안 검증 및 유틸리티
+    // ============================================================================
+
+    // 사용자 인증 확인
     function isAuthenticated() {
       return request.auth != null;
     }
 
-    // 헬퍼 함수: 본인 확인
+    // 본인 확인
     function isOwner(userId) {
       return isAuthenticated() && request.auth.uid == userId;
     }
 
-    // 사용자 프로필
+    // 관리자 권한 확인 (Custom Claims 기반)
+    function isAdmin() {
+      return isAuthenticated() && request.auth.token.admin == true;
+    }
+
+    // 중재자 권한 확인 (Custom Claims 기반)
+    function isModerator() {
+      return isAuthenticated() &&
+             (request.auth.token.moderator == true || isAdmin());
+    }
+
+    // 데이터 불변성 검증 - 특정 필드가 변경되지 않았는지 확인
+    function unchangedFields(fields) {
+      return request.resource.data.diff(resource.data).unchangedKeys().hasAll(fields);
+    }
+
+    // 필수 필드 존재 확인
+    function hasRequiredFields(fields) {
+      return request.resource.data.keys().hasAll(fields);
+    }
+
+    // 문자열 길이 검증
+    function validStringLength(field, minLen, maxLen) {
+      return request.resource.data[field] is string &&
+             request.resource.data[field].size() >= minLen &&
+             request.resource.data[field].size() <= maxLen;
+    }
+
+    // 숫자 범위 검증
+    function validNumberRange(field, min, max) {
+      return request.resource.data[field] is number &&
+             request.resource.data[field] >= min &&
+             request.resource.data[field] <= max;
+    }
+
+    // 타임스탬프 검증 (현재 시간 기준 ±5분 이내)
+    function validTimestamp(field) {
+      return request.resource.data[field] is timestamp &&
+             request.resource.data[field] >= request.time - duration.value(5, 'm') &&
+             request.resource.data[field] <= request.time + duration.value(5, 'm');
+    }
+
+    // Rate Limiting 헬퍼 (일일 생성 제한)
+    function underDailyLimit(collection, limit) {
+      // Note: 실제 구현은 Cloud Functions에서 처리 권장
+      // 여기서는 타임스탬프 기반 간단한 검증만 수행
+      return validTimestamp('createdAt');
+    }
+
+    // ============================================================================
+    // USERS COLLECTION - 사용자 프로필
+    // ============================================================================
+
     match /users/{userId} {
-      // 본인은 전체 프로필 읽기 가능
-      allow get: if isOwner(userId);
-      // 다른 사용자는 공개 설정된 프로필만 읽기 가능
-      allow read: if resource.data.keys().hasAny(['settings']) &&
-        resource.data.settings.profilePublic == true;
-      // 본인만 자신의 프로필 생성/수정 가능
-      allow create: if isOwner(userId);
-      allow update: if isOwner(userId);
-      // 삭제는 불가 (관리자만 가능하도록 별도 처리 필요)
-      allow delete: if false;
+      // 읽기 권한
+      allow get: if isOwner(userId) ||
+                    (isAuthenticated() &&
+                     exists(/databases/$(database)/documents/users/$(userId)) &&
+                     get(/databases/$(database)/documents/users/$(userId)).data.settings.profilePublic == true);
+
+      // 리스트 조회는 제한 (프라이버시 보호)
+      allow list: if isAdmin();
+
+      // 생성 권한 - 최초 1회만, 본인 UID와 일치
+      allow create: if isOwner(userId) &&
+                       hasRequiredFields(['email', 'displayName', 'createdAt']) &&
+                       validStringLength('displayName', 1, 50) &&
+                       validStringLength('email', 3, 100) &&
+                       request.resource.data.email == request.auth.token.email &&
+                       validTimestamp('createdAt') &&
+                       // 선택적 필드 검증
+                       (!request.resource.data.keys().hasAny(['bio']) ||
+                        validStringLength('bio', 0, 500)) &&
+                       (!request.resource.data.keys().hasAny(['photoURL']) ||
+                        validStringLength('photoURL', 0, 500));
+
+      // 수정 권한 - 본인만, 특정 필드는 불변
+      allow update: if isOwner(userId) &&
+                       unchangedFields(['email', 'createdAt', 'uid']) &&
+                       // displayName 변경 시 검증
+                       (!request.resource.data.diff(resource.data).affectedKeys().hasAny(['displayName']) ||
+                        validStringLength('displayName', 1, 50)) &&
+                       // bio 변경 시 검증
+                       (!request.resource.data.diff(resource.data).affectedKeys().hasAny(['bio']) ||
+                        validStringLength('bio', 0, 500));
+
+      // 삭제 권한 - 관리자만
+      allow delete: if isAdmin();
+
+      // ============================================================================
+      // SUBCOLLECTIONS - 사용자별 서브컬렉션
+      // ============================================================================
+
+      // 학습 진행률 (Progress)
+      match /progress/{weekId} {
+        allow read: if isOwner(userId);
+        allow create: if isOwner(userId) &&
+                         hasRequiredFields(['weekId', 'userId', 'updatedAt']) &&
+                         request.resource.data.userId == userId &&
+                         validTimestamp('updatedAt') &&
+                         validNumberRange('weekId', 1, 100);
+        allow update: if isOwner(userId) &&
+                         unchangedFields(['weekId', 'userId', 'createdAt']) &&
+                         validTimestamp('updatedAt');
+        allow delete: if false; // 진행률 삭제 불가
+      }
+
+      // 진행 요약 (Progress Summary)
+      match /progressSummary/{summaryId} {
+        allow read: if isOwner(userId);
+        allow write: if isOwner(userId) &&
+                        request.resource.data.userId == userId &&
+                        validTimestamp('updatedAt');
+      }
     }
 
-    // 사용자 진행 상황
+    // ============================================================================
+    // USER PROGRESS - 전역 진행률 (Deprecated, 하위 호환성)
+    // ============================================================================
+
     match /userProgress/{progressId} {
-      // 본인의 진행 상황만 접근 가능
-      allow read, write: if isAuthenticated() &&
-        resource.data.userId == request.auth.uid;
-    }
-
-    // 학습 일지 (Journal)
-    match /journals/{journalId} {
-      allow read: if isOwner(resource.data.userId);
-      allow create: if isAuthenticated() && isOwner(request.resource.data.userId);
-      allow update, delete: if isOwner(resource.data.userId);
-    }
-
-    // 알림
-    match /notifications/{notificationId} {
-      allow read: if isOwner(resource.data.userId);
-      allow update: if isOwner(resource.data.userId);
-      allow create, delete: if false; // 서버에서만
-    }
-
-    // 알림 설정
-    match /notificationSettings/{userId} {
-      allow read, write: if isOwner(userId);
-    }
-
-    // 게시글
-    match /posts/{postId} {
-      // 공개된 게시글은 모두 읽기 가능
-      allow read: if resource.data.isPublished == true ||
-        isOwner(resource.data.authorId);
-      // 인증된 사용자만 게시글 작성 가능
+      allow read: if isAuthenticated() &&
+                     resource.data.userId == request.auth.uid;
       allow create: if isAuthenticated() &&
-        request.resource.data.authorId == request.auth.uid;
-      // 작성자만 수정/삭제 가능
-      allow update, delete: if isOwner(resource.data.authorId);
+                       request.resource.data.userId == request.auth.uid &&
+                       validTimestamp('createdAt');
+      allow update: if isAuthenticated() &&
+                       resource.data.userId == request.auth.uid &&
+                       unchangedFields(['userId', 'createdAt']);
+      allow delete: if false;
     }
 
-    // 댓글
-    match /comments/{commentId} {
-      // 모두 읽기 가능
-      allow read: if true;
-      // 인증된 사용자만 작성 가능
-      allow create: if isAuthenticated() &&
-        request.resource.data.authorId == request.auth.uid;
-      // 작성자만 수정/삭제 가능
-      allow update, delete: if isOwner(resource.data.authorId);
-    }
+    // ============================================================================
+    // WEEK PROGRESS - 주차별 진행률
+    // ============================================================================
 
-    // 학습 리소스
-    match /resources/{resourceId} {
-      // 모두 읽기 가능
-      allow read: if true;
-      // 작성/수정/삭제는 관리자만 (클라이언트에서는 불가)
-      allow write: if false;
-    }
-
-    // 리소스 리뷰
-    match /resourceReviews/{reviewId} {
-      // 모두 읽기 가능
-      allow read: if true;
-      // 인증된 사용자만 리뷰 작성 가능
-      allow create: if isAuthenticated() &&
-        request.resource.data.userId == request.auth.uid;
-      // 작성자만 수정/삭제 가능
-      allow update, delete: if isOwner(resource.data.userId);
-    }
-
-    // 북마크
-    match /bookmarks/{bookmarkId} {
-      // 본인의 북마크만 접근 가능
-      allow read, write: if isAuthenticated() &&
-        resource.data.userId == request.auth.uid;
-    }
-
-    // 팔로우 관계
-    match /follows/{followId} {
-      // 모두 읽기 가능
-      allow read: if true;
-      // 본인만 팔로우/언팔로우 가능
-      allow create, delete: if isAuthenticated() &&
-        request.resource.data.followerId == request.auth.uid;
-    }
-
-    // 댓글 (Replies)
-    match /replies/{replyId} {
-      // 모두 읽기 가능
-      allow read: if true;
-      // 인증된 사용자만 댓글 작성 가능
-      allow create: if isAuthenticated() &&
-        request.resource.data.authorId == request.auth.uid;
-      // 작성자만 수정/삭제 가능
-      allow update, delete: if isOwner(resource.data.authorId);
-    }
-
-    // 좋아요 (Likes)
-    match /likes/{likeId} {
-      // 모두 읽기 가능
-      allow read: if true;
-      // 인증된 사용자만 좋아요 가능
-      allow create: if isAuthenticated() &&
-        request.resource.data.userId == request.auth.uid;
-      // 본인만 삭제 가능
-      allow delete: if isOwner(resource.data.userId);
-    }
-
-    // 스터디 그룹 (Study Groups)
-    match /studyGroups/{groupId} {
-      // 모두 읽기 가능
-      allow read: if true;
-      // 인증된 사용자만 그룹 생성 가능
-      allow create: if isAuthenticated() &&
-        request.resource.data.leaderId == request.auth.uid;
-      // 그룹 리더 또는 멤버만 수정 가능
-      allow update: if isAuthenticated() && (
-        isOwner(resource.data.leaderId) ||
-        resource.data.members.hasAny([request.auth.uid])
-      );
-      // 그룹 리더만 삭제 가능
-      allow delete: if isOwner(resource.data.leaderId);
-    }
-
-    // 주차별 진행률 (Week Progress)
     match /weekProgress/{progressId} {
-      // 본인의 진행률만 접근 가능
-      allow read, update: if isOwner(resource.data.userId);
-      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      allow read: if isAuthenticated() &&
+                     resource.data.userId == request.auth.uid;
+      allow create: if isAuthenticated() &&
+                       hasRequiredFields(['userId', 'weekId', 'createdAt']) &&
+                       request.resource.data.userId == request.auth.uid &&
+                       validNumberRange('weekId', 1, 100) &&
+                       validTimestamp('createdAt');
+      allow update: if isAuthenticated() &&
+                       resource.data.userId == request.auth.uid &&
+                       unchangedFields(['userId', 'weekId', 'createdAt']);
       allow delete: if false;
     }
 
-    // 활동별 진행률 (Activity Progress)
+    // ============================================================================
+    // ACTIVITY PROGRESS - 활동별 진행률
+    // ============================================================================
+
     match /activity_progress/{progressId} {
-      // 본인의 진행률만 접근 가능
-      allow read, update: if isOwner(resource.data.userId);
-      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      allow read: if isAuthenticated() &&
+                     resource.data.userId == request.auth.uid;
+      allow create: if isAuthenticated() &&
+                       hasRequiredFields(['userId', 'activityId', 'createdAt']) &&
+                       request.resource.data.userId == request.auth.uid &&
+                       validStringLength('activityId', 1, 100) &&
+                       validTimestamp('createdAt');
+      allow update: if isAuthenticated() &&
+                       resource.data.userId == request.auth.uid &&
+                       unchangedFields(['userId', 'activityId', 'createdAt']);
       allow delete: if false;
     }
 
-    // 게시글 서브컬렉션: 좋아요
-    match /posts/{postId}/likes/{userId} {
-      allow read: if true;
-      allow create: if isAuthenticated() && request.auth.uid == userId;
-      allow delete: if isAuthenticated() && request.auth.uid == userId;
+    // ============================================================================
+    // JOURNALS - 학습 일지
+    // ============================================================================
+
+    match /journals/{journalId} {
+      allow read: if isAuthenticated() &&
+                     resource.data.userId == request.auth.uid;
+      allow create: if isAuthenticated() &&
+                       hasRequiredFields(['userId', 'content', 'createdAt']) &&
+                       request.resource.data.userId == request.auth.uid &&
+                       validStringLength('content', 1, 5000) &&
+                       validTimestamp('createdAt') &&
+                       underDailyLimit('journals', 50);
+      allow update: if isAuthenticated() &&
+                       resource.data.userId == request.auth.uid &&
+                       unchangedFields(['userId', 'createdAt']) &&
+                       validStringLength('content', 1, 5000);
+      allow delete: if isAuthenticated() &&
+                       resource.data.userId == request.auth.uid;
     }
 
-    // 게시글 서브컬렉션: 북마크
-    match /posts/{postId}/bookmarks/{userId} {
-      allow read: if true;
-      allow create: if isAuthenticated() && request.auth.uid == userId;
-      allow delete: if isAuthenticated() && request.auth.uid == userId;
+    // ============================================================================
+    // NOTIFICATIONS - 알림
+    // ============================================================================
+
+    match /notifications/{notificationId} {
+      allow read: if isAuthenticated() &&
+                     resource.data.userId == request.auth.uid;
+      // 읽음 상태만 업데이트 가능
+      allow update: if isAuthenticated() &&
+                       resource.data.userId == request.auth.uid &&
+                       unchangedFields(['userId', 'type', 'content', 'createdAt']) &&
+                       request.resource.data.diff(resource.data).affectedKeys().hasOnly(['read', 'readAt']);
+      // 생성/삭제는 서버에서만 (Cloud Functions)
+      allow create, delete: if false;
     }
 
-    // 리소스 서브컬렉션: 북마크
-    match /resources/{resourceId}/bookmarks/{userId} {
+    // ============================================================================
+    // NOTIFICATION SETTINGS - 알림 설정
+    // ============================================================================
+
+    match /notificationSettings/{userId} {
+      allow read: if isOwner(userId);
+      allow write: if isOwner(userId) &&
+                      request.resource.data.userId == userId;
+    }
+
+    // ============================================================================
+    // POSTS - 게시글
+    // ============================================================================
+
+    match /posts/{postId} {
+      // 읽기 권한: 공개 게시글 또는 작성자 본인
+      allow read: if resource.data.isPublished == true ||
+                     isOwner(resource.data.authorId) ||
+                     isModerator();
+
+      // 생성 권한
+      allow create: if isAuthenticated() &&
+                       hasRequiredFields(['title', 'content', 'authorId', 'isPublished', 'createdAt']) &&
+                       request.resource.data.authorId == request.auth.uid &&
+                       validStringLength('title', 1, 200) &&
+                       validStringLength('content', 1, 50000) &&
+                       request.resource.data.isPublished is bool &&
+                       validTimestamp('createdAt') &&
+                       underDailyLimit('posts', 20);
+
+      // 수정 권한: 작성자 본인 또는 중재자
+      allow update: if (isOwner(resource.data.authorId) &&
+                        unchangedFields(['authorId', 'createdAt']) &&
+                        validStringLength('title', 1, 200) &&
+                        validStringLength('content', 1, 50000)) ||
+                       isModerator();
+
+      // 삭제 권한: 작성자 본인 또는 중재자
+      allow delete: if isOwner(resource.data.authorId) || isModerator();
+
+      // 서브컬렉션: 좋아요
+      match /likes/{userId} {
+        allow read: if true;
+        allow create: if isOwner(userId) &&
+                         request.resource.data.userId == userId &&
+                         validTimestamp('createdAt');
+        allow delete: if isOwner(userId);
+      }
+
+      // 서브컬렉션: 북마크
+      match /bookmarks/{userId} {
+        allow read: if isOwner(userId);
+        allow create: if isOwner(userId) &&
+                         request.resource.data.userId == userId &&
+                         validTimestamp('createdAt');
+        allow delete: if isOwner(userId);
+      }
+    }
+
+    // ============================================================================
+    // COMMENTS - 댓글
+    // ============================================================================
+
+    match /comments/{commentId} {
       allow read: if true;
-      allow create: if isAuthenticated() && request.auth.uid == userId;
-      allow delete: if isAuthenticated() && request.auth.uid == userId;
+
+      allow create: if isAuthenticated() &&
+                       hasRequiredFields(['content', 'authorId', 'postId', 'createdAt']) &&
+                       request.resource.data.authorId == request.auth.uid &&
+                       validStringLength('content', 1, 2000) &&
+                       validTimestamp('createdAt') &&
+                       underDailyLimit('comments', 100);
+
+      allow update: if (isOwner(resource.data.authorId) &&
+                        unchangedFields(['authorId', 'postId', 'createdAt']) &&
+                        validStringLength('content', 1, 2000)) ||
+                       isModerator();
+
+      allow delete: if isOwner(resource.data.authorId) || isModerator();
+    }
+
+    // ============================================================================
+    // REPLIES - 대댓글
+    // ============================================================================
+
+    match /replies/{replyId} {
+      allow read: if true;
+
+      allow create: if isAuthenticated() &&
+                       hasRequiredFields(['content', 'authorId', 'commentId', 'createdAt']) &&
+                       request.resource.data.authorId == request.auth.uid &&
+                       validStringLength('content', 1, 2000) &&
+                       validTimestamp('createdAt') &&
+                       underDailyLimit('replies', 100);
+
+      allow update: if (isOwner(resource.data.authorId) &&
+                        unchangedFields(['authorId', 'commentId', 'createdAt']) &&
+                        validStringLength('content', 1, 2000)) ||
+                       isModerator();
+
+      allow delete: if isOwner(resource.data.authorId) || isModerator();
+    }
+
+    // ============================================================================
+    // LIKES - 좋아요 (전역)
+    // ============================================================================
+
+    match /likes/{likeId} {
+      allow read: if true;
+
+      allow create: if isAuthenticated() &&
+                       hasRequiredFields(['userId', 'targetId', 'targetType', 'createdAt']) &&
+                       request.resource.data.userId == request.auth.uid &&
+                       request.resource.data.targetType in ['post', 'comment', 'reply'] &&
+                       validTimestamp('createdAt');
+
+      allow delete: if isAuthenticated() &&
+                       resource.data.userId == request.auth.uid;
+    }
+
+    // ============================================================================
+    // BOOKMARKS - 북마크
+    // ============================================================================
+
+    match /bookmarks/{bookmarkId} {
+      allow read: if isAuthenticated() &&
+                     resource.data.userId == request.auth.uid;
+
+      allow create: if isAuthenticated() &&
+                       hasRequiredFields(['userId', 'targetId', 'targetType', 'createdAt']) &&
+                       request.resource.data.userId == request.auth.uid &&
+                       request.resource.data.targetType in ['post', 'resource'] &&
+                       validTimestamp('createdAt');
+
+      allow update: if isAuthenticated() &&
+                       resource.data.userId == request.auth.uid &&
+                       unchangedFields(['userId', 'targetId', 'targetType', 'createdAt']);
+
+      allow delete: if isAuthenticated() &&
+                       resource.data.userId == request.auth.uid;
+    }
+
+    // ============================================================================
+    // FOLLOWS - 팔로우 관계
+    // ============================================================================
+
+    match /follows/{followId} {
+      allow read: if true;
+
+      allow create: if isAuthenticated() &&
+                       hasRequiredFields(['followerId', 'followingId', 'createdAt']) &&
+                       request.resource.data.followerId == request.auth.uid &&
+                       request.resource.data.followerId != request.resource.data.followingId &&
+                       validTimestamp('createdAt');
+
+      allow delete: if isAuthenticated() &&
+                       resource.data.followerId == request.auth.uid;
+    }
+
+    // ============================================================================
+    // STUDY GROUPS - 스터디 그룹
+    // ============================================================================
+
+    match /studyGroups/{groupId} {
+      allow read: if true;
+
+      allow create: if isAuthenticated() &&
+                       hasRequiredFields(['name', 'description', 'leaderId', 'createdAt']) &&
+                       request.resource.data.leaderId == request.auth.uid &&
+                       validStringLength('name', 1, 100) &&
+                       validStringLength('description', 0, 1000) &&
+                       validTimestamp('createdAt') &&
+                       underDailyLimit('studyGroups', 5);
+
+      // 업데이트: 리더만 가능, 핵심 필드는 불변
+      allow update: if isOwner(resource.data.leaderId) &&
+                       unchangedFields(['leaderId', 'createdAt']) &&
+                       validStringLength('name', 1, 100) &&
+                       validStringLength('description', 0, 1000);
+
+      // 삭제: 리더 또는 관리자
+      allow delete: if isOwner(resource.data.leaderId) || isAdmin();
+    }
+
+    // ============================================================================
+    // RESOURCES - 학습 리소스
+    // ============================================================================
+
+    match /resources/{resourceId} {
+      allow read: if true;
+
+      // 관리자만 생성/수정/삭제 가능
+      allow create: if isAdmin() &&
+                       hasRequiredFields(['title', 'description', 'type', 'createdAt']) &&
+                       validStringLength('title', 1, 200) &&
+                       validStringLength('description', 0, 2000) &&
+                       request.resource.data.type in ['video', 'article', 'exercise', 'quiz'] &&
+                       validTimestamp('createdAt');
+
+      allow update: if isAdmin() &&
+                       unchangedFields(['createdAt']);
+
+      allow delete: if isAdmin();
+
+      // 서브컬렉션: 북마크
+      match /bookmarks/{userId} {
+        allow read: if isOwner(userId);
+        allow create: if isOwner(userId) &&
+                         request.resource.data.userId == userId &&
+                         validTimestamp('createdAt');
+        allow delete: if isOwner(userId);
+      }
+    }
+
+    // ============================================================================
+    // RESOURCE REVIEWS - 리소스 리뷰
+    // ============================================================================
+
+    match /resourceReviews/{reviewId} {
+      allow read: if true;
+
+      allow create: if isAuthenticated() &&
+                       hasRequiredFields(['userId', 'resourceId', 'rating', 'comment', 'createdAt']) &&
+                       request.resource.data.userId == request.auth.uid &&
+                       validNumberRange('rating', 1, 5) &&
+                       validStringLength('comment', 1, 1000) &&
+                       validTimestamp('createdAt') &&
+                       underDailyLimit('resourceReviews', 20);
+
+      allow update: if (isOwner(resource.data.userId) &&
+                        unchangedFields(['userId', 'resourceId', 'createdAt']) &&
+                        validNumberRange('rating', 1, 5) &&
+                        validStringLength('comment', 1, 1000)) ||
+                       isModerator();
+
+      allow delete: if isOwner(resource.data.userId) || isModerator();
+    }
+
+    // ============================================================================
+    // ADMIN COLLECTIONS - 관리자 전용
+    // ============================================================================
+
+    // 사용자 신고
+    match /reports/{reportId} {
+      allow read: if isModerator();
+      allow create: if isAuthenticated() &&
+                       hasRequiredFields(['reporterId', 'targetId', 'targetType', 'reason', 'createdAt']) &&
+                       request.resource.data.reporterId == request.auth.uid &&
+                       request.resource.data.targetType in ['user', 'post', 'comment', 'reply'] &&
+                       validStringLength('reason', 10, 500) &&
+                       validTimestamp('createdAt');
+      allow update, delete: if isAdmin();
+    }
+
+    // 시스템 설정
+    match /systemSettings/{setting} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    // ============================================================================
+    // DEFAULT DENY - 명시적으로 허용되지 않은 모든 접근 차단
+    // ============================================================================
+
+    match /{document=**} {
+      allow read, write: if false;
     }
   }
 }

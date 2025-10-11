@@ -1,0 +1,504 @@
+{
+  "id": "week-4-vocabulary",
+  "type": "vocabulary",
+  "level": "A1.2",
+  "week": 4,
+  "title": "시간·날짜·날씨 - 어휘 마스터",
+  "estimatedTime": 30,
+  "objectives": [
+    "시간·날짜·날씨 관련 핵심 표현 15개 의미·용법·격식 구분",
+    "어원/문화적 맥락·콜로케이션 이해",
+    "실전 대화에서 자연스럽게 사용"
+  ],
+  "content": {
+    "theory": {
+      "introduction": "이 단원은 '시간·날짜·날씨' 주제에서 자주 쓰이는 어휘의 의미 범주, 사회언어학적 격식, 담화 기능을 체계적으로 다룬다.",
+      "etymology": {
+        "notes": "핵심 표제어의 어원·문화 맥락 간략 제시(상세 주석은 교사용 부록)"
+      },
+      "semanticFields": [
+        {
+          "category": "시간·날짜·날씨",
+          "words": [
+            "today",
+            "tomorrow",
+            "yesterday",
+            "morning",
+            "afternoon",
+            "evening",
+            "Monday",
+            "weekend",
+            "sunny",
+            "cloudy",
+            "rainy",
+            "snowy",
+            "hot",
+            "cold",
+            "windy"
+          ],
+          "nuances": "의미 차이와 상황 적합성을 비교 설명"
+        }
+      ]
+    },
+    "examples": {
+      "today": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'today' every day.",
+          "translation": "나는 매일 'today'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/today_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'today' more naturally.",
+          "translation": "나는 'today'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/today_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'today' should be deployed appropriately.",
+          "translation": "맥락이 'today'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/today_3.mp3"
+        }
+      ],
+      "tomorrow": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'tomorrow' every day.",
+          "translation": "나는 매일 'tomorrow'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/tomorrow_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'tomorrow' more naturally.",
+          "translation": "나는 'tomorrow'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/tomorrow_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'tomorrow' should be deployed appropriately.",
+          "translation": "맥락이 'tomorrow'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/tomorrow_3.mp3"
+        }
+      ],
+      "yesterday": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'yesterday' every day.",
+          "translation": "나는 매일 'yesterday'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/yesterday_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'yesterday' more naturally.",
+          "translation": "나는 'yesterday'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/yesterday_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'yesterday' should be deployed appropriately.",
+          "translation": "맥락이 'yesterday'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/yesterday_3.mp3"
+        }
+      ],
+      "morning": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'morning' every day.",
+          "translation": "나는 매일 'morning'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/morning_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'morning' more naturally.",
+          "translation": "나는 'morning'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/morning_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'morning' should be deployed appropriately.",
+          "translation": "맥락이 'morning'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/morning_3.mp3"
+        }
+      ],
+      "afternoon": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'afternoon' every day.",
+          "translation": "나는 매일 'afternoon'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/afternoon_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'afternoon' more naturally.",
+          "translation": "나는 'afternoon'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/afternoon_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'afternoon' should be deployed appropriately.",
+          "translation": "맥락이 'afternoon'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/afternoon_3.mp3"
+        }
+      ],
+      "evening": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'evening' every day.",
+          "translation": "나는 매일 'evening'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/evening_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'evening' more naturally.",
+          "translation": "나는 'evening'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/evening_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'evening' should be deployed appropriately.",
+          "translation": "맥락이 'evening'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/evening_3.mp3"
+        }
+      ],
+      "Monday": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'Monday' every day.",
+          "translation": "나는 매일 'Monday'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/Monday_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'Monday' more naturally.",
+          "translation": "나는 'Monday'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/Monday_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'Monday' should be deployed appropriately.",
+          "translation": "맥락이 'Monday'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/Monday_3.mp3"
+        }
+      ],
+      "weekend": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'weekend' every day.",
+          "translation": "나는 매일 'weekend'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/weekend_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'weekend' more naturally.",
+          "translation": "나는 'weekend'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/weekend_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'weekend' should be deployed appropriately.",
+          "translation": "맥락이 'weekend'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/weekend_3.mp3"
+        }
+      ],
+      "sunny": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'sunny' every day.",
+          "translation": "나는 매일 'sunny'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/sunny_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'sunny' more naturally.",
+          "translation": "나는 'sunny'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/sunny_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'sunny' should be deployed appropriately.",
+          "translation": "맥락이 'sunny'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/sunny_3.mp3"
+        }
+      ],
+      "cloudy": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'cloudy' every day.",
+          "translation": "나는 매일 'cloudy'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/cloudy_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'cloudy' more naturally.",
+          "translation": "나는 'cloudy'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/cloudy_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'cloudy' should be deployed appropriately.",
+          "translation": "맥락이 'cloudy'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/cloudy_3.mp3"
+        }
+      ],
+      "rainy": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'rainy' every day.",
+          "translation": "나는 매일 'rainy'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/rainy_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'rainy' more naturally.",
+          "translation": "나는 'rainy'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/rainy_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'rainy' should be deployed appropriately.",
+          "translation": "맥락이 'rainy'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/rainy_3.mp3"
+        }
+      ],
+      "snowy": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'snowy' every day.",
+          "translation": "나는 매일 'snowy'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/snowy_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'snowy' more naturally.",
+          "translation": "나는 'snowy'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/snowy_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'snowy' should be deployed appropriately.",
+          "translation": "맥락이 'snowy'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/snowy_3.mp3"
+        }
+      ],
+      "hot": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'hot' every day.",
+          "translation": "나는 매일 'hot'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/hot_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'hot' more naturally.",
+          "translation": "나는 'hot'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/hot_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'hot' should be deployed appropriately.",
+          "translation": "맥락이 'hot'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/hot_3.mp3"
+        }
+      ],
+      "cold": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'cold' every day.",
+          "translation": "나는 매일 'cold'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/cold_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'cold' more naturally.",
+          "translation": "나는 'cold'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/cold_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'cold' should be deployed appropriately.",
+          "translation": "맥락이 'cold'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/cold_3.mp3"
+        }
+      ],
+      "windy": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'windy' every day.",
+          "translation": "나는 매일 'windy'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/windy_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'windy' more naturally.",
+          "translation": "나는 'windy'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/windy_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'windy' should be deployed appropriately.",
+          "translation": "맥락이 'windy'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/windy_3.mp3"
+        }
+      ]
+    },
+    "exercises": [
+      {
+        "type": "fill_in_the_blank",
+        "question": "_____! Nice to meet you.",
+        "options": [
+          "Hello",
+          "Bye",
+          "Thanks",
+          "Sorry"
+        ],
+        "correct": "Hello",
+        "explanation": "첫 만남 인사"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "격식 있는 첫 만남 인사?",
+        "options": [
+          "How do you do?",
+          "What's up?",
+          "Yo!",
+          "Heya"
+        ],
+        "correct": "How do you do?",
+        "explanation": "고격식 의례 표현"
+      },
+      {
+        "type": "translation",
+        "korean": "좋은 아침입니다.",
+        "correct": "Good morning."
+      },
+      {
+        "type": "dialogue_match",
+        "prompt": "A: How are you?\nB: ________",
+        "options": [
+          "Good, thanks. And you?",
+          "How old are you?",
+          "Where?",
+          "Nice day."
+        ],
+        "correct": "Good, thanks. And you?"
+      },
+      {
+        "type": "collocation",
+        "question": "작별 인사에 자연스러운 것은?",
+        "options": [
+          "Take care.",
+          "Nice to meet you.",
+          "How are you?",
+          "Hey!"
+        ],
+        "correct": "Take care."
+      },
+      {
+        "type": "production",
+        "prompt": "시간·날짜·날씨 표현 5개로 4문장 대화 만들기",
+        "rubric": "격식/상황 일치, 철자·문법"
+      },
+      {
+        "type": "production",
+        "prompt": "시간·날짜·날씨 표현 5개로 4문장 대화 만들기",
+        "rubric": "격식/상황 일치, 철자·문법"
+      },
+      {
+        "type": "production",
+        "prompt": "시간·날짜·날씨 표현 5개로 4문장 대화 만들기",
+        "rubric": "격식/상황 일치, 철자·문법"
+      }
+    ]
+  },
+  "assessment": {
+    "preTest": [
+      {
+        "q": "‘Hello’의 적절한 응답은?",
+        "a": "Hi/Hello."
+      },
+      {
+        "q": "'How's it going?'의 격식 수준은?",
+        "a": "비격식"
+      }
+    ],
+    "postTest": [
+      {
+        "q": "첫 만남: ‘만나서 반갑습니다’",
+        "a": "Nice to meet you."
+      },
+      {
+        "q": "작별 배려 인사",
+        "a": "Take care."
+      }
+    ],
+    "masteryCheck": {
+      "description": "90% 이상 정답 시 통과",
+      "questions": [
+        {
+          "q": "‘Nice to see you’와 ‘Nice to meet you’ 차이 간단 설명",
+          "a": "재회 vs 첫 만남"
+        }
+      ]
+    }
+  },
+  "resources": {
+    "practiceTools": [
+      {
+        "name": "Anki Deck",
+        "url": "/downloads/week4_vocab.apkg",
+        "cards": 45
+      }
+    ]
+  },
+  "metadata": {
+    "createdBy": "GPT-5 Thinking Mode",
+    "createdAt": "2025-10-11",
+    "qualityScore": 92
+  }
+}

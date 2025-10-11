@@ -1,0 +1,127 @@
+{
+  "id": "week-3-listening",
+  "type": "listening",
+  "level": "A1.2",
+  "week": 3,
+  "title": "하루 일과",
+  "estimatedTime": 30,
+  "audioFiles": {
+    "main": "/audio/week3_listening_main.mp3",
+    "slow": "/audio/week3_listening_slow.mp3",
+    "segments": [
+      "/audio/week3_seg1.mp3",
+      "/audio/week3_seg2.mp3",
+      "/audio/week3_seg3.mp3",
+      "/audio/week3_seg4.mp3"
+    ]
+  },
+  "content": {
+    "scenario": {
+      "title": "하루 일과",
+      "participants": [
+        {
+          "name": "A",
+          "role": "Student"
+        },
+        {
+          "name": "B",
+          "role": "Student"
+        }
+      ],
+      "setting": "교실",
+      "length": "3분",
+      "wpm": 160
+    },
+    "fullTranscript": {
+      "paragraphs": [
+        {
+          "speaker": "A",
+          "text": "Hello, I'm Minji. Nice to meet you.",
+          "timestamp": "0:00-0:05",
+          "ipa": "/həˈloʊ | aɪm ˈmɪnʤi | naɪs tə ˈmiːt juː/",
+          "phoneticNotes": [
+            "연음: nice to → /naɪstə/ 가능"
+          ],
+          "intonation": {
+            "pattern": "Hello ↘ / I'm Minji ↘ / Nice to meet you ↘"
+          }
+        },
+        {
+          "speaker": "B",
+          "text": "Hi Minji, I'm Alex. How are you?",
+          "timestamp": "0:06-0:10",
+          "ipa": "/haɪ ˈmɪnʤi | aɪm ˈælɛks | haʊ ɑːr juː/",
+          "phoneticNotes": [
+            "약화: are → /ər/"
+          ],
+          "intonation": {
+            "pattern": "Hi ↘ / I'm Alex ↘ / How are you ↗"
+          }
+        }
+      ]
+    },
+    "phonologicalAnalysis": {
+      "title": "음운 특징",
+      "americanFeatures": [
+        {
+          "feature": "Rhoticity",
+          "example": "are /ɑːr/"
+        }
+      ],
+      "connectedSpeech": [
+        {
+          "phenomenon": "Elision",
+          "example": "next day → /neks deɪ/"
+        }
+      ]
+    },
+    "listeningExercises": [
+      {
+        "type": "gist_listening",
+        "question": "무엇에 대한 대화인가?",
+        "options": [
+          "자기소개",
+          "날씨",
+          "음식"
+        ],
+        "correct": "자기소개",
+        "audioSegment": "main"
+      },
+      {
+        "type": "detail_listening",
+        "question": "B의 이름은?",
+        "options": [
+          "Alex",
+          "Chris",
+          "Tom"
+        ],
+        "correct": "Alex",
+        "audioSegment": "segments[0]"
+      }
+    ]
+  },
+  "assessment": {
+    "comprehensionQuiz": [
+      {
+        "q": "A의 인사 표현?",
+        "a": "Hello / Nice to meet you."
+      }
+    ],
+    "phoneticTest": [
+      {
+        "q": "'nice to'의 약화형 표기?",
+        "a": "/naɪstə/"
+      }
+    ]
+  },
+  "metadata": {
+    "createdBy": "GPT-5 Thinking Mode",
+    "createdAt": "2025-10-11",
+    "difficultyRating": 6.8
+  },
+  "objectives": [
+    "주요 내용 파악 능력 향상",
+    "세부 정보 청취 및 이해",
+    "억양과 발음 패턴 인식"
+  ]
+}

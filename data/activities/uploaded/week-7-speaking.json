@@ -1,0 +1,69 @@
+{
+  "id": "week-7-speaking",
+  "type": "speaking",
+  "level": "A2.2",
+  "week": 7,
+  "title": "길 묻기·안내하기",
+  "estimatedTime": 30,
+  "objectives": [
+    "목표 표현으로 1~2분 말하기",
+    "롤플레이에서 질문/응답"
+  ],
+  "content": {
+    "drills": [
+      {
+        "pattern": "Hi, I'm ____.",
+        "notes": "이름/직업/국가 채우기",
+        "audio": "/audio/week7_speak_drill1.mp3"
+      },
+      {
+        "pattern": "Nice to meet you, ____.",
+        "notes": "상호 예의",
+        "audio": "/audio/week7_speak_drill2.mp3"
+      }
+    ],
+    "roleplays": [
+      {
+        "title": "첫 만남",
+        "setup": "교실 파트너에게 자기소개",
+        "prompts": [
+          "Greet",
+          "Ask name",
+          "Respond",
+          "Close"
+        ],
+        "targetVocabulary": [
+          "hello",
+          "hi",
+          "hey",
+          "good morning",
+          "good afternoon",
+          "good evening",
+          "nice to meet you",
+          "how are you"
+        ]
+      }
+    ],
+    "feedbackRubric": {
+      "fluency": "속도/멈춤",
+      "accuracy": "문법/발음",
+      "interaction": "턴-테이킹"
+    }
+  },
+  "assessment": {
+    "tasks": [
+      {
+        "prompt": "1분 자기소개 녹음",
+        "criteria": [
+          "발음",
+          "유창성",
+          "정확성"
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "createdBy": "GPT-5 Thinking Mode",
+    "createdAt": "2025-10-11"
+  }
+}

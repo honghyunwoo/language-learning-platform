@@ -1,0 +1,451 @@
+{
+  "id": "week-15-vocabulary-elite",
+  "type": "vocabulary",
+  "level": "C1-C2",
+  "week": 15,
+  "title": "정책·규제·윤리 어휘 - 엘리트 어휘 마스터",
+  "estimatedTime": 30,
+  "objectives": [
+    "고급 담화 표지·전문 어휘 15개 뉘앙스·레지스터 구분",
+    "코퍼스 기반 콜로케이션/구문 패턴 체득",
+    "실전 발표·협상에서 자연스럽게 사용"
+  ],
+  "content": {
+    "theory": {
+      "introduction": "'정책·규제·윤리 어휘' 영역의 고빈도 키워드를 의미론(denotation vs connotation), 사회언어학적 레지스터, 장르별 사용패턴으로 분석.",
+      "etymology": {
+        "notes": "핵심 표제어 어원·도메인 변천 약식 요약"
+      },
+      "semanticFields": [
+        {
+          "category": "정책·규제·윤리 어휘",
+          "words": [
+            "statutory",
+            "regulatory capture",
+            "fiduciary duty",
+            "due process",
+            "proportionality",
+            "remedy",
+            "sanction",
+            "compliance burden",
+            "enforcement",
+            "stakeholder consultation",
+            "sunset clause",
+            "impact assessment",
+            "precedent",
+            "jurisdiction",
+            "oversight hearing"
+          ],
+          "nuances": "정책/경영/학술 담화에서의 쓰임 대비"
+        }
+      ]
+    },
+    "examples": {
+      "statutory": [
+        {
+          "level": "intermediate",
+          "sentence": "Companies must comply with statutory reporting requirements.",
+          "translation": "기업은 법정 보고 요구사항을 준수해야 한다.",
+          "notes": "법적 의무",
+          "audioUrl": "/audio/elite_statutory_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Statutory obligations differ from regulatory requirements in their legal foundation.",
+          "translation": "법정 의무는 법적 기반에서 규제 요구사항과 다르다.",
+          "notes": "법적 구분",
+          "audioUrl": "/audio/elite_statutory_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Balancing statutory compliance with business flexibility requires sophisticated legal strategy.",
+          "translation": "법정 준수와 비즈니스 유연성의 균형은 정교한 법률 전략이 필요하다.",
+          "notes": "전략적 준수",
+          "audioUrl": "/audio/elite_statutory_3.mp3"
+        }
+      ],
+      "regulatory capture": [
+        {
+          "level": "intermediate",
+          "sentence": "Regulatory capture occurs when industries influence their regulators.",
+          "translation": "규제 포획은 산업이 규제기관에 영향을 미칠 때 발생한다.",
+          "notes": "규제 왜곡",
+          "audioUrl": "/audio/elite_regulatory capture_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Signs of regulatory capture include lax enforcement and industry-friendly rules.",
+          "translation": "규제 포획의 징후는 느슨한 시행과 산업 친화적 규칙을 포함한다.",
+          "notes": "거버넌스 실패",
+          "audioUrl": "/audio/elite_regulatory capture_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Preventing regulatory capture requires institutional independence, transparency, and accountability mechanisms.",
+          "translation": "규제 포획 방지는 제도적 독립성, 투명성, 책임성 메커니즘이 필요하다.",
+          "notes": "제도 설계",
+          "audioUrl": "/audio/elite_regulatory capture_3.mp3"
+        }
+      ],
+      "fiduciary duty": [
+        {
+          "level": "intermediate",
+          "sentence": "Board members have a fiduciary duty to act in shareholders' best interests.",
+          "translation": "이사회 구성원은 주주의 최선의 이익을 위해 행동할 신인의무가 있다.",
+          "notes": "법적 책임",
+          "audioUrl": "/audio/elite_fiduciary duty_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Fiduciary duty includes duties of care, loyalty, and good faith.",
+          "translation": "신인의무는 주의의무, 충실의무, 선의의무를 포함한다.",
+          "notes": "의무 구성 요소",
+          "audioUrl": "/audio/elite_fiduciary duty_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Fiduciary duties create legal liability for breaches that harm stakeholder interests.",
+          "translation": "신인의무는 이해관계자 이익을 해치는 위반에 대한 법적 책임을 만든다.",
+          "notes": "법적 결과",
+          "audioUrl": "/audio/elite_fiduciary duty_3.mp3"
+        }
+      ],
+      "due process": [
+        {
+          "level": "intermediate",
+          "sentence": "Employees are entitled to due process in disciplinary proceedings.",
+          "translation": "직원은 징계 절차에서 적법 절차를 받을 권리가 있다.",
+          "notes": "절차적 공정성",
+          "audioUrl": "/audio/elite_due process_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Due process ensures fair treatment through established procedures and standards.",
+          "translation": "적법 절차는 확립된 절차와 기준을 통해 공정한 대우를 보장한다.",
+          "notes": "공정성 보장",
+          "audioUrl": "/audio/elite_due process_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Due process balances efficiency with fairness, requiring both substantive and procedural justice.",
+          "translation": "적법 절차는 효율성과 공정성의 균형을 맞추며 실체적 및 절차적 정의를 모두 필요로 한다.",
+          "notes": "정의의 균형",
+          "audioUrl": "/audio/elite_due process_3.mp3"
+        }
+      ],
+      "proportionality": [
+        {
+          "level": "intermediate",
+          "sentence": "The punishment should have proportionality to the offense.",
+          "translation": "처벌은 위반에 비례해야 한다.",
+          "notes": "균형 잡힌 대응",
+          "audioUrl": "/audio/elite_proportionality_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Proportionality assessments weigh costs against benefits of regulatory measures.",
+          "translation": "비례성 평가는 규제 조치의 비용과 편익을 비교한다.",
+          "notes": "비용편익 분석",
+          "audioUrl": "/audio/elite_proportionality_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Proportionality principles ensure regulatory responses are necessary, appropriate, and least restrictive.",
+          "translation": "비례성 원칙은 규제 대응이 필요하고 적절하며 최소 제한적이도록 보장한다.",
+          "notes": "규제 설계 원칙",
+          "audioUrl": "/audio/elite_proportionality_3.mp3"
+        }
+      ],
+      "remedy": [
+        {
+          "level": "intermediate",
+          "sentence": "The court ordered a financial remedy for contract breach.",
+          "translation": "법원은 계약 위반에 대한 금전적 구제를 명령했다.",
+          "notes": "법적 구제",
+          "audioUrl": "/audio/elite_remedy_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Available remedies include damages, injunctions, and specific performance.",
+          "translation": "이용 가능한 구제책은 손해배상, 금지명령, 특정이행을 포함한다.",
+          "notes": "구제 유형",
+          "audioUrl": "/audio/elite_remedy_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Effective remedies restore harmed parties while deterring future violations.",
+          "translation": "효과적인 구제책은 피해 당사자를 회복시키면서 향후 위반을 억제한다.",
+          "notes": "법의 목적",
+          "audioUrl": "/audio/elite_remedy_3.mp3"
+        }
+      ],
+      "sanction": [
+        {
+          "level": "intermediate",
+          "sentence": "The regulator imposed sanctions for non-compliance.",
+          "translation": "규제기관은 준수 위반에 대한 제재를 부과했다.",
+          "notes": "처벌 조치",
+          "audioUrl": "/audio/elite_sanction_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Sanctions range from warnings to fines, suspensions, and criminal prosecution.",
+          "translation": "제재는 경고에서 벌금, 정지, 형사 기소까지 다양하다.",
+          "notes": "제재 등급",
+          "audioUrl": "/audio/elite_sanction_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Effective sanction regimes balance deterrence with proportionality and rehabilitation.",
+          "translation": "효과적인 제재 체계는 억제와 비례성 및 재활의 균형을 맞춘다.",
+          "notes": "정책 목표",
+          "audioUrl": "/audio/elite_sanction_3.mp3"
+        }
+      ],
+      "compliance burden": [
+        {
+          "level": "intermediate",
+          "sentence": "Small businesses face a significant compliance burden from new regulations.",
+          "translation": "소규모 기업은 새로운 규제로 인한 상당한 준수 부담에 직면한다.",
+          "notes": "규제 비용",
+          "audioUrl": "/audio/elite_compliance burden_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The compliance burden includes direct costs, opportunity costs, and administrative overhead.",
+          "translation": "준수 부담은 직접 비용, 기회비용, 관리 오버헤드를 포함한다.",
+          "notes": "총 비용",
+          "audioUrl": "/audio/elite_compliance burden_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Regulators must consider compliance burden when designing rules to avoid unintended consequences.",
+          "translation": "규제기관은 의도치 않은 결과를 피하기 위해 규칙 설계 시 준수 부담을 고려해야 한다.",
+          "notes": "규제 영향 평가",
+          "audioUrl": "/audio/elite_compliance burden_3.mp3"
+        }
+      ],
+      "enforcement": [
+        {
+          "level": "intermediate",
+          "sentence": "Strict enforcement ensures everyone follows the rules.",
+          "translation": "엄격한 집행은 모두가 규칙을 따르도록 보장한다.",
+          "notes": "규칙 시행",
+          "audioUrl": "/audio/elite_enforcement_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Effective enforcement requires adequate resources, clear authority, and consistent application.",
+          "translation": "효과적인 집행은 적절한 자원, 명확한 권한, 일관된 적용이 필요하다.",
+          "notes": "집행 요건",
+          "audioUrl": "/audio/elite_enforcement_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Enforcement strategies balance deterrence through penalties with education and voluntary compliance.",
+          "translation": "집행 전략은 처벌을 통한 억제와 교육 및 자발적 준수의 균형을 맞춘다.",
+          "notes": "규제 철학",
+          "audioUrl": "/audio/elite_enforcement_3.mp3"
+        }
+      ],
+      "stakeholder consultation": [
+        {
+          "level": "intermediate",
+          "sentence": "Stakeholder consultation improves policy quality and acceptance.",
+          "translation": "이해관계자 협의는 정책 품질과 수용성을 향상시킨다.",
+          "notes": "참여 프로세스",
+          "audioUrl": "/audio/elite_stakeholder consultation_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Effective stakeholder consultation provides meaningful opportunities for input and feedback.",
+          "translation": "효과적인 이해관계자 협의는 의견과 피드백을 위한 의미 있는 기회를 제공한다.",
+          "notes": "진정한 참여",
+          "audioUrl": "/audio/elite_stakeholder consultation_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Stakeholder consultation balances diverse interests while maintaining regulatory independence and public interest focus.",
+          "translation": "이해관계자 협의는 규제 독립성과 공익 초점을 유지하면서 다양한 이익의 균형을 맞춘다.",
+          "notes": "거버넌스 균형",
+          "audioUrl": "/audio/elite_stakeholder consultation_3.mp3"
+        }
+      ],
+      "sunset clause": [
+        {
+          "level": "intermediate",
+          "sentence": "The regulation includes a sunset clause requiring renewal after five years.",
+          "translation": "규제는 5년 후 갱신이 필요한 일몰 조항을 포함한다.",
+          "notes": "자동 종료",
+          "audioUrl": "/audio/elite_sunset clause_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Sunset clauses force periodic review of whether regulations remain necessary.",
+          "translation": "일몰 조항은 규제가 여전히 필요한지 정기적 검토를 강제한다.",
+          "notes": "지속적 평가",
+          "audioUrl": "/audio/elite_sunset clause_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Sunset clauses prevent regulatory accumulation but require balancing certainty needs with flexibility.",
+          "translation": "일몰 조항은 규제 누적을 방지하지만 확실성 필요와 유연성의 균형이 필요하다.",
+          "notes": "규제 설계 트레이드오프",
+          "audioUrl": "/audio/elite_sunset clause_3.mp3"
+        }
+      ],
+      "impact assessment": [
+        {
+          "level": "intermediate",
+          "sentence": "Impact assessments evaluate the effects of proposed policies.",
+          "translation": "영향 평가는 제안된 정책의 효과를 평가한다.",
+          "notes": "사전 분석",
+          "audioUrl": "/audio/elite_impact assessment_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Comprehensive impact assessments consider economic, social, and environmental effects.",
+          "translation": "포괄적 영향 평가는 경제적, 사회적, 환경적 효과를 고려한다.",
+          "notes": "다차원 분석",
+          "audioUrl": "/audio/elite_impact assessment_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Rigorous impact assessments improve policy quality by identifying unintended consequences before implementation.",
+          "translation": "엄격한 영향 평가는 실행 전 의도치 않은 결과를 식별하여 정책 품질을 향상시킨다.",
+          "notes": "증거 기반 정책",
+          "audioUrl": "/audio/elite_impact assessment_3.mp3"
+        }
+      ],
+      "precedent": [
+        {
+          "level": "intermediate",
+          "sentence": "This court decision sets an important legal precedent.",
+          "translation": "이 법원 결정은 중요한 법적 선례를 만든다.",
+          "notes": "선례",
+          "audioUrl": "/audio/elite_precedent_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Precedents provide predictability but can constrain adaptation to new circumstances.",
+          "translation": "선례는 예측 가능성을 제공하지만 새로운 상황에 대한 적응을 제약할 수 있다.",
+          "notes": "법적 안정성",
+          "audioUrl": "/audio/elite_precedent_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Legal systems balance respect for precedent with flexibility to evolve through distinguishing and overruling.",
+          "translation": "법 시스템은 선례 존중과 구별 및 파기를 통한 발전 유연성의 균형을 맞춘다.",
+          "notes": "법의 진화",
+          "audioUrl": "/audio/elite_precedent_3.mp3"
+        }
+      ],
+      "jurisdiction": [
+        {
+          "level": "intermediate",
+          "sentence": "This dispute falls under federal jurisdiction.",
+          "translation": "이 분쟁은 연방 관할권에 속한다.",
+          "notes": "관할권",
+          "audioUrl": "/audio/elite_jurisdiction_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Jurisdictional questions determine which court or authority can hear a case.",
+          "translation": "관할권 문제는 어떤 법원이나 당국이 사건을 심리할 수 있는지 결정한다.",
+          "notes": "권한 범위",
+          "audioUrl": "/audio/elite_jurisdiction_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Cross-border transactions create complex jurisdictional issues requiring careful legal structuring.",
+          "translation": "국경 간 거래는 신중한 법적 구조화가 필요한 복잡한 관할권 문제를 만든다.",
+          "notes": "국제 법률",
+          "audioUrl": "/audio/elite_jurisdiction_3.mp3"
+        }
+      ],
+      "oversight hearing": [
+        {
+          "level": "intermediate",
+          "sentence": "Congress held an oversight hearing on the agency's performance.",
+          "translation": "의회는 기관 성과에 대한 감독 청문회를 개최했다.",
+          "notes": "감독 절차",
+          "audioUrl": "/audio/elite_oversight hearing_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Oversight hearings examine agency compliance with legislative intent and public interest.",
+          "translation": "감독 청문회는 기관이 입법 의도와 공익을 준수하는지 검토한다.",
+          "notes": "책임성 메커니즘",
+          "audioUrl": "/audio/elite_oversight hearing_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Effective oversight hearings balance accountability with avoiding political interference in administrative functions.",
+          "translation": "효과적인 감독 청문회는 책임성과 행정 기능에 대한 정치적 간섭 회피의 균형을 맞춘다.",
+          "notes": "거버넌스 균형",
+          "audioUrl": "/audio/elite_oversight hearing_3.mp3"
+        }
+      ]
+    },
+    "exercises": [
+      {
+        "type": "collocation",
+        "instruction": "콜로케이션 선택",
+        "question": "_____ analysis",
+        "options": [
+          "variance",
+          "escalate",
+          "escalation"
+        ],
+        "correct": "variance",
+        "explanation": "통계 맥락"
+      },
+      {
+        "type": "translation",
+        "korean": "우리는 이 사안을 다음 주 회의에서 다시 논의하자.",
+        "correct": "Let's table the discussion until next week's meeting.",
+        "explanation": "‘table’의 미국식/영국식 차이는 노트 참고"
+      },
+      {
+        "type": "production",
+        "prompt": "신규 프로젝트 브리핑 4문장(표제어 5개 포함)"
+      },
+      {
+        "type": "production",
+        "prompt": "신규 프로젝트 브리핑 4문장(표제어 5개 포함)"
+      },
+      {
+        "type": "production",
+        "prompt": "신규 프로젝트 브리핑 4문장(표제어 5개 포함)"
+      }
+    ]
+  },
+  "assessment": {
+    "preTest": [
+      {
+        "q": "BATNA의 의미는?",
+        "a": "Best Alternative To a Negotiated Agreement"
+      }
+    ],
+    "postTest": [
+      {
+        "q": "'uplift'의 데이터 맥락 의미?",
+        "a": "증가분/상승 효과"
+      }
+    ],
+    "masteryCheck": {
+      "description": "90% 이상 정답 시 통과",
+      "questions": [
+        {
+          "q": "‘anchor’ 전략 한 줄 설명",
+          "a": "초기 제안을 유리한 기준점으로 설정해 협상 범위를 유도"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "createdBy": "GPT-5 Thinking Mode",
+    "createdAt": "2025-10-11",
+    "qualityScore": 95
+  }
+}

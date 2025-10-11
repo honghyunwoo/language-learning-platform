@@ -1,0 +1,451 @@
+{
+  "id": "week-9-vocabulary-elite",
+  "type": "vocabulary",
+  "level": "B1.2",
+  "week": 9,
+  "title": "비즈니스 전화·메시지 어휘 심화 - 엘리트 어휘 마스터",
+  "estimatedTime": 30,
+  "objectives": [
+    "고급 담화 표지·전문 어휘 15개 뉘앙스·레지스터 구분",
+    "코퍼스 기반 콜로케이션/구문 패턴 체득",
+    "실전 발표·협상에서 자연스럽게 사용"
+  ],
+  "content": {
+    "theory": {
+      "introduction": "'비즈니스 전화·메시지 어휘 심화' 영역의 고빈도 키워드를 의미론(denotation vs connotation), 사회언어학적 레지스터, 장르별 사용패턴으로 분석.",
+      "etymology": {
+        "notes": "핵심 표제어 어원·도메인 변천 약식 요약"
+      },
+      "semanticFields": [
+        {
+          "category": "비즈니스 전화·메시지 어휘 심화",
+          "words": [
+            "agenda",
+            "follow-up",
+            "call backlog",
+            "escalate",
+            "escalation",
+            "voicemail",
+            "dial-in",
+            "patch through",
+            "minutes",
+            "ETA",
+            "touch base",
+            "action item",
+            "bandwidth",
+            "sync",
+            "reschedule"
+          ],
+          "nuances": "정책/경영/학술 담화에서의 쓰임 대비"
+        }
+      ]
+    },
+    "examples": {
+      "agenda": [
+        {
+          "level": "intermediate",
+          "sentence": "Let's review the meeting agenda before we start the presentation.",
+          "translation": "발표를 시작하기 전에 회의 안건을 검토합시다.",
+          "notes": "일상 회의 맥락",
+          "audioUrl": "/audio/elite_agenda_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The committee has set a clear agenda for digital transformation over the next three years.",
+          "translation": "위원회가 향후 3년간 디지털 전환을 위한 명확한 의제를 설정했다.",
+          "notes": "전략적 계획 맥락",
+          "audioUrl": "/audio/elite_agenda_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "His hidden agenda became apparent during the contract negotiations.",
+          "translation": "그의 숨은 의도가 계약 협상 중에 명백해졌다.",
+          "notes": "은유적 사용 (숨은 의도)",
+          "audioUrl": "/audio/elite_agenda_3.mp3"
+        }
+      ],
+      "follow-up": [
+        {
+          "level": "intermediate",
+          "sentence": "I'll send you a follow-up email with the details after our call.",
+          "translation": "통화 후 세부 사항이 포함된 후속 이메일을 보내드리겠습니다.",
+          "notes": "이메일/전화 후속 조치",
+          "audioUrl": "/audio/elite_follow-up_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The sales team needs to improve their follow-up process with potential clients.",
+          "translation": "영업팀은 잠재 고객과의 후속 조치 프로세스를 개선해야 한다.",
+          "notes": "비즈니스 프로세스 개선",
+          "audioUrl": "/audio/elite_follow-up_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Effective follow-up is what separates successful negotiations from missed opportunities.",
+          "translation": "효과적인 후속 조치가 성공적인 협상과 놓친 기회를 구분하는 요소다.",
+          "notes": "추상적 개념 (성공 요인)",
+          "audioUrl": "/audio/elite_follow-up_3.mp3"
+        }
+      ],
+      "call backlog": [
+        {
+          "level": "intermediate",
+          "sentence": "We have a call backlog of over 50 customers waiting for support.",
+          "translation": "고객 지원을 기다리는 50명 이상의 고객 전화 적체가 있습니다.",
+          "notes": "고객 서비스 맥락",
+          "audioUrl": "/audio/elite_call backlog_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The call center needs additional staff to reduce the growing backlog.",
+          "translation": "콜센터는 증가하는 적체를 줄이기 위해 추가 인력이 필요하다.",
+          "notes": "인력 관리 이슈",
+          "audioUrl": "/audio/elite_call backlog_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Managing call backlog effectively is crucial for maintaining customer satisfaction metrics.",
+          "translation": "전화 적체를 효과적으로 관리하는 것은 고객 만족도 지표 유지에 매우 중요하다.",
+          "notes": "전략적 중요성",
+          "audioUrl": "/audio/elite_call backlog_3.mp3"
+        }
+      ],
+      "escalate": [
+        {
+          "level": "intermediate",
+          "sentence": "If you can't resolve the issue, please escalate it to your manager.",
+          "translation": "문제를 해결할 수 없으면 관리자에게 상급 보고하세요.",
+          "notes": "문제 해결 절차",
+          "audioUrl": "/audio/elite_escalate_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The conflict has escalated to the point where mediation is now necessary.",
+          "translation": "갈등이 이제 중재가 필요한 수준까지 확대되었다.",
+          "notes": "상황 악화",
+          "audioUrl": "/audio/elite_escalate_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "We need clear protocols for when to escalate customer complaints to senior leadership.",
+          "translation": "고객 불만을 고위 경영진에게 상급 보고할 시점에 대한 명확한 프로토콜이 필요하다.",
+          "notes": "조직 프로세스",
+          "audioUrl": "/audio/elite_escalate_3.mp3"
+        }
+      ],
+      "escalation": [
+        {
+          "level": "intermediate",
+          "sentence": "The escalation procedure is outlined in the employee handbook.",
+          "translation": "상급 보고 절차는 직원 핸드북에 명시되어 있습니다.",
+          "notes": "회사 정책",
+          "audioUrl": "/audio/elite_escalation_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "We've seen a 30% increase in escalations to technical support this quarter.",
+          "translation": "이번 분기 기술 지원팀으로의 상급 보고가 30% 증가했다.",
+          "notes": "데이터 기반 보고",
+          "audioUrl": "/audio/elite_escalation_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Rapid escalation of trade tensions could impact our global supply chain strategy.",
+          "translation": "무역 긴장의 급속한 확대는 우리 글로벌 공급망 전략에 영향을 미칠 수 있다.",
+          "notes": "거시 경제 맥락",
+          "audioUrl": "/audio/elite_escalation_3.mp3"
+        }
+      ],
+      "voicemail": [
+        {
+          "level": "intermediate",
+          "sentence": "Please leave a voicemail if I don't answer, and I'll call you back.",
+          "translation": "제가 받지 못하면 음성 메시지를 남겨주시면 다시 전화드리겠습니다.",
+          "notes": "전화 예절",
+          "audioUrl": "/audio/elite_voicemail_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Her voicemail box was full, so I sent her an email instead.",
+          "translation": "그녀의 음성 메일함이 가득 차서 대신 이메일을 보냈다.",
+          "notes": "대안 커뮤니케이션",
+          "audioUrl": "/audio/elite_voicemail_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Many professionals now prefer text messages over voicemail for quick updates.",
+          "translation": "많은 전문가들이 이제 빠른 업데이트를 위해 음성 메일보다 문자 메시지를 선호한다.",
+          "notes": "커뮤니케이션 트렌드",
+          "audioUrl": "/audio/elite_voicemail_3.mp3"
+        }
+      ],
+      "dial-in": [
+        {
+          "level": "intermediate",
+          "sentence": "Please use the dial-in number on the invitation to join the conference call.",
+          "translation": "초대장에 있는 전화 접속 번호를 사용하여 회의에 참여하세요.",
+          "notes": "화상/전화 회의",
+          "audioUrl": "/audio/elite_dial-in_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The dial-in code will be sent 15 minutes before the meeting starts.",
+          "translation": "전화 접속 코드는 회의 시작 15분 전에 발송됩니다.",
+          "notes": "회의 준비",
+          "audioUrl": "/audio/elite_dial-in_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "With global teams, dial-in options have become essential for inclusive meetings.",
+          "translation": "글로벌 팀과 함께하면서 전화 접속 옵션은 포용적인 회의에 필수가 되었다.",
+          "notes": "원격 근무 트렌드",
+          "audioUrl": "/audio/elite_dial-in_3.mp3"
+        }
+      ],
+      "patch through": [
+        {
+          "level": "intermediate",
+          "sentence": "Can you patch me through to the sales department?",
+          "translation": "저를 영업부로 연결해 주시겠어요?",
+          "notes": "전화 연결 요청",
+          "audioUrl": "/audio/elite_patch through_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The receptionist will patch you through to the appropriate person.",
+          "translation": "접수원이 적절한 담당자에게 연결해 드릴 것입니다.",
+          "notes": "전화 안내",
+          "audioUrl": "/audio/elite_patch through_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Modern phone systems can automatically patch through calls based on caller ID.",
+          "translation": "최신 전화 시스템은 발신자 번호에 따라 자동으로 통화를 연결할 수 있다.",
+          "notes": "기술 발전",
+          "audioUrl": "/audio/elite_patch through_3.mp3"
+        }
+      ],
+      "minutes": [
+        {
+          "level": "intermediate",
+          "sentence": "Could you please take minutes during today's meeting?",
+          "translation": "오늘 회의 중 회의록을 작성해 주시겠어요?",
+          "notes": "회의 기록",
+          "audioUrl": "/audio/elite_minutes_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The minutes from last week's board meeting have been circulated to all members.",
+          "translation": "지난주 이사회 회의록이 모든 구성원에게 배포되었습니다.",
+          "notes": "공식 문서",
+          "audioUrl": "/audio/elite_minutes_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Meeting minutes serve as an official record and can be legally binding in some cases.",
+          "translation": "회의록은 공식 기록으로 기능하며 일부 경우 법적 구속력을 가질 수 있다.",
+          "notes": "법적 중요성",
+          "audioUrl": "/audio/elite_minutes_3.mp3"
+        }
+      ],
+      "ETA": [
+        {
+          "level": "intermediate",
+          "sentence": "What's the ETA for the shipment?",
+          "translation": "배송의 도착 예정 시간은 언제인가요?",
+          "notes": "물류/배송",
+          "audioUrl": "/audio/elite_ETA_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The project team updated the ETA for completion to next Friday.",
+          "translation": "프로젝트 팀이 완료 예정 시간을 다음 주 금요일로 업데이트했다.",
+          "notes": "프로젝트 관리",
+          "audioUrl": "/audio/elite_ETA_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Accurate ETA communication is critical for managing stakeholder expectations.",
+          "translation": "정확한 예상 도착 시간 전달은 이해관계자의 기대를 관리하는 데 매우 중요하다.",
+          "notes": "이해관계자 관리",
+          "audioUrl": "/audio/elite_ETA_3.mp3"
+        }
+      ],
+      "touch base": [
+        {
+          "level": "intermediate",
+          "sentence": "Let's touch base next week to discuss the project status.",
+          "translation": "다음 주에 연락하여 프로젝트 상태를 논의합시다.",
+          "notes": "비공식 회의",
+          "audioUrl": "/audio/elite_touch base_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "I like to touch base with my team members at least once a day.",
+          "translation": "나는 팀원들과 하루에 최소 한 번은 소통하는 것을 좋아한다.",
+          "notes": "팀 커뮤니케이션",
+          "audioUrl": "/audio/elite_touch base_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Regular touch-base meetings help prevent miscommunication in distributed teams.",
+          "translation": "정기적인 현황 점검 회의는 분산 팀에서 잘못된 의사소통을 방지하는 데 도움이 된다.",
+          "notes": "원격 팀 관리",
+          "audioUrl": "/audio/elite_touch base_3.mp3"
+        }
+      ],
+      "action item": [
+        {
+          "level": "intermediate",
+          "sentence": "Let's list the action items from today's meeting before we finish.",
+          "translation": "회의를 마치기 전에 오늘 회의에서 나온 실행 항목을 정리합시다.",
+          "notes": "회의 결론",
+          "audioUrl": "/audio/elite_action item_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Each action item should have a clear owner and deadline assigned.",
+          "translation": "각 실행 항목은 명확한 담당자와 마감일이 지정되어야 한다.",
+          "notes": "책임 분배",
+          "audioUrl": "/audio/elite_action item_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Tracking action items systematically improves team accountability and project velocity.",
+          "translation": "실행 항목을 체계적으로 추적하면 팀의 책임감과 프로젝트 속도가 향상된다.",
+          "notes": "프로젝트 관리 원칙",
+          "audioUrl": "/audio/elite_action item_3.mp3"
+        }
+      ],
+      "bandwidth": [
+        {
+          "level": "intermediate",
+          "sentence": "I don't have the bandwidth to take on another project right now.",
+          "translation": "지금은 다른 프로젝트를 맡을 여력이 없습니다.",
+          "notes": "업무 용량 (은유)",
+          "audioUrl": "/audio/elite_bandwidth_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The team's bandwidth is already stretched thin with the current workload.",
+          "translation": "팀의 업무 처리 능력은 현재 업무량으로 이미 한계에 달했다.",
+          "notes": "팀 리소스 관리",
+          "audioUrl": "/audio/elite_bandwidth_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Managing cognitive bandwidth is essential for maintaining productivity in knowledge work.",
+          "translation": "인지적 대역폭 관리는 지식 노동에서 생산성을 유지하는 데 필수적이다.",
+          "notes": "심리학적 맥락",
+          "audioUrl": "/audio/elite_bandwidth_3.mp3"
+        }
+      ],
+      "sync": [
+        {
+          "level": "intermediate",
+          "sentence": "Let's have a quick sync tomorrow morning to align on priorities.",
+          "translation": "내일 아침에 우선순위를 조율하기 위해 빠른 동기화 회의를 하자.",
+          "notes": "비공식 회의 (명사)",
+          "audioUrl": "/audio/elite_sync_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "We need to sync our calendars to find a time that works for everyone.",
+          "translation": "모두에게 맞는 시간을 찾기 위해 일정을 동기화해야 한다.",
+          "notes": "일정 조율 (동사)",
+          "audioUrl": "/audio/elite_sync_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Cross-functional syncs help break down silos and improve organizational alignment.",
+          "translation": "부서 간 동기화 회의는 사일로를 허물고 조직 정렬을 개선하는 데 도움이 된다.",
+          "notes": "조직 문화",
+          "audioUrl": "/audio/elite_sync_3.mp3"
+        }
+      ],
+      "reschedule": [
+        {
+          "level": "intermediate",
+          "sentence": "Can we reschedule our meeting to next Tuesday?",
+          "translation": "우리 회의를 다음 주 화요일로 일정 변경할 수 있을까요?",
+          "notes": "일정 변경 요청",
+          "audioUrl": "/audio/elite_reschedule_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Due to a conflict, we've had to reschedule the client presentation.",
+          "translation": "일정 충돌로 인해 고객 프레젠테이션 일정을 변경해야 했다.",
+          "notes": "일정 조정 설명",
+          "audioUrl": "/audio/elite_reschedule_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Frequent rescheduling can signal poor planning or unrealistic commitments.",
+          "translation": "잦은 일정 변경은 부실한 계획이나 비현실적인 약속을 나타낼 수 있다.",
+          "notes": "시간 관리 원칙",
+          "audioUrl": "/audio/elite_reschedule_3.mp3"
+        }
+      ]
+    },
+    "exercises": [
+      {
+        "type": "collocation",
+        "instruction": "콜로케이션 선택",
+        "question": "_____ analysis",
+        "options": [
+          "variance",
+          "escalate",
+          "escalation"
+        ],
+        "correct": "variance",
+        "explanation": "통계 맥락"
+      },
+      {
+        "type": "translation",
+        "korean": "우리는 이 사안을 다음 주 회의에서 다시 논의하자.",
+        "correct": "Let's table the discussion until next week's meeting.",
+        "explanation": "‘table’의 미국식/영국식 차이는 노트 참고"
+      },
+      {
+        "type": "production",
+        "prompt": "신규 프로젝트 브리핑 4문장(표제어 5개 포함)"
+      },
+      {
+        "type": "production",
+        "prompt": "신규 프로젝트 브리핑 4문장(표제어 5개 포함)"
+      },
+      {
+        "type": "production",
+        "prompt": "신규 프로젝트 브리핑 4문장(표제어 5개 포함)"
+      }
+    ]
+  },
+  "assessment": {
+    "preTest": [
+      {
+        "q": "BATNA의 의미는?",
+        "a": "Best Alternative To a Negotiated Agreement"
+      }
+    ],
+    "postTest": [
+      {
+        "q": "'uplift'의 데이터 맥락 의미?",
+        "a": "증가분/상승 효과"
+      }
+    ],
+    "masteryCheck": {
+      "description": "90% 이상 정답 시 통과",
+      "questions": [
+        {
+          "q": "‘anchor’ 전략 한 줄 설명",
+          "a": "초기 제안을 유리한 기준점으로 설정해 협상 범위를 유도"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "createdBy": "GPT-5 Thinking Mode",
+    "createdAt": "2025-10-11",
+    "qualityScore": 95
+  }
+}

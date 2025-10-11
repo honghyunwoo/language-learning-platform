@@ -1,0 +1,14 @@
+[
+  {
+    "id": "placement_listen_1",
+    "text": "We'll circle back once the audit trail is complete; until then, let's avoid scope creep.",
+    "outfile": "placement_snippet.mp3",
+    "rate": 1.0
+  },
+  {
+    "id": "elite_week13_seg1",
+    "text": "Let's align on the mitigation plan before we lock the timeline.",
+    "outfile": "elite_week13_seg1.mp3",
+    "rate": 1.05
+  }
+]

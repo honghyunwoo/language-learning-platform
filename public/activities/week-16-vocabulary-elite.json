@@ -1,0 +1,451 @@
+{
+  "id": "week-16-vocabulary-elite",
+  "type": "vocabulary",
+  "level": "C2",
+  "week": 16,
+  "title": "추상·철학·비판적 담화 어휘 - 엘리트 어휘 마스터",
+  "estimatedTime": 30,
+  "objectives": [
+    "고급 담화 표지·전문 어휘 15개 뉘앙스·레지스터 구분",
+    "코퍼스 기반 콜로케이션/구문 패턴 체득",
+    "실전 발표·협상에서 자연스럽게 사용"
+  ],
+  "content": {
+    "theory": {
+      "introduction": "'추상·철학·비판적 담화 어휘' 영역의 고빈도 키워드를 의미론(denotation vs connotation), 사회언어학적 레지스터, 장르별 사용패턴으로 분석.",
+      "etymology": {
+        "notes": "핵심 표제어 어원·도메인 변천 약식 요약"
+      },
+      "semanticFields": [
+        {
+          "category": "추상·철학·비판적 담화 어휘",
+          "words": [
+            "epistemic",
+            "heuristic",
+            "teleology",
+            "ontology",
+            "axiomatic",
+            "dialectic",
+            "hermeneutic",
+            "syllogism",
+            "fallacy",
+            "salience",
+            "nuance",
+            "axiology",
+            "parsimonious",
+            "falsifiable",
+            "causality"
+          ],
+          "nuances": "정책/경영/학술 담화에서의 쓰임 대비"
+        }
+      ]
+    },
+    "examples": {
+      "epistemic": [
+        {
+          "level": "intermediate",
+          "sentence": "We need to address the epistemic challenges in our data analysis.",
+          "translation": "우리는 데이터 분석의 인식론적 과제를 해결해야 한다.",
+          "notes": "지식의 본질",
+          "audioUrl": "/audio/elite_epistemic_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Epistemic humility recognizes the limits of what we can know with certainty.",
+          "translation": "인식론적 겸손은 우리가 확실하게 알 수 있는 것의 한계를 인정한다.",
+          "notes": "지식의 한계",
+          "audioUrl": "/audio/elite_epistemic_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Epistemic communities share common frameworks for generating and validating knowledge.",
+          "translation": "인식론적 공동체는 지식을 생성하고 검증하기 위한 공통 프레임워크를 공유한다.",
+          "notes": "지식 공동체",
+          "audioUrl": "/audio/elite_epistemic_3.mp3"
+        }
+      ],
+      "heuristic": [
+        {
+          "level": "intermediate",
+          "sentence": "We use heuristics to make quick decisions with limited information.",
+          "translation": "우리는 제한된 정보로 빠른 결정을 내리기 위해 경험적 방법을 사용한다.",
+          "notes": "경험적 판단",
+          "audioUrl": "/audio/elite_heuristic_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Heuristics provide mental shortcuts but can lead to systematic biases.",
+          "translation": "경험적 방법은 정신적 지름길을 제공하지만 체계적 편향을 초래할 수 있다.",
+          "notes": "인지적 효율성과 오류",
+          "audioUrl": "/audio/elite_heuristic_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Understanding when heuristics help versus hinder requires meta-cognitive awareness of decision contexts.",
+          "translation": "경험적 방법이 언제 도움이 되고 방해가 되는지 이해하는 것은 의사결정 맥락에 대한 메타인지적 인식이 필요하다.",
+          "notes": "적응적 사고",
+          "audioUrl": "/audio/elite_heuristic_3.mp3"
+        }
+      ],
+      "teleology": [
+        {
+          "level": "intermediate",
+          "sentence": "The teleology of our strategy is long-term sustainable growth.",
+          "translation": "우리 전략의 목적론은 장기 지속가능한 성장이다.",
+          "notes": "목적/최종 목표",
+          "audioUrl": "/audio/elite_teleology_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Teleological reasoning evaluates actions based on their intended outcomes.",
+          "translation": "목적론적 추론은 의도된 결과를 기반으로 행동을 평가한다.",
+          "notes": "결과 중심 사고",
+          "audioUrl": "/audio/elite_teleology_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Teleological ethics contrast with deontological approaches that focus on duties regardless of consequences.",
+          "translation": "목적론적 윤리는 결과와 무관하게 의무에 초점을 맞추는 의무론적 접근과 대조된다.",
+          "notes": "윤리 이론",
+          "audioUrl": "/audio/elite_teleology_3.mp3"
+        }
+      ],
+      "ontology": [
+        {
+          "level": "intermediate",
+          "sentence": "The project's ontology defines key entities and their relationships.",
+          "translation": "프로젝트의 온톨로지는 핵심 개체와 그 관계를 정의한다.",
+          "notes": "개념 구조",
+          "audioUrl": "/audio/elite_ontology_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Ontological frameworks shape how we categorize and understand reality.",
+          "translation": "온톨로지 프레임워크는 우리가 현실을 분류하고 이해하는 방식을 형성한다.",
+          "notes": "존재론적 기반",
+          "audioUrl": "/audio/elite_ontology_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Competing ontologies reflect different assumptions about what exists and how it's structured.",
+          "translation": "경쟁하는 온톨로지는 무엇이 존재하고 어떻게 구조화되는지에 대한 다른 가정을 반영한다.",
+          "notes": "철학적 기초",
+          "audioUrl": "/audio/elite_ontology_3.mp3"
+        }
+      ],
+      "axiomatic": [
+        {
+          "level": "intermediate",
+          "sentence": "It's axiomatic that customer satisfaction drives repeat business.",
+          "translation": "고객 만족이 반복 거래를 유도한다는 것은 자명하다.",
+          "notes": "자명한 진리",
+          "audioUrl": "/audio/elite_axiomatic_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Axiomatic principles form the foundational assumptions of theoretical frameworks.",
+          "translation": "공리적 원칙은 이론 프레임워크의 기초 가정을 형성한다.",
+          "notes": "기본 가정",
+          "audioUrl": "/audio/elite_axiomatic_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Questioning axiomatic assumptions can reveal hidden constraints and open new solution spaces.",
+          "translation": "공리적 가정에 의문을 제기하는 것은 숨겨진 제약을 드러내고 새로운 해결 공간을 열 수 있다.",
+          "notes": "비판적 사고",
+          "audioUrl": "/audio/elite_axiomatic_3.mp3"
+        }
+      ],
+      "dialectic": [
+        {
+          "level": "intermediate",
+          "sentence": "The dialectic between innovation and stability shapes our strategy.",
+          "translation": "혁신과 안정성 사이의 변증법적 긴장이 우리 전략을 형성한다.",
+          "notes": "대립과 종합",
+          "audioUrl": "/audio/elite_dialectic_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Dialectical thinking examines how opposing forces interact to create new understanding.",
+          "translation": "변증법적 사고는 대립하는 힘이 어떻게 상호작용하여 새로운 이해를 만드는지 검토한다.",
+          "notes": "대립의 생산성",
+          "audioUrl": "/audio/elite_dialectic_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Dialectical processes reveal that contradictions often contain the seeds of resolution and synthesis.",
+          "translation": "변증법적 과정은 모순이 종종 해결과 종합의 씨앗을 포함함을 드러낸다.",
+          "notes": "헤겔적 변증법",
+          "audioUrl": "/audio/elite_dialectic_3.mp3"
+        }
+      ],
+      "hermeneutic": [
+        {
+          "level": "intermediate",
+          "sentence": "We need a hermeneutic approach to interpret customer feedback.",
+          "translation": "고객 피드백을 해석하기 위해 해석학적 접근이 필요하다.",
+          "notes": "해석 방법",
+          "audioUrl": "/audio/elite_hermeneutic_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Hermeneutic analysis considers context, assumptions, and interpretive frameworks.",
+          "translation": "해석학적 분석은 맥락, 가정, 해석 프레임워크를 고려한다.",
+          "notes": "맥락적 이해",
+          "audioUrl": "/audio/elite_hermeneutic_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "The hermeneutic circle illustrates how understanding parts requires grasping the whole and vice versa.",
+          "translation": "해석학적 순환은 부분 이해가 전체 파악을 필요로 하고 그 반대도 마찬가지임을 보여준다.",
+          "notes": "순환적 이해",
+          "audioUrl": "/audio/elite_hermeneutic_3.mp3"
+        }
+      ],
+      "syllogism": [
+        {
+          "level": "intermediate",
+          "sentence": "The argument follows a simple syllogism: if A then B, A is true, therefore B.",
+          "translation": "논증은 단순한 삼단논법을 따른다: A이면 B, A가 참이므로 B다.",
+          "notes": "논리적 추론",
+          "audioUrl": "/audio/elite_syllogism_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Syllogistic reasoning provides logical structure but requires valid premises.",
+          "translation": "삼단논법적 추론은 논리적 구조를 제공하지만 타당한 전제가 필요하다.",
+          "notes": "논리와 전제",
+          "audioUrl": "/audio/elite_syllogism_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Business cases often use implicit syllogisms that benefit from explicit logical examination.",
+          "translation": "비즈니스 케이스는 종종 명시적 논리 검토로 이익을 얻을 수 있는 암묵적 삼단논법을 사용한다.",
+          "notes": "비판적 분석",
+          "audioUrl": "/audio/elite_syllogism_3.mp3"
+        }
+      ],
+      "fallacy": [
+        {
+          "level": "intermediate",
+          "sentence": "That argument contains a logical fallacy.",
+          "translation": "그 논증은 논리적 오류를 포함한다.",
+          "notes": "추론 오류",
+          "audioUrl": "/audio/elite_fallacy_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Common fallacies include ad hominem attacks, false dichotomies, and slippery slope arguments.",
+          "translation": "흔한 오류는 인신공격, 거짓 이분법, 미끄러운 경사면 논증을 포함한다.",
+          "notes": "오류 유형",
+          "audioUrl": "/audio/elite_fallacy_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Recognizing fallacies improves critical thinking and protects against manipulation.",
+          "translation": "오류를 인식하는 것은 비판적 사고를 향상시키고 조작으로부터 보호한다.",
+          "notes": "논리적 방어",
+          "audioUrl": "/audio/elite_fallacy_3.mp3"
+        }
+      ],
+      "salience": [
+        {
+          "level": "intermediate",
+          "sentence": "The salience of cybersecurity risks has increased dramatically.",
+          "translation": "사이버 보안 리스크의 현저성이 극적으로 증가했다.",
+          "notes": "두드러짐",
+          "audioUrl": "/audio/elite_salience_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Salience affects which information captures attention and influences decisions.",
+          "translation": "현저성은 어떤 정보가 주의를 끌고 결정에 영향을 미치는지에 영향을 준다.",
+          "notes": "주의와 인지",
+          "audioUrl": "/audio/elite_salience_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Understanding salience bias helps leaders ensure important-but-not-urgent issues receive adequate attention.",
+          "translation": "현저성 편향을 이해하는 것은 리더가 중요하지만 긴급하지 않은 문제가 적절한 관심을 받도록 돕는다.",
+          "notes": "인지적 편향",
+          "audioUrl": "/audio/elite_salience_3.mp3"
+        }
+      ],
+      "nuance": [
+        {
+          "level": "intermediate",
+          "sentence": "This situation requires understanding the nuances of local culture.",
+          "translation": "이 상황은 지역 문화의 미묘한 차이를 이해하는 것이 필요하다.",
+          "notes": "미묘한 차이",
+          "audioUrl": "/audio/elite_nuance_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Nuanced thinking recognizes complexity rather than oversimplifying.",
+          "translation": "세밀한 사고는 과도하게 단순화하기보다 복잡성을 인식한다.",
+          "notes": "복잡성 인식",
+          "audioUrl": "/audio/elite_nuance_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Strategic leaders balance nuanced analysis with decisive action, avoiding paralysis by analysis.",
+          "translation": "전략적 리더는 세밀한 분석과 결단력 있는 행동의 균형을 맞추며 분석에 의한 마비를 피한다.",
+          "notes": "사고와 실행의 균형",
+          "audioUrl": "/audio/elite_nuance_3.mp3"
+        }
+      ],
+      "axiology": [
+        {
+          "level": "intermediate",
+          "sentence": "Corporate axiology defines what the organization values most.",
+          "translation": "기업 가치론은 조직이 가장 중요하게 여기는 것을 정의한다.",
+          "notes": "가치 이론",
+          "audioUrl": "/audio/elite_axiology_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Axiological frameworks guide ethical decision-making and priority-setting.",
+          "translation": "가치론적 프레임워크는 윤리적 의사결정과 우선순위 설정을 안내한다.",
+          "notes": "가치 기반 결정",
+          "audioUrl": "/audio/elite_axiology_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Explicit axiological clarity helps organizations navigate value conflicts and trade-offs.",
+          "translation": "명시적 가치론적 명확성은 조직이 가치 충돌과 트레이드오프를 탐색하도록 돕는다.",
+          "notes": "전략적 일관성",
+          "audioUrl": "/audio/elite_axiology_3.mp3"
+        }
+      ],
+      "parsimonious": [
+        {
+          "level": "intermediate",
+          "sentence": "We need a parsimonious model that explains the data simply.",
+          "translation": "우리는 데이터를 간단하게 설명하는 간명한 모델이 필요하다.",
+          "notes": "간결함",
+          "audioUrl": "/audio/elite_parsimonious_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Parsimonious explanations favor simplicity when multiple theories fit the evidence.",
+          "translation": "간명한 설명은 여러 이론이 증거에 맞을 때 단순성을 선호한다.",
+          "notes": "오컴의 면도날",
+          "audioUrl": "/audio/elite_parsimonious_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Balancing parsimony with explanatory power requires judgment about when simplicity sacrifices important nuance.",
+          "translation": "간명성과 설명력의 균형은 언제 단순성이 중요한 뉘앙스를 희생시키는지에 대한 판단이 필요하다.",
+          "notes": "모델 선택",
+          "audioUrl": "/audio/elite_parsimonious_3.mp3"
+        }
+      ],
+      "falsifiable": [
+        {
+          "level": "intermediate",
+          "sentence": "Scientific theories must be falsifiable through empirical testing.",
+          "translation": "과학 이론은 경험적 테스트를 통해 반증 가능해야 한다.",
+          "notes": "반증 가능성",
+          "audioUrl": "/audio/elite_falsifiable_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Falsifiable hypotheses specify conditions that would prove them wrong.",
+          "translation": "반증 가능한 가설은 그것이 틀렸음을 증명할 조건을 명시한다.",
+          "notes": "과학적 방법",
+          "audioUrl": "/audio/elite_falsifiable_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Falsifiability distinguishes scientific claims from unfalsifiable assertions that lack empirical content.",
+          "translation": "반증 가능성은 경험적 내용이 없는 반증 불가능한 주장에서 과학적 주장을 구별한다.",
+          "notes": "포퍼의 구획 기준",
+          "audioUrl": "/audio/elite_falsifiable_3.mp3"
+        }
+      ],
+      "causality": [
+        {
+          "level": "intermediate",
+          "sentence": "We need to establish causality, not just correlation.",
+          "translation": "우리는 단순한 상관관계가 아닌 인과관계를 확립해야 한다.",
+          "notes": "인과 관계",
+          "audioUrl": "/audio/elite_causality_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Establishing causality requires controlling for confounding variables.",
+          "translation": "인과관계 확립은 교란 변수를 통제하는 것이 필요하다.",
+          "notes": "인과 추론",
+          "audioUrl": "/audio/elite_causality_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Causal inference combines experimental design, statistical methods, and counterfactual reasoning.",
+          "translation": "인과 추론은 실험 설계, 통계적 방법, 반사실적 추론을 결합한다.",
+          "notes": "인과 분석 방법론",
+          "audioUrl": "/audio/elite_causality_3.mp3"
+        }
+      ]
+    },
+    "exercises": [
+      {
+        "type": "collocation",
+        "instruction": "콜로케이션 선택",
+        "question": "_____ analysis",
+        "options": [
+          "variance",
+          "escalate",
+          "escalation"
+        ],
+        "correct": "variance",
+        "explanation": "통계 맥락"
+      },
+      {
+        "type": "translation",
+        "korean": "우리는 이 사안을 다음 주 회의에서 다시 논의하자.",
+        "correct": "Let's table the discussion until next week's meeting.",
+        "explanation": "‘table’의 미국식/영국식 차이는 노트 참고"
+      },
+      {
+        "type": "production",
+        "prompt": "신규 프로젝트 브리핑 4문장(표제어 5개 포함)"
+      },
+      {
+        "type": "production",
+        "prompt": "신규 프로젝트 브리핑 4문장(표제어 5개 포함)"
+      },
+      {
+        "type": "production",
+        "prompt": "신규 프로젝트 브리핑 4문장(표제어 5개 포함)"
+      }
+    ]
+  },
+  "assessment": {
+    "preTest": [
+      {
+        "q": "BATNA의 의미는?",
+        "a": "Best Alternative To a Negotiated Agreement"
+      }
+    ],
+    "postTest": [
+      {
+        "q": "'uplift'의 데이터 맥락 의미?",
+        "a": "증가분/상승 효과"
+      }
+    ],
+    "masteryCheck": {
+      "description": "90% 이상 정답 시 통과",
+      "questions": [
+        {
+          "q": "‘anchor’ 전략 한 줄 설명",
+          "a": "초기 제안을 유리한 기준점으로 설정해 협상 범위를 유도"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "createdBy": "GPT-5 Thinking Mode",
+    "createdAt": "2025-10-11",
+    "qualityScore": 95
+  }
+}

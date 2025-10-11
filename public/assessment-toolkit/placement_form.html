@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>레벨테스트 (A1~C1) - 온라인 폼</title>
+<style>
+body{font-family:system-ui, -apple-system, Segoe UI, Roboto, 'Noto Sans KR', sans-serif; margin:24px; line-height:1.5;}
+h1,h2{margin:0 0 12px 0}
+.card{border:1px solid #ddd; border-radius:12px; padding:16px; margin:14px 0; box-shadow:0 1px 4px rgba(0,0,0,.05);}
+button{padding:10px 16px; border:0; border-radius:8px; cursor:pointer}
+.primary{background:#2563eb; color:#fff}
+.secondary{background:#eee}
+.small{font-size:12px; color:#666}
+hr{border:none; border-top:1px solid #eee; margin:18px 0}
+.result{padding:12px; border-radius:10px; background:#f0f9ff; border:1px solid #bae6fd; display:none}
+</style>
+</head>
+<body>
+<h1>레벨테스트 (A1~C1) - 온라인 폼</h1>
+<p class="small">생성일: 2025-10-11</p>
+<div id="form"></div>
+<hr/>
+<button class="primary" onclick="grade()">채점하기</button>
+<button class="secondary" onclick="downloadCSV()">결과 CSV 저장</button>
+<div id="result" class="result"></div>
+
+<script>
+const SPEC = {"title": "레벨테스트 (A1~C1) - 온라인 폼", "sections": [{"name": "Vocabulary & Collocation", "items": [{"id": "v1", "type": "mcq", "q": "Choose the best collocation: _____ evidence", "options": ["compelling", "heavy", "thick", "strongish"], "a": "compelling"}, {"id": "v2", "type": "mcq", "q": "'due diligence' is closest to", "options": ["thorough review", "quick glance", "casual guess", "simple math"], "a": "thorough review"}]}, {"name": "Grammar & Usage", "items": [{"id": "g1", "type": "mcq", "q": "If I _____ earlier, I would be on time now.", "options": ["had left", "left", "would leave"], "a": "had left"}, {"id": "g2", "type": "mcq", "q": "The report _____ by noon yesterday.", "options": ["had been finished", "has been finished", "is finished"], "a": "had been finished"}]}, {"name": "Reading (Short Passage)", "passage": "The committee acknowledged the benefits of rapid scaling, yet emphasized the governance risks inherent in vendor proliferation.", "items": [{"id": "r1", "type": "mcq", "q": "The committee's stance is best described as", "options": ["uncritical support", "balanced caution", "outright rejection", "indifference"], "a": "balanced caution"}]}, {"name": "Listening (Script-based)", "audio": "/audio/placement_snippet.mp3", "script": "We'll circle back once the audit trail is complete; until then, let's avoid scope creep.", "items": [{"id": "l1", "type": "mcq", "q": "What should be avoided?", "options": ["scope creep", "audit", "circle back", "completion"], "a": "scope creep"}]}, {"name": "Speaking (Self-assessment)", "items": [{"id": "s1", "type": "self_rating", "q": "1분간 업무 주제 발표 가능 여부(자기평가)", "scale": [1, 2, 3, 4, 5]}, {"id": "s2", "type": "self_rating", "q": "전화로 문제를 설명하고 해결책을 제안할 수 있다(자기평가)", "scale": [1, 2, 3, 4, 5]}]}], "scoring_bands": [{"min": 0, "max": 15, "level": "A1", "desc": "기초 표현 중심"}, {"min": 16, "max": 25, "level": "A2", "desc": "일상 주제 처리 가능"}, {"min": 26, "max": 35, "level": "B1", "desc": "예측 가능한 업무/여행 상황 처리"}, {"min": 36, "max": 45, "level": "B2", "desc": "추상적 주제 일부 처리/의견 전개"}, {"min": 46, "max": 55, "level": "C1", "desc": "복잡한 담화 구성·전문 주제 소화"}]};
+
+function el(tag, attrs={}, children=[]){ 
+  const e = document.createElement(tag);
+  Object.entries(attrs).forEach(([k,v])=>{ if(k==='innerHTML') e.innerHTML=v; else e.setAttribute(k,v); });
+  children.forEach(c=> e.appendChild(c));
+  return e;
+}
+
+function render(){ 
+  const root = document.getElementById('form');
+  root.innerHTML='';
+  SPEC.sections.forEach((sec, idx)=>{
+    const card = el('div', {class:'card'});
+    card.appendChild(el('h2', {innerHTML: (idx+1)+'. '+sec.name}));
+    if(sec.passage) card.appendChild(el('p', {innerHTML: '<b>Passage:</b> '+sec.passage}));
+    if(sec.script) card.appendChild(el('p', {innerHTML: '<b>Listening Script:</b> '+sec.script}));
+    (sec.items||[]).forEach(item=>{
+      const wrap = el('div', {class:'card'});
+      wrap.appendChild(el('p', {innerHTML: item.q}));
+      if(item.type==='mcq') {
+        (item.options||[]).forEach(opt=>{
+          const id = item.id+'_'+opt;
+          const label = el('label', {for:id, style:'display:block;margin:4px 0'});
+          const input = el('input', {type:'radio', name:item.id, id, value:opt});
+          label.appendChild(input);
+          label.appendChild(document.createTextNode(' '+opt));
+          wrap.appendChild(label);
+        });
+      } else if(item.type==='self_rating') {
+        const sel = el('select', {name:item.id});
+        (item.scale||[1,2,3,4,5]).forEach(n=>{
+          const o = el('option', {value:n}); o.textContent = n; sel.appendChild(o);
+        });
+        wrap.appendChild(sel);
+      }
+      card.appendChild(wrap);
+    });
+    root.appendChild(card);
+  });
+}
+
+function grade(){
+  let score = 0;
+  let max = 0;
+  let details = [];
+  SPEC.sections.forEach(sec=>{
+    (sec.items||[]).forEach(item=>{
+      if(item.type==='mcq'){
+        max += 1;
+        const chosen = (document.querySelector('input[name="'+item.id+'"]:checked')||{}).value;
+        const correct = item.a;
+        const ok = chosen===correct;
+        if(ok) score += 1;
+        details.push({id:item.id, chosen, correct, ok});
+      } else if(item.type==='self_rating'){
+        const sel = document.querySelector('select[name="'+item.id+'"]');
+        const v = sel ? parseInt(sel.value) : 3;
+        score += (v-3)*0.5; // 자기평가 보정
+      }
+    });
+  });
+  const band = SPEC.scoring_bands.find(b=> score>=b.min && score<=b.max) || SPEC.scoring_bands[SPEC.scoring_bands.length-1];
+  const res = document.getElementById('result');
+  res.style.display='block';
+  res.innerHTML = "<b>점수:</b> "+score.toFixed(1)+" / "+max+" (+자기평가 보정) <br/>"
+    + "<b>권장 레벨:</b> "+band.level+" — "+band.desc+"<br/>"
+    + "<details><summary>세부 채점 보기</summary><pre>"+JSON.stringify(details,null,2)+"</pre></details>";
+  window.__lastResult = {timestamp: new Date().toISOString(), score: score.toFixed(1), max, band: band.level, details};
+}
+
+function downloadCSV(){
+  const r = window.__lastResult || {};
+  const rows = [
+    ['timestamp','score','max','band'],
+    [r.timestamp||'', r.score||'', r.max||'', r.band||'']
+  ];
+  const csv = rows.map(r=>r.map(x=>"\""+(String(x).replace(/\"/g,'\"\"'))+"\"").join(',')).join('\n');
+  const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'placement_result.csv'; a.click();
+  URL.revokeObjectURL(url);
+}
+
+render();
+</script>
+</body>
+</html>

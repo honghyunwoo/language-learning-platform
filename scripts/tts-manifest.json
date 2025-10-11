@@ -1,0 +1,676 @@
+{
+  "generatedAt": "2025-10-11T00:31:36.788Z",
+  "totalAudioFiles": 67,
+  "audioFiles": [
+    {
+      "id": "placement_c1",
+      "source": "placement_test",
+      "audioPath": "/audio/placement_snippet_c1.mp3",
+      "script": "We'll circle back once the audit trail is complete; until then, let's avoid scope creep.",
+      "difficulty": "C1",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Placement Test - Question 1"
+    },
+    {
+      "id": "placement_a1",
+      "source": "placement_test",
+      "audioPath": "/audio/placement_snippet_a1.mp3",
+      "script": "Hello, my name is Sarah. I live in London.",
+      "difficulty": "A1",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Placement Test - Question 2"
+    },
+    {
+      "id": "placement_b1",
+      "source": "placement_test",
+      "audioPath": "/audio/placement_snippet_b1.mp3",
+      "script": "The meeting is scheduled for 3 PM tomorrow. Please bring the quarterly reports.",
+      "difficulty": "B1",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Placement Test - Question 3"
+    },
+    {
+      "id": "week1_main",
+      "source": "week-1-listening",
+      "audioPath": "/audio/week1_listening_main.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you. Hi Minji, I'm Alex. How are you?",
+      "difficulty": "A1.1",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 1 - Main dialogue"
+    },
+    {
+      "id": "week1_slow",
+      "source": "week-1-listening",
+      "audioPath": "/audio/week1_listening_slow.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you. Hi Minji, I'm Alex. How are you?",
+      "difficulty": "A1.1",
+      "speaker": "en-US-Standard-D",
+      "speed": 0.75,
+      "context": "Week 1 - Slow version"
+    },
+    {
+      "id": "week1_seg1",
+      "source": "week-1-listening",
+      "audioPath": "/audio/week1_seg1.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you.",
+      "difficulty": "A1.1",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 1 - Segment 1 (Speaker A)"
+    },
+    {
+      "id": "week1_seg2",
+      "source": "week-1-listening",
+      "audioPath": "/audio/week1_seg2.mp3",
+      "script": "Hi Minji, I'm Alex. How are you?",
+      "difficulty": "A1.1",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 1 - Segment 2 (Speaker B)"
+    },
+    {
+      "id": "week2_main",
+      "source": "week-2-listening",
+      "audioPath": "/audio/week2_listening_main.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you. Hi Minji, I'm Alex. How are you?",
+      "difficulty": "A1.1",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 2 - Main dialogue"
+    },
+    {
+      "id": "week2_slow",
+      "source": "week-2-listening",
+      "audioPath": "/audio/week2_listening_slow.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you. Hi Minji, I'm Alex. How are you?",
+      "difficulty": "A1.1",
+      "speaker": "en-US-Standard-D",
+      "speed": 0.75,
+      "context": "Week 2 - Slow version"
+    },
+    {
+      "id": "week2_seg1",
+      "source": "week-2-listening",
+      "audioPath": "/audio/week2_seg1.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you.",
+      "difficulty": "A1.1",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 2 - Segment 1 (Speaker A)"
+    },
+    {
+      "id": "week2_seg2",
+      "source": "week-2-listening",
+      "audioPath": "/audio/week2_seg2.mp3",
+      "script": "Hi Minji, I'm Alex. How are you?",
+      "difficulty": "A1.1",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 2 - Segment 2 (Speaker B)"
+    },
+    {
+      "id": "week3_main",
+      "source": "week-3-listening",
+      "audioPath": "/audio/week3_listening_main.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you. Hi Minji, I'm Alex. How are you?",
+      "difficulty": "A1.2",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 3 - Main dialogue"
+    },
+    {
+      "id": "week3_slow",
+      "source": "week-3-listening",
+      "audioPath": "/audio/week3_listening_slow.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you. Hi Minji, I'm Alex. How are you?",
+      "difficulty": "A1.2",
+      "speaker": "en-US-Standard-D",
+      "speed": 0.75,
+      "context": "Week 3 - Slow version"
+    },
+    {
+      "id": "week3_seg1",
+      "source": "week-3-listening",
+      "audioPath": "/audio/week3_seg1.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you.",
+      "difficulty": "A1.2",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 3 - Segment 1 (Speaker A)"
+    },
+    {
+      "id": "week3_seg2",
+      "source": "week-3-listening",
+      "audioPath": "/audio/week3_seg2.mp3",
+      "script": "Hi Minji, I'm Alex. How are you?",
+      "difficulty": "A1.2",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 3 - Segment 2 (Speaker B)"
+    },
+    {
+      "id": "week4_main",
+      "source": "week-4-listening",
+      "audioPath": "/audio/week4_listening_main.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you. Hi Minji, I'm Alex. How are you?",
+      "difficulty": "A1.2",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 4 - Main dialogue"
+    },
+    {
+      "id": "week4_slow",
+      "source": "week-4-listening",
+      "audioPath": "/audio/week4_listening_slow.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you. Hi Minji, I'm Alex. How are you?",
+      "difficulty": "A1.2",
+      "speaker": "en-US-Standard-D",
+      "speed": 0.75,
+      "context": "Week 4 - Slow version"
+    },
+    {
+      "id": "week4_seg1",
+      "source": "week-4-listening",
+      "audioPath": "/audio/week4_seg1.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you.",
+      "difficulty": "A1.2",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 4 - Segment 1 (Speaker A)"
+    },
+    {
+      "id": "week4_seg2",
+      "source": "week-4-listening",
+      "audioPath": "/audio/week4_seg2.mp3",
+      "script": "Hi Minji, I'm Alex. How are you?",
+      "difficulty": "A1.2",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 4 - Segment 2 (Speaker B)"
+    },
+    {
+      "id": "week5_main",
+      "source": "week-5-listening",
+      "audioPath": "/audio/week5_listening_main.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you. Hi Minji, I'm Alex. How are you?",
+      "difficulty": "A2.1",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 5 - Main dialogue"
+    },
+    {
+      "id": "week5_slow",
+      "source": "week-5-listening",
+      "audioPath": "/audio/week5_listening_slow.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you. Hi Minji, I'm Alex. How are you?",
+      "difficulty": "A2.1",
+      "speaker": "en-US-Standard-D",
+      "speed": 0.75,
+      "context": "Week 5 - Slow version"
+    },
+    {
+      "id": "week5_seg1",
+      "source": "week-5-listening",
+      "audioPath": "/audio/week5_seg1.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you.",
+      "difficulty": "A2.1",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 5 - Segment 1 (Speaker A)"
+    },
+    {
+      "id": "week5_seg2",
+      "source": "week-5-listening",
+      "audioPath": "/audio/week5_seg2.mp3",
+      "script": "Hi Minji, I'm Alex. How are you?",
+      "difficulty": "A2.1",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 5 - Segment 2 (Speaker B)"
+    },
+    {
+      "id": "week6_main",
+      "source": "week-6-listening",
+      "audioPath": "/audio/week6_listening_main.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you. Hi Minji, I'm Alex. How are you?",
+      "difficulty": "A2.1",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 6 - Main dialogue"
+    },
+    {
+      "id": "week6_slow",
+      "source": "week-6-listening",
+      "audioPath": "/audio/week6_listening_slow.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you. Hi Minji, I'm Alex. How are you?",
+      "difficulty": "A2.1",
+      "speaker": "en-US-Standard-D",
+      "speed": 0.75,
+      "context": "Week 6 - Slow version"
+    },
+    {
+      "id": "week6_seg1",
+      "source": "week-6-listening",
+      "audioPath": "/audio/week6_seg1.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you.",
+      "difficulty": "A2.1",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 6 - Segment 1 (Speaker A)"
+    },
+    {
+      "id": "week6_seg2",
+      "source": "week-6-listening",
+      "audioPath": "/audio/week6_seg2.mp3",
+      "script": "Hi Minji, I'm Alex. How are you?",
+      "difficulty": "A2.1",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 6 - Segment 2 (Speaker B)"
+    },
+    {
+      "id": "week7_main",
+      "source": "week-7-listening",
+      "audioPath": "/audio/week7_listening_main.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you. Hi Minji, I'm Alex. How are you?",
+      "difficulty": "A2.2",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 7 - Main dialogue"
+    },
+    {
+      "id": "week7_slow",
+      "source": "week-7-listening",
+      "audioPath": "/audio/week7_listening_slow.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you. Hi Minji, I'm Alex. How are you?",
+      "difficulty": "A2.2",
+      "speaker": "en-US-Standard-D",
+      "speed": 0.75,
+      "context": "Week 7 - Slow version"
+    },
+    {
+      "id": "week7_seg1",
+      "source": "week-7-listening",
+      "audioPath": "/audio/week7_seg1.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you.",
+      "difficulty": "A2.2",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 7 - Segment 1 (Speaker A)"
+    },
+    {
+      "id": "week7_seg2",
+      "source": "week-7-listening",
+      "audioPath": "/audio/week7_seg2.mp3",
+      "script": "Hi Minji, I'm Alex. How are you?",
+      "difficulty": "A2.2",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 7 - Segment 2 (Speaker B)"
+    },
+    {
+      "id": "week8_main",
+      "source": "week-8-listening",
+      "audioPath": "/audio/week8_listening_main.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you. Hi Minji, I'm Alex. How are you?",
+      "difficulty": "B1.1",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 8 - Main dialogue"
+    },
+    {
+      "id": "week8_slow",
+      "source": "week-8-listening",
+      "audioPath": "/audio/week8_listening_slow.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you. Hi Minji, I'm Alex. How are you?",
+      "difficulty": "B1.1",
+      "speaker": "en-US-Standard-D",
+      "speed": 0.75,
+      "context": "Week 8 - Slow version"
+    },
+    {
+      "id": "week8_seg1",
+      "source": "week-8-listening",
+      "audioPath": "/audio/week8_seg1.mp3",
+      "script": "Hello, I'm Minji. Nice to meet you.",
+      "difficulty": "B1.1",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 8 - Segment 1 (Speaker A)"
+    },
+    {
+      "id": "week8_seg2",
+      "source": "week-8-listening",
+      "audioPath": "/audio/week8_seg2.mp3",
+      "script": "Hi Minji, I'm Alex. How are you?",
+      "difficulty": "B1.1",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 8 - Segment 2 (Speaker B)"
+    },
+    {
+      "id": "week9_main",
+      "source": "week-9-listening-elite",
+      "audioPath": "/audio/elite_week9_main.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline. We've observed a significant variance in the latest cohort.",
+      "difficulty": "B1.2",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 9 - Main dialogue"
+    },
+    {
+      "id": "week9_slow",
+      "source": "week-9-listening-elite",
+      "audioPath": "/audio/elite_week9_slow.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline. We've observed a significant variance in the latest cohort.",
+      "difficulty": "B1.2",
+      "speaker": "en-US-Standard-D",
+      "speed": 0.75,
+      "context": "Week 9 - Slow version"
+    },
+    {
+      "id": "week9_seg1",
+      "source": "week-9-listening-elite",
+      "audioPath": "/audio/elite_week9_seg1.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline.",
+      "difficulty": "B1.2",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 9 - Segment 1 (Speaker Lead)"
+    },
+    {
+      "id": "week9_seg2",
+      "source": "week-9-listening-elite",
+      "audioPath": "/audio/elite_week9_seg2.mp3",
+      "script": "We've observed a significant variance in the latest cohort.",
+      "difficulty": "B1.2",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 9 - Segment 2 (Speaker Analyst)"
+    },
+    {
+      "id": "week10_main",
+      "source": "week-10-listening-elite",
+      "audioPath": "/audio/elite_week10_main.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline. We've observed a significant variance in the latest cohort.",
+      "difficulty": "B1.2",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 10 - Main dialogue"
+    },
+    {
+      "id": "week10_slow",
+      "source": "week-10-listening-elite",
+      "audioPath": "/audio/elite_week10_slow.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline. We've observed a significant variance in the latest cohort.",
+      "difficulty": "B1.2",
+      "speaker": "en-US-Standard-D",
+      "speed": 0.75,
+      "context": "Week 10 - Slow version"
+    },
+    {
+      "id": "week10_seg1",
+      "source": "week-10-listening-elite",
+      "audioPath": "/audio/elite_week10_seg1.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline.",
+      "difficulty": "B1.2",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 10 - Segment 1 (Speaker Lead)"
+    },
+    {
+      "id": "week10_seg2",
+      "source": "week-10-listening-elite",
+      "audioPath": "/audio/elite_week10_seg2.mp3",
+      "script": "We've observed a significant variance in the latest cohort.",
+      "difficulty": "B1.2",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 10 - Segment 2 (Speaker Analyst)"
+    },
+    {
+      "id": "week11_main",
+      "source": "week-11-listening-elite",
+      "audioPath": "/audio/elite_week11_main.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline. We've observed a significant variance in the latest cohort.",
+      "difficulty": "B2",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 11 - Main dialogue"
+    },
+    {
+      "id": "week11_slow",
+      "source": "week-11-listening-elite",
+      "audioPath": "/audio/elite_week11_slow.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline. We've observed a significant variance in the latest cohort.",
+      "difficulty": "B2",
+      "speaker": "en-US-Standard-D",
+      "speed": 0.75,
+      "context": "Week 11 - Slow version"
+    },
+    {
+      "id": "week11_seg1",
+      "source": "week-11-listening-elite",
+      "audioPath": "/audio/elite_week11_seg1.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline.",
+      "difficulty": "B2",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 11 - Segment 1 (Speaker Lead)"
+    },
+    {
+      "id": "week11_seg2",
+      "source": "week-11-listening-elite",
+      "audioPath": "/audio/elite_week11_seg2.mp3",
+      "script": "We've observed a significant variance in the latest cohort.",
+      "difficulty": "B2",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 11 - Segment 2 (Speaker Analyst)"
+    },
+    {
+      "id": "week12_main",
+      "source": "week-12-listening-elite",
+      "audioPath": "/audio/elite_week12_main.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline. We've observed a significant variance in the latest cohort.",
+      "difficulty": "B2",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 12 - Main dialogue"
+    },
+    {
+      "id": "week12_slow",
+      "source": "week-12-listening-elite",
+      "audioPath": "/audio/elite_week12_slow.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline. We've observed a significant variance in the latest cohort.",
+      "difficulty": "B2",
+      "speaker": "en-US-Standard-D",
+      "speed": 0.75,
+      "context": "Week 12 - Slow version"
+    },
+    {
+      "id": "week12_seg1",
+      "source": "week-12-listening-elite",
+      "audioPath": "/audio/elite_week12_seg1.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline.",
+      "difficulty": "B2",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 12 - Segment 1 (Speaker Lead)"
+    },
+    {
+      "id": "week12_seg2",
+      "source": "week-12-listening-elite",
+      "audioPath": "/audio/elite_week12_seg2.mp3",
+      "script": "We've observed a significant variance in the latest cohort.",
+      "difficulty": "B2",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 12 - Segment 2 (Speaker Analyst)"
+    },
+    {
+      "id": "week13_main",
+      "source": "week-13-listening-elite",
+      "audioPath": "/audio/elite_week13_main.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline. We've observed a significant variance in the latest cohort.",
+      "difficulty": "C1",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 13 - Main dialogue"
+    },
+    {
+      "id": "week13_slow",
+      "source": "week-13-listening-elite",
+      "audioPath": "/audio/elite_week13_slow.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline. We've observed a significant variance in the latest cohort.",
+      "difficulty": "C1",
+      "speaker": "en-US-Standard-D",
+      "speed": 0.75,
+      "context": "Week 13 - Slow version"
+    },
+    {
+      "id": "week13_seg1",
+      "source": "week-13-listening-elite",
+      "audioPath": "/audio/elite_week13_seg1.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline.",
+      "difficulty": "C1",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 13 - Segment 1 (Speaker Lead)"
+    },
+    {
+      "id": "week13_seg2",
+      "source": "week-13-listening-elite",
+      "audioPath": "/audio/elite_week13_seg2.mp3",
+      "script": "We've observed a significant variance in the latest cohort.",
+      "difficulty": "C1",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 13 - Segment 2 (Speaker Analyst)"
+    },
+    {
+      "id": "week14_main",
+      "source": "week-14-listening-elite",
+      "audioPath": "/audio/elite_week14_main.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline. We've observed a significant variance in the latest cohort.",
+      "difficulty": "C1",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 14 - Main dialogue"
+    },
+    {
+      "id": "week14_slow",
+      "source": "week-14-listening-elite",
+      "audioPath": "/audio/elite_week14_slow.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline. We've observed a significant variance in the latest cohort.",
+      "difficulty": "C1",
+      "speaker": "en-US-Standard-D",
+      "speed": 0.75,
+      "context": "Week 14 - Slow version"
+    },
+    {
+      "id": "week14_seg1",
+      "source": "week-14-listening-elite",
+      "audioPath": "/audio/elite_week14_seg1.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline.",
+      "difficulty": "C1",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 14 - Segment 1 (Speaker Lead)"
+    },
+    {
+      "id": "week14_seg2",
+      "source": "week-14-listening-elite",
+      "audioPath": "/audio/elite_week14_seg2.mp3",
+      "script": "We've observed a significant variance in the latest cohort.",
+      "difficulty": "C1",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 14 - Segment 2 (Speaker Analyst)"
+    },
+    {
+      "id": "week15_main",
+      "source": "week-15-listening-elite",
+      "audioPath": "/audio/elite_week15_main.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline. We've observed a significant variance in the latest cohort.",
+      "difficulty": "C1-C2",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 15 - Main dialogue"
+    },
+    {
+      "id": "week15_slow",
+      "source": "week-15-listening-elite",
+      "audioPath": "/audio/elite_week15_slow.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline. We've observed a significant variance in the latest cohort.",
+      "difficulty": "C1-C2",
+      "speaker": "en-US-Standard-D",
+      "speed": 0.75,
+      "context": "Week 15 - Slow version"
+    },
+    {
+      "id": "week15_seg1",
+      "source": "week-15-listening-elite",
+      "audioPath": "/audio/elite_week15_seg1.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline.",
+      "difficulty": "C1-C2",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 15 - Segment 1 (Speaker Lead)"
+    },
+    {
+      "id": "week15_seg2",
+      "source": "week-15-listening-elite",
+      "audioPath": "/audio/elite_week15_seg2.mp3",
+      "script": "We've observed a significant variance in the latest cohort.",
+      "difficulty": "C1-C2",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 15 - Segment 2 (Speaker Analyst)"
+    },
+    {
+      "id": "week16_main",
+      "source": "week-16-listening-elite",
+      "audioPath": "/audio/elite_week16_main.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline. We've observed a significant variance in the latest cohort.",
+      "difficulty": "C2",
+      "speaker": "en-US-Standard-D",
+      "speed": 1,
+      "context": "Week 16 - Main dialogue"
+    },
+    {
+      "id": "week16_slow",
+      "source": "week-16-listening-elite",
+      "audioPath": "/audio/elite_week16_slow.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline. We've observed a significant variance in the latest cohort.",
+      "difficulty": "C2",
+      "speaker": "en-US-Standard-D",
+      "speed": 0.75,
+      "context": "Week 16 - Slow version"
+    },
+    {
+      "id": "week16_seg1",
+      "source": "week-16-listening-elite",
+      "audioPath": "/audio/elite_week16_seg1.mp3",
+      "script": "Let's align on the mitigation plan before we lock the timeline.",
+      "difficulty": "C2",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 16 - Segment 1 (Speaker Lead)"
+    },
+    {
+      "id": "week16_seg2",
+      "source": "week-16-listening-elite",
+      "audioPath": "/audio/elite_week16_seg2.mp3",
+      "script": "We've observed a significant variance in the latest cohort.",
+      "difficulty": "C2",
+      "speaker": "en-US-Standard-C",
+      "speed": 1,
+      "context": "Week 16 - Segment 2 (Speaker Analyst)"
+    }
+  ]
+}

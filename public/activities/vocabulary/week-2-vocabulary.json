@@ -1,0 +1,504 @@
+{
+  "id": "week-2-vocabulary",
+  "type": "vocabulary",
+  "level": "A1.1",
+  "week": 2,
+  "title": "가족·사람 소개 - 어휘 마스터",
+  "estimatedTime": 30,
+  "objectives": [
+    "가족·사람 소개 관련 핵심 표현 15개 의미·용법·격식 구분",
+    "어원/문화적 맥락·콜로케이션 이해",
+    "실전 대화에서 자연스럽게 사용"
+  ],
+  "content": {
+    "theory": {
+      "introduction": "이 단원은 '가족·사람 소개' 주제에서 자주 쓰이는 어휘의 의미 범주, 사회언어학적 격식, 담화 기능을 체계적으로 다룬다.",
+      "etymology": {
+        "notes": "핵심 표제어의 어원·문화 맥락 간략 제시(상세 주석은 교사용 부록)"
+      },
+      "semanticFields": [
+        {
+          "category": "가족·사람 소개",
+          "words": [
+            "mother",
+            "father",
+            "parents",
+            "siblings",
+            "older brother",
+            "younger sister",
+            "friend",
+            "colleague",
+            "classmate",
+            "baby",
+            "child",
+            "teenager",
+            "adult",
+            "grandmother",
+            "grandfather"
+          ],
+          "nuances": "의미 차이와 상황 적합성을 비교 설명"
+        }
+      ]
+    },
+    "examples": {
+      "mother": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'mother' every day.",
+          "translation": "나는 매일 'mother'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/mother_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'mother' more naturally.",
+          "translation": "나는 'mother'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/mother_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'mother' should be deployed appropriately.",
+          "translation": "맥락이 'mother'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/mother_3.mp3"
+        }
+      ],
+      "father": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'father' every day.",
+          "translation": "나는 매일 'father'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/father_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'father' more naturally.",
+          "translation": "나는 'father'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/father_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'father' should be deployed appropriately.",
+          "translation": "맥락이 'father'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/father_3.mp3"
+        }
+      ],
+      "parents": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'parents' every day.",
+          "translation": "나는 매일 'parents'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/parents_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'parents' more naturally.",
+          "translation": "나는 'parents'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/parents_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'parents' should be deployed appropriately.",
+          "translation": "맥락이 'parents'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/parents_3.mp3"
+        }
+      ],
+      "siblings": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'siblings' every day.",
+          "translation": "나는 매일 'siblings'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/siblings_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'siblings' more naturally.",
+          "translation": "나는 'siblings'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/siblings_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'siblings' should be deployed appropriately.",
+          "translation": "맥락이 'siblings'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/siblings_3.mp3"
+        }
+      ],
+      "older brother": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'older brother' every day.",
+          "translation": "나는 매일 'older brother'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/older brother_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'older brother' more naturally.",
+          "translation": "나는 'older brother'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/older brother_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'older brother' should be deployed appropriately.",
+          "translation": "맥락이 'older brother'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/older brother_3.mp3"
+        }
+      ],
+      "younger sister": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'younger sister' every day.",
+          "translation": "나는 매일 'younger sister'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/younger sister_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'younger sister' more naturally.",
+          "translation": "나는 'younger sister'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/younger sister_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'younger sister' should be deployed appropriately.",
+          "translation": "맥락이 'younger sister'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/younger sister_3.mp3"
+        }
+      ],
+      "friend": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'friend' every day.",
+          "translation": "나는 매일 'friend'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/friend_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'friend' more naturally.",
+          "translation": "나는 'friend'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/friend_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'friend' should be deployed appropriately.",
+          "translation": "맥락이 'friend'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/friend_3.mp3"
+        }
+      ],
+      "colleague": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'colleague' every day.",
+          "translation": "나는 매일 'colleague'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/colleague_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'colleague' more naturally.",
+          "translation": "나는 'colleague'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/colleague_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'colleague' should be deployed appropriately.",
+          "translation": "맥락이 'colleague'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/colleague_3.mp3"
+        }
+      ],
+      "classmate": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'classmate' every day.",
+          "translation": "나는 매일 'classmate'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/classmate_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'classmate' more naturally.",
+          "translation": "나는 'classmate'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/classmate_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'classmate' should be deployed appropriately.",
+          "translation": "맥락이 'classmate'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/classmate_3.mp3"
+        }
+      ],
+      "baby": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'baby' every day.",
+          "translation": "나는 매일 'baby'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/baby_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'baby' more naturally.",
+          "translation": "나는 'baby'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/baby_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'baby' should be deployed appropriately.",
+          "translation": "맥락이 'baby'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/baby_3.mp3"
+        }
+      ],
+      "child": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'child' every day.",
+          "translation": "나는 매일 'child'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/child_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'child' more naturally.",
+          "translation": "나는 'child'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/child_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'child' should be deployed appropriately.",
+          "translation": "맥락이 'child'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/child_3.mp3"
+        }
+      ],
+      "teenager": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'teenager' every day.",
+          "translation": "나는 매일 'teenager'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/teenager_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'teenager' more naturally.",
+          "translation": "나는 'teenager'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/teenager_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'teenager' should be deployed appropriately.",
+          "translation": "맥락이 'teenager'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/teenager_3.mp3"
+        }
+      ],
+      "adult": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'adult' every day.",
+          "translation": "나는 매일 'adult'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/adult_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'adult' more naturally.",
+          "translation": "나는 'adult'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/adult_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'adult' should be deployed appropriately.",
+          "translation": "맥락이 'adult'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/adult_3.mp3"
+        }
+      ],
+      "grandmother": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'grandmother' every day.",
+          "translation": "나는 매일 'grandmother'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/grandmother_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'grandmother' more naturally.",
+          "translation": "나는 'grandmother'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/grandmother_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'grandmother' should be deployed appropriately.",
+          "translation": "맥락이 'grandmother'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/grandmother_3.mp3"
+        }
+      ],
+      "grandfather": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'grandfather' every day.",
+          "translation": "나는 매일 'grandfather'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/grandfather_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'grandfather' more naturally.",
+          "translation": "나는 'grandfather'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/grandfather_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'grandfather' should be deployed appropriately.",
+          "translation": "맥락이 'grandfather'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/grandfather_3.mp3"
+        }
+      ]
+    },
+    "exercises": [
+      {
+        "type": "fill_in_the_blank",
+        "question": "_____! Nice to meet you.",
+        "options": [
+          "Hello",
+          "Bye",
+          "Thanks",
+          "Sorry"
+        ],
+        "correct": "Hello",
+        "explanation": "첫 만남 인사"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "격식 있는 첫 만남 인사?",
+        "options": [
+          "How do you do?",
+          "What's up?",
+          "Yo!",
+          "Heya"
+        ],
+        "correct": "How do you do?",
+        "explanation": "고격식 의례 표현"
+      },
+      {
+        "type": "translation",
+        "korean": "좋은 아침입니다.",
+        "correct": "Good morning."
+      },
+      {
+        "type": "dialogue_match",
+        "prompt": "A: How are you?\nB: ________",
+        "options": [
+          "Good, thanks. And you?",
+          "How old are you?",
+          "Where?",
+          "Nice day."
+        ],
+        "correct": "Good, thanks. And you?"
+      },
+      {
+        "type": "collocation",
+        "question": "작별 인사에 자연스러운 것은?",
+        "options": [
+          "Take care.",
+          "Nice to meet you.",
+          "How are you?",
+          "Hey!"
+        ],
+        "correct": "Take care."
+      },
+      {
+        "type": "production",
+        "prompt": "가족·사람 소개 표현 5개로 4문장 대화 만들기",
+        "rubric": "격식/상황 일치, 철자·문법"
+      },
+      {
+        "type": "production",
+        "prompt": "가족·사람 소개 표현 5개로 4문장 대화 만들기",
+        "rubric": "격식/상황 일치, 철자·문법"
+      },
+      {
+        "type": "production",
+        "prompt": "가족·사람 소개 표현 5개로 4문장 대화 만들기",
+        "rubric": "격식/상황 일치, 철자·문법"
+      }
+    ]
+  },
+  "assessment": {
+    "preTest": [
+      {
+        "q": "‘Hello’의 적절한 응답은?",
+        "a": "Hi/Hello."
+      },
+      {
+        "q": "'How's it going?'의 격식 수준은?",
+        "a": "비격식"
+      }
+    ],
+    "postTest": [
+      {
+        "q": "첫 만남: ‘만나서 반갑습니다’",
+        "a": "Nice to meet you."
+      },
+      {
+        "q": "작별 배려 인사",
+        "a": "Take care."
+      }
+    ],
+    "masteryCheck": {
+      "description": "90% 이상 정답 시 통과",
+      "questions": [
+        {
+          "q": "‘Nice to see you’와 ‘Nice to meet you’ 차이 간단 설명",
+          "a": "재회 vs 첫 만남"
+        }
+      ]
+    }
+  },
+  "resources": {
+    "practiceTools": [
+      {
+        "name": "Anki Deck",
+        "url": "/downloads/week2_vocab.apkg",
+        "cards": 45
+      }
+    ]
+  },
+  "metadata": {
+    "createdBy": "GPT-5 Thinking Mode",
+    "createdAt": "2025-10-11",
+    "qualityScore": 92
+  }
+}

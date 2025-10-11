@@ -15,8 +15,33 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "언어 학습 플랫폼",
-  description: "효과적인 언어 학습을 위한 올인원 플랫폼",
+  title: "영어의 정석 - Language Learning Platform",
+  description: "논문급 깊이의 영어 학습 플랫폼 - 수학의 정석처럼 체계적인 영어 학습",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "영어의 정석",
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  themeColor: "#3b82f6",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
+  icons: {
+    icon: [
+      { url: "/icon-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/icon-192x192.png", sizes: "192x192", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({

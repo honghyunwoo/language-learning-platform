@@ -1,0 +1,451 @@
+{
+  "id": "week-13-vocabulary-elite",
+  "type": "vocabulary",
+  "level": "C1",
+  "week": 13,
+  "title": "전략·리스크·거버넌스 어휘 - 엘리트 어휘 마스터",
+  "estimatedTime": 30,
+  "objectives": [
+    "고급 담화 표지·전문 어휘 15개 뉘앙스·레지스터 구분",
+    "코퍼스 기반 콜로케이션/구문 패턴 체득",
+    "실전 발표·협상에서 자연스럽게 사용"
+  ],
+  "content": {
+    "theory": {
+      "introduction": "'전략·리스크·거버넌스 어휘' 영역의 고빈도 키워드를 의미론(denotation vs connotation), 사회언어학적 레지스터, 장르별 사용패턴으로 분석.",
+      "etymology": {
+        "notes": "핵심 표제어 어원·도메인 변천 약식 요약"
+      },
+      "semanticFields": [
+        {
+          "category": "전략·리스크·거버넌스 어휘",
+          "words": [
+            "governance",
+            "accountability",
+            "oversight",
+            "mitigation",
+            "exposure",
+            "material risk",
+            "compliance",
+            "audit trail",
+            "ethics committee",
+            "escalation matrix",
+            "risk appetite",
+            "backstop",
+            "contingency",
+            "ownership",
+            "stakeholder mapping"
+          ],
+          "nuances": "정책/경영/학술 담화에서의 쓰임 대비"
+        }
+      ]
+    },
+    "examples": {
+      "governance": [
+        {
+          "level": "intermediate",
+          "sentence": "Strong governance structures protect shareholder interests.",
+          "translation": "강력한 거버넌스 구조는 주주 이익을 보호한다.",
+          "notes": "기업 지배구조",
+          "audioUrl": "/audio/elite_governance_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The governance framework includes clear roles, responsibilities, and accountability mechanisms.",
+          "translation": "거버넌스 프레임워크는 명확한 역할, 책임, 책임성 메커니즘을 포함한다.",
+          "notes": "구조적 설계",
+          "audioUrl": "/audio/elite_governance_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Effective governance balances stakeholder interests while ensuring long-term organizational sustainability.",
+          "translation": "효과적인 거버넌스는 장기적 조직 지속가능성을 보장하면서 이해관계자 이익의 균형을 맞춘다.",
+          "notes": "전략적 거버넌스",
+          "audioUrl": "/audio/elite_governance_3.mp3"
+        }
+      ],
+      "accountability": [
+        {
+          "level": "intermediate",
+          "sentence": "Every project must have clear accountability for deliverables.",
+          "translation": "모든 프로젝트는 산출물에 대한 명확한 책임성이 있어야 한다.",
+          "notes": "책임 소재",
+          "audioUrl": "/audio/elite_accountability_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The accountability matrix defines who is responsible, accountable, consulted, and informed.",
+          "translation": "책임성 매트릭스는 누가 실행, 책임, 자문, 정보 대상인지 정의한다.",
+          "notes": "RACI 모델",
+          "audioUrl": "/audio/elite_accountability_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Accountability without authority creates frustration; effective systems align both.",
+          "translation": "권한 없는 책임성은 좌절을 만든다; 효과적인 시스템은 둘 다 정렬한다.",
+          "notes": "조직 설계 원칙",
+          "audioUrl": "/audio/elite_accountability_3.mp3"
+        }
+      ],
+      "oversight": [
+        {
+          "level": "intermediate",
+          "sentence": "The audit committee provides oversight of financial reporting.",
+          "translation": "감사위원회는 재무 보고에 대한 감독을 제공한다.",
+          "notes": "감독 기능",
+          "audioUrl": "/audio/elite_oversight_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Regulatory oversight ensures companies comply with legal and ethical standards.",
+          "translation": "규제 감독은 기업이 법적 및 윤리적 기준을 준수하도록 보장한다.",
+          "notes": "규제 역할",
+          "audioUrl": "/audio/elite_oversight_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Effective oversight requires independence, expertise, and timely access to information.",
+          "translation": "효과적인 감독은 독립성, 전문성, 적시의 정보 접근이 필요하다.",
+          "notes": "감독 품질 요소",
+          "audioUrl": "/audio/elite_oversight_3.mp3"
+        }
+      ],
+      "mitigation": [
+        {
+          "level": "intermediate",
+          "sentence": "Risk mitigation strategies reduce the likelihood and impact of threats.",
+          "translation": "리스크 완화 전략은 위협의 가능성과 영향을 줄인다.",
+          "notes": "리스크 관리",
+          "audioUrl": "/audio/elite_mitigation_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The mitigation plan includes preventive, detective, and corrective controls.",
+          "translation": "완화 계획은 예방, 탐지, 시정 통제를 포함한다.",
+          "notes": "통제 유형",
+          "audioUrl": "/audio/elite_mitigation_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Mitigation decisions involve cost-benefit analysis and risk appetite alignment.",
+          "translation": "완화 결정은 비용편익 분석과 리스크 성향 정렬을 포함한다.",
+          "notes": "전략적 의사결정",
+          "audioUrl": "/audio/elite_mitigation_3.mp3"
+        }
+      ],
+      "exposure": [
+        {
+          "level": "intermediate",
+          "sentence": "The company has significant exposure to currency fluctuations.",
+          "translation": "회사는 환율 변동에 상당한 노출이 있다.",
+          "notes": "리스크 노출",
+          "audioUrl": "/audio/elite_exposure_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "We need to quantify our cybersecurity exposure across all business units.",
+          "translation": "모든 사업부의 사이버 보안 노출을 정량화해야 한다.",
+          "notes": "리스크 측정",
+          "audioUrl": "/audio/elite_exposure_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Aggregate exposure analysis reveals concentrations that individual risk assessments might miss.",
+          "translation": "총합 노출 분석은 개별 리스크 평가가 놓칠 수 있는 집중을 드러낸다.",
+          "notes": "포트폴리오 관점",
+          "audioUrl": "/audio/elite_exposure_3.mp3"
+        }
+      ],
+      "material risk": [
+        {
+          "level": "intermediate",
+          "sentence": "Cybersecurity breaches represent a material risk to our operations.",
+          "translation": "사이버 보안 침해는 우리 운영에 중대한 리스크를 나타낸다.",
+          "notes": "중요 리스크",
+          "audioUrl": "/audio/elite_material risk_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The board requires quarterly reporting on all material risks.",
+          "translation": "이사회는 모든 중대 리스크에 대한 분기별 보고를 요구한다.",
+          "notes": "보고 요구사항",
+          "audioUrl": "/audio/elite_material risk_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Determining materiality involves both quantitative thresholds and qualitative judgment.",
+          "translation": "중요성 결정은 정량적 임계값과 정성적 판단을 모두 포함한다.",
+          "notes": "중요성 평가",
+          "audioUrl": "/audio/elite_material risk_3.mp3"
+        }
+      ],
+      "compliance": [
+        {
+          "level": "intermediate",
+          "sentence": "All employees must complete annual compliance training.",
+          "translation": "모든 직원은 연간 준법 교육을 이수해야 한다.",
+          "notes": "준수 의무",
+          "audioUrl": "/audio/elite_compliance_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The compliance program includes policies, training, monitoring, and enforcement.",
+          "translation": "준법 프로그램은 정책, 교육, 모니터링, 시행을 포함한다.",
+          "notes": "프로그램 요소",
+          "audioUrl": "/audio/elite_compliance_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Effective compliance goes beyond checking boxes to embedding ethical behavior in culture.",
+          "translation": "효과적인 준법은 형식적 충족을 넘어 문화에 윤리적 행동을 내재화한다.",
+          "notes": "문화적 통합",
+          "audioUrl": "/audio/elite_compliance_3.mp3"
+        }
+      ],
+      "audit trail": [
+        {
+          "level": "intermediate",
+          "sentence": "Maintain a clear audit trail for all financial transactions.",
+          "translation": "모든 금융 거래에 대한 명확한 감사 추적을 유지하라.",
+          "notes": "추적 가능성",
+          "audioUrl": "/audio/elite_audit trail_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The audit trail documents who did what, when, and why.",
+          "translation": "감사 추적은 누가 무엇을 언제 왜 했는지 문서화한다.",
+          "notes": "완전한 기록",
+          "audioUrl": "/audio/elite_audit trail_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Immutable audit trails using blockchain technology enhance trust and transparency.",
+          "translation": "블록체인 기술을 사용한 불변 감사 추적은 신뢰와 투명성을 향상시킨다.",
+          "notes": "기술적 혁신",
+          "audioUrl": "/audio/elite_audit trail_3.mp3"
+        }
+      ],
+      "ethics committee": [
+        {
+          "level": "intermediate",
+          "sentence": "The ethics committee reviews potential conflicts of interest.",
+          "translation": "윤리위원회는 잠재적 이해 충돌을 검토한다.",
+          "notes": "윤리 감독",
+          "audioUrl": "/audio/elite_ethics committee_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "An independent ethics committee provides guidance on complex moral dilemmas.",
+          "translation": "독립적 윤리위원회는 복잡한 도덕적 딜레마에 대한 지침을 제공한다.",
+          "notes": "윤리적 조언",
+          "audioUrl": "/audio/elite_ethics committee_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "The ethics committee's effectiveness depends on leadership support, independence, and cultural alignment.",
+          "translation": "윤리위원회의 효과는 리더십 지원, 독립성, 문화적 정렬에 달려 있다.",
+          "notes": "성공 요인",
+          "audioUrl": "/audio/elite_ethics committee_3.mp3"
+        }
+      ],
+      "escalation matrix": [
+        {
+          "level": "intermediate",
+          "sentence": "Follow the escalation matrix for reporting critical issues.",
+          "translation": "중요한 문제 보고를 위해 에스컬레이션 매트릭스를 따르라.",
+          "notes": "보고 프로세스",
+          "audioUrl": "/audio/elite_escalation matrix_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The escalation matrix defines severity levels and corresponding response protocols.",
+          "translation": "에스컬레이션 매트릭스는 심각도 수준과 해당 대응 프로토콜을 정의한다.",
+          "notes": "위기 대응",
+          "audioUrl": "/audio/elite_escalation matrix_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Well-designed escalation matrices balance speed of response with appropriate oversight.",
+          "translation": "잘 설계된 에스컬레이션 매트릭스는 대응 속도와 적절한 감독의 균형을 맞춘다.",
+          "notes": "설계 원칙",
+          "audioUrl": "/audio/elite_escalation matrix_3.mp3"
+        }
+      ],
+      "risk appetite": [
+        {
+          "level": "intermediate",
+          "sentence": "Our risk appetite for cybersecurity threats is very low.",
+          "translation": "사이버 보안 위협에 대한 우리의 리스크 성향은 매우 낮다.",
+          "notes": "리스크 허용도",
+          "audioUrl": "/audio/elite_risk appetite_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The board articulates risk appetite across strategic, financial, operational, and compliance dimensions.",
+          "translation": "이사회는 전략적, 재무적, 운영적, 준법 차원에서 리스크 성향을 명확히 한다.",
+          "notes": "다차원 정의",
+          "audioUrl": "/audio/elite_risk appetite_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Risk appetite statements guide decision-making by defining acceptable boundaries for risk-taking.",
+          "translation": "리스크 성향 선언은 리스크 감수의 허용 가능한 경계를 정의하여 의사결정을 안내한다.",
+          "notes": "거버넌스 도구",
+          "audioUrl": "/audio/elite_risk appetite_3.mp3"
+        }
+      ],
+      "backstop": [
+        {
+          "level": "intermediate",
+          "sentence": "We have a backstop plan if the primary strategy fails.",
+          "translation": "주요 전략이 실패하면 백스톱 계획이 있다.",
+          "notes": "예비 계획",
+          "audioUrl": "/audio/elite_backstop_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Central banks act as a backstop to ensure financial system stability.",
+          "translation": "중앙은행은 금융 시스템 안정성을 보장하기 위한 최후의 보루 역할을 한다.",
+          "notes": "제도적 안전망",
+          "audioUrl": "/audio/elite_backstop_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Effective backstops provide confidence without creating moral hazard.",
+          "translation": "효과적인 백스톱은 도덕적 해이를 만들지 않으면서 신뢰를 제공한다.",
+          "notes": "정책 설계",
+          "audioUrl": "/audio/elite_backstop_3.mp3"
+        }
+      ],
+      "contingency": [
+        {
+          "level": "intermediate",
+          "sentence": "We need contingency plans for supply chain disruptions.",
+          "translation": "공급망 중단에 대한 비상 계획이 필요하다.",
+          "notes": "대비 계획",
+          "audioUrl": "/audio/elite_contingency_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The contingency budget covers unexpected cost overruns and emergencies.",
+          "translation": "비상 예산은 예상치 못한 비용 초과와 긴급 상황을 포함한다.",
+          "notes": "재무 대비",
+          "audioUrl": "/audio/elite_contingency_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Robust contingency planning includes scenario analysis, trigger points, and pre-authorized responses.",
+          "translation": "견고한 비상 계획은 시나리오 분석, 트리거 포인트, 사전 승인 대응을 포함한다.",
+          "notes": "체계적 준비",
+          "audioUrl": "/audio/elite_contingency_3.mp3"
+        }
+      ],
+      "ownership": [
+        {
+          "level": "intermediate",
+          "sentence": "Clear ownership of tasks prevents confusion and delays.",
+          "translation": "작업의 명확한 소유권은 혼란과 지연을 방지한다.",
+          "notes": "책임 명확화",
+          "audioUrl": "/audio/elite_ownership_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Taking ownership means being accountable for both successes and failures.",
+          "translation": "소유권을 갖는다는 것은 성공과 실패 모두에 대한 책임을 진다는 의미다.",
+          "notes": "책임감",
+          "audioUrl": "/audio/elite_ownership_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Distributed ownership models require strong coordination mechanisms to prevent gaps and overlaps.",
+          "translation": "분산 소유권 모델은 공백과 중복을 방지하기 위한 강력한 조율 메커니즘이 필요하다.",
+          "notes": "조직 설계",
+          "audioUrl": "/audio/elite_ownership_3.mp3"
+        }
+      ],
+      "stakeholder mapping": [
+        {
+          "level": "intermediate",
+          "sentence": "Stakeholder mapping identifies all parties affected by the project.",
+          "translation": "이해관계자 매핑은 프로젝트에 영향을 받는 모든 당사자를 식별한다.",
+          "notes": "이해관계자 분석",
+          "audioUrl": "/audio/elite_stakeholder mapping_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Effective stakeholder mapping assesses power, interest, and influence.",
+          "translation": "효과적인 이해관계자 매핑은 권력, 관심, 영향력을 평가한다.",
+          "notes": "다차원 분석",
+          "audioUrl": "/audio/elite_stakeholder mapping_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Dynamic stakeholder mapping recognizes that influence and interest shift throughout the project lifecycle.",
+          "translation": "동적 이해관계자 매핑은 프로젝트 수명주기 전반에 걸쳐 영향력과 관심이 변화함을 인식한다.",
+          "notes": "적응적 접근",
+          "audioUrl": "/audio/elite_stakeholder mapping_3.mp3"
+        }
+      ]
+    },
+    "exercises": [
+      {
+        "type": "collocation",
+        "instruction": "콜로케이션 선택",
+        "question": "_____ analysis",
+        "options": [
+          "variance",
+          "escalate",
+          "escalation"
+        ],
+        "correct": "variance",
+        "explanation": "통계 맥락"
+      },
+      {
+        "type": "translation",
+        "korean": "우리는 이 사안을 다음 주 회의에서 다시 논의하자.",
+        "correct": "Let's table the discussion until next week's meeting.",
+        "explanation": "‘table’의 미국식/영국식 차이는 노트 참고"
+      },
+      {
+        "type": "production",
+        "prompt": "신규 프로젝트 브리핑 4문장(표제어 5개 포함)"
+      },
+      {
+        "type": "production",
+        "prompt": "신규 프로젝트 브리핑 4문장(표제어 5개 포함)"
+      },
+      {
+        "type": "production",
+        "prompt": "신규 프로젝트 브리핑 4문장(표제어 5개 포함)"
+      }
+    ]
+  },
+  "assessment": {
+    "preTest": [
+      {
+        "q": "BATNA의 의미는?",
+        "a": "Best Alternative To a Negotiated Agreement"
+      }
+    ],
+    "postTest": [
+      {
+        "q": "'uplift'의 데이터 맥락 의미?",
+        "a": "증가분/상승 효과"
+      }
+    ],
+    "masteryCheck": {
+      "description": "90% 이상 정답 시 통과",
+      "questions": [
+        {
+          "q": "‘anchor’ 전략 한 줄 설명",
+          "a": "초기 제안을 유리한 기준점으로 설정해 협상 범위를 유도"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "createdBy": "GPT-5 Thinking Mode",
+    "createdAt": "2025-10-11",
+    "qualityScore": 95
+  }
+}

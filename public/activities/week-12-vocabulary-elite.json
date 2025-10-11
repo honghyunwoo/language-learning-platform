@@ -1,0 +1,451 @@
+{
+  "id": "week-12-vocabulary-elite",
+  "type": "vocabulary",
+  "level": "B2",
+  "week": 12,
+  "title": "프레이절 버브 뉘앙스(비유·은유) - 엘리트 어휘 마스터",
+  "estimatedTime": 30,
+  "objectives": [
+    "고급 담화 표지·전문 어휘 15개 뉘앙스·레지스터 구분",
+    "코퍼스 기반 콜로케이션/구문 패턴 체득",
+    "실전 발표·협상에서 자연스럽게 사용"
+  ],
+  "content": {
+    "theory": {
+      "introduction": "'프레이절 버브 뉘앙스(비유·은유)' 영역의 고빈도 키워드를 의미론(denotation vs connotation), 사회언어학적 레지스터, 장르별 사용패턴으로 분석.",
+      "etymology": {
+        "notes": "핵심 표제어 어원·도메인 변천 약식 요약"
+      },
+      "semanticFields": [
+        {
+          "category": "프레이절 버브 뉘앙스(비유·은유)",
+          "words": [
+            "phase out",
+            "zero in on",
+            "double down on",
+            "bank on",
+            "play down",
+            "rule out",
+            "flesh out",
+            "bail out",
+            "roll out",
+            "branch out",
+            "boil down to",
+            "hinge on",
+            "pan out",
+            "shoot down",
+            "weigh in"
+          ],
+          "nuances": "정책/경영/학술 담화에서의 쓰임 대비"
+        }
+      ]
+    },
+    "examples": {
+      "phase out": [
+        {
+          "level": "intermediate",
+          "sentence": "The company plans to phase out legacy systems by Q4.",
+          "translation": "회사는 4분기까지 레거시 시스템을 단계적으로 중단할 계획이다.",
+          "notes": "점진적 중단",
+          "audioUrl": "/audio/elite_phase out_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "We need to phase out underperforming products while maintaining customer trust.",
+          "translation": "고객 신뢰를 유지하면서 저성과 제품을 단계적으로 중단해야 한다.",
+          "notes": "전략적 중단",
+          "audioUrl": "/audio/elite_phase out_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "The phase-out strategy requires careful stakeholder communication to minimize disruption.",
+          "translation": "단계적 중단 전략은 혼란을 최소화하기 위해 신중한 이해관계자 소통이 필요하다.",
+          "notes": "변화 관리",
+          "audioUrl": "/audio/elite_phase out_3.mp3"
+        }
+      ],
+      "zero in on": [
+        {
+          "level": "intermediate",
+          "sentence": "Let's zero in on the root cause of the production delay.",
+          "translation": "생산 지연의 근본 원인에 집중하자.",
+          "notes": "문제 해결",
+          "audioUrl": "/audio/elite_zero in on_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The data analysis helps us zero in on key performance drivers.",
+          "translation": "데이터 분석은 우리가 핵심 성과 동인에 집중하도록 돕는다.",
+          "notes": "분석적 초점",
+          "audioUrl": "/audio/elite_zero in on_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "We need to zero in on high-value customer segments for targeted marketing.",
+          "translation": "타겟 마케팅을 위해 고가치 고객 세그먼트에 집중해야 한다.",
+          "notes": "전략적 타겟팅",
+          "audioUrl": "/audio/elite_zero in on_3.mp3"
+        }
+      ],
+      "double down on": [
+        {
+          "level": "intermediate",
+          "sentence": "We're doubling down on our mobile-first strategy.",
+          "translation": "우리는 모바일 우선 전략에 더욱 집중하고 있다.",
+          "notes": "강화된 투자",
+          "audioUrl": "/audio/elite_double down on_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Despite market headwinds, the CEO decided to double down on innovation.",
+          "translation": "시장 역풍에도 불구하고 CEO는 혁신에 더욱 투자하기로 결정했다.",
+          "notes": "역경 속 결단",
+          "audioUrl": "/audio/elite_double down on_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Doubling down on sustainability initiatives demonstrates our long-term commitment to stakeholders.",
+          "translation": "지속가능성 이니셔티브에 더욱 투자하는 것은 이해관계자에 대한 장기 약속을 보여준다.",
+          "notes": "전략적 의지",
+          "audioUrl": "/audio/elite_double down on_3.mp3"
+        }
+      ],
+      "bank on": [
+        {
+          "level": "intermediate",
+          "sentence": "We're banking on strong holiday sales to meet our annual targets.",
+          "translation": "우리는 연간 목표를 달성하기 위해 강력한 연휴 매출에 의존하고 있다.",
+          "notes": "의존/기대",
+          "audioUrl": "/audio/elite_bank on_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "You can bank on our team to deliver results under tight deadlines.",
+          "translation": "우리 팀이 촉박한 마감 기한 내에 결과를 제공할 것을 믿어도 된다.",
+          "notes": "신뢰성 보장",
+          "audioUrl": "/audio/elite_bank on_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Banking solely on one revenue stream creates significant business risk.",
+          "translation": "하나의 수익원에만 의존하는 것은 상당한 비즈니스 리스크를 만든다.",
+          "notes": "리스크 경고",
+          "audioUrl": "/audio/elite_bank on_3.mp3"
+        }
+      ],
+      "play down": [
+        {
+          "level": "intermediate",
+          "sentence": "Management tried to play down concerns about the quarterly loss.",
+          "translation": "경영진은 분기 손실에 대한 우려를 축소하려 했다.",
+          "notes": "중요성 축소",
+          "audioUrl": "/audio/elite_play down_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Don't play down the cybersecurity risks—they're critical to address now.",
+          "translation": "사이버 보안 리스크를 축소하지 마라—지금 당장 해결해야 할 중요한 문제다.",
+          "notes": "경고/강조",
+          "audioUrl": "/audio/elite_play down_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "The PR team's decision to play down the incident backfired when media discovered the full extent.",
+          "translation": "PR 팀의 사건 축소 결정은 언론이 전체 범위를 발견하자 역효과를 냈다.",
+          "notes": "위기 관리 실패",
+          "audioUrl": "/audio/elite_play down_3.mp3"
+        }
+      ],
+      "rule out": [
+        {
+          "level": "intermediate",
+          "sentence": "We can't rule out the possibility of further delays.",
+          "translation": "우리는 추가 지연 가능성을 배제할 수 없다.",
+          "notes": "가능성 인정",
+          "audioUrl": "/audio/elite_rule out_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The audit ruled out fraud but identified several control weaknesses.",
+          "translation": "감사는 사기를 배제했지만 여러 통제 약점을 식별했다.",
+          "notes": "조사 결과",
+          "audioUrl": "/audio/elite_rule out_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "While we've ruled out several options, strategic alternatives remain under consideration.",
+          "translation": "여러 옵션을 배제했지만 전략적 대안은 여전히 검토 중이다.",
+          "notes": "의사결정 과정",
+          "audioUrl": "/audio/elite_rule out_3.mp3"
+        }
+      ],
+      "flesh out": [
+        {
+          "level": "intermediate",
+          "sentence": "Let's meet tomorrow to flesh out the project timeline.",
+          "translation": "내일 만나서 프로젝트 일정을 구체화하자.",
+          "notes": "세부사항 추가",
+          "audioUrl": "/audio/elite_flesh out_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The proposal needs more data to flesh out the business case.",
+          "translation": "제안서는 비즈니스 케이스를 구체화하기 위해 더 많은 데이터가 필요하다.",
+          "notes": "근거 강화",
+          "audioUrl": "/audio/elite_flesh out_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "We need to flesh out implementation details before presenting to the board.",
+          "translation": "이사회에 발표하기 전에 실행 세부사항을 구체화해야 한다.",
+          "notes": "전략적 준비",
+          "audioUrl": "/audio/elite_flesh out_3.mp3"
+        }
+      ],
+      "bail out": [
+        {
+          "level": "intermediate",
+          "sentence": "The parent company had to bail out its struggling subsidiary.",
+          "translation": "모회사는 어려움을 겪는 자회사를 구제해야 했다.",
+          "notes": "재정 지원",
+          "audioUrl": "/audio/elite_bail out_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Government intervention bailed out the banking sector during the crisis.",
+          "translation": "정부 개입이 위기 동안 은행 부문을 구제했다.",
+          "notes": "위기 대응",
+          "audioUrl": "/audio/elite_bail out_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "The bailout package includes strict conditions to prevent moral hazard.",
+          "translation": "구제금융 패키지는 도덕적 해이를 방지하기 위한 엄격한 조건을 포함한다.",
+          "notes": "정책 설계",
+          "audioUrl": "/audio/elite_bail out_3.mp3"
+        }
+      ],
+      "roll out": [
+        {
+          "level": "intermediate",
+          "sentence": "We'll roll out the new software in phases starting next month.",
+          "translation": "다음 달부터 새 소프트웨어를 단계적으로 출시할 것이다.",
+          "notes": "단계적 출시",
+          "audioUrl": "/audio/elite_roll out_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The marketing team is rolling out a comprehensive brand refresh campaign.",
+          "translation": "마케팅 팀은 포괄적인 브랜드 리프레시 캠페인을 출시하고 있다.",
+          "notes": "전략적 런칭",
+          "audioUrl": "/audio/elite_roll out_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "The global rollout requires careful coordination across regional teams and regulatory frameworks.",
+          "translation": "글로벌 출시는 지역 팀과 규제 프레임워크 전반에 걸친 신중한 조율이 필요하다.",
+          "notes": "복잡한 실행",
+          "audioUrl": "/audio/elite_roll out_3.mp3"
+        }
+      ],
+      "branch out": [
+        {
+          "level": "intermediate",
+          "sentence": "The company is branching out into new international markets.",
+          "translation": "회사는 새로운 국제 시장으로 확장하고 있다.",
+          "notes": "시장 확장",
+          "audioUrl": "/audio/elite_branch out_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "After dominating retail, Amazon branched out into cloud computing.",
+          "translation": "소매를 장악한 후 아마존은 클라우드 컴퓨팅으로 확장했다.",
+          "notes": "다각화 사례",
+          "audioUrl": "/audio/elite_branch out_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Branching out too quickly can dilute core competencies and strain resources.",
+          "translation": "너무 빠르게 확장하면 핵심 역량을 희석시키고 자원에 부담을 줄 수 있다.",
+          "notes": "전략적 경고",
+          "audioUrl": "/audio/elite_branch out_3.mp3"
+        }
+      ],
+      "boil down to": [
+        {
+          "level": "intermediate",
+          "sentence": "The problem boils down to insufficient funding.",
+          "translation": "문제는 결국 불충분한 자금으로 귀결된다.",
+          "notes": "핵심 요약",
+          "audioUrl": "/audio/elite_boil down to_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Success in this market boils down to execution speed and customer service.",
+          "translation": "이 시장에서의 성공은 실행 속도와 고객 서비스로 귀결된다.",
+          "notes": "성공 요인",
+          "audioUrl": "/audio/elite_boil down to_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Complex negotiations often boil down to trust and aligned incentives.",
+          "translation": "복잡한 협상은 종종 신뢰와 정렬된 인센티브로 귀결된다.",
+          "notes": "본질 파악",
+          "audioUrl": "/audio/elite_boil down to_3.mp3"
+        }
+      ],
+      "hinge on": [
+        {
+          "level": "intermediate",
+          "sentence": "The deal hinges on regulatory approval.",
+          "translation": "거래는 규제 승인에 달려 있다.",
+          "notes": "의존성",
+          "audioUrl": "/audio/elite_hinge on_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Our quarterly results hinge on successful product launch execution.",
+          "translation": "우리의 분기 실적은 성공적인 제품 출시 실행에 달려 있다.",
+          "notes": "중요 조건",
+          "audioUrl": "/audio/elite_hinge on_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "The merger's success hinges on cultural integration and retention of key talent.",
+          "translation": "합병의 성공은 문화 통합과 핵심 인재 유지에 달려 있다.",
+          "notes": "결정적 요인",
+          "audioUrl": "/audio/elite_hinge on_3.mp3"
+        }
+      ],
+      "pan out": [
+        {
+          "level": "intermediate",
+          "sentence": "Let's see how the new strategy pans out over the next quarter.",
+          "translation": "다음 분기에 새 전략이 어떻게 진행되는지 보자.",
+          "notes": "결과 대기",
+          "audioUrl": "/audio/elite_pan out_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "If the pilot program pans out, we'll expand it nationwide.",
+          "translation": "시범 프로그램이 성공하면 전국으로 확대할 것이다.",
+          "notes": "조건부 계획",
+          "audioUrl": "/audio/elite_pan out_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Not all innovation initiatives pan out, but failures provide valuable learning.",
+          "translation": "모든 혁신 이니셔티브가 성공하는 것은 아니지만 실패는 귀중한 학습을 제공한다.",
+          "notes": "실험적 사고",
+          "audioUrl": "/audio/elite_pan out_3.mp3"
+        }
+      ],
+      "shoot down": [
+        {
+          "level": "intermediate",
+          "sentence": "Management shot down the proposal due to budget constraints.",
+          "translation": "경영진은 예산 제약으로 제안을 거부했다.",
+          "notes": "거절",
+          "audioUrl": "/audio/elite_shoot down_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Don't shoot down ideas in brainstorming sessions—evaluate them later.",
+          "translation": "브레인스토밍 세션에서 아이디어를 즉시 거부하지 마라—나중에 평가하라.",
+          "notes": "창의성 촉진",
+          "audioUrl": "/audio/elite_shoot down_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "The board shot down the acquisition bid, citing strategic misalignment and valuation concerns.",
+          "translation": "이사회는 전략적 불일치와 가치평가 우려를 이유로 인수 제안을 거부했다.",
+          "notes": "전략적 거절",
+          "audioUrl": "/audio/elite_shoot down_3.mp3"
+        }
+      ],
+      "weigh in": [
+        {
+          "level": "intermediate",
+          "sentence": "I'd like the finance team to weigh in on this proposal.",
+          "translation": "재무팀이 이 제안에 대해 의견을 제시하기를 바란다.",
+          "notes": "의견 요청",
+          "audioUrl": "/audio/elite_weigh in_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "External consultants will weigh in on the feasibility assessment.",
+          "translation": "외부 컨설턴트가 타당성 평가에 대해 의견을 제시할 것이다.",
+          "notes": "전문가 의견",
+          "audioUrl": "/audio/elite_weigh in_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Stakeholders from multiple departments weighed in, providing diverse perspectives on the initiative.",
+          "translation": "여러 부서의 이해관계자가 의견을 제시하며 이니셔티브에 대한 다양한 관점을 제공했다.",
+          "notes": "협업적 의사결정",
+          "audioUrl": "/audio/elite_weigh in_3.mp3"
+        }
+      ]
+    },
+    "exercises": [
+      {
+        "type": "collocation",
+        "instruction": "콜로케이션 선택",
+        "question": "_____ analysis",
+        "options": [
+          "variance",
+          "escalate",
+          "escalation"
+        ],
+        "correct": "variance",
+        "explanation": "통계 맥락"
+      },
+      {
+        "type": "translation",
+        "korean": "우리는 이 사안을 다음 주 회의에서 다시 논의하자.",
+        "correct": "Let's table the discussion until next week's meeting.",
+        "explanation": "‘table’의 미국식/영국식 차이는 노트 참고"
+      },
+      {
+        "type": "production",
+        "prompt": "신규 프로젝트 브리핑 4문장(표제어 5개 포함)"
+      },
+      {
+        "type": "production",
+        "prompt": "신규 프로젝트 브리핑 4문장(표제어 5개 포함)"
+      },
+      {
+        "type": "production",
+        "prompt": "신규 프로젝트 브리핑 4문장(표제어 5개 포함)"
+      }
+    ]
+  },
+  "assessment": {
+    "preTest": [
+      {
+        "q": "BATNA의 의미는?",
+        "a": "Best Alternative To a Negotiated Agreement"
+      }
+    ],
+    "postTest": [
+      {
+        "q": "'uplift'의 데이터 맥락 의미?",
+        "a": "증가분/상승 효과"
+      }
+    ],
+    "masteryCheck": {
+      "description": "90% 이상 정답 시 통과",
+      "questions": [
+        {
+          "q": "‘anchor’ 전략 한 줄 설명",
+          "a": "초기 제안을 유리한 기준점으로 설정해 협상 범위를 유도"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "createdBy": "GPT-5 Thinking Mode",
+    "createdAt": "2025-10-11",
+    "qualityScore": 95
+  }
+}

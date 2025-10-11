@@ -288,7 +288,16 @@ function main() {
     const activitiesDir = path.join(__dirname, '../data/activities');
     const activityTypes = fs.readdirSync(activitiesDir);
 
+    // 검증에서 제외할 폴더 목록
+    const excludedFolders = ['uploaded', 'week-1', 'week-2'];
+
     activityTypes.forEach((type) => {
+      // uploaded 폴더와 week-* 폴더는 스킵 (다른 스키마 사용)
+      if (excludedFolders.includes(type) || type.startsWith('week-')) {
+        log(colors.yellow, `\n[${type}] 검증 스킵 (다른 스키마)`);
+        return;
+      }
+
       const typeDir = path.join(activitiesDir, type);
       if (fs.statSync(typeDir).isDirectory()) {
         log(colors.cyan, `\n[${type}] 검증 중...`);

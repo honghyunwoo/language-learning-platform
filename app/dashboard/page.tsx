@@ -156,6 +156,35 @@ export default function DashboardPage() {
           </p>
         </div>
 
+        {/* Placement Test 배너 */}
+        <div
+          onClick={() => router.push('/dashboard/placement-test')}
+          className="glass dark:glass-dark rounded-[2rem] p-6 shadow-2xl border border-blue-200/50 dark:border-blue-700/30 animate-fade-in-up delay-100 cursor-pointer hover:shadow-blue-500/20 hover:scale-[1.02] transition-all duration-300 bg-gradient-to-r from-blue-50/50 to-indigo-50/50 dark:from-blue-900/20 dark:to-indigo-900/20"
+        >
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
+                  레벨 테스트
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  나의 영어 실력을 진단하고 맞춤 학습 경로를 추천받으세요
+                </p>
+              </div>
+            </div>
+            <div className="text-blue-600 dark:text-blue-400">
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
         {/* 통계 카드 그리드 */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <div className="animate-fade-in-up delay-100">

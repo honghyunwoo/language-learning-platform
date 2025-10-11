@@ -1,0 +1,65 @@
+{
+  "id": "week-8-reading",
+  "type": "reading",
+  "level": "B1.1",
+  "week": 8,
+  "title": "업무 이메일 읽기",
+  "estimatedTime": 30,
+  "content": {
+    "text": "My name is Alex. I am from Canada. I am a student. I like music and cooking.",
+    "glossary": [
+      {
+        "term": "from",
+        "meaning": "~출신"
+      },
+      {
+        "term": "like",
+        "meaning": "좋아하다"
+      }
+    ],
+    "readingSkills": [
+      "skimming",
+      "scanning",
+      "inference"
+    ],
+    "questions": [
+      {
+        "type": "detail",
+        "q": "화자의 국적?",
+        "options": [
+          "Korea",
+          "Canada",
+          "Japan"
+        ],
+        "a": "Canada"
+      },
+      {
+        "type": "vocab",
+        "q": "'from'의 의미?",
+        "options": [
+          "~로부터/출신",
+          "~동안",
+          "~와 함께"
+        ],
+        "a": "~로부터/출신"
+      }
+    ]
+  },
+  "assessment": {
+    "postTest": [
+      {
+        "q": "한 문장 요약",
+        "a": "Alex is a Canadian student who likes music and cooking."
+      }
+    ]
+  },
+  "metadata": {
+    "createdBy": "GPT-5 Thinking Mode",
+    "createdAt": "2025-10-11"
+  },
+  "objectives": [
+    "글의 주제와 요지 파악",
+    "세부 정보 추출 및 이해",
+    "문맥을 통한 어휘 추론"
+  ]
+}

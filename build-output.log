@@ -1,0 +1,176 @@
+
+> language-learning-platform@0.1.0 prebuild
+> npm run validate:json && npm run copy:activities
+
+
+> language-learning-platform@0.1.0 validate:json
+> node scripts/validate-activity-json.js
+
+[36m 
+=== Activity JSON 검증 시작 ===
+ [0m
+[36m 
+[grammar] 검증 중... [0m
+[36m 
+[listening] 검증 중... [0m
+[36m 
+[reading] 검증 중... [0m
+[36m 
+[speaking] 검증 중... [0m
+[33m 
+[uploaded] 검증 스킵 (다른 스키마) [0m
+[36m 
+[vocabulary] 검증 중... [0m
+[33m 
+[week-1] 검증 스킵 (다른 스키마) [0m
+[33m 
+[week-2] 검증 스킵 (다른 스키마) [0m
+[36m 
+[writing] 검증 중... [0m
+[32m ✅ week-1-grammar.json: 검증 통과 [0m
+[32m ✅ week-2-grammar.json: 검증 통과 [0m
+[32m ✅ week-3-grammar.json: 검증 통과 [0m
+[32m ✅ week-4-grammar.json: 검증 통과 [0m
+[32m ✅ week-5-grammar.json: 검증 통과 [0m
+[32m ✅ week-6-grammar.json: 검증 통과 [0m
+[32m ✅ week-7-grammar.json: 검증 통과 [0m
+[32m ✅ week-8-grammar.json: 검증 통과 [0m
+[32m ✅ week-1-listening.json: 검증 통과 [0m
+[32m ✅ week-2-listening.json: 검증 통과 [0m
+[32m ✅ week-3-listening.json: 검증 통과 [0m
+[32m ✅ week-4-listening.json: 검증 통과 [0m
+[32m ✅ week-5-listening.json: 검증 통과 [0m
+[32m ✅ week-6-listening.json: 검증 통과 [0m
+[32m ✅ week-7-listening.json: 검증 통과 [0m
+[32m ✅ week-8-listening.json: 검증 통과 [0m
+[32m ✅ week-1-reading.json: 검증 통과 [0m
+[32m ✅ week-2-reading.json: 검증 통과 [0m
+[32m ✅ week-3-reading.json: 검증 통과 [0m
+[32m ✅ week-4-reading.json: 검증 통과 [0m
+[32m ✅ week-5-reading.json: 검증 통과 [0m
+[32m ✅ week-6-reading.json: 검증 통과 [0m
+[32m ✅ week-7-reading.json: 검증 통과 [0m
+[32m ✅ week-8-reading.json: 검증 통과 [0m
+[32m ✅ week-1-speaking.json: 검증 통과 [0m
+[32m ✅ week-2-speaking.json: 검증 통과 [0m
+[32m ✅ week-3-speaking.json: 검증 통과 [0m
+[32m ✅ week-4-speaking.json: 검증 통과 [0m
+[32m ✅ week-5-speaking.json: 검증 통과 [0m
+[32m ✅ week-6-speaking.json: 검증 통과 [0m
+[32m ✅ week-7-speaking.json: 검증 통과 [0m
+[32m ✅ week-8-speaking.json: 검증 통과 [0m
+[32m ✅ week-1-vocab.json: 검증 통과 [0m
+[32m ✅ week-2-vocab.json: 검증 통과 [0m
+[32m ✅ week-3-vocab.json: 검증 통과 [0m
+[32m ✅ week-4-vocab.json: 검증 통과 [0m
+[32m ✅ week-5-vocab.json: 검증 통과 [0m
+[32m ✅ week-6-vocab.json: 검증 통과 [0m
+[32m ✅ week-7-vocab.json: 검증 통과 [0m
+[32m ✅ week-8-vocab.json: 검증 통과 [0m
+[32m ✅ week-1-writing.json: 검증 통과 [0m
+[32m ✅ week-2-writing.json: 검증 통과 [0m
+[32m ✅ week-3-writing.json: 검증 통과 [0m
+[32m ✅ week-4-writing.json: 검증 통과 [0m
+[32m ✅ week-5-writing.json: 검증 통과 [0m
+[32m ✅ week-6-writing.json: 검증 통과 [0m
+[32m ✅ week-7-writing.json: 검증 통과 [0m
+[32m ✅ week-8-writing.json: 검증 통과 [0m
+[36m 
+=== 검증 완료 === [0m
+[36m 파일 수: 48 [0m
+[32m 에러: 0 [0m
+[32m 경고: 0 [0m
+
+> language-learning-platform@0.1.0 copy:activities
+> node scripts/copy-activities.js
+
+
+=== Activity 파일 복사 시작 ===
+
+✅ Copied: vocabulary/week-1-vocab.json
+✅ Copied: vocabulary/week-2-vocab.json
+✅ Copied: vocabulary/week-3-vocab.json
+✅ Copied: vocabulary/week-4-vocab.json
+✅ Copied: vocabulary/week-5-vocab.json
+✅ Copied: vocabulary/week-6-vocab.json
+✅ Copied: vocabulary/week-7-vocab.json
+✅ Copied: vocabulary/week-8-vocab.json
+✅ Copied: grammar/week-1-grammar.json
+✅ Copied: grammar/week-2-grammar.json
+✅ Copied: grammar/week-3-grammar.json
+✅ Copied: grammar/week-4-grammar.json
+✅ Copied: grammar/week-5-grammar.json
+✅ Copied: grammar/week-6-grammar.json
+✅ Copied: grammar/week-7-grammar.json
+✅ Copied: grammar/week-8-grammar.json
+✅ Copied: listening/week-1-listening.json
+✅ Copied: listening/week-2-listening.json
+✅ Copied: listening/week-3-listening.json
+✅ Copied: listening/week-4-listening.json
+✅ Copied: listening/week-5-listening.json
+✅ Copied: listening/week-6-listening.json
+✅ Copied: listening/week-7-listening.json
+✅ Copied: listening/week-8-listening.json
+✅ Copied: speaking/week-1-speaking.json
+✅ Copied: speaking/week-2-speaking.json
+✅ Copied: speaking/week-3-speaking.json
+✅ Copied: speaking/week-4-speaking.json
+✅ Copied: speaking/week-5-speaking.json
+✅ Copied: speaking/week-6-speaking.json
+✅ Copied: speaking/week-7-speaking.json
+✅ Copied: speaking/week-8-speaking.json
+✅ Copied: reading/week-1-reading.json
+✅ Copied: reading/week-2-reading.json
+✅ Copied: reading/week-3-reading.json
+✅ Copied: reading/week-4-reading.json
+✅ Copied: reading/week-5-reading.json
+✅ Copied: reading/week-6-reading.json
+✅ Copied: reading/week-7-reading.json
+✅ Copied: reading/week-8-reading.json
+✅ Copied: writing/week-1-writing.json
+✅ Copied: writing/week-2-writing.json
+✅ Copied: writing/week-3-writing.json
+✅ Copied: writing/week-4-writing.json
+✅ Copied: writing/week-5-writing.json
+✅ Copied: writing/week-6-writing.json
+✅ Copied: writing/week-7-writing.json
+✅ Copied: writing/week-8-writing.json
+
+=== Activity 파일 복사 완료 ===
+총 복사: 48개
+에러: 0개
+
+
+=== Activity 메타데이터 생성 시작 ===
+
+✅ 메타데이터 생성 완료: 48개 Activity
+   파일 위치: C:\Users\hynoo\OneDrive\바탕 화면\공부하기\language-learning-platform\public\activities-metadata.json
+
+🎉 모든 작업 완료!
+
+
+> language-learning-platform@0.1.0 build
+> next build
+
+   ▲ Next.js 15.5.4
+   - Environments: .env.local
+   - Experiments (use with caution):
+     · optimizePackageImports
+
+   Creating an optimized production build ...
+ ✓ (pwa) Compiling for server...
+ ✓ (pwa) Compiling for server...
+ ✓ (pwa) Compiling for client (static)...
+ ○ (pwa) Service worker: C:\Users\hynoo\OneDrive\바탕 화면\공부하기\language-learning-platform\public\sw.js
+ ○ (pwa)   URL: /sw.js
+ ○ (pwa)   Scope: /
+ ○ (pwa) Custom runtimeCaching array found, using it instead of the default one.
+Failed to compile.
+
+./app/dashboard/placement-test/page.tsx
+Module not found: Can't resolve '@/contexts/AuthContext'
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+> Build failed because of webpack errors

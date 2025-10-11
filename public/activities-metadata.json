@@ -1,0 +1,386 @@
+[
+  {
+    "id": "week-1-vocab",
+    "type": "vocabulary",
+    "weekId": "week-1",
+    "level": "A1",
+    "title": "기본 인사 표현",
+    "description": "일상생활에서 가장 많이 사용하는 인사 표현과 기본 단어를 배웁니다."
+  },
+  {
+    "id": "week-2-vocab",
+    "type": "vocabulary",
+    "weekId": "week-2",
+    "level": "A1",
+    "title": "일상 활동 표현",
+    "description": "매일 하는 활동과 일상생활에 사용하는 기본 동사를 배웁니다."
+  },
+  {
+    "id": "week-3-vocab",
+    "type": "vocabulary",
+    "weekId": "week-3",
+    "level": "A2",
+    "title": "과거 활동 표현",
+    "description": "과거에 했던 활동과 경험을 표현하는 동사의 과거형을 배웁니다."
+  },
+  {
+    "id": "week-4-vocab",
+    "type": "vocabulary",
+    "weekId": "week-4",
+    "level": "A2",
+    "title": "경험과 현재완료 표현",
+    "description": "경험을 나타내는 현재완료 시제와 관련된 단어와 표현을 배웁니다."
+  },
+  {
+    "id": "week-5-vocab",
+    "type": "vocabulary",
+    "weekId": "week-5",
+    "level": "B1",
+    "title": "조동사와 관련 표현",
+    "description": "능력, 가능성, 의무, 허가를 표현하는 조동사와 관련 어휘를 배웁니다."
+  },
+  {
+    "id": "week-6-vocab",
+    "type": "vocabulary",
+    "weekId": "week-6",
+    "level": "B1",
+    "title": "비교 표현 어휘",
+    "description": "비교급과 최상급에 자주 사용되는 형용사와 부사를 배웁니다."
+  },
+  {
+    "id": "week-7-vocab",
+    "type": "vocabulary",
+    "weekId": "week-7",
+    "level": "B2",
+    "title": "현재와 미래 관련 어휘",
+    "description": "현재 활동과 미래 계획을 표현하는 데 필요한 동사와 표현을 배웁니다."
+  },
+  {
+    "id": "week-8-vocab",
+    "type": "vocabulary",
+    "weekId": "week-8",
+    "level": "B2",
+    "title": "수동태와 관계대명사 관련 어휘",
+    "description": "수동태와 관계대명사에 자주 사용되는 동사와 표현을 배웁니다."
+  },
+  {
+    "id": "week-1-grammar",
+    "type": "grammar",
+    "weekId": "week-1",
+    "level": "A1",
+    "title": "Be동사 (am, is, are)",
+    "description": "Be동사의 기본 형태와 사용법을 학습합니다."
+  },
+  {
+    "id": "week-2-grammar",
+    "type": "grammar",
+    "weekId": "week-2",
+    "level": "A1",
+    "title": "일반동사 현재형",
+    "description": "일반동사의 현재형 형태와 사용법을 학습합니다."
+  },
+  {
+    "id": "week-3-grammar",
+    "type": "grammar",
+    "weekId": "week-3",
+    "level": "A2",
+    "title": "과거시제 (Simple Past)",
+    "description": "과거에 일어난 일을 표현하는 과거시제를 학습합니다."
+  },
+  {
+    "id": "week-4-grammar",
+    "type": "grammar",
+    "weekId": "week-4",
+    "level": "A2",
+    "title": "현재완료 시제 (Present Perfect)",
+    "description": "과거에 시작해서 현재까지 영향을 주는 일을 표현하는 현재완료 시제를 학습합니다."
+  },
+  {
+    "id": "week-5-grammar",
+    "type": "grammar",
+    "weekId": "week-5",
+    "level": "B1",
+    "title": "조동사 (Modal Verbs)",
+    "description": "능력, 가능성, 허가, 의무 등을 표현하는 조동사의 사용법을 학습합니다."
+  },
+  {
+    "id": "week-6-grammar",
+    "type": "grammar",
+    "weekId": "week-6",
+    "level": "B1",
+    "title": "비교급과 최상급 (Comparatives and Superlatives)",
+    "description": "사물이나 사람을 비교하는 비교급과 최상급의 형태와 사용법을 학습합니다."
+  },
+  {
+    "id": "week-7-grammar",
+    "type": "grammar",
+    "weekId": "week-7",
+    "level": "B2",
+    "title": "현재진행형과 미래시제",
+    "description": "현재진행형(Present Continuous)과 다양한 미래시제 표현을 학습합니다."
+  },
+  {
+    "id": "week-8-grammar",
+    "type": "grammar",
+    "weekId": "week-8",
+    "level": "B2",
+    "title": "수동태와 관계대명사",
+    "description": "수동태(Passive Voice)와 관계대명사(Relative Pronouns)를 학습합니다."
+  },
+  {
+    "id": "week-1-listening",
+    "type": "listening",
+    "weekId": "week-1",
+    "level": "A1",
+    "title": "간단한 대화 듣기",
+    "description": "일상적인 인사와 소개 대화를 듣고 이해합니다."
+  },
+  {
+    "id": "week-2-listening",
+    "type": "listening",
+    "weekId": "week-2",
+    "level": "A1",
+    "title": "일상 활동 대화 듣기",
+    "description": "일상생활에서 하는 활동에 대한 대화를 듣고 이해합니다."
+  },
+  {
+    "id": "week-3-listening",
+    "type": "listening",
+    "weekId": "week-3",
+    "level": "A2",
+    "title": "과거 경험 대화 듣기",
+    "description": "과거에 했던 일에 대한 대화를 듣고 이해합니다."
+  },
+  {
+    "id": "week-4-listening",
+    "type": "listening",
+    "weekId": "week-4",
+    "level": "A2",
+    "title": "경험 이야기 듣기",
+    "description": "다양한 경험에 대한 이야기를 듣고 이해합니다."
+  },
+  {
+    "id": "week-5-listening",
+    "type": "listening",
+    "weekId": "week-5",
+    "level": "B1",
+    "title": "능력과 계획 대화 듣기",
+    "description": "조동사를 사용한 능력, 계획, 조언에 대한 대화를 듣고 이해합니다."
+  },
+  {
+    "id": "week-6-listening",
+    "type": "listening",
+    "weekId": "week-6",
+    "level": "B1",
+    "title": "비교하는 대화 듣기",
+    "description": "비교급과 최상급을 사용한 비교 대화를 듣고 이해합니다."
+  },
+  {
+    "id": "week-7-listening",
+    "type": "listening",
+    "weekId": "week-7",
+    "level": "B2",
+    "title": "현재와 미래 계획 대화",
+    "description": "현재 진행 중인 일과 미래 계획에 대한 대화를 듣고 이해합니다."
+  },
+  {
+    "id": "week-8-listening",
+    "type": "listening",
+    "weekId": "week-8",
+    "level": "B2",
+    "title": "영화와 책 리뷰 대화",
+    "description": "영화와 책에 대한 리뷰를 듣고 수동태와 관계대명사가 사용된 문장을 이해합니다."
+  },
+  {
+    "id": "week-1-speaking",
+    "type": "speaking",
+    "weekId": "week-1",
+    "level": "A1",
+    "title": "기본 인사 말하기",
+    "description": "간단한 인사와 자기소개 문장을 따라 말해봅니다."
+  },
+  {
+    "id": "week-2-speaking",
+    "type": "speaking",
+    "weekId": "week-2",
+    "level": "A1",
+    "title": "일상 활동 말하기",
+    "description": "일상생활에서 하는 활동에 대해 말하는 연습을 합니다."
+  },
+  {
+    "id": "week-3-speaking",
+    "type": "speaking",
+    "weekId": "week-3",
+    "level": "A2",
+    "title": "과거 경험 말하기",
+    "description": "과거에 했던 일에 대해 과거시제를 사용하여 말하는 연습을 합니다."
+  },
+  {
+    "id": "week-4-speaking",
+    "type": "speaking",
+    "weekId": "week-4",
+    "level": "A2",
+    "title": "경험 말하기",
+    "description": "자신의 경험에 대해 현재완료 시제를 사용하여 말하는 연습을 합니다."
+  },
+  {
+    "id": "week-5-speaking",
+    "type": "speaking",
+    "weekId": "week-5",
+    "level": "B1",
+    "title": "조동사로 능력과 조언 말하기",
+    "description": "조동사를 사용하여 능력, 가능성, 조언, 의무를 표현하는 연습을 합니다."
+  },
+  {
+    "id": "week-6-speaking",
+    "type": "speaking",
+    "weekId": "week-6",
+    "level": "B1",
+    "title": "비교하며 말하기",
+    "description": "비교급과 최상급을 사용하여 사물과 사람을 비교하는 문장을 말해봅니다."
+  },
+  {
+    "id": "week-7-speaking",
+    "type": "speaking",
+    "weekId": "week-7",
+    "level": "B2",
+    "title": "현재와 미래 계획 말하기",
+    "description": "현재진행형과 미래시제를 사용하여 현재 하고 있는 일과 미래 계획을 말해봅니다."
+  },
+  {
+    "id": "week-8-speaking",
+    "type": "speaking",
+    "weekId": "week-8",
+    "level": "B2",
+    "title": "수동태와 관계대명사로 말하기",
+    "description": "수동태와 관계대명사를 사용하여 사물과 사람을 설명하는 문장을 말해봅니다."
+  },
+  {
+    "id": "week-1-reading",
+    "type": "reading",
+    "weekId": "week-1",
+    "level": "A1",
+    "title": "자기소개",
+    "description": "간단한 자기소개 글을 읽고 이해합니다."
+  },
+  {
+    "id": "week-2-reading",
+    "type": "reading",
+    "weekId": "week-2",
+    "level": "A1",
+    "title": "일상 루틴",
+    "description": "일상생활의 루틴에 대한 글을 읽고 이해합니다."
+  },
+  {
+    "id": "week-3-reading",
+    "type": "reading",
+    "weekId": "week-3",
+    "level": "A2",
+    "title": "주말 여행 이야기",
+    "description": "과거에 있었던 주말 여행에 대한 글을 읽고 이해합니다."
+  },
+  {
+    "id": "week-4-reading",
+    "type": "reading",
+    "weekId": "week-4",
+    "level": "A2",
+    "title": "나의 경험 이야기",
+    "description": "다양한 경험에 대한 글을 읽고 이해합니다."
+  },
+  {
+    "id": "week-5-reading",
+    "type": "reading",
+    "weekId": "week-5",
+    "level": "B1",
+    "title": "건강한 생활 조언",
+    "description": "건강한 생활 습관에 대한 조언과 규칙이 담긴 글을 읽고 이해합니다."
+  },
+  {
+    "id": "week-6-reading",
+    "type": "reading",
+    "weekId": "week-6",
+    "level": "B1",
+    "title": "세계의 도시들 비교하기",
+    "description": "세계 여러 도시들을 비교하는 글을 읽고 이해합니다."
+  },
+  {
+    "id": "week-7-reading",
+    "type": "reading",
+    "weekId": "week-7",
+    "level": "B2",
+    "title": "미래의 삶과 기술",
+    "description": "미래의 생활과 기술 발전에 대한 글을 읽고 이해합니다."
+  },
+  {
+    "id": "week-8-reading",
+    "type": "reading",
+    "weekId": "week-8",
+    "level": "B2",
+    "title": "해리 포터: 세계적인 현상",
+    "description": "해리 포터 시리즈에 대한 글을 읽고 수동태와 관계대명사를 이해합니다."
+  },
+  {
+    "id": "week-1-writing",
+    "type": "writing",
+    "weekId": "week-1",
+    "level": "A1",
+    "title": "자기소개 글쓰기",
+    "description": "자신에 대해 간단한 영어 글을 작성해봅니다."
+  },
+  {
+    "id": "week-2-writing",
+    "type": "writing",
+    "weekId": "week-2",
+    "level": "A1",
+    "title": "나의 하루 일과 글쓰기",
+    "description": "하루 동안 하는 일과와 활동에 대해 영어로 작성해봅니다."
+  },
+  {
+    "id": "week-3-writing",
+    "type": "writing",
+    "weekId": "week-3",
+    "level": "A2",
+    "title": "주말 경험 글쓰기",
+    "description": "지난 주말에 했던 일에 대해 과거시제를 사용하여 글을 작성해봅니다."
+  },
+  {
+    "id": "week-4-writing",
+    "type": "writing",
+    "weekId": "week-4",
+    "level": "A2",
+    "title": "나의 경험 이야기 글쓰기",
+    "description": "자신이 경험한 일에 대해 현재완료 시제를 사용하여 글을 작성해봅니다."
+  },
+  {
+    "id": "week-5-writing",
+    "type": "writing",
+    "weekId": "week-5",
+    "level": "B1",
+    "title": "조언과 능력에 대한 글쓰기",
+    "description": "조동사를 사용하여 조언, 능력, 의무에 대한 글을 작성해봅니다."
+  },
+  {
+    "id": "week-6-writing",
+    "type": "writing",
+    "weekId": "week-6",
+    "level": "B1",
+    "title": "두 가지를 비교하는 글쓰기",
+    "description": "비교급과 최상급을 활용하여 두 개 이상의 대상을 비교하는 글을 작성해봅니다."
+  },
+  {
+    "id": "week-7-writing",
+    "type": "writing",
+    "weekId": "week-7",
+    "level": "B2",
+    "title": "나의 미래 계획 글쓰기",
+    "description": "현재진행형과 미래시제를 활용하여 현재 하고 있는 일과 미래 계획에 대한 글을 작성해봅니다."
+  },
+  {
+    "id": "week-8-writing",
+    "type": "writing",
+    "weekId": "week-8",
+    "level": "B2",
+    "title": "좋아하는 책이나 영화 설명하기",
+    "description": "수동태와 관계대명사를 활용하여 좋아하는 책이나 영화에 대한 글을 작성해봅니다."
+  }
+]

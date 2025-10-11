@@ -1,0 +1,504 @@
+{
+  "id": "week-5-vocabulary",
+  "type": "vocabulary",
+  "level": "A2.1",
+  "week": 5,
+  "title": "쇼핑·가격·수량 - 어휘 마스터",
+  "estimatedTime": 30,
+  "objectives": [
+    "쇼핑·가격·수량 관련 핵심 표현 15개 의미·용법·격식 구분",
+    "어원/문화적 맥락·콜로케이션 이해",
+    "실전 대화에서 자연스럽게 사용"
+  ],
+  "content": {
+    "theory": {
+      "introduction": "이 단원은 '쇼핑·가격·수량' 주제에서 자주 쓰이는 어휘의 의미 범주, 사회언어학적 격식, 담화 기능을 체계적으로 다룬다.",
+      "etymology": {
+        "notes": "핵심 표제어의 어원·문화 맥락 간략 제시(상세 주석은 교사용 부록)"
+      },
+      "semanticFields": [
+        {
+          "category": "쇼핑·가격·수량",
+          "words": [
+            "buy",
+            "sell",
+            "cheap",
+            "expensive",
+            "price",
+            "discount",
+            "receipt",
+            "cashier",
+            "size",
+            "fit",
+            "refund",
+            "exchange",
+            "some",
+            "any",
+            "many"
+          ],
+          "nuances": "의미 차이와 상황 적합성을 비교 설명"
+        }
+      ]
+    },
+    "examples": {
+      "buy": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'buy' every day.",
+          "translation": "나는 매일 'buy'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/buy_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'buy' more naturally.",
+          "translation": "나는 'buy'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/buy_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'buy' should be deployed appropriately.",
+          "translation": "맥락이 'buy'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/buy_3.mp3"
+        }
+      ],
+      "sell": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'sell' every day.",
+          "translation": "나는 매일 'sell'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/sell_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'sell' more naturally.",
+          "translation": "나는 'sell'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/sell_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'sell' should be deployed appropriately.",
+          "translation": "맥락이 'sell'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/sell_3.mp3"
+        }
+      ],
+      "cheap": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'cheap' every day.",
+          "translation": "나는 매일 'cheap'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/cheap_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'cheap' more naturally.",
+          "translation": "나는 'cheap'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/cheap_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'cheap' should be deployed appropriately.",
+          "translation": "맥락이 'cheap'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/cheap_3.mp3"
+        }
+      ],
+      "expensive": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'expensive' every day.",
+          "translation": "나는 매일 'expensive'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/expensive_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'expensive' more naturally.",
+          "translation": "나는 'expensive'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/expensive_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'expensive' should be deployed appropriately.",
+          "translation": "맥락이 'expensive'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/expensive_3.mp3"
+        }
+      ],
+      "price": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'price' every day.",
+          "translation": "나는 매일 'price'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/price_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'price' more naturally.",
+          "translation": "나는 'price'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/price_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'price' should be deployed appropriately.",
+          "translation": "맥락이 'price'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/price_3.mp3"
+        }
+      ],
+      "discount": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'discount' every day.",
+          "translation": "나는 매일 'discount'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/discount_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'discount' more naturally.",
+          "translation": "나는 'discount'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/discount_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'discount' should be deployed appropriately.",
+          "translation": "맥락이 'discount'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/discount_3.mp3"
+        }
+      ],
+      "receipt": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'receipt' every day.",
+          "translation": "나는 매일 'receipt'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/receipt_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'receipt' more naturally.",
+          "translation": "나는 'receipt'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/receipt_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'receipt' should be deployed appropriately.",
+          "translation": "맥락이 'receipt'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/receipt_3.mp3"
+        }
+      ],
+      "cashier": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'cashier' every day.",
+          "translation": "나는 매일 'cashier'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/cashier_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'cashier' more naturally.",
+          "translation": "나는 'cashier'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/cashier_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'cashier' should be deployed appropriately.",
+          "translation": "맥락이 'cashier'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/cashier_3.mp3"
+        }
+      ],
+      "size": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'size' every day.",
+          "translation": "나는 매일 'size'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/size_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'size' more naturally.",
+          "translation": "나는 'size'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/size_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'size' should be deployed appropriately.",
+          "translation": "맥락이 'size'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/size_3.mp3"
+        }
+      ],
+      "fit": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'fit' every day.",
+          "translation": "나는 매일 'fit'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/fit_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'fit' more naturally.",
+          "translation": "나는 'fit'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/fit_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'fit' should be deployed appropriately.",
+          "translation": "맥락이 'fit'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/fit_3.mp3"
+        }
+      ],
+      "refund": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'refund' every day.",
+          "translation": "나는 매일 'refund'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/refund_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'refund' more naturally.",
+          "translation": "나는 'refund'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/refund_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'refund' should be deployed appropriately.",
+          "translation": "맥락이 'refund'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/refund_3.mp3"
+        }
+      ],
+      "exchange": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'exchange' every day.",
+          "translation": "나는 매일 'exchange'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/exchange_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'exchange' more naturally.",
+          "translation": "나는 'exchange'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/exchange_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'exchange' should be deployed appropriately.",
+          "translation": "맥락이 'exchange'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/exchange_3.mp3"
+        }
+      ],
+      "some": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'some' every day.",
+          "translation": "나는 매일 'some'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/some_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'some' more naturally.",
+          "translation": "나는 'some'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/some_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'some' should be deployed appropriately.",
+          "translation": "맥락이 'some'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/some_3.mp3"
+        }
+      ],
+      "any": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'any' every day.",
+          "translation": "나는 매일 'any'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/any_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'any' more naturally.",
+          "translation": "나는 'any'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/any_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'any' should be deployed appropriately.",
+          "translation": "맥락이 'any'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/any_3.mp3"
+        }
+      ],
+      "many": [
+        {
+          "level": "beginner",
+          "sentence": "I use 'many' every day.",
+          "translation": "나는 매일 'many'를/을 사용한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/many_1.mp3"
+        },
+        {
+          "level": "intermediate",
+          "sentence": "I'm learning to use 'many' more naturally.",
+          "translation": "나는 'many'를 더 자연스럽게 쓰는 법을 배우는 중이다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/many_2.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Context determines how 'many' should be deployed appropriately.",
+          "translation": "맥락이 'many'의 적절한 사용을 결정한다.",
+          "notes": "의미/용법 주석",
+          "audioUrl": "/audio/many_3.mp3"
+        }
+      ]
+    },
+    "exercises": [
+      {
+        "type": "fill_in_the_blank",
+        "question": "_____! Nice to meet you.",
+        "options": [
+          "Hello",
+          "Bye",
+          "Thanks",
+          "Sorry"
+        ],
+        "correct": "Hello",
+        "explanation": "첫 만남 인사"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "격식 있는 첫 만남 인사?",
+        "options": [
+          "How do you do?",
+          "What's up?",
+          "Yo!",
+          "Heya"
+        ],
+        "correct": "How do you do?",
+        "explanation": "고격식 의례 표현"
+      },
+      {
+        "type": "translation",
+        "korean": "좋은 아침입니다.",
+        "correct": "Good morning."
+      },
+      {
+        "type": "dialogue_match",
+        "prompt": "A: How are you?\nB: ________",
+        "options": [
+          "Good, thanks. And you?",
+          "How old are you?",
+          "Where?",
+          "Nice day."
+        ],
+        "correct": "Good, thanks. And you?"
+      },
+      {
+        "type": "collocation",
+        "question": "작별 인사에 자연스러운 것은?",
+        "options": [
+          "Take care.",
+          "Nice to meet you.",
+          "How are you?",
+          "Hey!"
+        ],
+        "correct": "Take care."
+      },
+      {
+        "type": "production",
+        "prompt": "쇼핑·가격·수량 표현 5개로 4문장 대화 만들기",
+        "rubric": "격식/상황 일치, 철자·문법"
+      },
+      {
+        "type": "production",
+        "prompt": "쇼핑·가격·수량 표현 5개로 4문장 대화 만들기",
+        "rubric": "격식/상황 일치, 철자·문법"
+      },
+      {
+        "type": "production",
+        "prompt": "쇼핑·가격·수량 표현 5개로 4문장 대화 만들기",
+        "rubric": "격식/상황 일치, 철자·문법"
+      }
+    ]
+  },
+  "assessment": {
+    "preTest": [
+      {
+        "q": "‘Hello’의 적절한 응답은?",
+        "a": "Hi/Hello."
+      },
+      {
+        "q": "'How's it going?'의 격식 수준은?",
+        "a": "비격식"
+      }
+    ],
+    "postTest": [
+      {
+        "q": "첫 만남: ‘만나서 반갑습니다’",
+        "a": "Nice to meet you."
+      },
+      {
+        "q": "작별 배려 인사",
+        "a": "Take care."
+      }
+    ],
+    "masteryCheck": {
+      "description": "90% 이상 정답 시 통과",
+      "questions": [
+        {
+          "q": "‘Nice to see you’와 ‘Nice to meet you’ 차이 간단 설명",
+          "a": "재회 vs 첫 만남"
+        }
+      ]
+    }
+  },
+  "resources": {
+    "practiceTools": [
+      {
+        "name": "Anki Deck",
+        "url": "/downloads/week5_vocab.apkg",
+        "cards": 45
+      }
+    ]
+  },
+  "metadata": {
+    "createdBy": "GPT-5 Thinking Mode",
+    "createdAt": "2025-10-11",
+    "qualityScore": 92
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "id": "placement_test_cefr_a1_to_c1",
+  "type": "placement_test",
+  "title": "레벨테스트 (A1~C1) - 진단",
+  "estimatedTime": 25,
+  "sections": [
+    {
+      "name": "Vocabulary & Collocation",
+      "items": [
+        {
+          "type": "mcq",
+          "q": "Choose the best collocation: _____ evidence",
+          "options": [
+            "compelling",
+            "heavy",
+            "thick",
+            "strongish"
+          ],
+          "a": "compelling"
+        },
+        {
+          "type": "mcq",
+          "q": "'due diligence' is closest to",
+          "options": [
+            "thorough review",
+            "quick glance",
+            "casual guess",
+            "simple math"
+          ],
+          "a": "thorough review"
+        }
+      ]
+    },
+    {
+      "name": "Grammar & Usage",
+      "items": [
+        {
+          "type": "mcq",
+          "q": "If I _____ earlier, I would be on time now.",
+          "options": [
+            "had left",
+            "left",
+            "would leave"
+          ],
+          "a": "had left"
+        },
+        {
+          "type": "mcq",
+          "q": "The report _____ by noon yesterday.",
+          "options": [
+            "had been finished",
+            "has been finished",
+            "is finished"
+          ],
+          "a": "had been finished"
+        }
+      ]
+    },
+    {
+      "name": "Reading (Short Passage)",
+      "passage": "The committee acknowledged the benefits of rapid scaling, yet emphasized the governance risks inherent in vendor proliferation.",
+      "items": [
+        {
+          "type": "inference",
+          "q": "The committee's stance is best described as",
+          "options": [
+            "uncritical support",
+            "balanced caution",
+            "outright rejection",
+            "indifference"
+          ],
+          "a": "balanced caution"
+        }
+      ]
+    },
+    {
+      "name": "Listening (Script-based)",
+      "audio": "/audio/placement_snippet.mp3",
+      "script": "We'll circle back once the audit trail is complete; until then, let's avoid scope creep.",
+      "items": [
+        {
+          "type": "detail",
+          "q": "What should be avoided?",
+          "options": [
+            "scope creep",
+            "audit",
+            "circle back",
+            "completion"
+          ],
+          "a": "scope creep"
+        }
+      ]
+    },
+    {
+      "name": "Speaking (Self-assessment)",
+      "items": [
+        {
+          "type": "self_rating",
+          "q": "1분간 업무 주제 발표 가능 여부",
+          "scale": [
+            1,
+            5
+          ]
+        },
+        {
+          "type": "self_rating",
+          "q": "전화로 문제를 설명하고 해결책을 제안할 수 있다",
+          "scale": [
+            1,
+            5
+          ]
+        }
+      ]
+    }
+  ],
+  "scoring": {
+    "method": "가중 합산(정답 기반 + 자기평가 보정)",
+    "bands": [
+      {
+        "range": "0-15",
+        "level": "A1",
+        "description": "기초 표현 중심"
+      },
+      {
+        "range": "16-25",
+        "level": "A2",
+        "description": "일상 주제 처리 가능"
+      },
+      {
+        "range": "26-35",
+        "level": "B1",
+        "description": "예측 가능한 업무/여행 상황 처리"
+      },
+      {
+        "range": "36-45",
+        "level": "B2",
+        "description": "추상적 주제 일부 처리/의견 전개"
+      },
+      {
+        "range": "46-55",
+        "level": "C1",
+        "description": "복잡한 담화 구성·전문 주제 소화"
+      }
+    ],
+    "placementRule": "점수대+문항 난이도별 정답 분포를 함께 고려(상위 난이도 정답 비중이 높으면 한 단계 상향)"
+  },
+  "metadata": {
+    "createdBy": "GPT-5 Thinking Mode",
+    "createdAt": "2025-10-11"
+  }
+}

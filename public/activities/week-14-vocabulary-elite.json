@@ -1,0 +1,451 @@
+{
+  "id": "week-14-vocabulary-elite",
+  "type": "vocabulary",
+  "level": "C1",
+  "week": 14,
+  "title": "은유·관용·레토릭(레지스터 전환) - 엘리트 어휘 마스터",
+  "estimatedTime": 30,
+  "objectives": [
+    "고급 담화 표지·전문 어휘 15개 뉘앙스·레지스터 구분",
+    "코퍼스 기반 콜로케이션/구문 패턴 체득",
+    "실전 발표·협상에서 자연스럽게 사용"
+  ],
+  "content": {
+    "theory": {
+      "introduction": "'은유·관용·레토릭(레지스터 전환)' 영역의 고빈도 키워드를 의미론(denotation vs connotation), 사회언어학적 레지스터, 장르별 사용패턴으로 분석.",
+      "etymology": {
+        "notes": "핵심 표제어 어원·도메인 변천 약식 요약"
+      },
+      "semanticFields": [
+        {
+          "category": "은유·관용·레토릭(레지스터 전환)",
+          "words": [
+            "silver lining",
+            "slippery slope",
+            "move the needle",
+            "boil the ocean",
+            "on the same page",
+            "elephant in the room",
+            "devil's advocate",
+            "low-hanging fruit",
+            "circle back",
+            "table the discussion",
+            "take offline",
+            "open the kimono",
+            "band-aid solution",
+            "can of worms",
+            "play it by ear"
+          ],
+          "nuances": "정책/경영/학술 담화에서의 쓰임 대비"
+        }
+      ]
+    },
+    "examples": {
+      "silver lining": [
+        {
+          "level": "intermediate",
+          "sentence": "The silver lining is that we learned valuable lessons from this failure.",
+          "translation": "긍정적인 측면은 우리가 이 실패에서 귀중한 교훈을 배웠다는 것이다.",
+          "notes": "긍정적 측면",
+          "audioUrl": "/audio/elite_silver lining_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The pandemic's silver lining was accelerated digital transformation.",
+          "translation": "팬데믹의 긍정적 측면은 가속화된 디지털 전환이었다.",
+          "notes": "위기 속 기회",
+          "audioUrl": "/audio/elite_silver lining_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Finding the silver lining requires reframing challenges as opportunities for growth.",
+          "translation": "긍정적 측면을 찾는 것은 도전을 성장 기회로 재구성하는 것을 필요로 한다.",
+          "notes": "사고 전환",
+          "audioUrl": "/audio/elite_silver lining_3.mp3"
+        }
+      ],
+      "slippery slope": [
+        {
+          "level": "intermediate",
+          "sentence": "Cutting corners on quality is a slippery slope.",
+          "translation": "품질을 타협하는 것은 미끄러운 경사면이다.",
+          "notes": "위험한 시작",
+          "audioUrl": "/audio/elite_slippery slope_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Small ethical compromises can create a slippery slope to major violations.",
+          "translation": "작은 윤리적 타협은 큰 위반으로 가는 미끄러운 경사면을 만들 수 있다.",
+          "notes": "점진적 악화",
+          "audioUrl": "/audio/elite_slippery slope_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Organizations must guard against the slippery slope of normalizing deviance.",
+          "translation": "조직은 일탈을 정상화하는 미끄러운 경사면을 경계해야 한다.",
+          "notes": "조직 문화 리스크",
+          "audioUrl": "/audio/elite_slippery slope_3.mp3"
+        }
+      ],
+      "move the needle": [
+        {
+          "level": "intermediate",
+          "sentence": "This initiative will really move the needle on customer satisfaction.",
+          "translation": "이 이니셔티브는 고객 만족도에 정말 큰 영향을 미칠 것이다.",
+          "notes": "중요한 영향",
+          "audioUrl": "/audio/elite_move the needle_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "We need to focus on activities that actually move the needle on revenue.",
+          "translation": "우리는 실제로 수익에 큰 영향을 미치는 활동에 집중해야 한다.",
+          "notes": "우선순위 설정",
+          "audioUrl": "/audio/elite_move the needle_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Moving the needle requires balancing quick wins with sustained strategic investments.",
+          "translation": "큰 영향을 만드는 것은 빠른 승리와 지속적인 전략적 투자의 균형을 필요로 한다.",
+          "notes": "전략적 균형",
+          "audioUrl": "/audio/elite_move the needle_3.mp3"
+        }
+      ],
+      "boil the ocean": [
+        {
+          "level": "intermediate",
+          "sentence": "Let's not try to boil the ocean—focus on achievable goals.",
+          "translation": "불가능한 것을 시도하지 말자—달성 가능한 목표에 집중하라.",
+          "notes": "비현실적 목표",
+          "audioUrl": "/audio/elite_boil the ocean_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "The proposal is trying to boil the ocean instead of addressing specific pain points.",
+          "translation": "제안서는 특정 문제점을 해결하는 대신 불가능한 것을 시도하고 있다.",
+          "notes": "과도한 범위",
+          "audioUrl": "/audio/elite_boil the ocean_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Strategic focus prevents boiling the ocean by defining clear boundaries and priorities.",
+          "translation": "전략적 초점은 명확한 경계와 우선순위를 정의하여 불가능한 시도를 방지한다.",
+          "notes": "전략적 규율",
+          "audioUrl": "/audio/elite_boil the ocean_3.mp3"
+        }
+      ],
+      "on the same page": [
+        {
+          "level": "intermediate",
+          "sentence": "Let's make sure everyone is on the same page before we proceed.",
+          "translation": "진행하기 전에 모두가 같은 이해를 하고 있는지 확인하자.",
+          "notes": "공동 이해",
+          "audioUrl": "/audio/elite_on the same page_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Regular communication keeps the team on the same page.",
+          "translation": "정기적인 커뮤니케이션은 팀이 같은 이해를 유지하게 한다.",
+          "notes": "정렬 유지",
+          "audioUrl": "/audio/elite_on the same page_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Getting stakeholders on the same page requires clear articulation of goals and transparent progress tracking.",
+          "translation": "이해관계자를 같은 이해로 모으는 것은 목표의 명확한 설명과 투명한 진행 추적을 필요로 한다.",
+          "notes": "이해관계자 정렬",
+          "audioUrl": "/audio/elite_on the same page_3.mp3"
+        }
+      ],
+      "elephant in the room": [
+        {
+          "level": "intermediate",
+          "sentence": "Let's address the elephant in the room: our declining market share.",
+          "translation": "방 안의 코끼리를 다루자: 우리의 감소하는 시장 점유율.",
+          "notes": "명백하지만 회피되는 문제",
+          "audioUrl": "/audio/elite_elephant in the room_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Ignoring the elephant in the room only makes problems worse over time.",
+          "translation": "명백한 문제를 무시하면 시간이 지날수록 상황만 악화된다.",
+          "notes": "문제 직면",
+          "audioUrl": "/audio/elite_elephant in the room_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Addressing the elephant in the room requires psychological safety and leadership courage.",
+          "translation": "명백한 문제를 다루는 것은 심리적 안전과 리더십 용기를 필요로 한다.",
+          "notes": "조직 문화",
+          "audioUrl": "/audio/elite_elephant in the room_3.mp3"
+        }
+      ],
+      "devil's advocate": [
+        {
+          "level": "intermediate",
+          "sentence": "Let me play devil's advocate: what if this strategy fails?",
+          "translation": "반론자 역할을 해보겠다: 이 전략이 실패하면 어떻게 하나?",
+          "notes": "반대 의견 제시",
+          "audioUrl": "/audio/elite_devil's advocate_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "A devil's advocate challenges assumptions to strengthen decisions.",
+          "translation": "반론자는 결정을 강화하기 위해 가정에 도전한다.",
+          "notes": "비판적 사고",
+          "audioUrl": "/audio/elite_devil's advocate_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Effective devil's advocacy balances constructive challenge with team cohesion.",
+          "translation": "효과적인 반론 제기는 건설적 도전과 팀 결속의 균형을 맞춘다.",
+          "notes": "의사결정 품질",
+          "audioUrl": "/audio/elite_devil's advocate_3.mp3"
+        }
+      ],
+      "low-hanging fruit": [
+        {
+          "level": "intermediate",
+          "sentence": "Let's start with the low-hanging fruit—quick wins that build momentum.",
+          "translation": "쉽게 얻을 수 있는 것부터 시작하자—추진력을 만드는 빠른 승리.",
+          "notes": "쉬운 목표",
+          "audioUrl": "/audio/elite_low-hanging fruit_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "After picking all the low-hanging fruit, we need sustainable growth strategies.",
+          "translation": "모든 쉬운 목표를 달성한 후 지속 가능한 성장 전략이 필요하다.",
+          "notes": "전략적 진화",
+          "audioUrl": "/audio/elite_low-hanging fruit_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Balancing low-hanging fruit with long-term investments prevents strategic myopia.",
+          "translation": "쉬운 목표와 장기 투자의 균형은 전략적 근시안을 방지한다.",
+          "notes": "균형 잡힌 포트폴리오",
+          "audioUrl": "/audio/elite_low-hanging fruit_3.mp3"
+        }
+      ],
+      "circle back": [
+        {
+          "level": "intermediate",
+          "sentence": "Let's circle back to this topic in next week's meeting.",
+          "translation": "다음 주 회의에서 이 주제로 다시 돌아오자.",
+          "notes": "재논의",
+          "audioUrl": "/audio/elite_circle back_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "I'll circle back with you once I have more information.",
+          "translation": "더 많은 정보가 있으면 다시 연락하겠다.",
+          "notes": "후속 조치",
+          "audioUrl": "/audio/elite_circle back_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Effective circling back requires clear action items and timelines to prevent indefinite deferral.",
+          "translation": "효과적인 재논의는 무한정 연기를 방지하기 위한 명확한 실행 항목과 일정이 필요하다.",
+          "notes": "실행 책임",
+          "audioUrl": "/audio/elite_circle back_3.mp3"
+        }
+      ],
+      "table the discussion": [
+        {
+          "level": "intermediate",
+          "sentence": "Let's table the discussion until we have all the data.",
+          "translation": "모든 데이터를 확보할 때까지 논의를 연기하자.",
+          "notes": "논의 연기 (미국식)",
+          "audioUrl": "/audio/elite_table the discussion_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "We're tabling this issue due to conflicting priorities.",
+          "translation": "우리는 상충하는 우선순위로 인해 이 문제를 연기하고 있다.",
+          "notes": "우선순위 조정",
+          "audioUrl": "/audio/elite_table the discussion_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Tabling discussions strategically prevents premature decisions, but overuse causes decision paralysis.",
+          "translation": "전략적으로 논의를 연기하는 것은 성급한 결정을 방지하지만 과도한 사용은 결정 마비를 초래한다.",
+          "notes": "의사결정 타이밍",
+          "audioUrl": "/audio/elite_table the discussion_3.mp3"
+        }
+      ],
+      "take offline": [
+        {
+          "level": "intermediate",
+          "sentence": "Let's take this offline and discuss it separately.",
+          "translation": "이것은 따로 논의하도록 하자.",
+          "notes": "별도 논의",
+          "audioUrl": "/audio/elite_take offline_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "We should take this detailed discussion offline to respect everyone's time.",
+          "translation": "모두의 시간을 존중하기 위해 이 상세한 논의는 따로 해야 한다.",
+          "notes": "회의 효율성",
+          "audioUrl": "/audio/elite_take offline_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Taking issues offline maintains meeting focus while ensuring important topics receive proper attention.",
+          "translation": "문제를 따로 논의하는 것은 회의 초점을 유지하면서 중요한 주제가 적절한 관심을 받도록 보장한다.",
+          "notes": "회의 관리",
+          "audioUrl": "/audio/elite_take offline_3.mp3"
+        }
+      ],
+      "open the kimono": [
+        {
+          "level": "intermediate",
+          "sentence": "We need to open the kimono and share our financial projections.",
+          "translation": "우리는 솔직하게 재무 전망을 공유해야 한다.",
+          "notes": "정보 공개 (구식 표현, 주의 필요)",
+          "audioUrl": "/audio/elite_open the kimono_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Opening the kimono builds trust but requires careful consideration of proprietary information.",
+          "translation": "솔직한 정보 공개는 신뢰를 구축하지만 독점 정보에 대한 신중한 고려가 필요하다.",
+          "notes": "투명성과 기밀성 균형",
+          "audioUrl": "/audio/elite_open the kimono_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Note: This idiom is increasingly considered culturally insensitive; use 'share transparently' instead.",
+          "translation": "참고: 이 관용구는 점점 문화적으로 부적절하다고 여겨지고 있다; '투명하게 공유하다'를 대신 사용하라.",
+          "notes": "언어 민감성",
+          "audioUrl": "/audio/elite_open the kimono_3.mp3"
+        }
+      ],
+      "band-aid solution": [
+        {
+          "level": "intermediate",
+          "sentence": "This is just a band-aid solution; we need a permanent fix.",
+          "translation": "이것은 임시방편일 뿐이다; 우리는 영구적인 해결책이 필요하다.",
+          "notes": "임시 조치",
+          "audioUrl": "/audio/elite_band-aid solution_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "Band-aid solutions may provide short-term relief but fail to address root causes.",
+          "translation": "임시방편은 단기 완화를 제공할 수 있지만 근본 원인을 해결하지 못한다.",
+          "notes": "근본 원인 분석",
+          "audioUrl": "/audio/elite_band-aid solution_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Strategic leaders distinguish between acceptable interim measures and inadequate band-aid solutions.",
+          "translation": "전략적 리더는 허용 가능한 임시 조치와 부적절한 임시방편을 구별한다.",
+          "notes": "전략적 판단",
+          "audioUrl": "/audio/elite_band-aid solution_3.mp3"
+        }
+      ],
+      "can of worms": [
+        {
+          "level": "intermediate",
+          "sentence": "Changing the compensation structure could open a can of worms.",
+          "translation": "보상 구조를 변경하면 복잡한 문제를 일으킬 수 있다.",
+          "notes": "복잡한 문제",
+          "audioUrl": "/audio/elite_can of worms_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "We opened a can of worms when we started investigating the accounting practices.",
+          "translation": "회계 관행을 조사하기 시작했을 때 우리는 복잡한 문제를 열었다.",
+          "notes": "예상치 못한 복잡성",
+          "audioUrl": "/audio/elite_can of worms_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Anticipating which issues open cans of worms requires experience and systematic risk assessment.",
+          "translation": "어떤 문제가 복잡한 문제를 여는지 예상하는 것은 경험과 체계적인 리스크 평가가 필요하다.",
+          "notes": "리스크 예측",
+          "audioUrl": "/audio/elite_can of worms_3.mp3"
+        }
+      ],
+      "play it by ear": [
+        {
+          "level": "intermediate",
+          "sentence": "We don't have all the details yet, so let's play it by ear.",
+          "translation": "아직 모든 세부사항이 없으니 상황을 보며 대응하자.",
+          "notes": "상황 대응",
+          "audioUrl": "/audio/elite_play it by ear_1.mp3"
+        },
+        {
+          "level": "advanced",
+          "sentence": "While planning is important, sometimes you need to play it by ear and adapt.",
+          "translation": "계획이 중요하지만 때로는 상황을 보며 적응해야 한다.",
+          "notes": "유연성",
+          "audioUrl": "/audio/elite_play it by ear_2.mp3"
+        },
+        {
+          "level": "expert",
+          "sentence": "Effective leaders balance structured planning with the agility to play it by ear when conditions change.",
+          "translation": "효과적인 리더는 체계적 계획과 조건 변화 시 상황 대응하는 민첩성의 균형을 맞춘다.",
+          "notes": "적응적 리더십",
+          "audioUrl": "/audio/elite_play it by ear_3.mp3"
+        }
+      ]
+    },
+    "exercises": [
+      {
+        "type": "collocation",
+        "instruction": "콜로케이션 선택",
+        "question": "_____ analysis",
+        "options": [
+          "variance",
+          "escalate",
+          "escalation"
+        ],
+        "correct": "variance",
+        "explanation": "통계 맥락"
+      },
+      {
+        "type": "translation",
+        "korean": "우리는 이 사안을 다음 주 회의에서 다시 논의하자.",
+        "correct": "Let's table the discussion until next week's meeting.",
+        "explanation": "‘table’의 미국식/영국식 차이는 노트 참고"
+      },
+      {
+        "type": "production",
+        "prompt": "신규 프로젝트 브리핑 4문장(표제어 5개 포함)"
+      },
+      {
+        "type": "production",
+        "prompt": "신규 프로젝트 브리핑 4문장(표제어 5개 포함)"
+      },
+      {
+        "type": "production",
+        "prompt": "신규 프로젝트 브리핑 4문장(표제어 5개 포함)"
+      }
+    ]
+  },
+  "assessment": {
+    "preTest": [
+      {
+        "q": "BATNA의 의미는?",
+        "a": "Best Alternative To a Negotiated Agreement"
+      }
+    ],
+    "postTest": [
+      {
+        "q": "'uplift'의 데이터 맥락 의미?",
+        "a": "증가분/상승 효과"
+      }
+    ],
+    "masteryCheck": {
+      "description": "90% 이상 정답 시 통과",
+      "questions": [
+        {
+          "q": "‘anchor’ 전략 한 줄 설명",
+          "a": "초기 제안을 유리한 기준점으로 설정해 협상 범위를 유도"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "createdBy": "GPT-5 Thinking Mode",
+    "createdAt": "2025-10-11",
+    "qualityScore": 95
+  }
+}
