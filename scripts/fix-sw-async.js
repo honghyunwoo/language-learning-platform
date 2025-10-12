@@ -20,28 +20,49 @@ const SW_PATH = path.join(__dirname, '../public/sw.js');
 
 try {
   // Read sw.js
-  const swContent = fs.readFileSync(SW_PATH, 'utf8');
+  let swContent = fs.readFileSync(SW_PATH, 'utf8');
 
   // Check if _async_to_generator or _ts_generator is used but not defined
-  if ((swContent.includes('_async_to_generator') || swContent.includes('_ts_generator')) &&
-      !swContent.includes('function _async_to_generator')) {
+  const usesAsyncHelper = swContent.includes('_async_to_generator') || swContent.includes('_ts_generator');
+  const hasHelperDefined = swContent.includes('function _async_to_generator');
+
+  if (usesAsyncHelper && !hasHelperDefined) {
     console.log('🔧 Fixing sw.js: Injecting TypeScript/Babel helpers...');
 
-    // Inject helper at the beginning (after the first function wrapper)
-    const fixed = swContent.replace(
+    // Strategy 1: Try to inject after the first define() wrapper
+    let fixed = swContent.replace(
       /^(.*?define\(\[.*?\],function\(e\)\{)/,
       `$1${ASYNC_HELPER};`
     );
+
+    // Strategy 2: If Strategy 1 didn't work (no match), inject at the very beginning
+    if (fixed === swContent) {
+      console.log('   Strategy 1 failed, trying Strategy 2 (prepend)...');
+      fixed = `${ASYNC_HELPER};\n${swContent}`;
+    }
+
+    // Strategy 3: If sw.js starts with "use strict", inject after it
+    if (fixed === swContent && swContent.startsWith('"use strict"')) {
+      console.log('   Strategy 2 failed, trying Strategy 3 (after "use strict")...');
+      fixed = swContent.replace('"use strict";', `"use strict";${ASYNC_HELPER};`);
+    }
+
+    // Verify that we actually modified the content
+    if (fixed === swContent) {
+      console.warn('⚠️  Warning: Could not find injection point, prepending to file start');
+      fixed = ASYNC_HELPER + ';\n' + swContent;
+    }
 
     // Write fixed sw.js
     fs.writeFileSync(SW_PATH, fixed, 'utf8');
 
     console.log('✅ sw.js fixed successfully!');
     console.log(`   Added helpers: _async_to_generator, asyncGeneratorStep, _ts_generator (${ASYNC_HELPER.length} bytes)`);
-  } else if (!swContent.includes('_async_to_generator')) {
-    console.log('✅ sw.js does not need fixing (no _async_to_generator usage)');
+    console.log(`   File size: ${swContent.length} → ${fixed.length} bytes (+${fixed.length - swContent.length})`);
+  } else if (!usesAsyncHelper) {
+    console.log('✅ sw.js does not need fixing (no _async_to_generator or _ts_generator usage)');
   } else {
-    console.log('✅ sw.js already has _async_to_generator defined');
+    console.log('✅ sw.js already has helpers defined');
   }
 } catch (error) {
   console.error('❌ Error fixing sw.js:', error.message);

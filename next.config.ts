@@ -115,11 +115,6 @@ const nextConfig: NextConfig = {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin',
           },
-          // 🔧 Fix: Firebase 팝업 로그인을 위해 COOP 완화
-          {
-            key: 'Cross-Origin-Opener-Policy',
-            value: 'same-origin-allow-popups',
-          },
         ],
       },
       {

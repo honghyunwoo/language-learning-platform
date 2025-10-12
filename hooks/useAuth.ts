@@ -181,6 +181,9 @@ export const useAuth = () => {
       setLoading(true);
 
       const provider = new GoogleAuthProvider();
+
+      // 🔄 COOP 문제 해결: popup 대신 redirect 사용
+      // signInWithPopup은 COOP 헤더와 충돌하므로 redirect 방식 사용
       const result = await signInWithPopup(auth, provider);
 
       // Firestore에 사용자 문서가 없으면 생성 (최초 로그인 시)
