@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import {
   User as FirebaseUser,
   createUserWithEmailAndPassword,
@@ -36,6 +36,7 @@ export const useAuth = () => {
   const [firebaseUser, setFirebaseUser] = useState<FirebaseUser | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const redirectHandled = useRef(false); // 무한 루프 방지
 
   // Firebase 인증 상태 구독
   useEffect(() => {
@@ -70,13 +71,16 @@ export const useAuth = () => {
 
   // Google 로그인 Redirect 결과 처리
   useEffect(() => {
-    if (!auth || !db) return;
+    if (!auth || !db || redirectHandled.current) return;
 
     const handleRedirectResult = async () => {
       try {
         const result = await getRedirectResult(auth);
 
         if (result) {
+          // ✅ 한 번만 처리하도록 플래그 설정
+          redirectHandled.current = true;
+
           // 로그인 성공 시 사용자 문서 처리
           const userDoc = await getDoc(doc(db, 'users', result.user.uid));
 
@@ -119,10 +123,13 @@ export const useAuth = () => {
             }
           }
 
-          // ✅ Redirect 후 원래 가려던 페이지로 이동
+          // ✅ sessionStorage에서 redirect URL 가져오기
           const redirectUrl = sessionStorage.getItem('auth-redirect') || '/dashboard';
           sessionStorage.removeItem('auth-redirect');
-          window.location.href = redirectUrl;
+
+          // ✅ Next.js에서 페이지 이동 (window.location 대신)
+          // useRouter를 사용할 수 없으므로 window.location 사용하되 한 번만 실행
+          window.location.replace(redirectUrl);
         }
       } catch (err: unknown) {
         console.error('Redirect 결과 처리 실패:', err);
