@@ -22,9 +22,10 @@ try {
   // Read sw.js
   const swContent = fs.readFileSync(SW_PATH, 'utf8');
 
-  // Check if _async_to_generator is used but not defined
-  if (swContent.includes('_async_to_generator') && !swContent.includes('function _async_to_generator')) {
-    console.log('🔧 Fixing sw.js: Injecting _async_to_generator helper...');
+  // Check if _async_to_generator or _ts_generator is used but not defined
+  if ((swContent.includes('_async_to_generator') || swContent.includes('_ts_generator')) &&
+      !swContent.includes('function _async_to_generator')) {
+    console.log('🔧 Fixing sw.js: Injecting TypeScript/Babel helpers...');
 
     // Inject helper at the beginning (after the first function wrapper)
     const fixed = swContent.replace(
@@ -36,7 +37,7 @@ try {
     fs.writeFileSync(SW_PATH, fixed, 'utf8');
 
     console.log('✅ sw.js fixed successfully!');
-    console.log(`   Added _async_to_generator helper (${ASYNC_HELPER.length} bytes)`);
+    console.log(`   Added helpers: _async_to_generator, asyncGeneratorStep, _ts_generator (${ASYNC_HELPER.length} bytes)`);
   } else if (!swContent.includes('_async_to_generator')) {
     console.log('✅ sw.js does not need fixing (no _async_to_generator usage)');
   } else {
