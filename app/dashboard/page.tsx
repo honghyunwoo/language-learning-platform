@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/hooks/useAuth';
@@ -31,8 +31,16 @@ const WeeklyChart = dynamic(() => import('@/components/dashboard/WeeklyChart'), 
 
 export default function DashboardPage() {
   const router = useRouter();
-  const { currentUser } = useAuth();
+  const { currentUser, loading: authLoading } = useAuth();
   const { data: progress, isLoading } = useUserProgress(currentUser?.uid);
+
+  // 🔒 로그인 체크 (클라이언트 사이드)
+  useEffect(() => {
+    if (!authLoading && !currentUser) {
+      // 로그인 안 되어 있으면 로그인 페이지로 리다이렉트
+      router.push('/login?redirect=/dashboard');
+    }
+  }, [authLoading, currentUser, router]);
   const { weeklyData, totalWeeklyTime } = useWeeklyStats(currentUser?.uid);
   const { data: streakData } = useStreak(currentUser?.uid);
   const { data: learningTimeData } = useLearningTime(currentUser?.uid);
@@ -74,8 +82,8 @@ export default function DashboardPage() {
     }));
   }, [weekProgress, getCurrentWeek]);
 
-  // 로딩 상태
-  if (isLoading) {
+  // 로딩 상태 (인증 로딩 포함)
+  if (authLoading || isLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/30 dark:from-gray-900 dark:via-slate-900/50 dark:to-gray-900 p-6">
         {/* 애니메이션 배경 */}

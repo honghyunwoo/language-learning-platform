@@ -1,44 +1,18 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-// 보호된 경로 (인증 필요)
-const protectedPaths = ['/dashboard'];
+// 🔒 Firebase Auth는 클라이언트 사이드 인증을 사용합니다
+// - 토큰을 localStorage에 저장 (쿠키 사용 안 함)
+// - Middleware는 서버 사이드에서 실행되므로 localStorage 접근 불가
+// - 따라서 서버 사이드 쿠키 체크가 불가능
+//
+// ✅ 해결: 각 페이지에서 useAuth Hook으로 클라이언트 인증 체크
+// - app/dashboard/page.tsx에서 useEffect로 로그인 체크
+// - 로그인 안 되어 있으면 /login으로 리다이렉트
 
-// 인증된 사용자가 접근하면 안 되는 경로 (로그인, 회원가입)
-const authPaths = ['/login', '/signup'];
-
-export async function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-
-  // 보호된 경로인지 확인
-  const isProtectedPath = protectedPaths.some((path) =>
-    pathname.startsWith(path)
-  );
-
-  // 인증 페이지인지 확인
-  const isAuthPath = authPaths.some((path) => pathname.startsWith(path));
-
-  // 보호된 경로 접근 시 세션 확인
-  if (isProtectedPath) {
-    const sessionToken = request.cookies.get('session')?.value;
-
-    // 세션 토큰이 없으면 로그인 페이지로 리다이렉트
-    if (!sessionToken) {
-      const loginUrl = new URL('/login', request.url);
-      loginUrl.searchParams.set('redirect', pathname);
-      return NextResponse.redirect(loginUrl);
-    }
-
-    // TODO: Firebase Admin SDK로 토큰 검증
-    // 현재는 토큰 존재만 확인 (클라이언트에서 추가 검증)
-    return NextResponse.next();
-  }
-
-  // 인증 페이지는 그대로 통과
-  if (isAuthPath) {
-    return NextResponse.next();
-  }
-
+export async function middleware(_request: NextRequest) {
+  // Middleware 비활성화: 모든 요청 통과
+  // 인증 체크는 각 페이지의 useAuth에서 수행
   return NextResponse.next();
 }
 
