@@ -233,13 +233,24 @@ export const useAuth = () => {
         }
       }
     } catch (err: unknown) {
-      console.error('Google 로그인 실패:', err);
+      console.error('Google 로그인 실패 (상세):', err);
 
-      const error = err as { code?: string };
+      const error = err as { code?: string; message?: string };
+
+      // 🔍 상세 에러 정보 콘솔 출력 (디버깅용)
+      console.error('Error code:', error.code);
+      console.error('Error message:', error.message);
+      console.error('Full error:', JSON.stringify(err, null, 2));
+
       if (error.code === 'auth/popup-closed-by-user') {
         setError('로그인 팝업이 닫혔습니다.');
+      } else if (error.code === 'auth/unauthorized-domain') {
+        setError('❌ 이 도메인은 Firebase에 승인되지 않았습니다. Firebase Console에서 도메인을 추가해주세요.');
+      } else if (error.code === 'auth/popup-blocked') {
+        setError('❌ 팝업이 차단되었습니다. 브라우저 팝업 차단을 해제해주세요.');
       } else {
-        setError('Google 로그인에 실패했습니다. 다시 시도해주세요.');
+        // 디버깅을 위해 에러 코드도 표시
+        setError(`Google 로그인 실패: ${error.code || '알 수 없는 오류'} - ${error.message || '다시 시도해주세요.'}`);
       }
 
       throw err;
