@@ -57,8 +57,12 @@ function LoginForm() {
   // Google 로그인
   const handleGoogleSignIn = async () => {
     try {
+      // Redirect 후 돌아올 URL을 sessionStorage에 저장
+      sessionStorage.setItem('auth-redirect', redirect);
+
       await signInWithGoogle();
-      router.push(redirect);
+      // signInWithRedirect는 페이지를 떠나므로 router.push 불필요
+      // (Google에서 돌아오면 자동으로 onAuthStateChanged 실행)
     } catch {
       // 에러는 useAuth에서 처리됨
     }

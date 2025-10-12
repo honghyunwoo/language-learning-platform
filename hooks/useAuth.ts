@@ -9,6 +9,8 @@ import {
   onAuthStateChanged,
   GoogleAuthProvider,
   signInWithPopup,
+  signInWithRedirect,
+  getRedirectResult,
   updateProfile,
 } from 'firebase/auth';
 import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
@@ -64,6 +66,75 @@ export const useAuth = () => {
     });
 
     return unsubscribe;
+  }, []);
+
+  // Google 로그인 Redirect 결과 처리
+  useEffect(() => {
+    if (!auth || !db) return;
+
+    const handleRedirectResult = async () => {
+      try {
+        const result = await getRedirectResult(auth);
+
+        if (result) {
+          // 로그인 성공 시 사용자 문서 처리
+          const userDoc = await getDoc(doc(db, 'users', result.user.uid));
+
+          if (!userDoc.exists()) {
+            // 신규 사용자: 전체 프로필 생성
+            const today = new Date().toISOString().split('T')[0];
+            const newUser: User = {
+              uid: result.user.uid,
+              email: result.user.email || '',
+              nickname: result.user.displayName || '사용자',
+              level: 'A1',
+              learningGoal: 'hobby',
+              dailyLearningTime: 30,
+              profilePictureUrl: result.user.photoURL,
+              bio: '',
+              createdAt: new Date().toISOString(),
+              currentWeek: 'A1-W1',
+              streak: 0,
+              lastLearningDate: today,
+              totalLearningTime: 0,
+              badges: [],
+              followerCount: 0,
+              followingCount: 0,
+              settings: {
+                emailNotifications: true,
+                theme: 'auto',
+                textSize: 'medium',
+                profilePublic: true,
+              },
+            };
+
+            await setDoc(doc(db, 'users', result.user.uid), newUser);
+          } else {
+            // 기존 사용자: 프로필 사진 업데이트
+            const existingUser = userDoc.data() as User;
+            if (!existingUser.profilePictureUrl && result.user.photoURL) {
+              await updateDoc(doc(db, 'users', result.user.uid), {
+                profilePictureUrl: result.user.photoURL,
+              });
+            }
+          }
+
+          // ✅ Redirect 후 원래 가려던 페이지로 이동
+          const redirectUrl = sessionStorage.getItem('auth-redirect') || '/dashboard';
+          sessionStorage.removeItem('auth-redirect');
+          window.location.href = redirectUrl;
+        }
+      } catch (err: unknown) {
+        console.error('Redirect 결과 처리 실패:', err);
+        const error = err as { code?: string; message?: string };
+
+        if (error.code !== 'auth/popup-closed-by-user') {
+          setError(`로그인 처리 실패: ${error.message || '다시 시도해주세요.'}`);
+        }
+      }
+    };
+
+    handleRedirectResult();
   }, []);
 
   // 이메일/비밀번호 회원가입
@@ -182,59 +253,14 @@ export const useAuth = () => {
 
       const provider = new GoogleAuthProvider();
 
-      // 🔄 COOP 문제 해결: popup 대신 redirect 사용
-      // signInWithPopup은 COOP 헤더와 충돌하므로 redirect 방식 사용
-      const result = await signInWithPopup(auth, provider);
+      // 🔄 Redirect 방식으로 로그인 (COOP 문제 해결)
+      // - Popup은 COOP 헤더와 충돌
+      // - Redirect는 페이지 전체 이동으로 COOP 영향 없음
+      // - 결과는 페이지 로드 시 getRedirectResult로 처리
+      await signInWithRedirect(auth, provider);
 
-      // Firestore에 사용자 문서가 없으면 생성 (최초 로그인 시)
-      const userDoc = await getDoc(doc(db, 'users', result.user.uid));
-
-      if (!userDoc.exists()) {
-        // 신규 사용자: 전체 프로필 생성
-        const today = new Date().toISOString().split('T')[0];
-        const newUser: User = {
-          uid: result.user.uid,
-          email: result.user.email || '',
-          nickname: result.user.displayName || '사용자',
-          level: 'A1', // 기본값
-          learningGoal: 'hobby', // 기본값
-          dailyLearningTime: 30, // 기본값
-          profilePictureUrl: result.user.photoURL,
-          bio: '',
-          createdAt: new Date().toISOString(),
-          currentWeek: 'A1-W1',
-          streak: 0,
-          lastLearningDate: today,
-          totalLearningTime: 0,
-          badges: [],
-          followerCount: 0,
-          followingCount: 0,
-          settings: {
-            emailNotifications: true,
-            theme: 'auto',
-            textSize: 'medium',
-            profilePublic: true,
-          },
-        };
-
-        await setDoc(doc(db, 'users', result.user.uid), newUser);
-        setCurrentUser(newUser);
-      } else {
-        // 기존 사용자: 프로필 사진이 없으면 Google 사진으로 업데이트
-        const existingUser = userDoc.data() as User;
-
-        if (!existingUser.profilePictureUrl && result.user.photoURL) {
-          await updateDoc(doc(db, 'users', result.user.uid), {
-            profilePictureUrl: result.user.photoURL,
-          });
-
-          // 로컬 상태도 업데이트
-          setCurrentUser({
-            ...existingUser,
-            profilePictureUrl: result.user.photoURL,
-          });
-        }
-      }
+      // 주의: 이 함수는 redirect 전에 종료됨
+      // 실제 로그인 처리는 redirect 후 돌아왔을 때 위의 useEffect에서 수행
     } catch (err: unknown) {
       console.error('Google 로그인 실패 (상세):', err);
 
@@ -245,14 +271,11 @@ export const useAuth = () => {
       console.error('Error message:', error.message);
       console.error('Full error:', JSON.stringify(err, null, 2));
 
-      if (error.code === 'auth/popup-closed-by-user') {
-        setError('로그인 팝업이 닫혔습니다.');
-      } else if (error.code === 'auth/unauthorized-domain') {
+      if (error.code === 'auth/unauthorized-domain') {
         setError('❌ 이 도메인은 Firebase에 승인되지 않았습니다. Firebase Console에서 도메인을 추가해주세요.');
       } else if (error.code === 'auth/popup-blocked') {
-        setError('❌ 팝업이 차단되었습니다. 브라우저 팝업 차단을 해제해주세요.');
+        setError('❌ 로그인이 차단되었습니다. 잠시 후 다시 시도해주세요.');
       } else {
-        // 디버깅을 위해 에러 코드도 표시
         setError(`Google 로그인 실패: ${error.code || '알 수 없는 오류'} - ${error.message || '다시 시도해주세요.'}`);
       }
 
