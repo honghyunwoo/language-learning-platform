@@ -31,7 +31,9 @@ export interface SignInData {
   password: string;
 }
 
-export const useAuth = () => {
+export type AuthHookResult = ReturnType<typeof useProvideAuth>;
+
+export const useProvideAuth = () => {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [firebaseUser, setFirebaseUser] = useState<FirebaseUser | null>(null);
   const [loading, setLoading] = useState(true);
@@ -89,6 +91,7 @@ export const useAuth = () => {
             const today = new Date().toISOString().split('T')[0];
             const newUser: User = {
               uid: result.user.uid,
+              role: 'user',
               email: result.user.email || '',
               nickname: result.user.displayName || '사용자',
               level: 'A1',
@@ -102,6 +105,7 @@ export const useAuth = () => {
               lastLearningDate: today,
               totalLearningTime: 0,
               badges: [],
+              points: 0,
               followerCount: 0,
               followingCount: 0,
               settings: {
@@ -123,13 +127,8 @@ export const useAuth = () => {
             }
           }
 
-          // ✅ sessionStorage에서 redirect URL 가져오기
-          const redirectUrl = sessionStorage.getItem('auth-redirect') || '/dashboard';
-          sessionStorage.removeItem('auth-redirect');
-
-          // ✅ Next.js에서 페이지 이동 (window.location 대신)
-          // useRouter를 사용할 수 없으므로 window.location 사용하되 한 번만 실행
-          window.location.replace(redirectUrl);
+          // ✅ redirect URL은 sessionStorage에 보관
+          // 실제 리다이렉트는 login 페이지에서 currentUser 감지 시 처리
         }
       } catch (err: unknown) {
         console.error('Redirect 결과 처리 실패:', err);
@@ -171,6 +170,7 @@ export const useAuth = () => {
       const today = new Date().toISOString().split('T')[0];
       const newUser: User = {
         uid: userCredential.user.uid,
+        role: 'user',
         email: data.email,
         nickname: data.nickname,
         level: data.level,
@@ -184,6 +184,7 @@ export const useAuth = () => {
         lastLearningDate: today,
         totalLearningTime: 0,
         badges: [],
+        points: 0,
         followerCount: 0,
         followingCount: 0,
         settings: {

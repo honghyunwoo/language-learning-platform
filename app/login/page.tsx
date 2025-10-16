@@ -1,16 +1,16 @@
 'use client';
 
-import { useState, Suspense } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { useAuth } from '@/hooks/useAuth';
+import { useAuth } from '@/contexts/AuthContext';
 import { Button, Input, Card } from '@/components/ui';
 
 function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const redirect = searchParams.get('redirect') || '/dashboard';
-  const { signIn, signInWithGoogle, loading, error } = useAuth();
+  const { currentUser, signIn, signInWithGoogle, loading, error } = useAuth();
 
   const [formData, setFormData] = useState({
     email: '',
@@ -21,6 +21,18 @@ function LoginForm() {
     email?: string;
     password?: string;
   }>({});
+
+  // 이미 로그인된 사용자 자동 리다이렉트
+  useEffect(() => {
+    if (!loading && currentUser) {
+      // sessionStorage에서 redirect URL 가져오기
+      const savedRedirect = sessionStorage.getItem('auth-redirect');
+      sessionStorage.removeItem('auth-redirect');
+
+      // 저장된 redirect URL이 있으면 그곳으로, 없으면 기본 redirect로
+      router.push(savedRedirect || redirect);
+    }
+  }, [loading, currentUser, redirect, router]);
 
   // 폼 유효성 검사
   const validateForm = (): boolean => {
