@@ -25,12 +25,7 @@ function LoginForm() {
   // 이미 로그인된 사용자 자동 리다이렉트
   useEffect(() => {
     if (!loading && currentUser) {
-      // sessionStorage에서 redirect URL 가져오기
-      const savedRedirect = sessionStorage.getItem('auth-redirect');
-      sessionStorage.removeItem('auth-redirect');
-
-      // 저장된 redirect URL이 있으면 그곳으로, 없으면 기본 redirect로
-      router.push(savedRedirect || redirect);
+      router.push(redirect);
     }
   }, [loading, currentUser, redirect, router]);
 
@@ -69,12 +64,10 @@ function LoginForm() {
   // Google 로그인
   const handleGoogleSignIn = async () => {
     try {
-      // Redirect 후 돌아올 URL을 sessionStorage에 저장
-      sessionStorage.setItem('auth-redirect', redirect);
-
       await signInWithGoogle();
-      // signInWithRedirect는 페이지를 떠나므로 router.push 불필요
-      // (Google에서 돌아오면 자동으로 onAuthStateChanged 실행)
+      // signInWithPopup 성공 시 onAuthStateChanged가 자동으로 트리거되어
+      // currentUser가 업데이트되고, 위의 useEffect에서 자동으로 리다이렉트됨
+      router.push(redirect);
     } catch {
       // 에러는 useAuth에서 처리됨
     }
